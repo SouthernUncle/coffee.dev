@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
 <body>
-	<h1>Heading 1</h1>
+	<h1 class="primary">Heading 1</h1>
 	<h2>Heading 2</h2>
 	<h3>Heading 3</h3>
 	<h4>Heading 4</h4>
