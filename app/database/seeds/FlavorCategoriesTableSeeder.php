@@ -1,18 +1,23 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
-
 class FlavorCategoriesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
+		$flavors = [
+			'citrus', 'apple', 'melon',
+			'grape', 'tropical fruit',
+			'stone fruit', 'berry',
+			'dried fruit', 'chocolate',
+			'sugar', 'nut', 'grain', 'roast',
+			'spice', 'savory', 'herb',
+			'earthy', 'vegetal', 'floral' 
+		]
 
-		foreach(range(1, 10) as $index)
+		foreach($flavors as $flavor)
 		{
 			FlavorCategory::create([
-
+				'name' => $flavor;
 			]);
 		}
 	}
