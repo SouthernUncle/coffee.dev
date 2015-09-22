@@ -16,6 +16,7 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->elevation              = '1830 to 1950m';
         $coffee->roasters_description   = 'This washed coffee is from the Guji Zone in Oromia, one of Ethiopia\'s largest growing areas. The farm consists of 221 hectares and is located between 1830 and 1950 meters. It\'s grown in highly nutritious volcanic soil and fertilized organically, then washed and depulped mechanically. There is a 35-48 hour fermentation process before the coffee is dried on raised beds for 9-15 days.';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -30,6 +31,7 @@ class CoffeesTableSeeder extends Seeder {
 
 In addition to the wide-spread SL28 and SL34, this lot contains some Ruiru 11. Ruiru 11 is named for the station at Ruiru, Kenya where it was developed in the \'70s and released in 1986. The varietal is slowly becoming more widespread in the region due to its resistance to Coffee Berry Disease and Coffee Leaf Rust and has both been backcrossed with SL28 and SL34 to ensure high cup quality.';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -57,6 +59,7 @@ The Menendez family is committed to improving the areas and people\'s livelihood
 
 As usual, this year\'s crop is enormously sweet, to the point of being sugary. It has a very distinct caramel and chocolate flavor to the cup, a mild acidity, and is very clean. We would recommend this coffee for everyone, and especially if you\'re a fan of full, sweet cups.';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -87,6 +90,7 @@ On last year’s trip to visit our mill in Colombia, La Palma Y El Tucan, Phil m
 
 La Cruz is an excellent find and an important coffee for us. As demand continues to skyrocket for quality Costa Ricans, people with direct trades will benefit while others will be left without access. This farm is producing some amazing coffees, and we have two different lots this year. This first is a traditional Natural process, and is exceptionally lively, complex and bursting with flavor. The second, which will be available when this is out, is a Kenya style double washed coffee (the only coffee like this we’ve ever seen).';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -126,6 +130,7 @@ BREW METHOD:
 
 Choose any drip method for this coffee.  Body stands out even among clarity driven methods and anything you can do to highlight the melon note is a positive.';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -154,6 +159,7 @@ We really love this coffee for cold brew systems.  Toddy or Kyoto.  Refreshing, 
 
 Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He owns the Santa Barbara Estate as well as the wonderful coffee bar Pergamino, in Medellin.  He\'s also working on ground breaking fermentation concepts that we will carry a bit later this year.  This lot was a surprise that we found while cupping some of his experiments in Medellin, Colombia at the beginning of this year.  It immediately jumped off the table with beautifully balanced sugar browning notes and a deep resonating body.  This will be a people pleaser that shows a perfect example of what a great Colombian Excelso.';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -166,6 +172,7 @@ Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He own
         $coffee->elevation              = '1,400 - 1,850m';
         $coffee->roasters_description   = 'The farms of growers contributing coffee to the La Voz cooperative are nestled among the volcanoes surrounding the breathtaking Lake Atitlán—easily one of the most beautiful places in the world. For a second year in a row, the well-managed co-op produced a coffee with notes of crisp red apple and light fruit tones complemented by a sweet, nutty finish.';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -178,6 +185,7 @@ Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He own
         $coffee->elevation              = '1,900 - 2,400m';
         $coffee->roasters_description   = 'This first lot from the Idido cooperative in Yirgacheffe, Ethiopia, represents a select group of 200 of the most dedicated farmers in the co-op. These farmers turn in their best cherries at the peak of harvest for this washed, special preparation coffee. Look for floral, melon, and citrus notes.';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -190,6 +198,7 @@ Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He own
         $coffee->elevation              = '';
         $coffee->roasters_description   = 'Honduras Santa Elena Carminda Vásquez is sourced from a family-owned farm in collaboration with Catracha Coffee Company.  Carminda Vásquez Sorto produced this micro-lot on a 3.5 acre farm called El Naranjo located in the municipality of Santa Elena within the department of La Paz, Honduras. Catracha Coffee works with a select group of farmers who participate in monthly educational seminars to improve upon their coffee production. These capacity building opportunities have helped Carminda increase yields and improve the quality of his coffee. Carminda receives all the profits associated with the sale of her exported coffee, which is the main source of income for her, her husband, and 6 children. Carminda plans to use some of her earnings to renovate parts of her farm that have been damaged by leaf rust.';
         $coffee->active                 = true;
+        $coffee->save();
 
         $coffee = new Coffee();
         $coffee->user_id                = ;
@@ -211,6 +220,7 @@ silky, medium-bodied coffee that immediately bites at our taste buds with notes 
 grapefruit. There are soothing, raw sugar and bittersweet dark chocolate and
 silky, fragrant elements to the profile that saves it from being too tart throughout the cup.';
         $coffee->active                 = true;
+        $coffee->save();
 
 	}
 
