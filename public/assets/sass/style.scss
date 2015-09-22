@@ -20,3 +20,28 @@
 .danger {
 	color: $danger1;
 }
+
+.btn-primary {
+	color: $default1;
+	background-color: $warning1;
+	border-color: darken($warning1, 10%);
+}
+
+.btn-primary:hover {
+	background-color: darken($warning1, 10%);
+}
+
+.btn-default {
+	color: $primary1;
+	border-color: darken($primary1, 10%);
+}
+
+.btn-success {
+	color: $default1;
+	background-color: $success1;
+	border-color: darken($success1, 10%);
+}
+
+.btn-success:hover {
+	background-color: darken($success1, 10%);
+}

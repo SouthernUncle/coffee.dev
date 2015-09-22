@@ -180,6 +180,7 @@ DB structure:
 		-roaster_id
 		-region_id
 		-roaster_notes (textarea)
+        -active
 		-link [top user or admin only] (nullable)
 		-process (nullable)
 		-elevation (nullable)

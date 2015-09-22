@@ -15,6 +15,11 @@ class CreateFlavorsTable extends Migration {
 		Schema::create('flavors', function(Blueprint $table)
 		{
 			$table->increments('id');
+
+			$table->integer->('cagetory_id')->unsigned()->index();
+			$table->foreign('cagetory_id')->references('id')->on('flavor_categories')->onDelete('cascade');
+
+			$table->string('name');
 			$table->timestamps();
 		});
 	}
@@ -27,6 +32,11 @@ class CreateFlavorsTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::table('flavors', function(Blueprint $table)
+		{
+			$table->dropForeign('flavors_category_id_foreign');
+		});
+
 		Schema::drop('flavors');
 	}
 

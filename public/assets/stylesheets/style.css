@@ -8793,3 +8793,33 @@ button.close {
 .danger {
   color: #FF715B;
 }
+
+/* line 24, ../sass/style.scss */
+.btn-primary {
+  color: #FFFFFF;
+  background-color: #523F38;
+  border-color: #342823;
+}
+
+/* line 30, ../sass/style.scss */
+.btn-primary:hover {
+  background-color: #342823;
+}
+
+/* line 34, ../sass/style.scss */
+.btn-default {
+  color: #4C5454;
+  border-color: #343939;
+}
+
+/* line 39, ../sass/style.scss */
+.btn-success {
+  color: #FFFFFF;
+  background-color: #1EA896;
+  border-color: #167d6f;
+}
+
+/* line 45, ../sass/style.scss */
+.btn-success:hover {
+  background-color: #167d6f;
+}

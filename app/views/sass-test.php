@@ -43,5 +43,12 @@
 		</tbody>
 	</table>
 
+	<a href="#" class="btn btn-default">Default Button</a>
+	<a href="#" class="btn btn-primary">Primary Button</a>
+	<a href="#" class="btn btn-success">Success Button</a>
+	<a href="#" class="btn btn-warning">Warning Button</a>
+	<a href="#" class="btn btn-info">Info Button</a>
+	<a href="#" class="btn btn-danger">Danger Button</a>
+
 </body>
 </html>
