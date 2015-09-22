@@ -11,6 +11,16 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
+		DB::table('review_flavor')->delete();
+		DB::table('parameters')->delete();
+		DB::table('reviews')->delete();
+		DB::table('coffees')->delete();
+		DB::table('roasters')->delete();
+		DB::table('users')->delete();
+		DB::table('flavors')->delete();
+		DB::table('flavor_categories')->delete();
+		DB::table('regions')->delete();
+
 		$this->call('RegionsTableSeeder');
 		$this->call('FlavorCategoriesTableSeeder');
 		$this->call('FlavorsTableSeeder');
