@@ -154,15 +154,6 @@ DB structure:
 		-body
 		-acidity
 
-		(brew parameters:)
-			-grind (nullable)
-			-wt_coffee (nullable)
-			-wt_water (nullable)
-			-brew_time (nullable)
-			-brewer (nullable)
-			-roast_date (nullable)
-			-methods (textarea) (nullable)
-
 		-price (nullable)
 		-bag size (nullable)
 
@@ -215,6 +206,18 @@ DB structure:
     	-description 
     	-img_url 
 
+    parameters table
+        -id
+        -review_id
+        -grind (nullable) 
+        -wt_water (nullable)
+        -wt_coffee (nullable)
+        -brew_time (nullable)
+        -brewer (nullable)
+        -method (textarea) (nullable)
+        -roast_date (nullable)
+        -temp_water (nullable)
+
 Classes:
 
     User
@@ -225,6 +228,7 @@ Classes:
     	belongs to many Flavor
     	has many Coffee
     	has many Roaster
+        has Parameter
 
     FlavorCategory
     	has many Flavor
@@ -244,6 +248,9 @@ Classes:
 
     Region
     	has many Coffee
+
+    Parameter
+        belongs to Review
 
 
 startup new project: https://gist.github.com/dgcollier/7bf95080656f996de2df

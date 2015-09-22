@@ -1,29 +1,4 @@
 @charset "UTF-8";
-/* line 1, ../sass/_classes.scss */
-.default {
-  color: #FFFFFF;
-}
-
-/* line 5, ../sass/_classes.scss */
-.primary {
-  color: #4C5454;
-}
-
-/* line 9, ../sass/_classes.scss */
-.success {
-  color: #1EA896;
-}
-
-/* line 13, ../sass/_classes.scss */
-.warning {
-  color: #523F38;
-}
-
-/* line 17, ../sass/_classes.scss */
-.danger {
-  color: #FF715B;
-}
-
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -8793,4 +8768,28 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+/* line 4, ../sass/style.scss */
+.default {
+  color: #FFFFFF;
+}
+
+/* line 8, ../sass/style.scss */
+.primary {
+  color: #4C5454;
+}
+
+/* line 12, ../sass/style.scss */
+.success {
+  color: #1EA896;
+}
+
+/* line 16, ../sass/style.scss */
+.warning {
+  color: #523F38;
+}
+
+/* line 20, ../sass/style.scss */
+.danger {
+  color: #FF715B;
 }
