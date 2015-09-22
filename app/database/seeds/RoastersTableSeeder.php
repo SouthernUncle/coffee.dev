@@ -17,6 +17,7 @@ class RoastersTableSeeder extends Seeder {
         $roaster->twitter       = '';
         $roaster->facebook      = '';
         $roaster->instagram     = '';
+        $roaster->save();
 
         $roaster = new Roaster();
         $roaster->user_id       = 1;
@@ -30,6 +31,7 @@ class RoastersTableSeeder extends Seeder {
         $roaster->twitter       = '';
         $roaster->facebook      = '';
         $roaster->instagram     = '';
+        $roaster->save();
         
         $roaster = new Roaster();
         $roaster->user_id       = 1;
@@ -43,6 +45,7 @@ class RoastersTableSeeder extends Seeder {
         $roaster->twitter       = '';
         $roaster->facebook      = '';
         $roaster->instagram     = '';
+        $roaster->save();
         
         $roaster = new Roaster();
         $roaster->user_id       = 1;
@@ -56,6 +59,7 @@ class RoastersTableSeeder extends Seeder {
         $roaster->twitter       = '';
         $roaster->facebook      = '';
         $roaster->instagram     = '';
+        $roaster->save();
         
         $roaster = new Roaster();
         $roaster->user_id       = 1;
@@ -69,6 +73,7 @@ class RoastersTableSeeder extends Seeder {
         $roaster->twitter       = '';
         $roaster->facebook      = '';
         $roaster->instagram     = '';
+        $roaster->save();
         
 	}
 
