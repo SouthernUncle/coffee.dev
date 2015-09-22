@@ -1,0 +1,1 @@
+/vagrant/sites/coffee.dev/app/views/regions/show.blade.php
