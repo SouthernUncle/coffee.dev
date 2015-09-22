@@ -1,0 +1,19 @@
+{
+  "name": "coffee.dev",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SouthernUncle/coffee.dev",
+  "authors": [
+    "dgcollier <david@gcollier.me>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
