@@ -1,20 +1,165 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
 
 class ReviewsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Review::create([
+		$review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
 
-			]);
-		}
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
+        $review = new Review();
+        $review->coffee_id      = ;
+        $review->roaster_id     = ;
+        $review->user_id        = ;
+        $review->review         = '';
+        $review->aroma          = ;
+        $review->flavor         = ;
+        $review->aftertaste     = ;
+        $review->roast          = ;
+        $review->body           = ;
+        $review->acidity        = ;
+        $review->price          = ;
+        $review->bag_size_grams = ;
+
 	}
 
 }

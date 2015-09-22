@@ -1,20 +1,75 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
-
 class RoastersTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Roaster::create([
-
-			]);
-		}
+		$roaster = new Roaster();
+        $roaster->user_id       = ;
+        $roaster->name          = '';
+        $roaster->address       = '';
+        $roaster->city          = '';
+        $roaster->state         = '';
+        $roaster->img_url       = '';
+        $roaster->url           = '';
+        $roaster->description   = '';
+        $roaster->twitter       = '';
+        $roaster->facebook      = '';
+        $roaster->instagram     = '';
+        
+        $roaster = new Roaster();
+        $roaster->user_id       = ;
+        $roaster->name          = '';
+        $roaster->address       = '';
+        $roaster->city          = '';
+        $roaster->state         = '';
+        $roaster->img_url       = '';
+        $roaster->url           = '';
+        $roaster->description   = '';
+        $roaster->twitter       = '';
+        $roaster->facebook      = '';
+        $roaster->instagram     = '';
+        
+        $roaster = new Roaster();
+        $roaster->user_id       = ;
+        $roaster->name          = '';
+        $roaster->address       = '';
+        $roaster->city          = '';
+        $roaster->state         = '';
+        $roaster->img_url       = '';
+        $roaster->url           = '';
+        $roaster->description   = '';
+        $roaster->twitter       = '';
+        $roaster->facebook      = '';
+        $roaster->instagram     = '';
+        
+        $roaster = new Roaster();
+        $roaster->user_id       = ;
+        $roaster->name          = '';
+        $roaster->address       = '';
+        $roaster->city          = '';
+        $roaster->state         = '';
+        $roaster->img_url       = '';
+        $roaster->url           = '';
+        $roaster->description   = '';
+        $roaster->twitter       = '';
+        $roaster->facebook      = '';
+        $roaster->instagram     = '';
+        
+        $roaster = new Roaster();
+        $roaster->user_id       = ;
+        $roaster->name          = '';
+        $roaster->address       = '';
+        $roaster->city          = '';
+        $roaster->state         = '';
+        $roaster->img_url       = '';
+        $roaster->url           = '';
+        $roaster->description   = '';
+        $roaster->twitter       = '';
+        $roaster->facebook      = '';
+        $roaster->instagram     = '';
+        
 	}
 
 }
