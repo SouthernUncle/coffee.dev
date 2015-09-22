@@ -6,7 +6,7 @@ class ReviewsTableSeeder extends Seeder {
 	public function run()
 	{
 
-		$review = new Review();
+    	$review = new Review();	
         $review->coffee_id      = 1;
         $review->roaster_id     = 1;
         $review->user_id        = 1;
@@ -155,7 +155,5 @@ class ReviewsTableSeeder extends Seeder {
         $review->price          = 15.00;
         $review->bag_size_grams = 340;
         $review->save();
-
 	}
-
 }

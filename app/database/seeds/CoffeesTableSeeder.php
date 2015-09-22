@@ -6,7 +6,7 @@ class CoffeesTableSeeder extends Seeder {
 	{
 
 		$coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 1;
         $coffee->region_id              = 1;
         $coffee->roaster_id             = 1;
         $coffee->name                   = 'Suke Quto';
@@ -19,7 +19,7 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 2;
         $coffee->region_id              = 2;
         $coffee->roaster_id             = 1;
         $coffee->name                   = 'Kii AA';
@@ -34,7 +34,7 @@ In addition to the wide-spread SL28 and SL34, this lot contains some Ruiru 11. R
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 3;
         $coffee->region_id              = 3;
         $coffee->roaster_id             = 2;
         $coffee->name                   = 'Santa Barbara';
@@ -62,7 +62,7 @@ As usual, this year\'s crop is enormously sweet, to the point of being sugary. I
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 4;
         $coffee->region_id              = 4;
         $coffee->roaster_id             = 2;
         $coffee->name                   = 'La Cruz';
@@ -93,7 +93,7 @@ La Cruz is an excellent find and an important coffee for us. As demand continues
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 5;
         $coffee->region_id              = 5;
         $coffee->roaster_id             = 3;
         $coffee->name                   = 'Similakuta';
@@ -133,7 +133,7 @@ Choose any drip method for this coffee.  Body stands out even among clarity driv
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 6;
         $coffee->region_id              = 6;
         $coffee->roaster_id             = 3;
         $coffee->name                   = 'San Antonio';
@@ -162,7 +162,7 @@ Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He own
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 7;
         $coffee->region_id              = 7;
         $coffee->roaster_id             = 4;
         $coffee->name                   = 'La Voz';
@@ -175,7 +175,7 @@ Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He own
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 8;
         $coffee->region_id              = 1;
         $coffee->roaster_id             = 4;
         $coffee->name                   = 'Idido';
@@ -188,7 +188,7 @@ Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He own
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 9;
         $coffee->region_id              = 9;
         $coffee->roaster_id             = 5;
         $coffee->name                   = 'Santa Elena';
@@ -201,7 +201,7 @@ Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He own
         $coffee->save();
 
         $coffee = new Coffee();
-        $coffee->user_id                = ;
+        $coffee->user_id                = 10;
         $coffee->region_id              = 8;
         $coffee->roaster_id             = 5;
         $coffee->name                   = 'Bon Vivant';

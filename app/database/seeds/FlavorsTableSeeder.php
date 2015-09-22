@@ -5,7 +5,7 @@ class FlavorsTableSeeder extends Seeder {
 	public function run()
 	{
 	// 1-7
-		$citrus = [ 'lemon', 'lime', 'grapefuit', 'clementine', 'tangerine', 'mandarin orange', 'orange' ]
+		$citrus = [ 'lemon', 'lime', 'grapefruit', 'clementine', 'tangerine', 'mandarin orange', 'orange' ]
 	//  8-9
 		$apple = [ 'green apple', 'red apple' ]
 	// 10-12
