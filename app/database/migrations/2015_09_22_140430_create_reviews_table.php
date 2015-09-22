@@ -36,7 +36,7 @@ class CreateReviewsTable extends Migration {
 			$table->float('body', 2, 1)->nullable();
 			$table->float('acidity', 2, 1)->nullable();
 			
-			$table->float('price', 3, 2)->nullable();
+			$table->decimal('price', 3, 2)->nullable();
 			$table->tinyint('bag_size_grams', 4)->nullable();
 
 			$table->timestamps();
