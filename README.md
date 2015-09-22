@@ -228,6 +228,7 @@ Classes:
     	belongs to many Flavor
     	has many Coffee
     	has many Roaster
+        has Parameter
 
     FlavorCategory
     	has many Flavor
@@ -247,6 +248,9 @@ Classes:
 
     Region
     	has many Coffee
+
+    Parameter
+        belongs to Review
 
 
 startup new project: https://gist.github.com/dgcollier/7bf95080656f996de2df
