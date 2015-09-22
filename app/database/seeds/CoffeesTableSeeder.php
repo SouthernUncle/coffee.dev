@@ -1,20 +1,20 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
-
 class CoffeesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
-
-		foreach(range(1, 10) as $index)
-		{
-			Coffee::create([
-
-			]);
-		}
+		$coffee = new Coffee();
+        $coffee->user_id                = ;
+        $coffee->region_id              = ;
+        $coffee->roaster_id             = ;
+        $coffee->name                   = ;
+        $coffee->img_url                = ;
+        $coffee->url                    = ;
+        $coffee->process                = ;
+        $coffee->elevation              = ;
+        $coffee->roasters_description   = ;
+        $coffee->active                 = ;
 	}
 
 }
