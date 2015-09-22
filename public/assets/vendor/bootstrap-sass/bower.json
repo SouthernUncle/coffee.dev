@@ -1,35 +1,21 @@
 {
-  "name": "bootstrap-sass",
-  "homepage": "https://github.com/twbs/bootstrap-sass",
+  "name": "Some Application",
+  "version": "0.1.0",
+  "homepage": "https://github.com/dgcollier/Codeup.dev",
   "authors": [
-    "Thomas McDonald",
-    "Tristan Harward",
-    "Peter Gumeson",
-    "Gleb Mazovetskiy"
+    "dgcollier <david@gcollier.me>"
   ],
-  "description": "bootstrap-sass is a Sass-powered version of Bootstrap, ready to drop right into your Sass powered applications.",
-  "moduleType": "globals",
-  "main": [
-    "assets/stylesheets/_bootstrap.scss",
-    "assets/javascripts/bootstrap.js"
-  ],
-  "keywords": [
-    "twbs",
-    "bootstrap",
-    "sass"
-  ],
+  "description": "This is a test application",
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "lib",
-    "tasks",
-    "templates",
+    "node_modules",
+    "bower_components",
     "test",
-    "*.gemspec",
-    "Rakefile",
-    "Gemfile"
+    "tests"
   ],
   "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
     "jquery": ">= 1.9.0"
   }
 }
