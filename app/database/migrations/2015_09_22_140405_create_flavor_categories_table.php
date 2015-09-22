@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateReviewsTable extends Migration {
+class CreateFlavorCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,10 @@ class CreateReviewsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('reviews', function(Blueprint $table)
+		Schema::create('flavor_categories', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('name');
 			$table->timestamps();
 		});
 	}
@@ -27,7 +28,7 @@ class CreateReviewsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('reviews');
+		Schema::drop('flavor_categories');
 	}
 
 }

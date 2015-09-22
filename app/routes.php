@@ -13,5 +13,10 @@
 
 Route::get('/', function()
 {
+	return View::make('hello');
+});
+
+Route::get('/theme1', function()
+{
 	return View::make('sass-test');
 });
