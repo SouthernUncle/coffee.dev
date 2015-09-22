@@ -20,7 +20,8 @@ class CreateUsersTable extends Migration {
 			$table->string('username')->unique();
 			$table->string('password');
 			$table->string('role');
-			$table->string('img_url');
+			$table->string('img_url')->nullable();
+			$table->string('confirmation');
 
 			$table->rememberToken();
 
