@@ -154,15 +154,6 @@ DB structure:
 		-body
 		-acidity
 
-		(brew parameters:)
-			-grind (nullable)
-			-wt_coffee (nullable)
-			-wt_water (nullable)
-			-brew_time (nullable)
-			-brewer (nullable)
-			-roast_date (nullable)
-			-methods (textarea) (nullable)
-
 		-price (nullable)
 		-bag size (nullable)
 
@@ -214,6 +205,18 @@ DB structure:
     	-region
     	-description 
     	-img_url 
+
+    parameters table
+        -id
+        -review_id
+        -grind (nullable) 
+        -wt_water (nullable)
+        -wt_coffee (nullable)
+        -brew_time (nullable)
+        -brewer (nullable)
+        -method (textarea) (nullable)
+        -roast_date (nullable)
+        -temp_water (nullable)
 
 Classes:
 

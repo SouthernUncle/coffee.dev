@@ -1,0 +1,24 @@
+/* line 3, ../sass/main.scss */
+.default {
+  color: #FFFFFF;
+}
+
+/* line 7, ../sass/main.scss */
+.primary {
+  color: #4C5454;
+}
+
+/* line 11, ../sass/main.scss */
+.success {
+  color: #1EA896;
+}
+
+/* line 15, ../sass/main.scss */
+.warning {
+  color: #523F38;
+}
+
+/* line 19, ../sass/main.scss */
+.danger {
+  color: #FF715B;
+}
