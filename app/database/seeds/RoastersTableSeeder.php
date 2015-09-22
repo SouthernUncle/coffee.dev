@@ -72,7 +72,5 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->twitter       = '';
                 $roaster->facebook      = '';
                 $roaster->instagram     = '';
-        
 	}
-
 }
