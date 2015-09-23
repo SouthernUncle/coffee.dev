@@ -27,16 +27,16 @@ class CreateReviewsTable extends Migration {
 
 			$table->text('review');
 
-			$table->float('aroma', 2, 1);
-			$table->float('flavor', 2, 1);
-			$table->float('aftertaste', 2, 1);
-			$table->float('balance', 2, 1);
+			$table->float('aroma', 3, 1);
+			$table->float('flavor', 3, 1);
+			$table->float('aftertaste', 3, 1);
+			$table->float('balance', 3, 1);
 
-			$table->float('roast', 2, 1)->nullable();
-			$table->float('body', 2, 1)->nullable();
-			$table->float('acidity', 2, 1)->nullable();
+			$table->float('roast', 3, 1)->nullable();
+			$table->float('body', 3, 1)->nullable();
+			$table->float('acidity', 3, 1)->nullable();
 			
-			$table->decimal('price', 3, 2)->nullable();
+			$table->decimal('price', 4, 2)->nullable();
 			$table->integer('bag_size_grams')->nullable();
 
 			$table->timestamps();

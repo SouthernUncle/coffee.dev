@@ -17,6 +17,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->twitter       = 'https://twitter.com/search?q=press%20coffee%20dayton&src=typd';
                 $roaster->facebook      = 'https://www.facebook.com/PressCoffeeBarDYT?fref=ts';
                 $roaster->instagram     = 'https://instagram.com/woodburlcoffee/';
+                $roaster->save();
 
                 $roaster = new Roaster();
                 $roaster->user_id       = 1;
@@ -33,6 +34,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->twitter       = 'https://twitter.com/CorvusCoffee';
                 $roaster->facebook      = 'https://www.facebook.com/CorvusCoffeeRoasters?fref=ts';
                 $roaster->instagram     = 'https://instagram.com/corvuscoffee/';
+                $roaster->save();
         
                 $roaster = new Roaster();
                 $roaster->user_id       = 1;
@@ -46,6 +48,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->twitter       = 'https://twitter.com/OnyxCoffeeLab';
                 $roaster->facebook      = 'https://www.facebook.com/OnyxCoffeeLab/';
                 $roaster->instagram     = 'https://instagram.com/onyxcoffeelab/';
+                $roaster->save();
         
                 $roaster = new Roaster();
                 $roaster->user_id       = 1;
@@ -62,6 +65,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->twitter       = 'https://twitter.com/counter_culture';
                 $roaster->facebook      = 'https://www.facebook.com/counterculturecoffee';
                 $roaster->instagram     = 'https://instagram.com/counterculturecoffee/';
+                $roaster->save();
         
                 $roaster = new Roaster();
                 $roaster->user_id       = 1;
@@ -77,5 +81,6 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->twitter       = 'https://twitter.com/metriccoffee';
                 $roaster->facebook      = 'https://www.facebook.com/metriccoffee';
                 $roaster->instagram     = 'https://instagram.com/metriccoffee';
+                $roaster->save();
 	}
 }

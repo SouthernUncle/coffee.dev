@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder {
 			'email'        => $_ENV['USER_EMAIL'],
 			'password'     => $_ENV['USER_PASSWORD'],
 			'role' 		   => 'admin',
-			'confirmation' => Hashids::encode(1);
+			'confirmation' => Hashids::encode(1),
 		]);
 
 		$faker = Faker::create();
@@ -24,8 +24,8 @@ class UsersTableSeeder extends Seeder {
 				'username'     => $faker->userName,
 				'email'        => $faker->freeEmail,
 				'password'     => $_ENV['USER_PASSWORD'],
-				'role'	       => 'user';
-				'confirmation' => null;
+				'role'	       => 'user',
+				'confirmation' => null,
 
 			]);
 		}
@@ -37,8 +37,8 @@ class UsersTableSeeder extends Seeder {
 				'username'     => $faker->userName,
 				'email'        => $faker->freeEmail,
 				'password'     => $_ENV['USER_PASSWORD'],
-				'role'	       => 'top';
-				'confirmation' => null;
+				'role'	       => 'top',
+				'confirmation' => null,
 				
 			]);
 		}
