@@ -15,6 +15,12 @@ class CreateInvitationsTable extends Migration {
 		Schema::create('invitations', function(Blueprint $table)
 		{
 			$table->increments('id');
+
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			
+			$table->string('email');
+			$table->string('confirmation');
 			$table->timestamps();
 		});
 	}
@@ -27,6 +33,11 @@ class CreateInvitationsTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::table('invitations', function(Blueprint $table)
+		{
+			$table->dropForeign('invitations_user_id_foreign');
+		});
+
 		Schema::drop('invitations');
 	}
 
