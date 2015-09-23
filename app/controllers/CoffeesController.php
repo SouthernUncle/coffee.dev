@@ -1,6 +1,6 @@
 <?php
 
-class CoffeesController extends \BaseController {
+class CoffeesController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -10,7 +10,11 @@ class CoffeesController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$query = Coffee::with('user');
+
+		$coffees = $query->orderBy('id')->get();
+
+		return View::make('coffees.index', compact('coffees'));
 	}
 
 	/**

@@ -223,12 +223,15 @@ Classes:
 
     User
     	has many Review
+        has many Coffee
+        has many Roaster
+        has Role
+        has many Invitation
 
     Review
     	belongs to User
     	belongs to many Flavor
-    	has many Coffee
-    	has many Roaster
+    	belongs to Coffee
         has Parameter
 
     FlavorCategory
@@ -239,19 +242,26 @@ Classes:
     	belongs to FlavorCategory
 
     Coffee
-    	belongs to Roaster
-    	belongs to Review
+    	has many Review
+        belongs to Roaster
     	belongs to Region
+        belongs to User
 
     Roaster
     	has many Coffee
-    	belongs to Review
+        belongs to User
 
     Region
     	has many Coffee
 
     Parameter
         belongs to Review
+
+    Role
+        belongs to User
+
+    Invitation
+        belongs to User
 
 
 startup new project: https://gist.github.com/dgcollier/7bf95080656f996de2df
