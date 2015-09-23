@@ -12,12 +12,12 @@ class FlavorCategoriesTableSeeder extends Seeder {
 			'sugar', 'nut', 'grain', 'roast',
 			'spice', 'savory', 'herb',
 			'earthy', 'vegetal', 'floral' 
-		]
+		];
 
 		foreach($flavors as $flavor)
 		{
 			FlavorCategory::create([
-				'name' => $flavor;
+				'name' => $flavor,
 			]);
 		}
 	}

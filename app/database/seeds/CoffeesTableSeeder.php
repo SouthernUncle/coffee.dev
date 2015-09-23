@@ -5,7 +5,7 @@ class CoffeesTableSeeder extends Seeder {
 	public function run()
 	{
 
-		$coffee = new Coffee();
+	$coffee = new Coffee();
         $coffee->user_id                = 1;
         $coffee->region_id              = 1;
         $coffee->roaster_id             = 1;

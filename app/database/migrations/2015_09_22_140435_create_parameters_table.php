@@ -40,10 +40,11 @@ class CreateParametersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('parameter_user', function(Blueprint $table) {
-			$table->dropForeign('parameter_user_event_id_foreign');
-			$table->dropForeign('parameter_user_user_id_foreign');
+		Schema::table('parameters', function(Blueprint $table)
+		{
+			$table->dropForeign('parameters_review_id_foreign');
 		});
+		
 		Schema::drop('parameters');
 	}
 

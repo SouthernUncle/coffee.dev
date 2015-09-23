@@ -16,8 +16,8 @@ class CreateFlavorsTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('cagetory_id')->unsigned();
-			$table->foreign('cagetory_id')->references('id')->on('flavor_categories')->onDelete('cascade');
+			$table->integer('category_id')->unsigned();
+			$table->foreign('category_id')->references('id')->on('flavor_categories')->onDelete('cascade');
 
 			$table->string('name');
 			$table->timestamps();

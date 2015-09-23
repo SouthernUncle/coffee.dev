@@ -50,10 +50,10 @@ class CreateCoffeesTable extends Migration {
 	public function down()
 	{
 
-		Schema::table('coffee', function(Blueprint $table) {
-			$table->dropForeign('coffee_roaster_id_foreign');
-			$table->dropForeign('coffee_region_id_foreign');
-			$table->dropForeign('coffee_user_id_foreign');
+		Schema::table('coffees', function(Blueprint $table) {
+			$table->dropForeign('coffees_roaster_id_foreign');
+			$table->dropForeign('coffees_region_id_foreign');
+			$table->dropForeign('coffees_user_id_foreign');
 		});
 
 		Schema::drop('coffees');

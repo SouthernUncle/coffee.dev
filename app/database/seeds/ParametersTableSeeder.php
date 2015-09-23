@@ -13,7 +13,7 @@ class ParametersTableSeeder extends Seeder {
                 $parameter->water_temp      = 208;
                 $parameter->brewer          = 'Chemex';
                 $parameter->method          = '30-second bloom, 16:1 ratio';
-                $parameter->roast_date      = '09/10/2015';
+                $parameter->roast_date      = '2015-09-10';
                 $parameter->save();
 	}
 

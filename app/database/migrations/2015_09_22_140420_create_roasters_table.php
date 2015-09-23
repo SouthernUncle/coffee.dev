@@ -44,8 +44,8 @@ class CreateRoastersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('roaster_user', function(Blueprint $table) {
-			$table->dropForeign('roaster_user_user_id_foreign');
+		Schema::table('roasters', function(Blueprint $table) {
+			$table->dropForeign('roasters_user_id_foreign');
 		});
 		Schema::drop('roasters');
 	}

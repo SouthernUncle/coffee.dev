@@ -14,6 +14,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 9.5;
         $review->flavor         = 8.5;
         $review->aftertaste     = 8;
+        $review->balance        = 6.5;
         $review->roast          = 5;
         $review->body           = 7;
         $review->acidity        = 8;
@@ -29,6 +30,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 6;
         $review->flavor         = 5;
         $review->aftertaste     = 4;
+        $review->balance        = 6.5;
         $review->roast          = 1;
         $review->body           = 8;
         $review->acidity        = 10;
@@ -44,6 +46,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 6.5;
         $review->flavor         = 7.5;
         $review->aftertaste     = 8;
+        $review->balance        = 6.5;
         $review->roast          = 3;
         $review->body           = 8;
         $review->acidity        = 8;
@@ -59,6 +62,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 6.5;
         $review->flavor         = 8.5;
         $review->aftertaste     = 8;
+        $review->balance        = 6.5;
         $review->roast          = 5;
         $review->body           = 7;
         $review->acidity        = 8;
@@ -74,6 +78,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 9;
         $review->flavor         = 8;
         $review->aftertaste     = 8;
+        $review->balance        = 6.5;
         $review->roast          = 8;
         $review->body           = 3;
         $review->acidity        = 5;
@@ -89,6 +94,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 8;
         $review->flavor         = 9.5;
         $review->aftertaste     = 10;
+        $review->balance        = 6.5;
         $review->roast          = 7;
         $review->body           = 8;
         $review->acidity        = 5;
@@ -104,6 +110,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 8;
         $review->flavor         = 9.5;
         $review->aftertaste     = 8;
+        $review->balance        = 6.5;
         $review->roast          = 7;
         $review->body           = 8;
         $review->acidity        = 4.5;
@@ -119,6 +126,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 9.5;
         $review->flavor         = 9.5;
         $review->aftertaste     = 6.5;
+        $review->balance        = 6.5;
         $review->roast          = 8;
         $review->body           = 8;
         $review->acidity        = 3;
@@ -134,6 +142,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 9;
         $review->flavor         = 8;
         $review->aftertaste     = 9.5;
+        $review->balance        = 6.5;
         $review->roast          = 4;
         $review->body           = 9.5;
         $review->acidity        = 6;
@@ -149,6 +158,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->aroma          = 9.5;
         $review->flavor         = 8;
         $review->aftertaste     = 9.5;
+        $review->balance        = 6.5;
         $review->roast          = 6;
         $review->body           = 8;
         $review->acidity        = 3;

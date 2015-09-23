@@ -21,6 +21,8 @@ class CreateReviewFlavorTable extends Migration {
 			$table->foreign('flavor_id')->references('id')->on('flavors')->onDelete('cascade');
 
 			$table->primary(array('review_id', 'flavor_id'));
+
+			$table->timestamps();
 		});
 	}
 
