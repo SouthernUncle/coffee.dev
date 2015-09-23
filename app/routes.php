@@ -11,6 +11,20 @@
 |
 */
 
+Route::resource('/users', 'UsersController');
+Route::resource('/coffees', 'CoffeesController');
+Route::resource('/region', 'RegionsController');
+Route::resource('/param', 'ParametersController');
+Route::resource('/invite', 'InvitationsController');
+
+Route::resource('/reviews', 'ReviewsController');
+Route::resource('/role', 'RolesController');
+
+Route::get('/login', 'HomeController@showLogin');
+Route::post('login', 'HomeController@doLogin');
+Route::get('/logout', 'HomeController@doLogout');
+
+
 Route::get('/', function()
 {
 	return View::make('hello');

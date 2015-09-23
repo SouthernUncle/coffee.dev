@@ -4,8 +4,7 @@ class CoffeesTableSeeder extends Seeder {
 
 	public function run()
 	{
-
-	$coffee = new Coffee();
+	    $coffee = new Coffee();
         $coffee->user_id                = 1;
         $coffee->region_id              = 1;
         $coffee->roaster_id             = 1;
@@ -28,8 +27,7 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->process                = 'Washed and Sun Dried';
         $coffee->elevation              = '1600 to 1900m';
         $coffee->roasters_description   = 'This coffee was produced by smallholder farmers belonging to the Rung’eto Farmers Cooperative Society. Established in 1976, the society currently represents up to 1,214 small scale farmers, all with coffee plots of under .5 hectares on average. Farmers in this region first planted coffee in 1953, and since then, coffee has become a primary cash crop in the area. These farms overlook the famous elephant migration route that connects Aberdare and Mt. Kenya Forest. Along with elephants, there are many other wild animals such as buffaloes, antelopes and monkeys in the area. These, as well as many others, often find their way onto the farms to graze on the grassland or chew on the sweet coffee berries.
-
-In addition to the wide-spread SL28 and SL34, this lot contains some Ruiru 11. Ruiru 11 is named for the station at Ruiru, Kenya where it was developed in the \'70s and released in 1986. The varietal is slowly becoming more widespread in the region due to its resistance to Coffee Berry Disease and Coffee Leaf Rust and has both been backcrossed with SL28 and SL34 to ensure high cup quality.';
+            In addition to the wide-spread SL28 and SL34, this lot contains some Ruiru 11. Ruiru 11 is named for the station at Ruiru, Kenya where it was developed in the \'70s and released in 1986. The varietal is slowly becoming more widespread in the region due to its resistance to Coffee Berry Disease and Coffee Leaf Rust and has both been backcrossed with SL28 and SL34 to ensure high cup quality.';
         $coffee->active                 = true;
         $coffee->save();
 
@@ -43,21 +41,21 @@ In addition to the wide-spread SL28 and SL34, this lot contains some Ruiru 11. R
         $coffee->process                = '';
         $coffee->elevation              = '';
         $coffee->roasters_description   = 'Country: El Salvador
-Terroir: Cerro las Ranas
-Farmer: Miguel Menendez
-Varietal: Bourbon & Typica
+            Terroir: Cerro las Ranas
+            Farmer: Miguel Menendez
+            Varietal: Bourbon & Typica
 
-Aroma: Cashew, Chocolate
-Flavors: Dark Chocolate, Caramel
-Sweetness: Smooth, Very rich
-Body: Full and mellow
- 
+            Aroma: Cashew, Chocolate
+            Flavors: Dark Chocolate, Caramel
+            Sweetness: Smooth, Very rich
+            Body: Full and mellow
+             
 
-Santa Barbara is from our oldest direct trade relationship, the Menendez Family. Guillermo and Miguel, along with their families, have won multiple awards for coffee from different farms they own and their father, Miguel Sr. runs in El Salvador. For the last two years we\'ve purchased from the Santa Barbara farm because of the exceptional chocolate sweetness produced by the terroir. It\'s consistently one of our best selling coffees every year. 
+            Santa Barbara is from our oldest direct trade relationship, the Menendez Family. Guillermo and Miguel, along with their families, have won multiple awards for coffee from different farms they own and their father, Miguel Sr. runs in El Salvador. For the last two years we\'ve purchased from the Santa Barbara farm because of the exceptional chocolate sweetness produced by the terroir. It\'s consistently one of our best selling coffees every year. 
 
-The Menendez family is committed to improving the areas and people\'s livelihoods around the farms, and were even responsible for bringing electricity to the surrounding areas. The family also flies in the face of "conventional" wisdom which promotes turning over older, heirloom varietals for newer rust resistant varietals. This commitment to people and the cup quality of their product has led to them producing some of the best coffees in the world.
+            The Menendez family is committed to improving the areas and people\'s livelihoods around the farms, and were even responsible for bringing electricity to the surrounding areas. The family also flies in the face of "conventional" wisdom which promotes turning over older, heirloom varietals for newer rust resistant varietals. This commitment to people and the cup quality of their product has led to them producing some of the best coffees in the world.
 
-As usual, this year\'s crop is enormously sweet, to the point of being sugary. It has a very distinct caramel and chocolate flavor to the cup, a mild acidity, and is very clean. We would recommend this coffee for everyone, and especially if you\'re a fan of full, sweet cups.';
+            As usual, this year\'s crop is enormously sweet, to the point of being sugary. It has a very distinct caramel and chocolate flavor to the cup, a mild acidity, and is very clean. We would recommend this coffee for everyone, and especially if you\'re a fan of full, sweet cups.';
         $coffee->active                 = true;
         $coffee->save();
 
@@ -71,24 +69,24 @@ As usual, this year\'s crop is enormously sweet, to the point of being sugary. I
         $coffee->process                = '';
         $coffee->elevation              = '';
         $coffee->roasters_description   = 'Country: Costa Rica
-Terroir: Tarrazu
-Farmer: Esteban Picado
-Processing: Natural • Raised Beds
-Varietal: Catuai/Caturra
+            Terroir: Tarrazu
+            Farmer: Esteban Picado
+            Processing: Natural • Raised Beds
+            Varietal: Catuai/Caturra
 
-Cupping Notes
-Aroma: Floral, ripe cherry
-Flavors: Intense blood orange/strawberry
-Sweetness: Vibrant & Pervasive
-Body: Jammy
+            Cupping Notes
+            Aroma: Floral, ripe cherry
+            Flavors: Intense blood orange/strawberry
+            Sweetness: Vibrant & Pervasive
+            Body: Jammy
 
- 
+             
 
-La Cruz is a micro mill ran by Mr. Esteban Zamora Picado in Tarrazu, Costa Rica. This area is one of the best known in the world for the rich volcanic soil and growing conditions, and in recent years prices have shot up in line with increasing demand and quality for the best Costa Rican coffees from the region. 
+            La Cruz is a micro mill ran by Mr. Esteban Zamora Picado in Tarrazu, Costa Rica. This area is one of the best known in the world for the rich volcanic soil and growing conditions, and in recent years prices have shot up in line with increasing demand and quality for the best Costa Rican coffees from the region. 
 
-On last year’s trip to visit our mill in Colombia, La Palma Y El Tucan, Phil met Grace Mena who was also paying a visit to the mill. Grace runs a company sourcing and connecting the best farmers (literally) in Costa Rica, Nicaragua, and Panama with roasters in the US, Netherlands, and Japan. This connection was exciting and what was more exciting was the samples we started getting from Grace during the production seasons of these countries. 
+            On last year’s trip to visit our mill in Colombia, La Palma Y El Tucan, Phil met Grace Mena who was also paying a visit to the mill. Grace runs a company sourcing and connecting the best farmers (literally) in Costa Rica, Nicaragua, and Panama with roasters in the US, Netherlands, and Japan. This connection was exciting and what was more exciting was the samples we started getting from Grace during the production seasons of these countries. 
 
-La Cruz is an excellent find and an important coffee for us. As demand continues to skyrocket for quality Costa Ricans, people with direct trades will benefit while others will be left without access. This farm is producing some amazing coffees, and we have two different lots this year. This first is a traditional Natural process, and is exceptionally lively, complex and bursting with flavor. The second, which will be available when this is out, is a Kenya style double washed coffee (the only coffee like this we’ve ever seen).';
+            La Cruz is an excellent find and an important coffee for us. As demand continues to skyrocket for quality Costa Ricans, people with direct trades will benefit while others will be left without access. This farm is producing some amazing coffees, and we have two different lots this year. This first is a traditional Natural process, and is exceptionally lively, complex and bursting with flavor. The second, which will be available when this is out, is a Kenya style double washed coffee (the only coffee like this we’ve ever seen).';
         $coffee->active                 = true;
         $coffee->save();
 
@@ -103,32 +101,32 @@ La Cruz is an excellent find and an important coffee for us. As demand continues
         $coffee->elevation              = '1800m';
         $coffee->roasters_description   = 'Origin: Sumatra
 
-Washing Station: Similungun
+            Washing Station: Similungun
 
-Producer: Similakuta
+            Producer: Similakuta
 
-Process: Washed & Raised Bed Drying
+            Process: Washed & Raised Bed Drying
 
-Elevation: 1800meters
+            Elevation: 1800meters
 
-Varietal: Sigarar Untang, S795
+            Varietal: Sigarar Untang, S795
 
-Cup: Juicy Melon, Sweet Cream, Sugar Cane, Herbal
+            Cup: Juicy Melon, Sweet Cream, Sugar Cane, Herbal
 
- 
+             
 
- Simalungun is one of the largest regions in the coffee highlands of 
-North Sumatra. Home to many Batak clans with generations of 
-coffee farming expertise, Simalungun is the ideal place for growing 
-superb Sumatran coffee. This coffee has been sorted and triple picked
-for only the sweetest cherries. Once it has been washed it is again
-sorted three times for defects making this a Grade 1 Sumatra.  
-Because of this careful selection this becomes the first Indonesian
-coffee Onyx has offered in three years.
+             Simalungun is one of the largest regions in the coffee highlands of 
+            North Sumatra. Home to many Batak clans with generations of 
+            coffee farming expertise, Simalungun is the ideal place for growing 
+            superb Sumatran coffee. This coffee has been sorted and triple picked
+            for only the sweetest cherries. Once it has been washed it is again
+            sorted three times for defects making this a Grade 1 Sumatra.  
+            Because of this careful selection this becomes the first Indonesian
+            coffee Onyx has offered in three years.
 
-BREW METHOD:
+            BREW METHOD:
 
-Choose any drip method for this coffee.  Body stands out even among clarity driven methods and anything you can do to highlight the melon note is a positive.';
+            Choose any drip method for this coffee.  Body stands out even among clarity driven methods and anything you can do to highlight the melon note is a positive.';
         $coffee->active                 = true;
         $coffee->save();
 
@@ -143,21 +141,21 @@ Choose any drip method for this coffee.  Body stands out even among clarity driv
         $coffee->elevation              = '1700m';
         $coffee->roasters_description   = 'Origin: Colombia
 
-Washing Station: Santa Barbara
+            Washing Station: Santa Barbara
 
-Producer: Pedro Echavarria
+            Producer: Pedro Echavarria
 
-Process: Washed & Raised Bed Drying
+            Process: Washed & Raised Bed Drying
 
-Elevation: 1700meters
+            Elevation: 1700meters
 
-Varietal: Bourbon, Castillo
+            Varietal: Bourbon, Castillo
 
-Cup: Dates, Brown Sugar, Nutty, Stone Fruit, Creamy
+            Cup: Dates, Brown Sugar, Nutty, Stone Fruit, Creamy
 
-We really love this coffee for cold brew systems.  Toddy or Kyoto.  Refreshing, sweet summer cold brew.  Completely balanced.
+            We really love this coffee for cold brew systems.  Toddy or Kyoto.  Refreshing, sweet summer cold brew.  Completely balanced.
 
-Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He owns the Santa Barbara Estate as well as the wonderful coffee bar Pergamino, in Medellin.  He\'s also working on ground breaking fermentation concepts that we will carry a bit later this year.  This lot was a surprise that we found while cupping some of his experiments in Medellin, Colombia at the beginning of this year.  It immediately jumped off the table with beautifully balanced sugar browning notes and a deep resonating body.  This will be a people pleaser that shows a perfect example of what a great Colombian Excelso.';
+            Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He owns the Santa Barbara Estate as well as the wonderful coffee bar Pergamino, in Medellin.  He\'s also working on ground breaking fermentation concepts that we will carry a bit later this year.  This lot was a surprise that we found while cupping some of his experiments in Medellin, Colombia at the beginning of this year.  It immediately jumped off the table with beautifully balanced sugar browning notes and a deep resonating body.  This will be a people pleaser that shows a perfect example of what a great Colombian Excelso.';
         $coffee->active                 = true;
         $coffee->save();
 
@@ -211,14 +209,14 @@ Pedro Echavarria is a friend and wonderfully adept producer in Colombia.  He own
         $coffee->elevation              = '';
         $coffee->roasters_description   = 'Creating a blend to achieve a particular flavor profile can be very exciting. It allows us to cup samples from all over, with the goal of finding the perfect coffee, or coffees, to suit our needs. In doing so for Bon Vivant, we seek heirloom, varietal coffees that find harmony and balance within each layer of this blend. These coffees are some of the most nuanced, and complex coffees on the planet and can shape-shift from region to region, processing, and through roast application.
 
-Blend Components:
-Ethiopia, Kenya, Colombia
+            Blend Components:
+            Ethiopia, Kenya, Colombia
 
-Cupping Notes:
-Taking my first few sips of the cup immediately post-brew, we were greeted by a
-silky, medium-bodied coffee that immediately bites at our taste buds with notes of tart
-grapefruit. There are soothing, raw sugar and bittersweet dark chocolate and
-silky, fragrant elements to the profile that saves it from being too tart throughout the cup.';
+            Cupping Notes:
+            Taking my first few sips of the cup immediately post-brew, we were greeted by a
+            silky, medium-bodied coffee that immediately bites at our taste buds with notes of tart
+            grapefruit. There are soothing, raw sugar and bittersweet dark chocolate and
+            silky, fragrant elements to the profile that saves it from being too tart throughout the cup.';
         $coffee->active                 = true;
         $coffee->save();
 
