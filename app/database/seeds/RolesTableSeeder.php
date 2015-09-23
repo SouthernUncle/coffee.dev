@@ -1,20 +1,16 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
-
 class RolesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
+		$role = new Role();
+        $role->name = "Admin";
+        $role->save();
 
-		foreach(range(1, 10) as $index)
-		{
-			Role::create([
-
-			]);
-		}
+        $role = new Role();
+        $role->name = "User";
+        $role->save();
 	}
 
 }

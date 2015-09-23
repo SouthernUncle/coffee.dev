@@ -15,13 +15,16 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('role_id')->unsigned();
+			$table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
 
 			$table->string('email')->unique();
 			$table->string('username')->unique();
 			$table->string('password');
-			$table->string('role');
 			$table->string('img_url')->nullable();
-			$table->string('confirmation')->nullable();
+			$table->float('roast_pref', 3, 1);
+			$table->float('acid_pref', 3, 1);
+			$table->float('body_pref', 3, 1);
 
 			$table->rememberToken();
 
@@ -37,6 +40,9 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::table('users', function(Blueprint $table) {
+			$table->dropForeign('users_role_id_foreign');
+		});
 		Schema::drop('users');
 	}
 
