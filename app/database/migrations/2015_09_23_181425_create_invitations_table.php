@@ -38,10 +38,7 @@ class CreateInvitationsTable extends Migration {
 		{
 			$table->dropForeign('invitations_user_id_foreign');
 		});
-<<<<<<< HEAD
-
-=======
->>>>>>> a30721dba0c45d9238f9ff7ae5d6bbec7ce9d284
+		
 		Schema::drop('invitations');
 	}
 
