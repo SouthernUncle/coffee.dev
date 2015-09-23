@@ -7,7 +7,7 @@ class RoastersTableSeeder extends Seeder {
 
 		$roaster = new Roaster();
                 $roaster->user_id       = 1;
-                $roaster->name          = 'Wood Burl';
+                $roaster->name          = 'Wood Burl Coffee';
                 $roaster->address       = '257 Wayne Ave.';
                 $roaster->city          = 'Dayton';
                 $roaster->state         = 'OH';
@@ -20,7 +20,7 @@ class RoastersTableSeeder extends Seeder {
 
                 $roaster = new Roaster();
                 $roaster->user_id       = 1;
-                $roaster->name          = 'Corvus';
+                $roaster->name          = 'Corvus Coffee';
                 $roaster->address       = '1740 Broadway';
                 $roaster->city          = 'Denver';
                 $roaster->state         = 'CO';
@@ -37,40 +37,45 @@ class RoastersTableSeeder extends Seeder {
                 $roaster = new Roaster();
                 $roaster->user_id       = 1;
                 $roaster->name          = 'Onyx Coffee Lab';
-                $roaster->address       = '';
-                $roaster->city          = '';
-                $roaster->state         = '';
-                $roaster->img_url       = '';
-                $roaster->url           = '';
-                $roaster->description   = '';
-                $roaster->twitter       = '';
-                $roaster->facebook      = '';
-                $roaster->instagram     = '';
+                $roaster->address       = '2418 N Gregg Ave';
+                $roaster->city          = 'Fayetteville';
+                $roaster->state         = 'AR';
+                $roaster->img_url       = 'onyx.png';
+                $roaster->url           = 'http://www.onyxcoffeelab.com/';
+                $roaster->description   = 'At Onyx we love coffee. Coffee roasting. Coffee brewing. Coffee talking. We don\'t want you to taste the roast; we want you to taste the bean. Every single coffee farm yields beans that have specific, innate taste notes that can only be exhibited when roasted correctly, and that\'s what we\'re after. It\'s the perfect combination of science + art that fuses ethical trading standards and quality bean sourcing, resulting in a precise cup.';
+                $roaster->twitter       = 'https://twitter.com/OnyxCoffeeLab';
+                $roaster->facebook      = 'https://www.facebook.com/OnyxCoffeeLab/';
+                $roaster->instagram     = 'https://instagram.com/onyxcoffeelab/';
         
                 $roaster = new Roaster();
                 $roaster->user_id       = 1;
                 $roaster->name          = 'Counter Culture Coffee';
-                $roaster->address       = '';
-                $roaster->city          = '';
-                $roaster->state         = '';
-                $roaster->img_url       = '';
-                $roaster->url           = '';
-                $roaster->description   = '';
-                $roaster->twitter       = '';
-                $roaster->facebook      = '';
-                $roaster->instagram     = '';
+                $roaster->address       = '4911 S Alston Ave';
+                $roaster->city          = 'Durham';
+                $roaster->state         = 'NC';
+                $roaster->img_url       = 'cc.png';
+                $roaster->url           = 'https://counterculturecoffee.com/';
+                $roaster->description   = 'At Counter Culture Coffee, we approach our work with a relentless pursuit of coffee perfection, a dedication to real sustainability, and a commitment to cutting-edge coffee education throughout the coffee chain.
+                        Since our founding in 1995, Counter Culture Coffee has represented a different way of bringing coffee to market: sourcing incredible handmade coffees directly from farmers and cooperatives, and roasting so that we bring out their unique flavors.
+                        Sustainability and transparency are core values for us, and these concepts guide every decision me make. We believe that everyone in the coffee supply chain deserves to prosper. To us, though, fairness is just a starting point, and we go far beyond the basics of fairness to create collaborative and personal relationships with our farmer partners.
+                        We are passionate about coffee education, and our mission to create cutting-edge coffee people extends beyond our organization to the relationships with farmers and co-ops, customers, vendors, and local communities. Our approach to coffee education aims to empower everyone in the coffee chain with the skills and knowledge necessary to ensure quality stewardship and sustainability from farm to cup. Since we know that education, quality, and sustainability go hand in hand, we feel a responsibility to share our discoveries and knowledge with the world.';
+                $roaster->twitter       = 'https://twitter.com/counter_culture';
+                $roaster->facebook      = 'https://www.facebook.com/counterculturecoffee';
+                $roaster->instagram     = 'https://instagram.com/counterculturecoffee/';
         
                 $roaster = new Roaster();
                 $roaster->user_id       = 1;
-                $roaster->name          = 'Metric';
-                $roaster->address       = '';
-                $roaster->city          = '';
-                $roaster->state         = '';
-                $roaster->img_url       = '';
-                $roaster->url           = '';
-                $roaster->description   = '';
-                $roaster->twitter       = '';
-                $roaster->facebook      = '';
-                $roaster->instagram     = '';
+                $roaster->name          = 'Metric Coffee Co.';
+                $roaster->address       = '2021 W Fulton St.';
+                $roaster->city          = 'Chicago';
+                $roaster->state         = 'IL';
+                $roaster->img_url       = 'metric.png';
+                $roaster->url           = 'http://metriccoffee.com/';
+                $roaster->description   = 'Metric Coffee is a Chicago, IL based Coffee Roaster that aims to provide Quality Coffee to the community it serves. As a company, we take pride in the selection of the coffees we chose, pay close attention to how we roast them and most importantly, provide our partners with the necessary tools to grind and brew the best coffee possible.
+                        We chose the name Metric because we like that the technical definition is "a system or standard or measurement" which in is something that is used in every aspect of life. We utilize Metrics in everyday life in order to perform certain tasks and in the world of coffee, it is no exception. Our other inspiration was with our machine having Metric sized nuts and bolts, so it seemed fitting to name our coffee company with concept of Metric in mind.
+                        Lastly, as people, we believe that the best way to operate a business is to be honest, ethical and loyal to our friends. We will stand by that any day!';
+                $roaster->twitter       = 'https://twitter.com/metriccoffee';
+                $roaster->facebook      = 'https://www.facebook.com/metriccoffee';
+                $roaster->instagram     = 'https://instagram.com/metriccoffee';
 	}
 }

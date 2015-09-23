@@ -1,8 +1,6 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
-
 
 class UsersTableSeeder extends Seeder {
 
@@ -14,7 +12,7 @@ class UsersTableSeeder extends Seeder {
 			'email'        => $_ENV['USER_EMAIL'],
 			'password'     => $_ENV['USER_PASSWORD'],
 			'role' 		   => 'admin',
-			'confirmation' => $faker->ean8;
+			'confirmation' => Hashids::encode(1);
 		]);
 
 		$faker = Faker::create();
