@@ -16,13 +16,13 @@ class CreateReviewsTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('coffee_id')->unsigned()->index();
+			$table->integer('coffee_id')->unsigned();
 			$table->foreign('coffee_id')->references('id')->on('coffees')->onDelete('cascade');
 
-			$table->integer('roaster_id')->unsigned()->index();
+			$table->integer('roaster_id')->unsigned();
 			$table->foreign('roaster_id')->references('id')->on('roasters')->onDelete('cascade');
 
-			$table->integer('user_id')->unsigned()->index();
+			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
 			$table->text('review');
@@ -37,7 +37,7 @@ class CreateReviewsTable extends Migration {
 			$table->float('acidity', 2, 1)->nullable();
 			
 			$table->decimal('price', 3, 2)->nullable();
-			$table->tinyint('bag_size_grams', 4)->nullable();
+			$table->integer('bag_size_grams')->nullable();
 
 			$table->timestamps();
 		});

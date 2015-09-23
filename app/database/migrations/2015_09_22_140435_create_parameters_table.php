@@ -16,7 +16,7 @@ class CreateParametersTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('review_id')->unsigned()->index();
+			$table->integer('review_id')->unsigned();
 			$table->foreign('review_id')->references('id')->on('reviews')->onDelete('cascade');
 			
 			$table->string('grind');

@@ -16,13 +16,13 @@ class CreateCoffeesTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('user_id')->unsigned()->index();
+			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-			$table->integer('region_id')->unsigned()->index();
+			$table->integer('region_id')->unsigned();
 			$table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
 
-			$table->integer('roaster_id')->unsigned()->index();
+			$table->integer('roaster_id')->unsigned();
 			$table->foreign('roaster_id')->references('id')->on('roasters')->onDelete('cascade');
 
 			$table->string('name');
