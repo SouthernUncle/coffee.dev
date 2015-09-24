@@ -11,6 +11,7 @@ class RoastersController extends \BaseController {
 	public function index()
 	{
 		//
+		return View::make('roasters.index');
 	}
 
 	/**
@@ -21,7 +22,7 @@ class RoastersController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('roasters.create');
 	}
 
 	/**
@@ -44,7 +45,7 @@ class RoastersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return View::make('roasters.show');
 	}
 
 	/**
@@ -56,7 +57,7 @@ class RoastersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return View::make('roasters.edit');
 	}
 
 	/**

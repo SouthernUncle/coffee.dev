@@ -10,7 +10,7 @@ class RegionsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('regions.index');
 	}
 
 	/**
@@ -21,7 +21,7 @@ class RegionsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('regions.create');
 	}
 
 	/**
@@ -44,7 +44,7 @@ class RegionsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return View::make('regions.show');
 	}
 
 	/**
@@ -56,7 +56,7 @@ class RegionsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return View::make('regions.edit');
 	}
 
 	/**

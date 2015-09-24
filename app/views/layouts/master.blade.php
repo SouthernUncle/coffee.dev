@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     @include('layouts.partials.head')
-    {{ HTML::style('/assets/stylesheets/colors.css') }}
 </head>
-<body ng-app="blog">
+<body>
 
     @include('layouts.partials.nav')
     

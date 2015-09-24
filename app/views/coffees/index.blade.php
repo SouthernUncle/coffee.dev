@@ -1,3 +1,3 @@
-@extends('layouts.master')
+@extends('layouts.index')
 
-@section('title', 'HOME')
+@section('title', 'COFFEES')

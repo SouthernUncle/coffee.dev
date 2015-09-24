@@ -10,7 +10,7 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('users.index');
 	}
 
 	/**
@@ -21,7 +21,7 @@ class UsersController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('users.create');
 	}
 
 	/**
@@ -44,7 +44,7 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return View::make('users.show');
 	}
 
 	/**
@@ -56,7 +56,7 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return View::make('users.edit');
 	}
 
 	/**
