@@ -24,6 +24,8 @@ class CreateRoastersTable extends Migration {
 			$table->string('city');
 			$table->string('state');
 
+			$table->float('avg_rating', 4, 2)->nullable();
+
 			$table->string('img_url');
 			$table->string('url');
 			$table->text('description');
