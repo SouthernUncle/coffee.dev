@@ -9,6 +9,10 @@
 	color: $primary;
 }
 
+.info {
+	color: $info;
+}
+
 .success {
 	color: $success;
 }
@@ -53,13 +57,24 @@
 
 .btn-info {
 	color: $default;
-	background-color: $primary;
-	border-color: darken($primary, 10%);
+	background-color: $info;
+	border-color: darken($info, 10%);
 }
 
 .btn-info:hover {
-	background-color: darken($primary, 10%);
-	border-color: darken($primary, 10%);
+	background-color: darken($info, 10%);
+	border-color: darken($info, 10%);
+}
+
+.btn-warning {
+	color: $default;
+	background-color: $warning;
+	border-color: darken($warning, 10%);
+}
+
+.btn-warning:hover {
+	background-color: darken($warning, 10%);
+	border-color: darken($warning, 10%);
 }
 
 .btn-danger {

@@ -8786,77 +8786,95 @@ button.close {
 }
 
 /* line 12, ../sass/style.scss */
+.info {
+  color: #4C5454;
+}
+
+/* line 16, ../sass/style.scss */
 .success {
   color: #1EA896;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 20, ../sass/style.scss */
 .warning {
   color: #FF715B;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 24, ../sass/style.scss */
 .danger {
   color: #f42100;
 }
 
-/* line 24, ../sass/style.scss */
+/* line 28, ../sass/style.scss */
 .grey {
   color: #BBBBBB;
 }
 
-/* line 28, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 .btn-default {
   color: #523F38;
   border-color: #342823;
 }
 
-/* line 33, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .btn-primary {
   color: #FFFFFF;
   background-color: #523F38;
   border-color: #342823;
 }
 
-/* line 39, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .btn-primary:hover {
   background-color: #342823;
   border-color: #342823;
 }
 
-/* line 44, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 .btn-success {
   color: #FFFFFF;
   background-color: #1EA896;
   border-color: #167d6f;
 }
 
-/* line 50, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 .btn-success:hover {
   background-color: #167d6f;
 }
 
-/* line 54, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 .btn-info {
   color: #FFFFFF;
-  background-color: #523F38;
-  border-color: #342823;
+  background-color: #4C5454;
+  border-color: #343939;
 }
 
-/* line 60, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .btn-info:hover {
-  background-color: #342823;
-  border-color: #342823;
+  background-color: #343939;
+  border-color: #343939;
 }
 
-/* line 65, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
+.btn-warning {
+  color: #FFFFFF;
+  background-color: #FF715B;
+  border-color: #ff4528;
+}
+
+/* line 75, ../sass/style.scss */
+.btn-warning:hover {
+  background-color: #ff4528;
+  border-color: #ff4528;
+}
+
+/* line 80, ../sass/style.scss */
 .btn-danger {
   color: #FFFFFF;
   background-color: #f42100;
   border-color: #c11a00;
 }
 
-/* line 71, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .btn-danger:hover {
   background-color: #c11a00;
   border-color: #c11a00;
