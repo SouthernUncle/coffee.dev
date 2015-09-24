@@ -15,12 +15,12 @@ Route::resource('/users', 'UsersController');
 Route::resource('/coffees', 'CoffeesController');
 Route::resource('/roasters', 'RoastersController');
 
-Route::resource('/region', 'RegionsController');
-Route::resource('/param', 'ParametersController');
-Route::resource('/invite', 'InvitationsController');
+Route::resource('/regions', 'RegionsController');
+Route::resource('/params', 'ParametersController');
+Route::resource('/invites', 'InvitationsController');
 
 Route::resource('/reviews', 'ReviewsController');
-Route::resource('/role', 'RolesController');
+Route::resource('/roles', 'RolesController');
 
 Route::get('/login', 'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');

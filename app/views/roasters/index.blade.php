@@ -30,7 +30,6 @@ Coffees!
     <tr>
         <td>{{ $r->name }}</td>
         <td>{{ $r->city . ", " . $r->state }}</td>
-        <td>{{ $r->roaster->name }}</td>
         <td>{{ $r->description }}</td>
     </tr>
 @endforeach
