@@ -13,13 +13,14 @@
 
 Route::resource('/users', 'UsersController');
 Route::resource('/coffees', 'CoffeesController');
+
 Route::resource('/regions', 'RegionsController');
 Route::resource('/roasters', 'RoastersController');
 Route::resource('/param', 'ParametersController');
 Route::resource('/invite', 'InvitationsController');
 
 Route::resource('/reviews', 'ReviewsController');
-Route::resource('/role', 'RolesController');
+Route::resource('/roles', 'RolesController');
 
 Route::get('/', 'HomeController@showHome');
 Route::get('/login', 'HomeController@showLogin');

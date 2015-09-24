@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('bg_photo')
+	<img src="/img/home_bg.jpg">
+@stop
+
 @section('content')
 	<h1 class="primary">Heading 1</h1>
 	<h2 class="success">Heading 2</h2>

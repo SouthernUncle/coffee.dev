@@ -3,19 +3,20 @@
 class RegionsController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
-	 * GET /regions
+	 * Display a listing of regions
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		return View::make('regions.index');
+
+		$regions = Region::all();
+
+		return View::make('regions.index', compact('regions'));
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 * GET /regions/create
+	 * Show the form for creating a new region
 	 *
 	 * @return Response
 	 */
@@ -25,62 +26,91 @@ class RegionsController extends \BaseController {
 	}
 
 	/**
-	 * Store a newly created resource in storage.
-	 * POST /regions
+	 * Store a newly created region in storage.
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		//
+		$validator = Validator::make($data = Input::all(), region::$rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		Region::create($data);
+
+		return Redirect::route('regions.index');
 	}
 
 	/**
-	 * Display the specified resource.
-	 * GET /regions/{id}
+	 * Display the specified region.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
+<<<<<<< HEAD
 		return View::make('regions.show');
+=======
+		$region = Region::findOrFail($id);
+
+		return View::make('regions.show', compact('region'));
+>>>>>>> 0d9eb6204762a3aede1e5d053591d0dee4cfc861
 	}
 
 	/**
-	 * Show the form for editing the specified resource.
-	 * GET /regions/{id}/edit
+	 * Show the form for editing the specified region.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function edit($id)
 	{
+<<<<<<< HEAD
 		return View::make('regions.edit');
+=======
+		$region = Region::find($id);
+
+		return View::make('regions.edit', compact('region'));
+>>>>>>> 0d9eb6204762a3aede1e5d053591d0dee4cfc861
 	}
 
 	/**
-	 * Update the specified resource in storage.
-	 * PUT /regions/{id}
+	 * Update the specified region in storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function update($id)
 	{
-		//
+		$region = Region::findOrFail($id);
+
+		$validator = Validator::make($data = Input::all(), region::$rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		$region->update($data);
+
+		return Redirect::route('regions.index');
 	}
 
 	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /regions/{id}
+	 * Remove the specified region from storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function destroy($id)
 	{
-		//
+		Region::destroy($id);
+
+		return Redirect::route('regions.index');
 	}
 
 }

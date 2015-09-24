@@ -14,3 +14,6 @@
 </title>
    
 @yield('style')
+
+@yield('bg_photo')
+	

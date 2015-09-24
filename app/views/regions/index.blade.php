@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.index')
 
 @section('title', 'REGIONS')
@@ -14,4 +15,25 @@
 	        </div>
 	    </div>
     </div>
+@stop
+
+@section('content')
+<div>
+<br><br><br><br>
+    <table>
+@foreach ($regions as $r)
+    <tr>
+        <td>{{ $r->name }}</td>
+        <td>{{ $r->description }}</td>
+    </tr>
+@endforeach
+    </table>
+
+</div>
+@stop
+
+@section('js')
+<script>
+// You need to have the script tags in here.
+</script>
 @stop
