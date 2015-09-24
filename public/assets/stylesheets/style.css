@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*white*/
+/*brown*/
+/*black*/
+/*green*/
+/*red*/
+/*grey*/
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -8776,7 +8782,7 @@ button.close {
 
 /* line 8, ../sass/style.scss */
 .primary {
-  color: #4C5454;
+  color: #523F38;
 }
 
 /* line 12, ../sass/style.scss */
@@ -8786,40 +8792,72 @@ button.close {
 
 /* line 16, ../sass/style.scss */
 .warning {
-  color: #523F38;
+  color: #FF715B;
 }
 
 /* line 20, ../sass/style.scss */
 .danger {
-  color: #FF715B;
+  color: #f42100;
 }
 
 /* line 24, ../sass/style.scss */
+.grey {
+  color: #BBBBBB;
+}
+
+/* line 28, ../sass/style.scss */
+.btn-default {
+  color: #523F38;
+  border-color: #342823;
+}
+
+/* line 33, ../sass/style.scss */
 .btn-primary {
   color: #FFFFFF;
   background-color: #523F38;
   border-color: #342823;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
 .btn-primary:hover {
   background-color: #342823;
+  border-color: #342823;
 }
 
-/* line 34, ../sass/style.scss */
-.btn-default {
-  color: #4C5454;
-  border-color: #343939;
-}
-
-/* line 39, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 .btn-success {
   color: #FFFFFF;
   background-color: #1EA896;
   border-color: #167d6f;
 }
 
-/* line 45, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 .btn-success:hover {
   background-color: #167d6f;
+}
+
+/* line 54, ../sass/style.scss */
+.btn-info {
+  color: #FFFFFF;
+  background-color: #523F38;
+  border-color: #342823;
+}
+
+/* line 60, ../sass/style.scss */
+.btn-info:hover {
+  background-color: #342823;
+  border-color: #342823;
+}
+
+/* line 65, ../sass/style.scss */
+.btn-danger {
+  color: #FFFFFF;
+  background-color: #f42100;
+  border-color: #c11a00;
+}
+
+/* line 71, ../sass/style.scss */
+.btn-danger:hover {
+  background-color: #c11a00;
+  border-color: #c11a00;
 }

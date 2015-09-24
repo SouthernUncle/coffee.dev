@@ -2,46 +2,73 @@
 @import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap';
 
 .default {
-	color: $default1;
+	color: $default;
 }
 
 .primary {
-	color: $primary1;
+	color: $primary;
 }
 
 .success {
-	color: $success1;
+	color: $success;
 }
 
 .warning {
-	color: $warning1;
+	color: $warning;
 }
 
 .danger {
-	color: $danger1;
+	color: $danger;
 }
 
-.btn-primary {
-	color: $default1;
-	background-color: $warning1;
-	border-color: darken($warning1, 10%);
-}
-
-.btn-primary:hover {
-	background-color: darken($warning1, 10%);
+.grey {
+    color: $grey;
 }
 
 .btn-default {
-	color: $primary1;
-	border-color: darken($primary1, 10%);
+	color: $primary;
+	border-color: darken($primary, 10%);
+}
+
+.btn-primary {
+	color: $default;
+	background-color: $primary;
+	border-color: darken($primary, 10%);
+}
+
+.btn-primary:hover {
+	background-color: darken($primary, 10%);
+	border-color: darken($primary, 10%);
 }
 
 .btn-success {
-	color: $default1;
-	background-color: $success1;
-	border-color: darken($success1, 10%);
+	color: $default;
+	background-color: $success;
+	border-color: darken($success, 10%);
 }
 
 .btn-success:hover {
-	background-color: darken($success1, 10%);
+	background-color: darken($success, 10%);
+}
+
+.btn-info {
+	color: $default;
+	background-color: $primary;
+	border-color: darken($primary, 10%);
+}
+
+.btn-info:hover {
+	background-color: darken($primary, 10%);
+	border-color: darken($primary, 10%);
+}
+
+.btn-danger {
+	color: $default;
+	background-color: $danger;
+	border-color: darken($danger, 10%);
+}
+
+.btn-danger:hover {
+	background-color: darken($danger, 10%);
+	border-color: darken($danger, 10%);
 }

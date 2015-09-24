@@ -1,0 +1,18 @@
+/* line 1, ../sass/header.scss */
+.dropdown-menu {
+  background-color: transparent;
+}
+
+/* line 5, ../sass/header.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
+/* line 12, ../sass/header.scss */
+.searchBar {
+  margin-top: 10px;
+  min-width: 200px;
+}
