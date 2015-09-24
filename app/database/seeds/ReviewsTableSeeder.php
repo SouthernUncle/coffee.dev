@@ -18,6 +18,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 5;
         $review->body           = 7;
         $review->acidity        = 8;
+        $review->weight_avg     = 8.36;
         $review->price          = 17.50;
         $review->bag_size_grams = 340;
         $review->save();
@@ -34,6 +35,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 1;
         $review->body           = 8;
         $review->acidity        = 10;
+        $review->weight_avg     = 5.75;
         $review->price          = 20.00;
         $review->bag_size_grams = 340;
         $review->save();
@@ -50,6 +52,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 3;
         $review->body           = 8;
         $review->acidity        = 8;
+        $review->weight_avg     = 7.39;
         $review->price          = 16.00;
         $review->bag_size_grams = 340;
         $review->save();
@@ -66,6 +69,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 5;
         $review->body           = 7;
         $review->acidity        = 8;
+        $review->weight_avg     = 7.69;
         $review->price          = 20.00;
         $review->bag_size_grams = 340;
         $review->save();
@@ -82,6 +86,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 8;
         $review->body           = 3;
         $review->acidity        = 5;
+        $review->weight_avg     = 7.93;
         $review->price          = 18.00;
         $review->bag_size_grams = 340;
         $review->save();
@@ -98,6 +103,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 7;
         $review->body           = 8;
         $review->acidity        = 5;
+        $review->weight_avg     = 8.73;
         $review->price          = 15.00;
         $review->bag_size_grams = 340;
         $review->save();
@@ -114,6 +120,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 7;
         $review->body           = 8;
         $review->acidity        = 4.5;
+        $review->weight_avg     = 8.25;
         $review->price          = 15.75;
         $review->bag_size_grams = 340;
         $review->save();
@@ -130,6 +137,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 8;
         $review->body           = 8;
         $review->acidity        = 3;
+        $review->weight_avg     = 8.23;
         $review->price          = 18.00;
         $review->bag_size_grams = 340;
         $review->save();
@@ -146,6 +154,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 4;
         $review->body           = 9.5;
         $review->acidity        = 6;
+        $review->weight_avg     = 8.44;
         $review->price          = 12.75;
         $review->bag_size_grams = 225;
         $review->save();
@@ -162,6 +171,7 @@ class ReviewsTableSeeder extends Seeder {
         $review->roast          = 6;
         $review->body           = 8;
         $review->acidity        = 3;
+        $review->weight_avg     = 8.43;
         $review->price          = 15.00;
         $review->bag_size_grams = 340;
         $review->save();
