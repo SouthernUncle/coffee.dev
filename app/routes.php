@@ -13,6 +13,8 @@
 
 Route::resource('/users', 'UsersController');
 Route::resource('/coffees', 'CoffeesController');
+Route::resource('/roasters', 'RoastersController');
+
 Route::resource('/region', 'RegionsController');
 Route::resource('/param', 'ParametersController');
 Route::resource('/invite', 'InvitationsController');

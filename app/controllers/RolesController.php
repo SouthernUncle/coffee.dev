@@ -3,84 +3,105 @@
 class RolesController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
-	 * GET /roles
+	 * Display a listing of roles
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		//
+		$roles = Role::all();
+
+		return View::make('roles.index', compact('roles'));
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 * GET /roles/create
+	 * Show the form for creating a new role
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-		//
+		return View::make('roles.create');
 	}
 
 	/**
-	 * Store a newly created resource in storage.
-	 * POST /roles
+	 * Store a newly created role in storage.
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		//
+		$validator = Validator::make($data = Input::all(), role::$rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		Role::create($data);
+
+		return Redirect::route('roles.index');
 	}
 
 	/**
-	 * Display the specified resource.
-	 * GET /roles/{id}
+	 * Display the specified role.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
-		//
+		$role = Role::findOrFail($id);
+
+		return View::make('roles.show', compact('role'));
 	}
 
 	/**
-	 * Show the form for editing the specified resource.
-	 * GET /roles/{id}/edit
+	 * Show the form for editing the specified role.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function edit($id)
 	{
-		//
+		$role = Role::find($id);
+
+		return View::make('roles.edit', compact('role'));
 	}
 
 	/**
-	 * Update the specified resource in storage.
-	 * PUT /roles/{id}
+	 * Update the specified role in storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function update($id)
 	{
-		//
+		$role = Role::findOrFail($id);
+
+		$validator = Validator::make($data = Input::all(), role::$rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		$role->update($data);
+
+		return Redirect::route('roles.index');
 	}
 
 	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /roles/{id}
+	 * Remove the specified role from storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function destroy($id)
 	{
-		//
+		Role::destroy($id);
+
+		return Redirect::route('roles.index');
 	}
 
 }
