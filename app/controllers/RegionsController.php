@@ -9,6 +9,7 @@ class RegionsController extends \BaseController {
 	 */
 	public function index()
 	{
+
 		$regions = Region::all();
 
 		return View::make('regions.index', compact('regions'));
@@ -51,9 +52,13 @@ class RegionsController extends \BaseController {
 	 */
 	public function show($id)
 	{
+<<<<<<< HEAD
+		return View::make('regions.show');
+=======
 		$region = Region::findOrFail($id);
 
 		return View::make('regions.show', compact('region'));
+>>>>>>> 0d9eb6204762a3aede1e5d053591d0dee4cfc861
 	}
 
 	/**
@@ -64,9 +69,13 @@ class RegionsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
+<<<<<<< HEAD
+		return View::make('regions.edit');
+=======
 		$region = Region::find($id);
 
 		return View::make('regions.edit', compact('region'));
+>>>>>>> 0d9eb6204762a3aede1e5d053591d0dee4cfc861
 	}
 
 	/**

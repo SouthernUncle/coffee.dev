@@ -12,6 +12,7 @@ class UsersController extends \BaseController {
 		$users = User::all();
 
 		return View::make('users.index', compact('users'));
+
 	}
 
 	/**
@@ -51,9 +52,13 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
+<<<<<<< HEAD
+		return View::make('users.show');
+=======
 		$user = User::findOrFail($id);
 
 		return View::make('users.show', compact('user'));
+>>>>>>> 0d9eb6204762a3aede1e5d053591d0dee4cfc861
 	}
 
 	/**
@@ -64,9 +69,13 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
+<<<<<<< HEAD
+		return View::make('users.edit');
+=======
 		$user = User::find($id);
 
 		return View::make('users.edit', compact('user'));
+>>>>>>> 0d9eb6204762a3aede1e5d053591d0dee4cfc861
 	}
 
 	/**

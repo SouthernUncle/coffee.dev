@@ -3,7 +3,7 @@
 <footer class="footer-container container">
     <div class="row">
         <div class="col-xs-4">
-            <a href="#" class="grey"><span class="glyphicon glyphicon-chevron-up grey"></span>Back to top</a>
+            <a href="#" class="grey"></span>Back to top</a>
         </div>
         
         <div class="col-xs-4">
@@ -16,7 +16,17 @@
 
         <div class="col-xs-4 text-right">
             @if(!Auth::check())
-                <p class="squeeze grey"><a href="/login" class="grey">Login</a></p>
+                <p class="squeeze grey">
+                    <a href="{{ action('HomeController@showLogin')}}" class="grey">
+                        Log In
+                    </a>
+                </p>
+            @else 
+                <p class="squeeze grey">
+                    <a href="{{ action('HomeController@doLogout')}}" class="grey">
+                        Log Out
+                    </a>
+                </p>
             @endif
         </div>
     </div>

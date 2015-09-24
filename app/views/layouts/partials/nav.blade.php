@@ -11,46 +11,41 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Coffee.dev</a>
+            <a class="navbar-brand" href="{{{ action('HomeController@showHome') }}}">Coffee.dev</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="searchBar">
+                <li class="searchBar search">
                     {{ Form::open(array('action' => 'CoffeesController@index', 'method' => 'GET')) }}
                         <input type="text" class="form-control" id="searchBar" name="search" placeholder="Search for...">
                     {{ Form::close() }}
                 </li>
-
-                @if(Auth::check())
                 <li>
-                    <a href="{{{ action('UsersController@show', Auth::id()) }}}">
-                        {{{ Auth::user()->username }}}
-                    </a>
+                    <a href="{{{ action('CoffeesController@index') }}}">Coffees</a>
                 </li>
-                @else
                 <li>
-                    <a href="{{{ action('HomeController@showLogin') }}}">Log In</a>
+                    <a href="{{{ action('RoastersController@index') }}}">Roasters</a>
                 </li>
-                @endif
-
-                <li class="dropdown" id="wtf">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Misc.<span class="caret"></span></a>
+                <li>
+                    <a href="{{{ action('RegionsController@index') }}}">Regions</a>
+                </li>
+                
+                {{-- @if(Auth::check()) --}}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add<span class="glyphicon glyphicon-plus"></span></a>
                     <ul class="dropdown-menu nav navbar-nav navbar-right">
                         <li>
-                            <a href="">About</a>
+                            <a href="{{{ action('CoffeesController@create') }}}">Coffee</a>
                         </li>
 
                         <li>
-                            <a href="">Contact</a>
-                        </li>
-                    
-                        <li>
-                            <a href="">Games</a>
+                            <a href="{{{ action('RoastersController@create') }}}">Roaster</a>
                         </li>
                     </ul>
                 </li>
+                {{-- @endif --}}
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->

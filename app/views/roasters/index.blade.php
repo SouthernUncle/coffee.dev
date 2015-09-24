@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.index')
 
 @section('title')
 Coffees!
@@ -43,3 +43,4 @@ Coffees!
 // You need to have the script tags in here.
 </script>
 @stop
+

@@ -14,7 +14,6 @@ Site Plan:
 	    Bower
 	    SASS
 	    Angular ***
-	    Eloquent NOT Esensi
 	    Chartist
 	    Sizzle.js (?)
 	    Carbon

@@ -1,25 +1,20 @@
-@extends('layouts.master')
+<<<<<<< HEAD
+@extends('layouts.index')
 
-@section('title')
-Regions!
-@stop
+@section('title', 'REGIONS')
 
-@section('style')
-<style>
-/* You need to have the style tags in here. */
-</style>
-@stop
-
-@section('heading')
-
-@stop
-
-@section('subheading')
-
-@stop
-
-@section('image_url')
-''
+@section('header')
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		        <div class="intro-text" id="forceUp">
+		            <div class="intro-lead-in">Welcome To Our Studio!</div>
+		            <div class="intro-heading">It's Nice To Meet You</div>
+		            <a href="" class="page-scroll btn btn-xl">Tell Me More</a>
+		        </div>
+	        </div>
+	    </div>
+    </div>
 @stop
 
 @section('content')
