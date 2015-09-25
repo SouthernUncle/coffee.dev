@@ -31,6 +31,6 @@ class Review extends Eloquent {
 
 	public function parameter()
 	{
-		return $this->has('Parameter');
+		return $this->hasOne('Parameter');
 	}
 }
