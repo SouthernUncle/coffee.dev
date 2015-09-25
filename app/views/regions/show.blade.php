@@ -23,16 +23,18 @@
 @stop
 
 @section('content')
-<div class="container">
-    <h1>{{ $region->name }}</h1>
-    <p>{{ $region->description }}</p>
-    <img src="{{ $region->img_url }}">
-    @foreach ($region->coffees as $c)
-        <h3>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</h3>
-        <h5>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</h5>
+<section>
+    <div class="container">
+        <h1>{{ $region->name }}</h1>
+        <p>{{ $region->description }}</p>
+        <img src="{{ $region->img_url }}">
+        @foreach ($region->coffees as $c)
+            <h3>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</h3>
+            <h5>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</h5>
 
-    @endforeach
-</div>
+        @endforeach
+    </div>
+</section>
 @stop
 
 @section('js')
