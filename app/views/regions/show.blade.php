@@ -26,7 +26,7 @@
 <div>
     <h1>{{ $region->name }}</h1>
     <p>{{ $region->description }}</p>
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ $region->name }}&zoom=13&size=600x300&maptype=roadmap&key=AIzaSyDAySxaq2FF-SkNhPq14sng77oo0ay_DiY">
+    <img src="{{ $region->img_url }}">
 </div>
 @stop
 

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @extends('layouts.index')
 
 @section('title', 'REGIONS')

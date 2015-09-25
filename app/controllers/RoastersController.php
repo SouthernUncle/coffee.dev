@@ -53,13 +53,9 @@ class RoastersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-<<<<<<< HEAD
-		return View::make('roasters.show');
-=======
 		$roaster = Roaster::findOrFail($id);
 
 		return View::make('roasters.show', compact('roaster'));
->>>>>>> 0d9eb6204762a3aede1e5d053591d0dee4cfc861
 	}
 
 	/**
@@ -70,13 +66,9 @@ class RoastersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-<<<<<<< HEAD
-		return View::make('roasters.edit');
-=======
 		$roaster = Roaster::find($id);
 
 		return View::make('roasters.edit', compact('roaster'));
->>>>>>> 0d9eb6204762a3aede1e5d053591d0dee4cfc861
 	}
 
 	/**
