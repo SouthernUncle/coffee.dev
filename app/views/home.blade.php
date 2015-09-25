@@ -238,7 +238,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-3 col-sm-offset-2">
                     <div class="team-member">
                         <img src="img/josh.jpg" class="img-responsive img-circle" alt="">
                         <h4>Josh Womack</h4>
@@ -253,7 +253,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3 col-sm-offset-2">
                     <div class="team-member">
                         <img src="img/dave.jpg" class="img-responsive img-circle" alt="">
                         <h4>Dave Collier</h4>
