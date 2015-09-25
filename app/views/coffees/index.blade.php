@@ -28,7 +28,7 @@ Coffees!
     <table>
 @foreach ($coffees as $c)
     <tr>
-        <td>{{ $c->name }}</td>
+        <td><a href="/coffees/{{ $c->id }}">{{ $c->name }}</a></td>
         <td>{{ $c->region->name }}</td>
         <td>{{ $c->roaster->name }}</td>
         <td>{{ $c->roasters_description }}</td>

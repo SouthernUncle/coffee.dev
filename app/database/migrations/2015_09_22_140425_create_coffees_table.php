@@ -33,9 +33,6 @@ class CreateCoffeesTable extends Migration {
 			$table->string('process')->nullable();
 			$table->string('elevation')->nullable();
 
-			$table->float('avg_rating', 4, 2)->nullable();
-			$table->float('st_dev', 3, 2)->nullable();
-
 			$table->text('roasters_description');
 
 			$table->boolean('active');
