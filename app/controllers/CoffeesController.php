@@ -52,8 +52,9 @@ class CoffeesController extends \BaseController {
 	public function show($id)
 	{
 		$coffee = Coffee::findOrFail($id);
+		$reviews = Review::findOrFail($id); 
 
-		return View::make('coffees.show', compact('coffee'));
+		return View::make('coffees.show', compact('coffee', 'reviews'));
 	}
 
 	/**

@@ -86,7 +86,7 @@ class ReviewFlavorTableSeeder extends Seeder {
 		$r->reviewFlavors()->attach($mandarin->id);
 		$r->reviewFlavors()->attach($bitterChoc->id);
 
-		$r = Review::where('coffee_id', $bonVivant->id)->firstOrFail();
+		$r = Review::where('coffee_id', $sukeQuto->id)->firstOrFail();
 		$r->reviewFlavors()->attach($grapefruit->id); 
 		$r->reviewFlavors()->attach($scane->id);
 		$r->reviewFlavors()->attach($darkChoc->id);

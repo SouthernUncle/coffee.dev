@@ -38,8 +38,6 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->name                   = 'Santa Barbara';
         $coffee->img_url                = 'santabarbara.jpg';
         $coffee->url                    = 'http://www.corvuscoffee.com/collections/single-origin/products/santa-barbara-el-salvador-12oz';
-        $coffee->process                = '';
-        $coffee->elevation              = '';
         $coffee->roasters_description   = 'Country: El Salvador
             Terroir: Cerro las Ranas
             Farmer: Miguel Menendez
@@ -66,8 +64,6 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->name                   = 'La Cruz';
         $coffee->img_url                = 'lacruz.jpg';
         $coffee->url                    = 'http://www.corvuscoffee.com/collections/single-origin/products/la-cruz-makers-reserve-natural-costa-rica-12oz';
-        $coffee->process                = '';
-        $coffee->elevation              = '';
         $coffee->roasters_description   = 'Country: Costa Rica
             Terroir: Tarrazu
             Farmer: Esteban Picado
@@ -192,8 +188,6 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->name                   = 'Santa Elena';
         $coffee->img_url                = 'santaelena.jpg';
         $coffee->url                    = 'http://metriccoffee.com/collections/single-origin/products/hondurascarmindavasquez';
-        $coffee->process                = '';
-        $coffee->elevation              = '';
         $coffee->roasters_description   = 'Honduras Santa Elena Carminda Vásquez is sourced from a family-owned farm in collaboration with Catracha Coffee Company.  Carminda Vásquez Sorto produced this micro-lot on a 3.5 acre farm called El Naranjo located in the municipality of Santa Elena within the department of La Paz, Honduras. Catracha Coffee works with a select group of farmers who participate in monthly educational seminars to improve upon their coffee production. These capacity building opportunities have helped Carminda increase yields and improve the quality of his coffee. Carminda receives all the profits associated with the sale of her exported coffee, which is the main source of income for her, her husband, and 6 children. Carminda plans to use some of her earnings to renovate parts of her farm that have been damaged by leaf rust.';
         $coffee->active                 = true;
         $coffee->save();
@@ -205,8 +199,6 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->name                   = 'Bon Vivant';
         $coffee->img_url                = 'bonvivant.jpg';
         $coffee->url                    = 'http://metriccoffee.com/collections/blends/products/bonvivant';
-        $coffee->process                = '';
-        $coffee->elevation              = '';
         $coffee->roasters_description   = 'Creating a blend to achieve a particular flavor profile can be very exciting. It allows us to cup samples from all over, with the goal of finding the perfect coffee, or coffees, to suit our needs. In doing so for Bon Vivant, we seek heirloom, varietal coffees that find harmony and balance within each layer of this blend. These coffees are some of the most nuanced, and complex coffees on the planet and can shape-shift from region to region, processing, and through roast application.
 
             Blend Components:
