@@ -5,24 +5,26 @@
 @section('content')
 	<section>
 		<div class="container">
-		<br><br><br><br>
-		    <table>
-		@foreach ($coffees as $c)
-		    <tr>
-		        <td><a href="/coffees/{{ $c->id }}">{{ $c->name }}</a></td>
-		        <td>{{ $c->region->name }}</td>
-		        <td>{{ $c->roaster->name }}</td>
-		        <td>{{ $c->roasters_description }}</td>
-		    </tr>
-		@endforeach
+		    <table class="table table-responsive">
+		    	<thead>
+		    		<tr>
+		    			<th>Name</th>
+		    			<th>Region</th>
+		    			<th>Roaster</th>
+	    				<th>Description</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+				@foreach ($coffees as $c)
+				    <tr>
+				        <td>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
+				        <td>{{ HTML::linkAction('RegionsController@show', $c->region->name, array($c->region->id)) }}</td>
+				        <td>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</td>
+				        <td>{{ $c->roasters_description }}</td>
+				    </tr>
+				@endforeach
+				</tbody>
 		    </table>
 		</div>
 	</section>
 @stop
-
-@section('js')
-<script>
-// You need to have the script tags in here.
-</script>
-@stop
-
