@@ -4,12 +4,11 @@
 <meta name="csrf-token" content="{{{ csrf_token() }}}">
 
 <!-- Bootstrap Core CSS -->
-{{-- {{ HTML::style('../css/bootstrap.min.css') }} --}}
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
 <!-- Custom CSS -->
-{{-- {{ HTML::style('../css/agency.css') }} --}}
 <link rel="stylesheet" type="text/css" href="/css/agency.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 <!-- Custom Fonts -->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

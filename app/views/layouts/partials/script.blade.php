@@ -16,4 +16,4 @@
 <!-- Custom Theme JavaScript -->
 <script src="js/agency.js"></script>
 
-{{-- @yield('js') --}}
+@yield('js')

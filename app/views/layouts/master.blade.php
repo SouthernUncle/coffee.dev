@@ -6,13 +6,12 @@
 
 <body id="page-top" class="index" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-    @include('layouts.partials.home-nav')
-    
-    @include('layouts.partials.home-header')
+@include('layouts.partials.nav')
 
-    @yield('content')
+@include('layouts.partials.header')
 
-    @include('layouts.partials.script')
+@include('layouts.partials.main_errors')
 
-</body>
-</html>
+@include('layouts.partials.footer')
+
+@include('layouts.partials.script')

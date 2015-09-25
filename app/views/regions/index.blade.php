@@ -18,7 +18,7 @@
 @stop
 
 @section('content')
-<div>
+<div class="container">
 <br><br><br><br>
     <table>
 @foreach ($regions as $r)

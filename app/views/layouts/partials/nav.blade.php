@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top nav-nothome">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Brew Review</a>
+            <a class="navbar-brand page-scroll" href="{{{ action('HomeController@showHome') }}}">Brew Review</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,27 +19,27 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#services">Reviews</a>
+                    <a class="page-scroll" href="{{{ action('CoffeesController@index') }}}">Coffees</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#portfolio">Coffees</a>
+                    <a class="page-scroll" href="{{{ action('RoastersController@index') }}}">Roasters</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">About</a>
+                    <a class="page-scroll" href="{{{ action('RegionsController@index') }}}">Regions</a>
                 </li>
+                @if(!Auth::check())
                 <li>
-                    <a class="page-scroll" href="#team">Team</a>
+                    <a class="page-scroll" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
                 </li>
+                @else
                 <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
+                    <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
                 </li>
-
-                @if(Auth::check())
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	Add
-                    	<i class="fa fa-plus"></i>
-                	</a>
+                        Add
+                        <i class="fa fa-plus"></i>
+                    </a>
                     <ul class="dropdown-menu nav navbar-nav navbar-right">
                         <li>
                             <a href="{{{ action('ReviewsController@create') }}}">Review</a>

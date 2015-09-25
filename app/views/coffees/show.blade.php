@@ -23,7 +23,7 @@
 @stop
 
 @section('content')
-<div>
+<div class="container">
     <h1><a href="{{ $coffee->url }}">{{ $coffee->name }}</a></h1>
     <h4><a href="{{ $coffee->roaster->url }}">{{ $coffee->roaster->name }}</a></h4>
     <h6>{{ $coffee->region->name }}</h6>

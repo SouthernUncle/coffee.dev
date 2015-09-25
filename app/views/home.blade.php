@@ -16,26 +16,32 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
+                    <a href="{{{ action('RegionsController@index') }}}">
+	                    <span class="fa-stack fa-4x">
+	                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+	                        <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+	                    </span>
+                    </a>
                     <h4 class="service-heading">Region</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
+	                <a href="{{{ action('RoastersController@index') }}}">
+	                    <span class="fa-stack fa-4x">
+	                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+	                        <i class="fa fa-fire fa-stack-1x fa-inverse"></i>
+	                    </span>
+                    </a>
                     <h4 class="service-heading">Roaster</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
+                	<a href="{{{ action('CoffeesController@index') }}}">
+	                    <span class="fa-stack fa-4x">
+	                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+	                        <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
+	                    </span>
+                    </a>
                     <h4 class="service-heading">Coffee</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
@@ -163,7 +169,7 @@
                                     <h4 class="subheading">Jitterz</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Josh worked at Jitterz in the Rio Grande Valley, perfecting his brew skills and pallette. </p>
+                                    <p class="text-muted">Josh worked at Jitterz in the Rio Grande Valley, perfecting his brew skills and palette. </p>
                                 </div>
                             </div>
                         </li>
