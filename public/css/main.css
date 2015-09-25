@@ -1,0 +1,15 @@
+.navbar-nav>li>.dropdown-menu {
+	background-color: #222;
+	border: 1px solid #fed316;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+	background-color: transparent;
+	color: #fed316;
+}
+
+.navbar-default.nav-nothome {
+	background-color: #222;
+}

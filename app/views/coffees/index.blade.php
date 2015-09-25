@@ -23,7 +23,7 @@ Coffees!
 @stop
 
 @section('content')
-<div>
+<div class="container">
 <br><br><br><br>
     <table>
 @foreach ($coffees as $c)

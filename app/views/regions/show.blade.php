@@ -23,7 +23,7 @@
 @stop
 
 @section('content')
-<div>
+<div class="container">
     <h1>{{ $region->name }}</h1>
     <p>{{ $region->description }}</p>
     <img src="{{ $region->img_url }}">
