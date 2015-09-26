@@ -32,7 +32,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab">
                                 <div class="panel-title">
-                                       <h4><span id="overall">9.5</span>/10 {{ $r->user->username }}</h4>
+                                       <h4><span id="overall">{{ $r->weighted_avg }}</span>/10 {{ $r->user->username }}</h4>
                                        <p>Aroma: {{ $r->aroma }} | Flavor: {{ $r->flavor }} | Aftertaste: {{ $r->aftertaste }} | Balance: {{ $r->balance }}</p>
                                        <p>Roast: {{ $r->roast }} | Body: {{ $r->body }} | Acidity: {{ $r->acidity }}</p>
                                 </div>
