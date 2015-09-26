@@ -5,7 +5,7 @@
 @section('content')
 	<section>
 		<div class="container">
-		    <table class="table table-responsive">
+		    <table class="table table-responsive table-hover">
 		    	<thead>
 		    		<tr>
 		    			<th>Name</th>
