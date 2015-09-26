@@ -26,3 +26,19 @@
 	color: #222;
 }
 */
+
+tbody {
+	overflow-y: hidden;
+}
+
+td.coffee-name {
+	min-width: 120px;
+}
+
+td.region-name {
+	min-width: 110px;
+}
+
+tr {
+	max-height: 50px;
+}
