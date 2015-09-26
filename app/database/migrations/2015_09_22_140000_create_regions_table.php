@@ -18,6 +18,7 @@ class CreateRegionsTable extends Migration {
 			
 			$table->string('name');
 			$table->text('description');
+			$table->string('map_url');
 			$table->string('img_url');
 
 			$table->timestamps();
