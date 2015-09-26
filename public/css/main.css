@@ -42,3 +42,27 @@ td.region-name {
 tr {
 	max-height: 50px;
 }
+
+.region-photos {
+	max-width: 1140;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.image {
+	position: relative;
+	width: 100%;
+	margin-bottom: 10px;
+	
+}
+
+/*<div style="position: absolute; bottom: 0; left: 0.5em; width: 400px; font-weight: bold; color: #fff;">*/
+
+h2.region-name {
+	position: absolute;
+	top: 280px;
+	left: .5em;
+	width: 100%;
+	color: #fed316;
+	margin-left: 10px;
+}
