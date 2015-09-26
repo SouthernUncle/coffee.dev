@@ -14,7 +14,9 @@
             <h4>
                 <a href="{{ $coffee->roaster->url }}">{{ $coffee->roaster->name }}</a>
             </h4>
-
+            <h4>
+                {{ $coffee->overall_average }} / 10
+            </h4>
             <h6>
                 {{ $coffee->region->name }}
             </h6>
