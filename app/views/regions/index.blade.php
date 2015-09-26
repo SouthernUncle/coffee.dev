@@ -6,6 +6,16 @@
 @section('content')
 	<section>
 		<div class="container">
+			<h1>Regions</h1>
+			<div class="region-[photos">
+				@foreach($regions as $r)
+					<span class="col-md-4 col-sm-4">
+						<img src="{{ $r->img_url }}">
+						<h2 class="region-name">{{ $r->name }}</h2>
+					</span>
+				@endforeach
+			</div>
+
 		    <table class="table table-responsive table-hover">
 		    	<thead>
 		    		<tr>
