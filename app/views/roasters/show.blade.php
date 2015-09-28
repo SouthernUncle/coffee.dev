@@ -26,6 +26,7 @@
 <section>
     <div class="container">
         <h1>{{ $roaster->name }}</h1>
+        <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
         <p>{{ $roaster->description }}</p>
         <img src="/img/{{ $roaster->img_url }}">
         @foreach ($roaster->coffees as $c)

@@ -23,4 +23,15 @@ class Roaster extends Eloquent {
 	{
 		return $this->belongsTo('User');
 	}
+
+	public function overallRoasterScore()
+	{
+		foreach($this->coffees as $c) {
+			$scores[] = $c->overallCoffeeRating();
+		}
+
+		$avg = array_sum($scores) / count($scores);
+
+		return $mainScore = round(($avg * 5) + 50);
+	}
 }

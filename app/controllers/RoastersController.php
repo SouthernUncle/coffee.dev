@@ -55,6 +55,7 @@ class RoastersController extends \BaseController {
 	{
 		$roaster = Roaster::findOrFail($id);
 
+
 		return View::make('roasters.show', compact('roaster'));
 	}
 
