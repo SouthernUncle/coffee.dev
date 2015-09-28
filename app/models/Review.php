@@ -33,4 +33,15 @@ class Review extends Eloquent {
 	{
 		return $this->hasOne('Parameter');
 	}
+
+	public function weightedScore()
+	{
+		// Calculates weighted average for each review
+		$score = 	($this->flavor * .27) + ($this->aroma * .24) + 
+					($this->aftertaste * .22) + ($this->balance * .2) + 
+					($this->roast * .02) + ($this->body * .03) + 
+					($this->acidity * .02);
+		$roundedScore = round($score, 2);
+		return $roundedScore;
+	}
 }

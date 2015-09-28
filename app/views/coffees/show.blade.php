@@ -15,7 +15,7 @@
                 <a href="{{ $coffee->roaster->url }}">{{ $coffee->roaster->name }}</a>
             </h4>
             <h4>
-                {{ $coffee->overall_average }} / 10
+                {{ $coffee->overallCoffeeRating() }} / 10
             </h4>
             <h6>
                 {{ $coffee->region->name }}
@@ -34,7 +34,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab">
                                 <div class="panel-title">
-                                       <h4><span id="overall">{{ $r->weighted_avg }}</span>/10 {{ $r->user->username }}</h4>
+                                       <h4><span id="overall">{{ $r->weightedScore() }}</span>/10 {{ $r->user->username }}</h4>
                                        <p>Aroma: {{ $r->aroma }} | Flavor: {{ $r->flavor }} | Aftertaste: {{ $r->aftertaste }} | Balance: {{ $r->balance }}</p>
                                        <p>Roast: {{ $r->roast }} | Body: {{ $r->body }} | Acidity: {{ $r->acidity }}</p>
                                 </div>
