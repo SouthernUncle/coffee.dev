@@ -75,3 +75,23 @@ h1#regions-header {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
 }
+
+.fancy {
+	font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+}
+
+.yellow {
+	color: #fed316;
+}
+
+.brown {
+	color: #222;
+}
+
+.bg-yellow {
+	background-color: #fed316;
+}
+
+.bg-brown {
+	background-color: #222;
+}

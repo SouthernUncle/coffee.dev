@@ -33,4 +33,20 @@ class Review extends Eloquent {
 	{
 		return $this->hasOne('Parameter');
 	}
+
+	// Calculations
+	public static function convertToGrams($number)
+	{
+		$figure = round($number * 28.35);
+		return $figure;
+	}
+
+	public static function convertToOunces($number)
+	{
+		$figure = round($number / 28.35);
+		return $figure;
+	}
+
+	//Rules
+	public static $rules = [];
 }
