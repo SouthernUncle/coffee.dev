@@ -6,6 +6,9 @@
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
+<!-- Animate CSS -->
+<link rel="stylesheet" type="text/css" href="/css/animate.css">
+
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" href="/css/agency.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -23,7 +26,6 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 
 
 <title>@yield('title')</title>

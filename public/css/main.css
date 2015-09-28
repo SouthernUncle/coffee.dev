@@ -44,25 +44,34 @@ tr {
 }
 
 .region-photos {
-	max-width: 1140;
-	margin-left: auto;
+	margin-left: px auto;
 	margin-right: auto;
 }
 
-.image {
-	position: relative;
-	width: 100%;
-	margin-bottom: 10px;
-	
+.region-pic {
+	margin: 10px;
 }
 
 /*<div style="position: absolute; bottom: 0; left: 0.5em; width: 400px; font-weight: bold; color: #fff;">*/
 
-h2.region-name {
+p.region-name {
+	text-transform: uppercase;
+	font-size: 2em;
 	position: absolute;
 	top: 280px;
-	left: .5em;
+	left: 1em;
 	width: 100%;
 	color: #fed316;
 	margin-left: 10px;
+}
+
+h1#regions-header {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
 }
