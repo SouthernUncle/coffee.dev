@@ -21,7 +21,10 @@ class ReviewsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('reviews.create');
+		$roasters = Roaster::all();
+		$coffees  = Coffee::all();
+
+		return View::make('reviews.create', compact('roasters', 'coffees'));
 	}
 
 	/**
@@ -79,16 +82,27 @@ class ReviewsController extends \BaseController {
 	{
 		$review = Review::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), review::$rules);
+		$validator = Validator::make($data = Input::all(), Review::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$review->update($data);
+		$review->review 		= Input::get('review'); 
+		$review->aroma			= Input::get('aroma');
+		$review->flavor 		= Input::get('flavor');
+		$review->aftertaste		= Input::get('aftertaste');
+		$review->balance		= Input::get('balance');
+		$review->roast 			= Input::get('roast');
+		$review->body 			= Input::get('body');
+		$review->acidity 		= Input::get('acidity');
+		$review->price 			= Input::get('price');
+		$review->bag_size_grams = Input::get('bag_size_grams');
 
-		return Redirect::route('reviews.index');
+		$review->save();
+
+		return Redirect::action('CoffeesController@show', $review->coffee_id);
 	}
 
 	/**
@@ -103,5 +117,4 @@ class ReviewsController extends \BaseController {
 
 		return Redirect::route('reviews.index');
 	}
-
 }

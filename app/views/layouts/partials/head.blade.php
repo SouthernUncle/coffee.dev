@@ -2,13 +2,18 @@
 
 <!-- Add CSRF Token as a meta tag in your head -->
 <meta name="csrf-token" content="{{{ csrf_token() }}}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
+<!-- Animate CSS -->
+<link rel="stylesheet" type="text/css" href="/css/animate.css">
+
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" href="/css/agency.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css" href="/css/slider.css">
 
 <!-- Custom Fonts -->
 <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -25,5 +30,6 @@
 <![endif]-->
 
 
+@yield('style')
 
 <title>@yield('title')</title>

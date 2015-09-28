@@ -34,6 +34,23 @@ class Review extends Eloquent {
 		return $this->hasOne('Parameter');
 	}
 
+
+	//Rules
+	public static $rules = [];
+
+	// Calculations
+	public static function convertToGrams($number)
+	{
+		$figure = round($number * 28.35);
+		return $figure;
+	}
+
+	public static function convertToOunces($number)
+	{
+		$figure = round($number / 28.35);
+		return $figure;
+	}
+
 	public function weightedScore()
 	{
 		// Calculates weighted average for each review
@@ -44,4 +61,5 @@ class Review extends Eloquent {
 		$roundedScore = round($score, 2);
 		return $roundedScore;
 	}
+
 }
