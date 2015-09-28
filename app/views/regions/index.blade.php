@@ -9,7 +9,7 @@
 			<h1 id="regions-header">Regions</h1>
 			<div class="region-photos">
 				@foreach($regions as $r)
-					<span class="col-xs-12 col-sm-6 col-lg-4">
+					<span class="col-xs-12 col-sm-6 col-lg-4 animate-hover">
 						<a href="{{{ action('RegionsController@show', $r->id) }}}">
 							<img src="{{ $r->img_url }}" class="img-responsive region-pic">
 							<p class="region-name">{{ $r->name }}</p>
@@ -26,7 +26,7 @@
 		$(document).ready(function() {
 			"use strict";	
 
-			doHoverAnimation(".region-pic", "pulse");
+			doHoverAnimation(".animate-hover", "pulse");
 
 			function doHoverAnimation (element, animation) {
 				var element = $(element);
