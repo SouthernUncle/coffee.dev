@@ -169,7 +169,7 @@
                                     <h4 class="subheading">Jitterz</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Josh worked at Jitterz in the Rio Grande Valley, perfecting his brew skills and palette. </p>
+                                    <p class="text-muted">Josh worked at Jitterz in the Rio Grande Valley, perfecting his brew skills and palate. </p>
                                 </div>
                             </div>
                         </li>
@@ -183,7 +183,7 @@
                                     <h4 class="subheading">An Idea is Born</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Good review sites exist for beers, but not for coffees. Or if they did exist, only the experts could weigh in. Sometimes about their own coffee. Not cool.</p>
+                                    <p class="text-muted">Good review sites exist for beers/wine/etc. but not for coffees. Or if they did exist, only the experts could weigh in. Sometimes about their own coffee. Not cool.</p>
                                 </div>
                             </div>
                         </li>
