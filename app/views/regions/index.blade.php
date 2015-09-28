@@ -30,7 +30,7 @@
 
 			function doHoverAnimation (element, animation) {
 				var element = $(element);
-				element.hover(function() {
+				element.mouseenter(function() {
 					$(this).addClass('animated ' + animation).one('animationend webkitAnimationEnd oAnimationEnd', function() {
     					$(this).removeClass('animated ' + animation);
     				});
