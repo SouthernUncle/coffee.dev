@@ -23,7 +23,7 @@
 				</select>
 			<h4 class="yellow fancy">Select Coffee</h4>
 				<select>
-				
+
 				</select>
 
 		</div>
@@ -62,7 +62,12 @@
 @section('js')
 	<script>
 	$(document).ready(function(){
-		
+		 var suburb = $('#suburb').val();
+    $.get( "/getStreets", { suburb: suburb } ).done(function( data ) {
+        $.each(data, function(i, value){
+            $('#street_names').append($('<option>').text(value).attr('value', value));
+        });
+    });
 	});
 </script>
 @stop

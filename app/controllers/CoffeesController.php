@@ -52,16 +52,6 @@ class CoffeesController extends \BaseController {
 	public function show($id)
 	{
 		$coffee = Coffee::with('reviews')->findOrFail($id);
-		$avg = [];
-
-		foreach($coffee->reviews as $r) {
-			$r->weighted_avg = round($this->weighted_avg($r), 2);
-			$avg[] = $r->weighted_avg;
-		}
-		
-		if (count($avg) != 0) {
-			$coffee->overall_average = round(array_sum($avg)/count($avg), 2);
-		}
 
 		return View::make('coffees.show', compact('coffee'));
 	}
@@ -114,14 +104,6 @@ class CoffeesController extends \BaseController {
 		return Redirect::route('coffees.index');
 	}
 
-	public function weighted_avg($review)
-	{
-		$score = 	($review->flavor * .25) + ($review->aroma * .225) + 
-					($review->aftertaste * .225) + ($review->balance * .2) + 
-					($review->roast * .05) + ($review->body * .05) + 
-					($review->acidity * .05);
-
-		return $score;
-	}
+	
 
 }

@@ -34,6 +34,10 @@ class Review extends Eloquent {
 		return $this->hasOne('Parameter');
 	}
 
+
+	//Rules
+	public static $rules = [];
+
 	// Calculations
 	public static function convertToGrams($number)
 	{
@@ -47,6 +51,15 @@ class Review extends Eloquent {
 		return $figure;
 	}
 
-	//Rules
-	public static $rules = [];
+	public function weightedScore()
+	{
+		// Calculates weighted average for each review
+		$score = 	($this->flavor * .27) + ($this->aroma * .24) + 
+					($this->aftertaste * .22) + ($this->balance * .2) + 
+					($this->roast * .02) + ($this->body * .03) + 
+					($this->acidity * .02);
+		$roundedScore = round($score, 2);
+		return $roundedScore;
+	}
+
 }
