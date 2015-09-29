@@ -45,8 +45,48 @@
     	<span class="slider-title fancy">Review</span><br>
     	<textarea class="input-group form-control clear" name="review" cols="50" rows="10" placeholder="Write your review here..."></textarea>
     </div>
+    <div class="well col-xs-12 col-s-6 full">
+        <span class="slider-title fancy clear-both">Choose 3 Notes</span>
+
+        <select class="form-control flavors tier-one" id="category1">
+			<option>Categories:</option>
+			@foreach ($categories as $cat)
+				<option value="{{{ $cat->id }}}">
+					{{{ (ucfirst($cat->name)) }}}
+				</option>
+			@endforeach
+		</select>
+
+		<select class="form-control flavors tier-two" id="flavor1" name="flavor1">
+			<option>Please select a Category first...</option>
+		</select>
+		
+		<select class="form-control flavors tier-one" id="category2">
+			<option>Categories:</option>
+			@foreach ($categories as $cat)
+				<option value="{{{ $cat->id }}}">
+					{{{ (ucfirst($cat->name)) }}}
+				</option>
+			@endforeach
+		</select>
+
+		<select class="form-control flavors tier-two" id="flavor2" name="flavor2">
+			<option>Please select a Category first...</option>
+		</select>
+
+		<select class="form-control flavors tier-one" id="category3">
+			<option>Categories:</option>
+			@foreach ($categories as $cat)
+				<option value="{{{ $cat->id }}}">
+					{{{ (ucfirst($cat->name)) }}}
+				</option>
+			@endforeach
+		</select>
+
+		<select class="form-control flavors tier-two" id="flavor3" name="flavor3">
+			<option>Please select a Category first...</option>
+		</select>
+    </div>
 
     <button class="btn btn-default fancy">Save</button>
-
-{{ Form::close() }}
 </div>

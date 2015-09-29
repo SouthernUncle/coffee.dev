@@ -29,4 +29,5 @@ Route::get('/login', 'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 Route::get('/logout', 'HomeController@doLogout');
 
-Route::get('roasters/coffees/{id}', 'RoastersController@getCoffees');
+Route::get('roasters/coffees/{id}', 'ReviewsController@getCoffees');
+Route::get('categories/flavors/{id}', 'ReviewsController@getFlavors');
