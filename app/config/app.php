@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Mitch\Hashids\HashidsServiceProvider',
+		'Sajjadrad\Invi\InviServiceProvider',
 
 	),
 

@@ -21,6 +21,6 @@ class Invitation extends Eloquent {
 
 	public function generateHash()
 	{
-		return Hashids::encode(mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000));
+		return Hashids::encode(array(mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000)));
 	}
 }

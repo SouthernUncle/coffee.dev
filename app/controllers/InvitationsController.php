@@ -111,18 +111,27 @@ class InvitationsController extends \BaseController {
 			Redirect::back()->withInput();
 	    }
 		
+		$invite = new Invitation();
+
+		$invite->email   = Input::get('email');
+		$invite->user_id = 1;
+
+		$invite->confirmation = md5(Input::get('email') . 1);
+
+		$invite->save();
+
 		$data = array(
 			'name' => Input::get('name'),
 			'email_address' => Input::get('email'),
-			'body' => Input::get('message')
+			'confirmation'  => md5(Input::get('email') . 1),
 		);
-			
-		Mail::send('emails.contact', $data, function($message) {
-			$message->from(Input::get('email'), Input::get('name'));
-			$message->to('david@gcollier.me', 'David G. Collier');
-			$message->subject('Email from dgcollier.com');
+
+		Mail::send('emails.invite', $data, function($message) {
+			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'test');
+			$message->to(Input::get('email'), Input::get('name'));
+			$message->subject('Welcome to ...');
 		});
-		Session::flash('successMessage', 'Your email was sent to the developer.');
+		Session::flash('successMessage', 'Your invite was sent.');
 		return Redirect::action('HomeController@showHome');			
 	}
 
