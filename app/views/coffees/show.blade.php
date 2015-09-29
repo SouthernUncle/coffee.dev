@@ -56,6 +56,9 @@
                                     @if ($p->coffee_weight)
                                         Coffee: {{ $p->coffee_weight }} g |
                                     @endif
+                                    @if ($p->coffee_weight && $p->water_weight)
+                                        Ratio: {{ $p->ratio() }}:1 |
+                                    @endif
                                     @if ($p->brew_time)
                                         Brew Time: {{ $p->brew_time }} seconds
                                     @endif
@@ -64,6 +67,9 @@
                                     @endif
                                 </p>
                                 <p>
+                                    @if ($p->brewer)
+                                        Brewer: {{ $p->brewer }} |
+                                    @endif
                                     @if ($p->method)
                                         Method: {{ $p->method }}
                                     @endif
