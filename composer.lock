@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bca0005d9a90c7d5df6a63b6246bceb7",
+    "hash": "a991fd029b329f76d682288a8a9302e6",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1179,51 +1179,6 @@
             "time": "2012-12-21 11:40:51"
         },
         {
-            "name": "sajjadrad/invi",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sajjadrad/invi-l4.git",
-                "reference": "4adcc602f99f3975fbe85c845cf653461bcbc90c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sajjadrad/invi-l4/zipball/4adcc602f99f3975fbe85c845cf653461bcbc90c",
-                "reference": "4adcc602f99f3975fbe85c845cf653461bcbc90c",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "4.2.*",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/migrations"
-                ],
-                "psr-0": {
-                    "Sajjadrad\\Invi\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sajjad Rad",
-                    "email": "sajjad.273@gmail.com"
-                }
-            ],
-            "description": "A simple invitation system api",
-            "keywords": [
-                "Invitation",
-                "Invite",
-                "laravel"
-            ],
-            "time": "2015-01-09 09:49:04"
-        },
-        {
             "name": "stack/builder",
             "version": "v1.0.3",
             "source": {
@@ -2335,9 +2290,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "sajjadrad/invi": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
