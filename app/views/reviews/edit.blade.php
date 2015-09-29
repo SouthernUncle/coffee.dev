@@ -64,7 +64,50 @@
 	        	<textarea class="input-group form-control clear" name="review" cols="50" rows="10">{{ $review->review }}</textarea>
 	        </div>
 
-	        <button class="btn btn-default fancy">Save</button>
+	        <div class="well col-xs-12 col-s-6 full">
+		        <span class="slider-title fancy clear-both">Choose 3 Notes</span>
+
+		        <select class="form-control flavors tier-one" id="category1">
+					<option>Categories:</option>
+					@foreach ($categories as $cat)
+						<option value="{{{ $cat->id }}}">
+							{{{ (ucfirst($cat->name)) }}}
+						</option>
+					@endforeach
+				</select>
+
+				<select class="form-control flavors tier-two" id="flavor1" name="flavor1">
+					<option>Please select a Category first...</option>
+				</select>
+				
+				<select class="form-control flavors tier-one" id="category2">
+					<option>Categories:</option>
+					@foreach ($categories as $cat)
+						<option value="{{{ $cat->id }}}">
+							{{{ (ucfirst($cat->name)) }}}
+						</option>
+					@endforeach
+				</select>
+
+				<select class="form-control flavors tier-two" id="flavor2" name="flavor2">
+					<option>Please select a Category first...</option>
+				</select>
+
+				<select class="form-control flavors tier-one" id="category3">
+					<option>Categories:</option>
+					@foreach ($categories as $cat)
+						<option value="{{{ $cat->id }}}">
+							{{{ (ucfirst($cat->name)) }}}
+						</option>
+					@endforeach
+				</select>
+
+				<select class="form-control flavors tier-two" id="flavor3" name="flavor3">
+					<option>Please select a Category first...</option>
+				</select>
+	        </div>
+
+        <button class="btn btn-default fancy">Save</button>
 
 		{{ Form::close() }}
 		</div>
@@ -74,7 +117,34 @@
 @section('js')
 	<script>
 	$(document).ready(function() {
-		"use strict";
+	"use strict";
+		var route = "/categories/flavors/";
+
+		var master = $("#category1");
+		var dependent = $("#flavor1");
+		getDropdown(master, dependent);
+
+		master = $("#category2");
+		dependent = $("#flavor2");
+		getDropdown(master, dependent);
+
+		master = $("#category3");
+		dependent = $("#flavor3");
+		getDropdown(master, dependent);
+
+		function getDropdown(master, dependent) {
+			master.change(function() {
+				$.get(route + master.val()).done(function(data) {
+					var $options = dependent;
+					$options.empty();
+					console.log(data);
+					$.each(data, function(index, value) {
+						$options.append('<option value="' + index +'">' + value + '</option>');
+					});
+					dependent.trigger("change"); 
+				});
+			});
+		};
 
 		// With JQuery
 		$('#aroma').slider({

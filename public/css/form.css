@@ -123,3 +123,20 @@ div.titles h2 {
 textarea {
 	overflow: hidden;
 }
+
+select.flavors {
+	max-width: 50%;
+}
+
+select.tier-two {
+	float: right;
+}
+
+select.tier-one {
+	float: left;
+}
+
+.clear-both {
+	display: block;
+	margin-bottom: 10px;
+}
