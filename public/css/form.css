@@ -76,7 +76,9 @@ input.currency {
 }
 
 textarea.clear {
-	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
 }
 
 .btn.btn-default {
@@ -87,7 +89,8 @@ textarea.clear {
 	border: 1px solid #222;
 }
 
-.btn.btn-default:hover {
+.btn-default:hover,
+.btn-default:focus {
 	color: #fed316;
 	background-color: #222;
 }
@@ -110,7 +113,8 @@ div.titles h2 {
 	border: 1px solid #fed316;
 }
 
-.btn-info:hover {
+.btn-info:hover,
+.btn-info:focus {
 	background-color: #fff;
 	color: #fed316;
 	border: 1.5px solid #fed316;

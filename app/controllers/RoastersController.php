@@ -106,4 +106,17 @@ class RoastersController extends \BaseController {
 		return Redirect::route('roasters.index');
 	}
 
+	public function getCoffees($id)
+	{
+		$coffees = Coffee::where('roaster_id', $id)->get();
+
+		$options = array();
+
+		foreach ($coffees as $c) {
+			$options += array($c->id => $c->name);
+		}
+
+		return Response::json($options);
+	}
+
 }

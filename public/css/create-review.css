@@ -1,0 +1,25 @@
+.head .well {
+	max-width: 75%;
+}
+
+.form-control {
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.heading {
+	padding-bottom: 47px;
+}
+
+section {
+	padding-bottom: 50px;
+}
+
+section #form {
+	padding: 50px;
+}
+
+#bag-size {
+	float: right;
+}
