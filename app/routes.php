@@ -19,6 +19,8 @@ Route::resource('/roasters', 'RoastersController');
 Route::resource('/param', 'ParametersController');
 Route::resource('/invite', 'InvitationsController');
 
+Route::post('/createinvite', 'InvitationsController@emailInvite');
+
 Route::resource('/reviews', 'ReviewsController');
 Route::resource('/roles', 'RolesController');
 
