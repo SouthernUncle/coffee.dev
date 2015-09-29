@@ -26,7 +26,17 @@
 <section>
     <div class="container">
         <h1>Invite a Friend</h1>
-    </div>
+        {{ Form::open(array('action' => 'InvitationsController@emailInvite')) }}
+    
+            {{ Form::label('name', 'Name') }}
+            {{ Form::text('name', null, ['class' => 'form-control']) }}
+
+            {{ Form::label('email', 'Email') }}
+            {{ Form::email('email', null, ['class' => 'form-control']) }}
+
+            <button class="btn btn-default">Save</button>
+
+        {{ Form::close() }}    </div>
 </section>
 @stop
 
