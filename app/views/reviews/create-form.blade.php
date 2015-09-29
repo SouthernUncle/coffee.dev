@@ -47,6 +47,4 @@
     </div>
 
     <button class="btn btn-default fancy">Save</button>
-
-{{ Form::close() }}
 </div>

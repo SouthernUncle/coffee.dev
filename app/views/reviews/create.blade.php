@@ -12,6 +12,7 @@
 @section('content')
 	<section>
 		<div class="container head">
+		{{ Form::open(array('action' => 'ReviewsController@store')) }}
 			<div class="well col-xs-12 col-md-8">
 				<h1 class="yellow heading">Create New Review</h1>
 				<div class="col-xs-12 col-md-6">
@@ -32,15 +33,17 @@
 			</div>
 			<div class="well col-xs-12 col-md-4">
 				<h4 class="yellow fancy">Don't see what you're looking for?</h4>
-				<button type="button" class="btn btn-info btn-lg">Add a New Roaster</button>
-			
+				<a href="{{{ action('RoastersController@create') }}}">
+					<button type="button" class="btn btn-info btn-lg">Add a New Roaster</button>
+				</a>
 				<h4 class="yellow fancy">or</h4>
-				<button type="button" class="btn btn-info btn-lg">Add a New Coffee</button>
+				<a href="{{{ action('CoffeesController@create') }}}">
+					<button type="button" class="btn btn-info btn-lg">Add a New Coffee</button>
+				</a>
 			</div>
 		</div>
-	
 		@include('reviews.create-form')
-
+		{{ Form::close() }}
 	</section>
 
 @stop

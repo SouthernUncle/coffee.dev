@@ -41,9 +41,25 @@ class ReviewsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Review::create($data);
+		$review = new Review();
+		$review->user_id	    = 1;
+		$review->roaster_id		= Input::get('roaster');
+		$review->coffee_id		= Input::get('coffee');
+		$review->review 		= Input::get('review'); 
+		$review->aroma			= Input::get('aroma');
+		$review->flavor 		= Input::get('flavor');
+		$review->aftertaste		= Input::get('aftertaste');
+		$review->balance		= Input::get('balance');
+		$review->roast 			= Input::get('roast');
+		$review->body 			= Input::get('body');
+		$review->acidity 		= Input::get('acidity');
+		$review->price 			= Input::get('price');
+		$review->bag_size_grams = Review::convertToGrams(Input::get('bag_size_grams'));
 
-		return Redirect::route('reviews.index');
+		$review->save();
+
+
+		return Redirect::action('CoffeesController@show', $review->coffee_id);
 	}
 
 	/**
