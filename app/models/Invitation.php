@@ -18,4 +18,9 @@ class Invitation extends Eloquent {
 	{
 		return $this->belongsTo('User');
 	}
+
+	public function generateHash()
+	{
+		return Hashids::encode(mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000),mt_rand(1,1000));
+	}
 }

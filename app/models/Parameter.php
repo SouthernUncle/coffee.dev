@@ -18,4 +18,9 @@ class Parameter extends Eloquent {
 	{
 		return $this->belongsTo('Review');
 	}
+
+	public function ratio()
+	{
+		return $ratio = round($this->water_weight / $this->coffee_weight, 1);
+	}
 }
