@@ -14,19 +14,6 @@
 	background-color: #222;
 }
 
-/*.panel-default>.panel-heading {
-	background-color: #0f8b8d;
-}
-
-.panel-title {
-	color: #222;
-}
-
-#overall {
-	color: #222;
-}
-*/
-
 tbody {
 	overflow-y: hidden;
 }
@@ -44,15 +31,14 @@ tr {
 }
 
 .region-photos {
-	margin-left: px auto;
+	margin-left: auto;
 	margin-right: auto;
 }
 
 .region-pic {
+	padding: 10px;
 	margin: 10px;
 }
-
-/*<div style="position: absolute; bottom: 0; left: 0.5em; width: 400px; font-weight: bold; color: #fff;">*/
 
 p.region-name {
 	text-transform: uppercase;
@@ -72,8 +58,8 @@ h1#regions-header {
 }
 
 .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
 }
 
 .fancy {

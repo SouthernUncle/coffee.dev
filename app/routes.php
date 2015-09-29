@@ -27,7 +27,4 @@ Route::get('/login', 'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 Route::get('/logout', 'HomeController@doLogout');
 
-Route::get('/theme1', function()
-{
-	return View::make('sass-test');
-});
+Route::get('roasters/coffees/{id}', 'RoastersController@getCoffees');

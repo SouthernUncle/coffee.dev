@@ -34,4 +34,5 @@ class Roaster extends Eloquent {
 
 		return $mainScore = round(($avg * 5) + 50);
 	}
+
 }
