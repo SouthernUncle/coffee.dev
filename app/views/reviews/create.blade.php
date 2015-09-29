@@ -18,7 +18,7 @@
 				<div class="col-xs-12 col-md-6">
 				<h4 class="yellow fancy">Select Roaster</h4>
 					<select class="form-control" name="roaster" id="roaster">
-							<option>Please select a roaster first...</option>
+							<option>Roaster:</option>
 						@foreach ($roasters as $r)
 							<option value="{{{ $r->id }}}">
 								{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
@@ -28,7 +28,9 @@
 				</div>
 				<div class="col-xs-12 col-md-6">
 				<h4 class="yellow fancy">Select Coffee</h4>
-					<select class="form-control" id="coffee" name="coffee"></select>
+					<select class="form-control" id="coffee" name="coffee">
+						<option>Please select a roaster first...</option>
+					</select>
 				</div>
 			</div>
 			<div class="well col-xs-12 col-md-4">
@@ -62,6 +64,33 @@
 				$("#coffee").trigger("change"); 
 			});
 		});
+
+		var route = "/categories/flavors/";
+		var master = $("#category1");
+		var dependent = $("#flavor1");
+		getDropdown(master, dependent);
+
+		master = $("#category2");
+		dependent = $("#flavor2");
+		getDropdown(master, dependent);
+
+		master = $("#category3");
+		dependent = $("#flavor3");
+		getDropdown(master, dependent);
+
+		function getDropdown(master, dependent) {
+			master.change(function() {
+				$.get(route + master.val()).done(function(data) {
+					var $options = dependent;
+					$options.empty();
+					console.log(data);
+					$.each(data, function(index, value) {
+						$options.append('<option value="' + index +'">' + value + '</option>');
+					});
+					dependent.trigger("change"); 
+				});
+			});
+		};
 
 		$('#aroma').slider({
 			formatter: function(value) {

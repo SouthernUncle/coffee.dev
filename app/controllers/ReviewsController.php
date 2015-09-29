@@ -23,8 +23,9 @@ class ReviewsController extends \BaseController {
 	{
 		$roasters = Roaster::all();
 		$coffees  = Coffee::all();
+		$categories = FlavorCategory::orderBy('name')->get();
 
-		return View::make('reviews.create', compact('roasters', 'coffees'));
+		return View::make('reviews.create', compact('roasters', 'coffees', 'categories'));
 	}
 
 	/**
@@ -59,12 +60,12 @@ class ReviewsController extends \BaseController {
 		$review->save();
 
 		$flavor1 = Input::get('flavor1');
-		$flavor3 = Input::get('flavor2');
+		$flavor2 = Input::get('flavor2');
 		$flavor3 = Input::get('flavor3');
-		$flavors = array($flavor1, $flavor2, $flavor3);
-		dd($flavors);
 		
-		Review::addFlavorToReview(array($flavors), $review->id);
+		$flavors = array($flavor1, $flavor2, $flavor3);
+		
+		$this->addFlavorToReview($flavors, $review->id);
 
 		return Redirect::action('CoffeesController@show', $review->coffee_id);
 	}
@@ -137,9 +138,6 @@ class ReviewsController extends \BaseController {
 		$flavor1 = Input::get('flavor1');
 		$flavor2 = Input::get('flavor2');
 		$flavor3 = Input::get('flavor3');
-		var_dump($flavor1);
-		var_dump($flavor2);
-		var_dump($flavor3);
 		
 		$flavors = array($flavor1, $flavor2, $flavor3);
 		
