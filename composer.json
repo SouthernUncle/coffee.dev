@@ -9,8 +9,7 @@
 		"fzaninotto/faker": "^1.5",
 		"matriphe/imageupload": "4.2.*",
 		"mitch/hashids": "1.x",
-		"guzzlehttp/guzzle": "~4.0",
-		"sajjadrad/invi": "dev-master"
+		"guzzlehttp/guzzle": "~4.0"
 	},
 	"autoload": {
 		"classmap": [
