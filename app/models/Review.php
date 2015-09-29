@@ -62,4 +62,12 @@ class Review extends Eloquent {
 		return $roundedScore;
 	}
 
+	public function ratingsDev()
+	{
+		$overall = $this->coffee->overallCoffeeRating();
+		$ws = $this->weightedScore();
+		$rDev = round((($ws / $overall) - 1) * 100, 2);
+		return $rDev;
+	}
+
 }
