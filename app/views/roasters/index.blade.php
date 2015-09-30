@@ -21,6 +21,9 @@
 				        <td>{{ $r->coffees->count() }}</td>
 				    </tr>
 				@endforeach
+				<tr>
+					<td>{{ $roasters->links() }}</td>
+				</tr>
 			    </tbody>
 		    </table>
 		</div>

@@ -33,13 +33,16 @@
             <th>Coffee</th>
             <th>Overall Rating</th>
             <th>Number of Reviews</th>
-        @foreach ($roaster->coffees as $c)
+        @foreach ($coffees as $c)
         <tr>
             <td>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
             <td>{{ $c->overallCoffeeRating() }}</td>
             <td>{{ $c->reviews->count() }}</td>
         </tr>
         @endforeach
+        <tr>
+            <td>{{ $coffees->links() }}</td>
+        </tr>
         </table>
     </div>
 </section>

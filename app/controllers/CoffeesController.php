@@ -9,7 +9,7 @@ class CoffeesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$coffees = Coffee::all();
+		$coffees = Coffee::paginate(5);
 
 		return View::make('coffees.index', compact('coffees'));
 	}

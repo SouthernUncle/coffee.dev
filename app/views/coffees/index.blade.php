@@ -25,6 +25,9 @@
 				        <td>{{ $c->reviews->count() }}</td>
 				    </tr>
 				@endforeach
+				<tr>
+					<td>{{ $coffees->links() }}</td>
+				</tr>
 				</tbody>
 		    </table>
 		</div>

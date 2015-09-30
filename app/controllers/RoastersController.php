@@ -10,7 +10,7 @@ class RoastersController extends \BaseController {
 	public function index()
 	{
 
-		$roasters = Roaster::all();
+		$roasters = Roaster::paginate(3);
 
 		return View::make('roasters.index', compact('roasters'));
 
@@ -55,7 +55,9 @@ class RoastersController extends \BaseController {
 	{
 		$roaster = Roaster::findOrFail($id);
 
-		return View::make('roasters.show', compact('roaster'));
+		$coffees = $roaster->coffees()->paginate(5);
+
+		return View::make('roasters.show', compact('roaster', 'coffees'));
 	}
 
 	/**
