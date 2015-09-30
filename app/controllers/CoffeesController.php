@@ -53,7 +53,9 @@ class CoffeesController extends \BaseController {
 	{
 		$coffee = Coffee::with('reviews')->findOrFail($id);
 
-		return View::make('coffees.show', compact('coffee'));
+		$reviews = $coffee->reviews()->paginate(4);
+
+		return View::make('coffees.show', compact('coffee', 'reviews'));
 	}
 
 	/**

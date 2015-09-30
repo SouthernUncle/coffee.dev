@@ -29,7 +29,7 @@
             <br>
 
             <h2>Reviews:</h2>
-            @foreach ($coffee->reviews as $r)
+            @foreach ($reviews as $r)
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab">
@@ -84,6 +84,7 @@
                     </div>
                 </div>
             @endforeach
+            <div>{{ $reviews->links() }}</div>
         </div>
     </section>
 @stop
