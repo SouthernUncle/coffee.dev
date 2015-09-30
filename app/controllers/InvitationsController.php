@@ -1,17 +1,15 @@
 <?php
 
-class InvitationsController extends \BaseController {
+class InvitationsController extends BaseController {
 
 	/**
-	 * Display a listing of invitations
+	 * Set up filters.
 	 *
-	 * @return Response
 	 */
-	public function index()
+	public function __construct()
 	{
-		$invitations = Invitation::all();
-
-		return View::make('invitations.index', compact('invitations'));
+		parent::__construct();
+		$this->beforeFilter('auth');	
 	}
 
 	/**
@@ -23,6 +21,50 @@ class InvitationsController extends \BaseController {
 	{
 		return View::make('invitations.create');
 	}
+
+	public function emailInvite()
+	{
+		if(!Input::all()) {
+			Session::flash('errorMessage', 'You were missing some info there...');
+			Redirect::back()->withInput();
+	    }
+		
+		$invite = new Invitation();
+
+		$invite->email   = Input::get('email');
+		$invite->user_id = Auth::id();
+
+		$invite->confirmation = md5(Input::get('email') . Auth::id());
+
+		$invite->save();
+
+		$data = array(
+			'name' => Input::get('name'),
+			'email_address' => Input::get('email'),
+			'confirmation'  => md5(Input::get('email') . Auth::id()),
+		);
+
+		Mail::send('emails.invite', $data, function($message) {
+			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'test');
+			$message->to(Input::get('email'), Input::get('name'));
+			$message->subject('Welcome to ...');
+		});
+		Session::flash('successMessage', 'Your invite was sent.');
+		return Redirect::action('HomeController@showHome');			
+	}
+
+	/**
+	 * Display a listing of invitations
+	 *
+	 * @return Response
+	 */
+	// public function index()
+	// {
+		
+	// 	$invitations = Invitation::all();
+
+	// 	return View::make('invitations.index', compact('invitations'));
+	// }
 
 	/**
 	 * Store a newly created invitation in storage.
@@ -49,12 +91,12 @@ class InvitationsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		$invitation = Invitation::findOrFail($id);
+	// public function show($id)
+	// {
+	// 	$invitation = Invitation::findOrFail($id);
 
-		return View::make('invitations.show', compact('invitation'));
-	}
+	// 	return View::make('invitations.show', compact('invitation'));
+	// }
 
 	/**
 	 * Show the form for editing the specified invitation.
@@ -62,12 +104,12 @@ class InvitationsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
-	{
-		$invitation = Invitation::find($id);
+	// public function edit($id)
+	// {
+	// 	$invitation = Invitation::find($id);
 
-		return View::make('invitations.edit', compact('invitation'));
-	}
+	// 	return View::make('invitations.edit', compact('invitation'));
+	// }
 
 	/**
 	 * Update the specified invitation in storage.
@@ -75,21 +117,21 @@ class InvitationsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
-	{
-		$invitation = Invitation::findOrFail($id);
+	// public function update($id)
+	// {
+	// 	$invitation = Invitation::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), invitation::$rules);
+	// 	$validator = Validator::make($data = Input::all(), invitation::$rules);
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+	// 	if ($validator->fails())
+	// 	{
+	// 		return Redirect::back()->withErrors($validator)->withInput();
+	// 	}
 
-		$invitation->update($data);
+	// 	$invitation->update($data);
 
-		return Redirect::route('invitations.index');
-	}
+	// 	return Redirect::route('invitations.index');
+	// }
 
 	/**
 	 * Remove the specified invitation from storage.
@@ -97,42 +139,11 @@ class InvitationsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		Invitation::destroy($id);
+	// public function destroy($id)
+	// {
+	// 	Invitation::destroy($id);
 
-		return Redirect::route('invitations.index');
-	}
-
-	public function emailInvite()
-	{
-		if(!Input::all()) {
-			Session::flash('errorMessage', 'You were missing some info there...');
-			Redirect::back()->withInput();
-	    }
-		
-		$invite = new Invitation();
-
-		$invite->email   = Input::get('email');
-		$invite->user_id = 1;
-
-		$invite->confirmation = md5(Input::get('email') . 1);
-
-		$invite->save();
-
-		$data = array(
-			'name' => Input::get('name'),
-			'email_address' => Input::get('email'),
-			'confirmation'  => md5(Input::get('email') . 1),
-		);
-
-		Mail::send('emails.invite', $data, function($message) {
-			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'test');
-			$message->to(Input::get('email'), Input::get('name'));
-			$message->subject('Welcome to ...');
-		});
-		Session::flash('successMessage', 'Your invite was sent.');
-		return Redirect::action('HomeController@showHome');			
-	}
+	// 	return Redirect::route('invitations.index');
+	// }
 
 }

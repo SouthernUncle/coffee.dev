@@ -33,6 +33,15 @@
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
+                @if(!Auth::check())
+                <li>
+                    <a class="page-scroll" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
+                </li>
+                @else
+                <li>
+                    <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
+                </li>
+                @endif
 
                 @if(Auth::check())
                 <li class="dropdown">

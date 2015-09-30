@@ -20,6 +20,7 @@ Route::resource('/param', 'ParametersController');
 Route::resource('/invite', 'InvitationsController');
 
 Route::post('/createinvite', 'InvitationsController@emailInvite');
+Route::get('/createnewuser/{confirmation}', 'UsersController@create');
 
 Route::resource('/reviews', 'ReviewsController');
 Route::resource('/roles', 'RolesController');

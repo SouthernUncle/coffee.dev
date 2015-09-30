@@ -20,8 +20,20 @@ class UsersController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($confirmation)
 	{
+		$query = Invitation::where('confirmation', $confirmation)->get();
+
+		if(empty($query[0])) {
+			// Log something here
+			Session::flash('errorMessage', 'Invalid invitation code.');
+			return Redirect::action('HomeController@showHome');
+		}
+
+		$invite = Invitation::findOrFail($query[0]->id);
+		$invite->confirmation 	= null;
+		$invite->save();
+
 		return View::make('users.create');
 	}
 

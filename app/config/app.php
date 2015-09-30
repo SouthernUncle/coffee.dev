@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Mitch\Hashids\HashidsServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 
 	),
 
@@ -190,6 +191,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Hashids' => 'Mitch\Hashids\Hashids',
+		'Image' => 'Intervention\Image\Facades\Image',
 
 	),
 
