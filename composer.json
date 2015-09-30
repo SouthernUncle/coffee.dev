@@ -9,7 +9,8 @@
 		"fzaninotto/faker": "^1.5",
 		"matriphe/imageupload": "4.2.*",
 		"mitch/hashids": "1.x",
-		"guzzlehttp/guzzle": "~4.0"
+		"guzzlehttp/guzzle": "~4.0",
+		"intervention/image": "^2.3"
 	},
 	"autoload": {
 		"classmap": [
