@@ -11,7 +11,8 @@
 		    			<th>Name</th>
 		    			<th>Region</th>
 		    			<th>Roaster</th>
-	    				<th>Description</th>
+	    				<th>Overall Rating</th>
+	    				<th>Number of Reviews</th>
 		    		</tr>
 		    	</thead>
 		    	<tbody>
@@ -20,7 +21,8 @@
 				        <td class="coffee-name">{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
 				        <td class="region-name">{{ HTML::linkAction('RegionsController@show', $c->region->name, array($c->region->id)) }}</td>
 				        <td>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</td>
-				        <td>{{ $c->roasters_description }}</td>
+				        <td>{{ $c->overallCoffeeRating() }}</td>
+				        <td>{{ $c->reviews->count() }}</td>
 				    </tr>
 				@endforeach
 				</tbody>

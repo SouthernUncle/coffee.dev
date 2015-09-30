@@ -10,7 +10,7 @@
 		    		<tr>
 		    			<th>Name</th>
 		    			<th>Location</th>
-		    			<th>Description</th>
+		    			<th>Number of Coffees</th>
 		    		</tr>
 		    	</thead>
 				<tbody>
@@ -18,7 +18,7 @@
 				    <tr>
 				        <td>{{ HTML::linkAction('RoastersController@show', $r->name, array($r->id)) }}</td>
 				        <td>{{ $r->city . ", " . $r->state }}</td>
-				        <td>{{ $r->description }}</td>
+				        <td>{{ $r->coffees->count() }}</td>
 				    </tr>
 				@endforeach
 			    </tbody>
