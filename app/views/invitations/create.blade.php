@@ -36,7 +36,8 @@
 
             <button class="btn btn-default">Save</button>
 
-        {{ Form::close() }}    </div>
+        {{ Form::close() }}    
+    </div>
 </section>
 @stop
 

@@ -17,7 +17,9 @@ class HomeController extends BaseController {
 
 	public function showHome()
 	{
-		return View::make('home');
+		$coffees = Coffee::all()->random(6);
+
+		return View::make('home', compact('coffees'));
 	}
 
 	public function showLogin()
@@ -51,4 +53,28 @@ class HomeController extends BaseController {
 		Session::flash('successMessage', 'You have successfully logged out.');
 		return Redirect::to('/');	
 	}
+
+	public function contactUs()
+	{
+		if(!Input::all()) {
+			Session::flash('errorMessage', 'You were missing some info there...');
+			Redirect::back()->withInput();
+	    }
+		
+		$data = array(
+			'name' => Input::get('name'),
+			'email' => Input::get('email'),
+			'body'  => Input::get('message'),
+		);
+
+		Mail::send('emails.contact', $data, function($message) {
+			$message->from(Input::get('email'), Input::get('name'));
+			$message->to('david@gcollier.me', 'Admin');
+			$message->subject('testing the contact form');
+		});
+
+		Session::flash('successMessage', 'Your message was sent.');
+		return Redirect::action('HomeController@showHome');	
+	}
+	
 }
