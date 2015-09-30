@@ -1,1 +1,0 @@
-/vagrant/sites/coffee.dev/app/views/roles/create.blade.php

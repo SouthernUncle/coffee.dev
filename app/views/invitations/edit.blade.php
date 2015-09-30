@@ -1,1 +1,0 @@
-/vagrant/sites/coffee.dev/app/views/invitations/edit.blade.php

@@ -3,6 +3,16 @@
 class CoffeesController extends \BaseController {
 
 	/**
+	 * Set up filters.
+	 *
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth', array('except' => array('index', 'show')));	
+	}
+
+	/**
 	 * Display a listing of coffees
 	 *
 	 * @return Response
@@ -97,12 +107,12 @@ class CoffeesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		Coffee::destroy($id);
+	// public function destroy($id)
+	// {
+	// 	Coffee::destroy($id);
 
-		return Redirect::route('coffees.index');
-	}
+	// 	return Redirect::route('coffees.index');
+	// }
 
 	
 

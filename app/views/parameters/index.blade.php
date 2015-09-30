@@ -1,1 +1,0 @@
-/vagrant/sites/coffee.dev/app/views/parameters/index.blade.php

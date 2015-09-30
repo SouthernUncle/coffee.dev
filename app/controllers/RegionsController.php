@@ -3,6 +3,16 @@
 class RegionsController extends \BaseController {
 
 	/**
+	 * Set up filters.
+	 *
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth', array('except' => array('index', 'show')));	
+	}
+
+	/**
 	 * Display a listing of regions
 	 *
 	 * @return Response
@@ -13,35 +23,6 @@ class RegionsController extends \BaseController {
 		$regions = Region::all();
 
 		return View::make('regions.index', compact('regions'));
-	}
-
-	/**
-	 * Show the form for creating a new region
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		return View::make('regions.create');
-	}
-
-	/**
-	 * Store a newly created region in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		$validator = Validator::make($data = Input::all(), region::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		Region::create($data);
-
-		return Redirect::route('regions.index');
 	}
 
 	/**
@@ -58,17 +39,46 @@ class RegionsController extends \BaseController {
 	}
 
 	/**
+	 * Show the form for creating a new region
+	 *
+	 * @return Response
+	 */
+	// public function create()
+	// {
+	// 	return View::make('regions.create');
+	// }
+
+	/**
+	 * Store a newly created region in storage.
+	 *
+	 * @return Response
+	 */
+	// public function store()
+	// {
+	// 	$validator = Validator::make($data = Input::all(), region::$rules);
+
+	// 	if ($validator->fails())
+	// 	{
+	// 		return Redirect::back()->withErrors($validator)->withInput();
+	// 	}
+
+	// 	Region::create($data);
+
+	// 	return Redirect::route('regions.index');
+	// }
+
+	/**
 	 * Show the form for editing the specified region.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
-	{
-		$region = Region::find($id);
+	// public function edit($id)
+	// {
+	// 	$region = Region::find($id);
 
-		return View::make('regions.edit', compact('region'));
-	}
+	// 	return View::make('regions.edit', compact('region'));
+	// }
 
 	/**
 	 * Update the specified region in storage.
@@ -76,21 +86,21 @@ class RegionsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
-	{
-		$region = Region::findOrFail($id);
+	// public function update($id)
+	// {
+	// 	$region = Region::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), region::$rules);
+	// 	$validator = Validator::make($data = Input::all(), region::$rules);
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+	// 	if ($validator->fails())
+	// 	{
+	// 		return Redirect::back()->withErrors($validator)->withInput();
+	// 	}
 
-		$region->update($data);
+	// 	$region->update($data);
 
-		return Redirect::route('regions.index');
-	}
+	// 	return Redirect::route('regions.index');
+	// }
 
 	/**
 	 * Remove the specified region from storage.
@@ -98,11 +108,11 @@ class RegionsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		Region::destroy($id);
+	// public function destroy($id)
+	// {
+	// 	Region::destroy($id);
 
-		return Redirect::route('regions.index');
-	}
+	// 	return Redirect::route('regions.index');
+	// }
 
 }

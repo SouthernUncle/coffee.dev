@@ -3,16 +3,26 @@
 class ReviewsController extends \BaseController {
 
 	/**
+	 * Set up filters.
+	 *
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth', array('except' => array('show')));	
+	}
+	
+	/**
 	 * Display a listing of reviews
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-		$reviews = Review::all();
+	// public function index()
+	// {
+	// 	$reviews = Review::all();
 
-		return View::make('reviews.index', compact('reviews'));
-	}
+	// 	return View::make('reviews.index', compact('reviews'));
+	// }
 
 	/**
 	 * Show the form for creating a new review
@@ -84,12 +94,12 @@ class ReviewsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		$review = Review::findOrFail($id);
+	// public function show($id)
+	// {
+	// 	$review = Review::findOrFail($id);
 
-		return View::make('reviews.show', compact('review'));
-	}
+	// 	return View::make('reviews.show', compact('review'));
+	// }
 
 	/**
 	 * Show the form for editing the specified review.
