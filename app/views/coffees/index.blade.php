@@ -25,11 +25,11 @@
 				        <td>{{ $c->reviews->count() }}</td>
 				    </tr>
 				@endforeach
-				<tr>
-					<td>{{ $coffees->links() }}</td>
-				</tr>
 				</tbody>
 		    </table>
+			<div>
+				{{ $coffees->links() }}
+			</div>
 		</div>
 	</section>
 @stop

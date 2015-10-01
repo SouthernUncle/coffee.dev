@@ -2,6 +2,14 @@
 
 @section('title', 'ROASTERS')
 
+@section('style')
+<style>
+	.paginfix {
+		color: #FED316;
+	}
+</style>
+@stop
+
 @section('content')
 	<section>
 		<div class="container">
@@ -21,11 +29,9 @@
 				        <td>{{ $r->coffees->count() }}</td>
 				    </tr>
 				@endforeach
-				<tr>
-					<td>{{ $roasters->links() }}</td>
-				</tr>
 			    </tbody>
 		    </table>
+			<div class="paginfix">{{ $roasters->links() }}</div>
 		</div>
 	</section>
 @stop
