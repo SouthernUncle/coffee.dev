@@ -19,14 +19,14 @@ class CreateParametersTable extends Migration {
 			$table->integer('review_id')->unsigned();
 			$table->foreign('review_id')->references('id')->on('reviews')->onDelete('cascade');
 			
-			$table->string('grind');
-			$table->float('water_weight', 6, 2);
-			$table->float('coffee_weight', 5, 2);
-			$table->integer('brew_time');
-			$table->integer('water_temp');
-			$table->string('brewer');
-			$table->text('method');
-			$table->date('roast_date');
+			$table->string('grind')-> nullable();
+			$table->float('water_weight', 6, 2)-> nullable();
+			$table->float('coffee_weight', 5, 2)-> nullable();
+			$table->integer('brew_time')-> nullable();
+			$table->integer('water_temp')-> nullable();
+			$table->string('brewer')-> nullable();
+			$table->text('method')-> nullable();
+			$table->date('roast_date')-> nullable();
 
 			$table->timestamps();
 		});

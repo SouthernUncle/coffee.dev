@@ -3,45 +3,54 @@
 class ParametersController extends \BaseController {
 
 	/**
+	 * Set up filters.
+	 *
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth');	
+	}
+	/**
 	 * Display a listing of parameters
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-		$parameters = Parameter::all();
+	// public function index()
+	// {
+	// 	$parameters = Parameter::all();
 
-		return View::make('parameters.index', compact('parameters'));
-	}
+	// 	return View::make('parameters.index', compact('parameters'));
+	// }
 
 	/**
 	 * Show the form for creating a new parameter
 	 *
 	 * @return Response
 	 */
-	public function create()
-	{
-		return View::make('parameters.create');
-	}
+	// public function create()
+	// {
+	// 	return View::make('parameters.create');
+	// }
 
 	/**
 	 * Store a newly created parameter in storage.
 	 *
 	 * @return Response
 	 */
-	public function store()
-	{
-		$validator = Validator::make($data = Input::all(), parameter::$rules);
+	// public function store()
+	// {
+	// 	$validator = Validator::make($data = Input::all(), parameter::$rules);
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+	// 	if ($validator->fails())
+	// 	{
+	// 		return Redirect::back()->withErrors($validator)->withInput();
+	// 	}
 
-		Parameter::create($data);
+	// 	Parameter::create($data);
 
-		return Redirect::route('parameters.index');
-	}
+	// 	return Redirect::route('parameters.index');
+	// }
 
 	/**
 	 * Display the specified parameter.
@@ -49,12 +58,12 @@ class ParametersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		$parameter = Parameter::findOrFail($id);
+	// public function show($id)
+	// {
+	// 	$parameter = Parameter::findOrFail($id);
 
-		return View::make('parameters.show', compact('parameter'));
-	}
+	// 	return View::make('parameters.show', compact('parameter'));
+	// }
 
 	/**
 	 * Show the form for editing the specified parameter.
@@ -62,12 +71,12 @@ class ParametersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
-	{
-		$parameter = Parameter::find($id);
+	// public function edit($id)
+	// {
+	// 	$parameter = Parameter::find($id);
 
-		return View::make('parameters.edit', compact('parameter'));
-	}
+	// 	return View::make('parameters.edit', compact('parameter'));
+	// }
 
 	/**
 	 * Update the specified parameter in storage.
@@ -75,21 +84,21 @@ class ParametersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
-	{
-		$parameter = Parameter::findOrFail($id);
+	// public function update($id)
+	// {
+	// 	$parameter = Parameter::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), parameter::$rules);
+	// 	$validator = Validator::make($data = Input::all(), parameter::$rules);
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+	// 	if ($validator->fails())
+	// 	{
+	// 		return Redirect::back()->withErrors($validator)->withInput();
+	// 	}
 
-		$parameter->update($data);
+	// 	$parameter->update($data);
 
-		return Redirect::route('parameters.index');
-	}
+	// 	return Redirect::route('parameters.index');
+	// }
 
 	/**
 	 * Remove the specified parameter from storage.
@@ -97,11 +106,11 @@ class ParametersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		Parameter::destroy($id);
+	// public function destroy($id)
+	// {
+	// 	Parameter::destroy($id);
 
-		return Redirect::route('parameters.index');
-	}
+	// 	return Redirect::route('parameters.index');
+	// }
 
 }

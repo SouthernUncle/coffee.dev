@@ -3,6 +3,16 @@
 class RoastersController extends \BaseController {
 
 	/**
+	 * Set up filters.
+	 *
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth', array('except' => array('index','show')));	
+	}
+
+	/**
 	 * Display a listing of roasters
 	 *
 	 * @return Response
@@ -105,11 +115,11 @@ class RoastersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		Roaster::destroy($id);
+	// public function destroy($id)
+	// {
+	// 	Roaster::destroy($id);
 
-		return Redirect::route('roasters.index');
-	}
+	// 	return Redirect::route('roasters.index');
+	// }
 
 }

@@ -54,6 +54,25 @@ class InvitationsController extends BaseController {
 	}
 
 	/**
+	 * Store a newly created invitation in storage.
+	 *
+	 * @return Response
+	 */
+	// public function store()
+	// {
+	// 	$validator = Validator::make($data = Input::all(), invitation::$rules);
+
+	// 	if ($validator->fails())
+	// 	{
+	// 		return Redirect::back()->withErrors($validator)->withInput();
+	// 	}
+
+	// 	Invitation::create($data);
+
+	// 	return Redirect::route('invitations.index');
+	// }
+
+	/**
 	 * Display a listing of invitations
 	 *
 	 * @return Response
@@ -65,25 +84,6 @@ class InvitationsController extends BaseController {
 
 	// 	return View::make('invitations.index', compact('invitations'));
 	// }
-
-	/**
-	 * Store a newly created invitation in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		$validator = Validator::make($data = Input::all(), invitation::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		Invitation::create($data);
-
-		return Redirect::route('invitations.index');
-	}
 
 	/**
 	 * Display the specified invitation.

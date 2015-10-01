@@ -3,6 +3,16 @@
 class UsersController extends \BaseController {
 
 	/**
+	 * Set up filters.
+	 *
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth', array('except' => array('show')));	
+	}
+
+	/**
 	 * Display a listing of users
 	 *
 	 * @return Response
@@ -22,15 +32,15 @@ class UsersController extends \BaseController {
 	 */
 	public function create($confirmation)
 	{
-		$query = Invitation::where('confirmation', $confirmation)->get();
+		$query = Invitation::where('confirmation', $confirmation)->first();
 
-		if(empty($query[0])) {
+		if(empty($query)) {
 			// Log something here
 			Session::flash('errorMessage', 'Invalid invitation code.');
 			return Redirect::action('HomeController@showHome');
 		}
 
-		$invite = Invitation::findOrFail($query[0]->id);
+		$invite = Invitation::findOrFail($query->id);
 		$invite->confirmation 	= null;
 		$invite->save();
 

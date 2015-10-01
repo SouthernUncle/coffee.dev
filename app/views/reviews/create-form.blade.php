@@ -88,5 +88,28 @@
 		</select>
     </div>
 
+    <div class="well col-xs-12 col-s-6 full">
+	    <span class="slider-title fancy clear-both">Brew Parameters (optional)</span>
+	    <div class="col-xs-6 col-s-6">
+	    	<input type="text" name="grind" placeholder="Grind (ex: Medium, Burr)" class="form-control small">
+	    	<input type="number" name="brew_time" min="0"class="form-control small" placeholder="Brew Time in seconds (ex: 240 = 4 min.)"/>
+	    	<input type="number" name="water_temp" min="0.00" step="0.10" data-number-to-fixed="3" data-number-stepfactor="100" class="form-control small" placeholder="Water Temp in &deg;F"/>
+    	</div>
+    	<div class="col-xs-6 col-s-6">
+	    	<input type="number" name="water_weight" min="0.00" step="0.10" data-number-to-fixed="3" data-number-stepfactor="100" class="form-control small" placeholder="Water Weight in grams"/>
+	    	<input type="number" name="coffee_weight" min="0.00" step="0.10" data-number-to-fixed="3" data-number-stepfactor="100" class="form-control small" placeholder="Coffee Weight in grams"/>
+	    	<input type="text" name="brewer" placeholder="Brewer (ex: Chemex -or- V60)" class="form-control small">
+    	</div>
+    	<div class="col-xs-12">
+	    	<textarea class="form-control full" placeholder="Enter your brewing methods here (ie: bloom time, other equipment used) and any other factors or tidbits you wish to share!"></textarea>
+    	</div>
+    </div>
+    <div class="well col-xs-12 full">
+    	<div class="col-xs-12">
+    		<span class="slider-title fancy clear-both">Roast Date (optional)</span>
+    		<input type="date" name="roast_date" class="form-control small">
+    	</div>
+	</div>
+
     <button class="btn btn-default fancy">Save</button>
 </div>

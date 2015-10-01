@@ -100,4 +100,12 @@ class Coffee extends Eloquent {
 		return $score;
 	}
 
+	public static function convertDate($string)
+	{
+		$date = date_create($string);
+		$date = date_format($date, 'n-j-Y');
+
+		return $date;
+	}
+
 }

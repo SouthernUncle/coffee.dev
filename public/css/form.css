@@ -19,6 +19,10 @@
 		max-width: 100%;
 	}
 
+	.head .well {
+		max-width: 100%;
+	}
+
 	.well.titles {
 		margin-right: 25%;
 		margin-left: 25%;
@@ -31,6 +35,10 @@
 	}
 
 	.full {
+		max-width: 100%;
+	}
+
+	.head .well {
 		max-width: 100%;
 	}
 
@@ -130,13 +138,24 @@ select.flavors {
 
 select.tier-two {
 	float: right;
+	margin-bottom:2px;
 }
 
 select.tier-one {
 	float: left;
+	margin-bottom:2px;
 }
 
 .clear-both {
 	display: block;
 	margin-bottom: 10px;
+}
+
+input.small {
+	max-width: 100%;
+	margin-bottom:2px;
+}
+
+textarea.full {
+	max-width: 100%
 }
