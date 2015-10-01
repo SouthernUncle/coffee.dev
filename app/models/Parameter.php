@@ -23,4 +23,10 @@ class Parameter extends Eloquent {
 	{
 		return $ratio = round($this->water_weight / $this->coffee_weight, 1);
 	}
+
+	/**
+	 * Rules
+	 *
+	 */
+	public static $rules = array();
 }

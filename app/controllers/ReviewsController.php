@@ -96,13 +96,13 @@ class ReviewsController extends \BaseController {
 			}
 
 			$param->review_id		= $review->id;
-			$param->grind 			= Input::get('grind');
-			$param->water_weight	= Input::get('water_weight');
-			$param->coffee_weight	= Input::get('coffee_weight');
-			$param->brew_time		= Input::get('brew_time');
-			$param->water_temp		= Input::get('water_temp');
-			$param->brewer			= Input::get('brewer');
-			$param->method 			= Input::get('method');
+			$param->grind 			= (Input::has('grind') ? Input::get('grind') : null);
+			$param->water_weight	= (Input::has('water_weight') ? Input::get('water_weight') : null);
+			$param->coffee_weight	= (Input::has('coffee_weight') ? Input::get('coffee_weight') : null);
+			$param->brew_time		= (Input::has('brew_time') ? Input::get('brew_time') : null);
+			$param->water_temp		= (Input::has('water_temp') ? Input::get('water_temp') : null);
+			$param->brewer			= (Input::has('brewer') ? Input::get('brewer') : null);
+			$param->method 			= (Input::has('method') ? Input::get('method') : null);
 			$param->save();
 		}
 
@@ -186,6 +186,25 @@ class ReviewsController extends \BaseController {
 		if(!empty($flavors)) {
 			$this->addFlavorToReview($flavors, $review->id);
 		}	
+
+		$param = new Parameter();
+
+		if(Input::has('roast_date')) {
+				$input 		= Input::get('roast_date');
+				$date  		= date_create($input);
+				$roast_date = date_format($date, 'Y-m-d');
+				$param->roast_date		= $roast_date;
+			}
+
+			$param->review_id		= $review->id;
+			$param->grind 			= (Input::has('grind') ? Input::get('grind') : null);
+			$param->water_weight	= (Input::has('water_weight') ? Input::get('water_weight') : null);
+			$param->coffee_weight	= (Input::has('coffee_weight') ? Input::get('coffee_weight') : null);
+			$param->brew_time		= (Input::has('brew_time') ? Input::get('brew_time') : null);
+			$param->water_temp		= (Input::has('water_temp') ? Input::get('water_temp') : null);
+			$param->brewer			= (Input::has('brewer') ? Input::get('brewer') : null);
+			$param->method 			= (Input::has('method') ? Input::get('method') : null);
+			$param->save();
 
 		return Redirect::action('CoffeesController@show', $review->coffee_id);
 	}

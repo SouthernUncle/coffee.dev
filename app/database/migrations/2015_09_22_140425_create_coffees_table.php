@@ -35,8 +35,6 @@ class CreateCoffeesTable extends Migration {
 
 			$table->text('roasters_description');
 
-			$table->boolean('active');
-
 			$table->timestamps();
 		});
 	}

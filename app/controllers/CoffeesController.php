@@ -35,7 +35,9 @@ class CoffeesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('coffees.create');
+		$roasters = Roaster::orderBy('state')->orderBy('name')->get();
+		$regions = Region::orderBy('name')->get();
+		return View::make('coffees.create', compact('roasters', 'regions'));
 	}
 
 	/**
