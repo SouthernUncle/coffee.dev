@@ -27,6 +27,9 @@
 				@endforeach
 				</tbody>
 		    </table>
+			<div>
+				{{ $coffees->links() }}
+			</div>
 		</div>
 	</section>
 @stop

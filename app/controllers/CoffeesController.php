@@ -9,7 +9,11 @@ class CoffeesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$coffees = Coffee::all();
+		$coffees = Coffee::paginate(5);
+
+		foreach($coffees as $c) {
+			$new = Image::make(public_path() . $c->img_url)->fit(500)->save(public_path() . '/img/fit500' . $c->img_url);
+		}
 
 		return View::make('coffees.index', compact('coffees'));
 	}
@@ -53,7 +57,9 @@ class CoffeesController extends \BaseController {
 	{
 		$coffee = Coffee::with('reviews')->findOrFail($id);
 
-		return View::make('coffees.show', compact('coffee'));
+		$reviews = $coffee->reviews()->paginate(4);
+
+		return View::make('coffees.show', compact('coffee', 'reviews'));
 	}
 
 	/**
