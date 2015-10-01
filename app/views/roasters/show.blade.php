@@ -28,12 +28,20 @@
         <h1>{{ $roaster->name }}</h1>
         <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
         <p>{{ $roaster->description }}</p>
-        <img src="/img/{{ $roaster->img_url }}">
-        @foreach ($roaster->coffees as $c)
-            <h3>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</h3>
-            <h5>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</h5>
-
+        <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive">
+        <table class="table table-responsive">
+            <th>Coffee</th>
+            <th>Overall Rating</th>
+            <th>Number of Reviews</th>
+        @foreach ($coffees as $c)
+        <tr>
+            <td>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
+            <td>{{ $c->overallCoffeeRating() }}</td>
+            <td>{{ $c->reviews->count() }}</td>
+        </tr>
         @endforeach
+        </table>
+        <div>{{ $coffees->links() }}</div>
     </div>
 </section>
 @stop

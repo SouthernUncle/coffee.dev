@@ -67,7 +67,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="/img/{{ $c->img_url }}" class="img-responsive" alt="">
+                        <img src="/img/fit500{{ $c->img_url }}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>{{ $c->name }}</h4>

@@ -67,6 +67,9 @@ class Review extends Eloquent {
 		$overall = $this->coffee->overallCoffeeRating();
 		$ws = $this->weightedScore();
 		$rDev = round((($ws / $overall) - 1) * 100, 2);
+		if($rDev > 0) {
+			$rDev = '+' . $rDev;
+		}
 		return $rDev;
 	}
 

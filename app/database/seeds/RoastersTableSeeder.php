@@ -11,7 +11,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->address       = '257 Wayne Ave.';
                 $roaster->city          = 'Dayton';
                 $roaster->state         = 'OH';
-                $roaster->img_url       = 'woodburl.jpg';
+                $roaster->img_url       = '/img/woodburl.jpg';
                 $roaster->url           = 'http://www.woodburlcoffee.com/';
                 $roaster->description   = 'All coffees are seasonal and will change frequently. We strongly suggest serving/selling coffee within 2 weeks of the roast date, which is printed on the bags. Our coffee is roasted with care in small batches in Dayton, Ohio.';
                 $roaster->twitter       = 'https://twitter.com/search?q=press%20coffee%20dayton&src=typd';
@@ -25,7 +25,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->address       = '1740 Broadway';
                 $roaster->city          = 'Denver';
                 $roaster->state         = 'CO';
-                $roaster->img_url       = 'corvus.jpg';
+                $roaster->img_url       = '/img/corvus.jpg';
                 $roaster->url           = 'http://www.corvuscoffee.com/';
                 $roaster->description   = 'Corvus Coffee Co is a Specialty Coffee Roaster in Denver, Colorado. We pride ourselves in working with Single estate and Privately owned farms. We believe farmers can provide themselves with better livelihoods through better coffee, instead of fair trade, organic, or other for-profit certifications to make us feel good in the states. 
                         We firmly believe that the best way to impact farmers is to encourage them to sustainably produce higher-quality coffee. We work closely with a Q-Grader to ensure that farms understand how to improve processing and sorting to be able to sell us a higher quality, higher priced product. We have brokers on the ground in every area we work with and have full visibility to the farm through these very dedicated people. At the moment we are proud to have direct trade connections with about 85% of all the coffees we bring in to our Roast works for wholesale and retail. This includes coffees from Colombia, Brazil, Peru, Nicaragua, El Salvador, Costa Rica, Panama, Ethiopia, Kenya, Guatemala, and others. We specialize in very sweet, highly vibrant, and exceptionally clean coffees with a variety of flavors in the final cup.
@@ -42,7 +42,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->address       = '2418 N Gregg Ave';
                 $roaster->city          = 'Fayetteville';
                 $roaster->state         = 'AR';
-                $roaster->img_url       = 'onyx.jpg';
+                $roaster->img_url       = '/img/onyx.jpg';
                 $roaster->url           = 'http://www.onyxcoffeelab.com/';
                 $roaster->description   = 'At Onyx we love coffee. Coffee roasting. Coffee brewing. Coffee talking. We don\'t want you to taste the roast; we want you to taste the bean. Every single coffee farm yields beans that have specific, innate taste notes that can only be exhibited when roasted correctly, and that\'s what we\'re after. It\'s the perfect combination of science + art that fuses ethical trading standards and quality bean sourcing, resulting in a precise cup.';
                 $roaster->twitter       = 'https://twitter.com/OnyxCoffeeLab';
@@ -56,7 +56,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->address       = '4911 S Alston Ave';
                 $roaster->city          = 'Durham';
                 $roaster->state         = 'NC';
-                $roaster->img_url       = 'ccc.jpg';
+                $roaster->img_url       = '/img/ccc.jpg';
                 $roaster->url           = 'https://counterculturecoffee.com/';
                 $roaster->description   = 'At Counter Culture Coffee, we approach our work with a relentless pursuit of coffee perfection, a dedication to real sustainability, and a commitment to cutting-edge coffee education throughout the coffee chain.
                         Since our founding in 1995, Counter Culture Coffee has represented a different way of bringing coffee to market: sourcing incredible handmade coffees directly from farmers and cooperatives, and roasting so that we bring out their unique flavors.
@@ -73,7 +73,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->address       = '2021 W Fulton St.';
                 $roaster->city          = 'Chicago';
                 $roaster->state         = 'IL';
-                $roaster->img_url       = 'metric.jpg';
+                $roaster->img_url       = '/img/metric.jpg';
                 $roaster->url           = 'http://metriccoffee.com/';
                 $roaster->description   = 'Metric Coffee is a Chicago, IL based Coffee Roaster that aims to provide Quality Coffee to the community it serves. As a company, we take pride in the selection of the coffees we chose, pay close attention to how we roast them and most importantly, provide our partners with the necessary tools to grind and brew the best coffee possible.
                         We chose the name Metric because we like that the technical definition is "a system or standard or measurement" which in is something that is used in every aspect of life. We utilize Metrics in everyday life in order to perform certain tasks and in the world of coffee, it is no exception. Our other inspiration was with our machine having Metric sized nuts and bolts, so it seemed fitting to name our coffee company with concept of Metric in mind.

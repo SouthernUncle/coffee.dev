@@ -28,6 +28,10 @@ Route::resource('/roles', 'RolesController');
 Route::get('/', 'HomeController@showHome');
 Route::post('/', 'HomeController@contactUs');
 
+Route::get('/img/{path}', function(League\Glide\Server $server, $path){
+    dd($server);
+});
+
 Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@doLogin');
 Route::get('/logout', 'HomeController@doLogout');
