@@ -25,7 +25,7 @@
                 {{ $coffee->roasters_description }}
             </p>
 
-            <img src="/img/{{ $coffee->img_url }}">
+            <img src="{{ $coffee->img_url }}">
             <br>
 
             <h2>Reviews:</h2>
