@@ -26,8 +26,10 @@ Route::resource('/reviews', 'ReviewsController');
 Route::resource('/roles', 'RolesController');
 
 Route::get('/', 'HomeController@showHome');
+Route::post('/', 'HomeController@contactUs');
+
 Route::get('/login', 'HomeController@showLogin');
-Route::post('login', 'HomeController@doLogin');
+Route::post('/login', 'HomeController@doLogin');
 Route::get('/logout', 'HomeController@doLogout');
 
 Route::get('roasters/coffees/{id}', 'ReviewsController@getCoffees');
