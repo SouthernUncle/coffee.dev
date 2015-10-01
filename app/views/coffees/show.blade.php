@@ -68,7 +68,7 @@
                             </p>
                             <p>
                                 @if ($p->brewer)
-                                    Brewer: {{ $p->brewer }} |
+                                    Brewer: {{ $p->brewer }}
                                 @endif
                                 @if ($p->method)
                                     Method: {{ $p->method }}
@@ -76,7 +76,7 @@
                             </p>
                             <p>
                                 @if ($p->roast_date)
-                                    Roast Date: {{ $p->roast_date }}
+                                    Roast Date: {{ Coffee::convertDate($p->roast_date) }}
                                 @endif
                             </p>
                         </div>

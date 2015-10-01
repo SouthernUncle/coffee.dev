@@ -77,6 +77,35 @@ class ReviewsController extends \BaseController {
 		
 		$this->addFlavorToReview($flavors, $review->id);
 
+		if(Input::has('grind') || 
+			Input::has('water_weight') || 
+			Input::has('coffee_weight') || 
+			Input::has('brew_time') || 
+			Input::has('water_temp') || 
+			Input::has('brewer') || 
+			Input::has('roast_date') ||
+			Input::has('method')) {
+			
+			$param = new Parameter();
+
+			if(Input::has('roast_date')) {
+				$input 		= Input::get('roast_date');
+				$date  		= date_create($input);
+				$roast_date = date_format($date, 'Y-m-d');
+				$param->roast_date		= $roast_date;
+			}
+
+			$param->review_id		= $review->id;
+			$param->grind 			= Input::get('grind');
+			$param->water_weight	= Input::get('water_weight');
+			$param->coffee_weight	= Input::get('coffee_weight');
+			$param->brew_time		= Input::get('brew_time');
+			$param->water_temp		= Input::get('water_temp');
+			$param->brewer			= Input::get('brewer');
+			$param->method 			= Input::get('method');
+			$param->save();
+		}
+
 		return Redirect::action('CoffeesController@show', $review->coffee_id);
 	}
 
@@ -145,13 +174,18 @@ class ReviewsController extends \BaseController {
 
 		$review->save();
 
-		$flavor1 = Input::get('flavor1');
-		$flavor2 = Input::get('flavor2');
-		$flavor3 = Input::get('flavor3');
-		
-		$flavors = array($flavor1, $flavor2, $flavor3);
-		
-		$this->addFlavorToReview($flavors, $review->id);
+		$flavors = [];
+
+		for($i = 0; $i <= 2; $i++) {
+			if (Input::has('flavor' . $i)) {
+				$flavor = Input::get('flavor' . $i);
+				array_push($flavors, $flavor);
+			}
+		}
+
+		if(!empty($flavors)) {
+			$this->addFlavorToReview($flavors, $review->id);
+		}	
 
 		return Redirect::action('CoffeesController@show', $review->coffee_id);
 	}

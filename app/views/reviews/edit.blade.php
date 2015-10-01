@@ -12,11 +12,13 @@
 	<section>
 		<div class="container">
 			<div class ="well titles">
+				<!-- HEADER -->
 				<h1 class="yellow">{{ $review->coffee->name }}</h1>
 				<span class="fancy yellow small"> - by - </span>
 				<h2 class="fancy yellow">{{ $review->coffee->roaster->name }}</h2>
 			</div>
 		{{ Form::model($review, array('action' =>array('ReviewsController@update', $review->id), 'method' =>'PUT')) }}
+			<!-- REVIEW SLIDERS -->
 			<div class="well full col-xs-12">
 				<span class="slider-title fancy">Flavor</span>
 				<input id="flavor" name="flavor" data-slider-id='flavor' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->flavor }}}"/>
@@ -45,6 +47,8 @@
 				<span class="slider-title fancy">Acidity</span>
 				<input id="acidity" name="acidity" data-slider-id='aroma' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->acidity }}}"/>
 			</div>
+
+			<!-- PURCHASE INFO -->
 			<div class="well col-xs-12 col-s-6">
         		<span class="slider-title fancy">Price per Bag</span>
    				<div class="input-group"> 
@@ -59,53 +63,77 @@
 	        		<span class="input-group-addon" id="basic-addon2">oz.</span>
         		</div>
 	        </div>
+
+	        <!-- REVIEW TEXT -->
 	        <div class="well col-xs-12 col-s-6 full">
 	        	<span class="slider-title fancy">Review</span>
 	        	<textarea class="input-group form-control clear" name="review" cols="50" rows="10">{{ $review->review }}</textarea>
 	        </div>
 
+	        <!-- FLAVOR NOTES -->
 	        <div class="well col-xs-12 col-s-6 full">
 		        <span class="slider-title fancy clear-both">Choose 3 Notes</span>
+	        	<?php $i = 0; ?>
+		       	@if(isset($review->reviewFlavors[0]))
+			        @foreach($review->reviewFlavors as $index => $flavor)
+			        	<?php $i++; ?>
+				        <select class="form-control flavors tier-one" id="category{{{ $index }}}">
+							<option>Categories:</option>
+							@foreach ($categories as $cat)
+								<option value="{{{ $cat->id }}}" @if($cat->id == $flavor->category_id) selected @endif>
+									{{{ (ucfirst($cat->name)) }}}
+								</option>
+							@endforeach
+						</select>
 
-		        <select class="form-control flavors tier-one" id="category1">
-					<option>Categories:</option>
-					@foreach ($categories as $cat)
-						<option value="{{{ $cat->id }}}">
-							{{{ (ucfirst($cat->name)) }}}
-						</option>
-					@endforeach
-				</select>
+						<select class="form-control flavors tier-two" id="flavor{{{ $index }}}" name="flavor{{{ $index }}}" data-flavorid="{{ $flavor->id }}">
+							<option>Please select a Category first...</option>
+						</select>
+			        @endforeach
+		        @endif
 
-				<select class="form-control flavors tier-two" id="flavor1" name="flavor1">
-					<option>Please select a Category first...</option>
-				</select>
-				
-				<select class="form-control flavors tier-one" id="category2">
-					<option>Categories:</option>
-					@foreach ($categories as $cat)
-						<option value="{{{ $cat->id }}}">
-							{{{ (ucfirst($cat->name)) }}}
-						</option>
-					@endforeach
-				</select>
+	        	@while($i <= 2)
+        			<select class="form-control flavors tier-one" id="category{{{ $i }}}">
+        				<option>Categories:</option>
+        				@foreach ($categories as $cat)
+							<option value="{{{ $cat->id }}}">
+								{{{ (ucfirst($cat->name)) }}}
+							</option>
+						@endforeach	
+        			</select>
 
-				<select class="form-control flavors tier-two" id="flavor2" name="flavor2">
-					<option>Please select a Category first...</option>
-				</select>
+        			<select class="form-control flavors tier-two" id="flavor{{{ $i }}}" name="flavor{{{ $i }}}">
+						<option>Please select a flavor:</option>
+					</select>
+	        		<?php $i++; ?>
 
-				<select class="form-control flavors tier-one" id="category3">
-					<option>Categories:</option>
-					@foreach ($categories as $cat)
-						<option value="{{{ $cat->id }}}">
-							{{{ (ucfirst($cat->name)) }}}
-						</option>
-					@endforeach
-				</select>
+	        	@endwhile
+		        
 
-				<select class="form-control flavors tier-two" id="flavor3" name="flavor3">
-					<option>Please select a Category first...</option>
-				</select>
 	        </div>
+
+	        <div class="well col-xs-12 col-s-6 full">
+		    <span class="slider-title fancy clear-both">Brew Parameters (optional)</span>
+		    <div class="col-xs-6 col-s-6">
+		    	<input type="text" name="grind" placeholder="Grind (ex: Medium, Burr)" class="form-control small" value="{{{ $review->parameter->grind }}}">
+		    	<input type="number" name="brew_time" min="0"class="form-control small" placeholder="Brew Time in seconds (ex: 240 = 4 min.)" value="{{{ $review->parameter->brew_time }}}"/>
+		    	<input type="number" name="water_temp" min="0.00" step="0.10" data-number-to-fixed="3" data-number-stepfactor="100" class="form-control small" placeholder="Water Temp in &deg;F" value="{{{ $review->parameter->water_temp }}}"/>
+	    	</div>
+	    	<div class="col-xs-6 col-s-6">
+		    	<input type="number" name="water_weight" min="0.00" step="0.10" data-number-to-fixed="3" data-number-stepfactor="100" class="form-control small" placeholder="Water Weight in grams" value="{{{ $review->parameter->water_weight }}}"/>
+		    	<input type="number" name="coffee_weight" min="0.00" step="0.10" data-number-to-fixed="3" data-number-stepfactor="100" class="form-control small" placeholder="Coffee Weight in grams" value="{{{ $review->parameter->coffee_weight }}}"/>
+		    	<input type="text" name="brewer" placeholder="Brewer (ex: Chemex -or- V60)" class="form-control small" value="{{{ $review->parameter->brewer }}}"/>
+	    	</div>
+	    	<div class="col-xs-12">
+		    	<textarea class="form-control full">{{ $review->parameter->method }}</textarea>
+	    	</div>
+	    </div>
+	    <div class="well col-xs-12 full">
+	    	<div class="col-xs-12">
+	    		<span class="slider-title fancy clear-both">Roast Date (optional)</span>
+	    		<input type="date" name="roast_date" class="form-control small" value="{{{ $review->parameter->roast_date }}}">
+	    	</div>
+		</div>
 
         <button class="btn btn-default fancy">Save</button>
 
@@ -116,23 +144,40 @@
 
 @section('js')
 	<script>
-	$(document).ready(function() {
+	// $(document).ready(function() {
 	"use strict";
 		var route = "/categories/flavors/";
 
-		var master = $("#category1");
-		var dependent = $("#flavor1");
+		var master = $("#category0");
+		var dependent = $("#flavor0");
+		getDropdown(master, dependent);
+
+		master = $("#category1");
+		dependent = $("#flavor1");
 		getDropdown(master, dependent);
 
 		master = $("#category2");
 		dependent = $("#flavor2");
 		getDropdown(master, dependent);
 
-		master = $("#category3");
-		dependent = $("#flavor3");
-		getDropdown(master, dependent);
-
 		function getDropdown(master, dependent) {
+			$.get(route + master.val()).done(function(data) {
+					var $options = dependent;
+					var flavor_id = dependent.data('flavorid');
+					$options.empty();
+					console.log(data);
+					$.each(data, function(index, value) {
+						var optionString = '<option value="' + index +'" ';
+							if(index == flavor_id) {
+								optionString += ' selected';
+							}
+						optionString += '>' + value + '</option>';
+						
+						$options.append(optionString);
+					});
+					dependent.trigger("change"); 
+				});
+
 			master.change(function() {
 				$.get(route + master.val()).done(function(data) {
 					var $options = dependent;
@@ -188,7 +233,7 @@
 				return 'Acidity: ' + value;
 			}
 		});
-	});
+	// });
 
   </script>
 @stop
