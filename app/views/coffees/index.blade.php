@@ -38,3 +38,13 @@
 		</div>
 	</div>
 @stop
+
+@section('js')
+	<script>
+		$(document).ready(function() {
+			"use strict";
+
+			$("#coffee").style.class = "active";
+		});
+	</script>
+@stop
