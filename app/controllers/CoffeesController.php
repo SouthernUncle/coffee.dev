@@ -73,14 +73,14 @@ class CoffeesController extends \BaseController {
 		$coffee->active 				= 1;
 
 		if (Request::hasFile('file')) {
-			    $img = Imageupload::upload(Request::file('file'));
-			    // dd($img);
-				$coffee->img_url = '/' . $img['original_filedir'];
-			}
-			// dd($coffee);
+		    $img = Imageupload::upload(Request::file('file'));
+		    
+			$coffee->img_url = '/' . $img['original_filedir'];
+		}
+		
 		$coffee->save();
 
-		return Redirect::action('ReviewsController@createFromCoffee', $coffee->roaster_id, $coffee->id);
+		return Redirect::action('ReviewsController@createFromCoffee', $coffee->id);
 	}
 
 	/**

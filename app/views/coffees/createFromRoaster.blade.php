@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'My {{{ $roaster->name }}} Coffee')
+@section('title')
+	My {{{ $roaster->name }}}
+@stop
 
 @section('style')
 	<link rel="stylesheet" type="text/css" href="/css/form.css">

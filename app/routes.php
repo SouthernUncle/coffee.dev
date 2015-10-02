@@ -35,10 +35,6 @@ Route::resource('/roasters', 'RoastersController');
 Route::resource('/users', 'UsersController');
 Route::get('/createnewuser/{confirmation}', 'UsersController@create');
 
-
-
-
-
 Route::get('/img/{path}', function(League\Glide\Server $server, $path){
     dd($server);
 });

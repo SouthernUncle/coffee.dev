@@ -47,12 +47,31 @@ class RoastersController extends \BaseController {
 
 		if ($validator->fails())
 		{
+			Session::flash('errorMessage', 'Please complete the form before proceeding.');
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Roaster::create($data);
+		$roaster = new Roaster();
+		$roaster->user_id		= Auth::id();
+		$roaster->name			= Input::get('name');
+		$roaster->address		= Input::get('address') ;
+		$roaster->city			= Input::get('city');
+		$roaster->state			= Input::get('state');
+		$roaster->url			= 'http://' . Input::get('url');
+		$roaster->facebook		= 'http://www.facebook.com/' . Input::get('facebook');
+		$roaster->twitter		= 'http://twitter.com/' . Input::get('twitter');
+		$roaster->instagram		= 'http://instagram.com/' . Input::get('instagram');
+		$roaster->description 	= Input::get('description');
 
-		return Redirect::route('roasters.index');
+		if (Request::hasFile('file')) {
+		    $img = Imageupload::upload(Request::file('file'));
+
+			$roaster->img_url = '/' . $img['original_filedir'];
+		}
+
+		$roaster->save();
+
+		return Redirect::action('CoffeesController@createFromRoaster', $roaster->id);
 	}
 
 	/**
