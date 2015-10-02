@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'My New Coffee')
+@section('title', 'My {{{ $roaster->name }}} Coffee')
 
 @section('style')
 	<link rel="stylesheet" type="text/css" href="/css/form.css">
@@ -28,12 +28,8 @@
 				<div class="col-xs-12 col-md-6">
 				<h4 class="brown fancy">Select Roaster</h4>
 					<select class="brown form-control" name="roaster" id="roaster">
-							<option>Roaster:</option>
-						@foreach ($roasters as $r)
-							<option value="{{{ $r->id }}}">
-								{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
-							</option>
-						@endforeach
+							<option value="{{{ $roaster->id }}}"> {{{ $roaster->name }}}</option>
+
 					</select>
 				</div>	
 			</div>

@@ -38,6 +38,15 @@ class ReviewsController extends \BaseController {
 		return View::make('reviews.create', compact('roasters', 'coffees', 'categories'));
 	}
 
+	public function createFromCoffee($id)
+	{
+		$coffee  = Coffee::findOrFail($id);
+		$roaster = Roaster::where('id', $coffee->roaster_id)->get();
+		$categories = FlavorCategory::orderBy('name')->get();
+
+		return View::make('reviews.createFromCoffee', compact('coffee', 'roaster', 'categories'));
+	}
+
 	/**
 	 * Store a newly created review in storage.
 	 *

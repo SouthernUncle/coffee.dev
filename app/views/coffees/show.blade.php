@@ -12,7 +12,7 @@
             </h1>
 
             <h4>
-                <a href="{{ $coffee->roaster->url }}">{{ $coffee->roaster->name }}</a>
+                <a href="{{ action('RoastersController@show', $coffee->roaster->id) }}">{{ $coffee->roaster->name }}</a>
             </h4>
             <h4>
                 {{ $coffee->overallCoffeeRating() }} / 10
@@ -84,6 +84,11 @@
                     </div>
                 </div>
             @endforeach
+            @if(Auth::id() == 1)
+                <a href="{{{ action('CoffeesController@destroy', $coffee->id) }}}">
+                    <button class="btn btn-info">Delete</button>
+                </a>
+            @endif
             <div>{{ $reviews->links() }}</div>
         </div>
     </section>

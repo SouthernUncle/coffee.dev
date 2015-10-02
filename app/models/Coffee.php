@@ -108,4 +108,11 @@ class Coffee extends Eloquent {
 		return $date;
 	}
 
+	public static $rules = array(
+		'region' 		=> 'required',
+		'roaster' 		=> 'required',
+		'name' 			=> 'required',
+		'description' 	=> 'required',
+	);
+
 }

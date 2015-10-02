@@ -35,9 +35,16 @@ class CoffeesController extends \BaseController {
 	 */
 	public function create()
 	{
-		$roasters = Roaster::orderBy('state')->orderBy('name')->get();
+		$roasters = Roaster::orderBy('name')->get();
 		$regions = Region::orderBy('name')->get();
 		return View::make('coffees.create', compact('roasters', 'regions'));
+	}
+
+	public function createFromRoaster($id)
+	{
+		$roaster = Roaster::findOrFail($id);
+		$regions = Region::orderBy('name')->get();
+		return View::make('coffees.createFromRoaster', compact('roaster', 'regions'));	
 	}
 
 	/**
@@ -47,16 +54,33 @@ class CoffeesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), coffee::$rules);
+		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), coffee::$rules);
 
 		if ($validator->fails())
 		{
+			Session::flash('errorMessage', 'Please fix errors and re-submit:');
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Coffee::create($data);
+		$coffee = new Coffee();
+		$coffee->user_id				= Auth::id();
+		$coffee->region_id				= Input::get('region');
+		$coffee->roaster_id				= Input::get('roaster');
+		$coffee->name 					= Input::get('name');
+		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
+		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
+		$coffee->roasters_description 	= Input::get('description');
+		$coffee->active 				= 1;
 
-		return Redirect::route('coffees.index');
+		if (Request::hasFile('file')) {
+			    $img = Imageupload::upload(Request::file('file'));
+			    // dd($img);
+				$coffee->img_url = '/' . $img['original_filedir'];
+			}
+			// dd($coffee);
+		$coffee->save();
+
+		return Redirect::action('ReviewsController@createFromCoffee', $coffee->roaster_id, $coffee->id);
 	}
 
 	/**
@@ -106,7 +130,7 @@ class CoffeesController extends \BaseController {
 
 		$coffee->update($data);
 
-		return Redirect::route('coffees.index');
+		return Redirect::route('CoffeesController@index');
 	}
 
 	/**
@@ -115,12 +139,13 @@ class CoffeesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	// public function destroy($id)
-	// {
-	// 	Coffee::destroy($id);
+	public function destroy($id)
+	{
+		$coffee = Coffee::find($id);
+		$coffee->delete();
 
-	// 	return Redirect::route('coffees.index');
-	// }
+		return Redirect::route('CoffeesController@index');
+	}
 
 	
 
