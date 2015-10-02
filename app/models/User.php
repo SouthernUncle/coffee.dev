@@ -32,11 +32,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	);
 
 	public static $editRules = array(
-	    'email' 	   	  => 'required|email|max:255',
-		'username'   	  => 'required|max:32|min:4',
+	    'email' 	   	  => 'email|max:255',
+		'username'   	  => 'max:32|min:4',
 		'password'  	  => 'required',
-		'newPass'		  => 'max:32|min:8',
-		'newPassConfirm'  => 'max:32|min:8'
 	);
 
 	/**
