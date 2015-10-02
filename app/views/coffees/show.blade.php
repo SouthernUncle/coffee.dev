@@ -28,7 +28,7 @@
             {{ $coffee->roasters_description }}
         </p>
 
-        <img src="/img/fit500{{ $coffee->img_url }}">
+        <img src="/img/fit500{{ $coffee->img_url }}" class="img img-responsive">
         <br>
 
         @if(isset($reviews[0]))<h2>Reviews:</h2>@endif
