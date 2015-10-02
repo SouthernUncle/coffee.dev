@@ -36,7 +36,16 @@ class Review extends Eloquent {
 
 
 	//Rules
-	public static $rules = [];
+	public static $rules = array(
+		'review' => 'required',
+		'aroma' => 'required',
+		'flavor' => 'required',
+		'aftertaste' => 'required',
+		'balance' => 'required',
+		'roast' => 'required',
+		'body' => 'required',
+		'acidity' => 'required'
+	);
 
 	// Calculations
 	public static function convertToGrams($number)

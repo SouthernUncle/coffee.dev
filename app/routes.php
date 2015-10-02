@@ -11,30 +11,31 @@
 |
 */
 
-Route::resource('/users', 'UsersController');
 Route::resource('/coffees', 'CoffeesController');
-
-Route::resource('/regions', 'RegionsController');
-Route::resource('/roasters', 'RoastersController');
-Route::resource('/param', 'ParametersController');
-Route::resource('/invite', 'InvitationsController');
-
-Route::post('/createinvite', 'InvitationsController@emailInvite');
-Route::get('/createnewuser/{confirmation}', 'UsersController@create');
-
-Route::resource('/reviews', 'ReviewsController');
-Route::resource('/roles', 'RolesController');
+Route::get('/coffees/createFromRoaster/{id}', 'CoffeesController@createFromRoaster');
 
 Route::get('/', 'HomeController@showHome');
 Route::post('/', 'HomeController@contactUs');
+Route::get('/login', 'HomeController@showLogin');
+Route::post('/login', 'HomeController@doLogin');
+Route::get('/logout', 'HomeController@doLogout');
+
+Route::resource('/invite', 'InvitationsController');
+Route::post('/createinvite', 'InvitationsController@emailInvite');
+
+Route::resource('/regions', 'RegionsController');
+
+Route::resource('/reviews', 'ReviewsController');
+Route::get('/reviews/createFromCoffee/{id}', 'ReviewsController@createFromCoffee');
+Route::get('roasters/coffees/{id}', 'ReviewsController@getCoffees');
+Route::get('categories/flavors/{id}', 'ReviewsController@getFlavors');
+
+Route::resource('/roasters', 'RoastersController');
+
+Route::resource('/users', 'UsersController');
+Route::get('/createnewuser/{confirmation}', 'UsersController@create');
 
 Route::get('/img/{path}', function(League\Glide\Server $server, $path){
     dd($server);
 });
 
-Route::get('/login', 'HomeController@showLogin');
-Route::post('/login', 'HomeController@doLogin');
-Route::get('/logout', 'HomeController@doLogout');
-
-Route::get('roasters/coffees/{id}', 'ReviewsController@getCoffees');
-Route::get('categories/flavors/{id}', 'ReviewsController@getFlavors');

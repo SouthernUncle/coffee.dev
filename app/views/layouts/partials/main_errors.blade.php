@@ -12,5 +12,5 @@
         @endforeach
     @endif
 </div>
-    
+
 @yield('content')

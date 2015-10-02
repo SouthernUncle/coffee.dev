@@ -2,8 +2,6 @@
 
 @section('title', 'Brew Review')
 
-{{-- @include('layouts.partials.home-header') --}}
-
 @section('content')
     <!-- Reviews Section -->
     <section id="services">

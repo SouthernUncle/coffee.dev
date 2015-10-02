@@ -1,0 +1,35 @@
+.coffee-input {
+	min-width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+}
+
+div.upload {
+	margin-top: 20px;
+}
+
+.well.img-upload {
+	color: #fed316;
+	height: 104px;
+}
+
+div	{
+	margin-top: 10px;
+}
+
+.brown.fancy {
+	font-size: 1.1em;
+}
+
+.img-upload {
+	margin-left: 30px;
+}
+
+.upload > input {
+	margin-left: 55px;
+}
+
+textarea {
+	overflow: scroll;
+}

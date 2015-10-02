@@ -35,4 +35,17 @@ class Roaster extends Eloquent {
 		return $mainScore = round(($avg * 5) + 50);
 	}
 
+	public static $rules = array(
+		'name' 			=> 'required',
+		'address' 		=> 'required',
+		'city' 			=> 'required',
+		'state' 		=> 'required',
+		'url' 			=> 'required',
+		'facebook' 		=> 'required',
+		'twitter' 		=> 'required',
+		'instagram'		=> 'required',
+		'description'	=> 'required',
+		// 'img_url' 		=> 'required',
+	);
+
 }

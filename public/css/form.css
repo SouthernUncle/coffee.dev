@@ -93,14 +93,6 @@ textarea.clear {
 	width: 50%;
 	margin-left: 25%;
 	margin-right: 25%;
-	color: #222;
-	border: 1px solid #222;
-}
-
-.btn-default:hover,
-.btn-default:focus {
-	color: #fed316;
-	background-color: #222;
 }
 
 div.titles {
@@ -113,19 +105,6 @@ div.titles h1 {
 
 div.titles h2 {
 	margin-top: 8px;
-}
-
-.btn-info {
-	color: #222;
-	background-color: #fed316;
-	border: 1px solid #fed316;
-}
-
-.btn-info:hover,
-.btn-info:focus {
-	background-color: #fff;
-	color: #fed316;
-	border: 1.5px solid #fed316;
 }
 
 textarea {

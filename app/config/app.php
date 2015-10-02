@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Mitch\Hashids\HashidsServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
+		'Matriphe\Imageupload\ImageuploadServiceProvider',
 	),
 
 	/*
@@ -192,6 +193,7 @@ return array(
 		'Hashids' 		  	=> 'Mitch\Hashids\Hashids',
 		'Image' 		  	=> 'Intervention\Image\Facades\Image',
 		'Carbon'			=> 'Carbon\Carbon',
+		'Imageupload' 		=> 'Matriphe\Imageupload\ImageuploadFacade',
 	),
 
 );

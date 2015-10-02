@@ -81,3 +81,27 @@ h1#regions-header {
 .bg-brown {
 	background-color: #222;
 }
+
+.btn.btn-default {
+	color: #222;
+	border: 1px solid #222;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+	color: #fed316;
+	background-color: #222;
+}
+
+.btn-info {
+	color: #222;
+	background-color: #fed316;
+	border: 1px solid #fed316;
+}
+
+.btn-info:hover,
+.btn-info:focus {
+	background-color: #fff;
+	color: #fed316;
+	border: 1.5px solid #fed316;
+}
