@@ -11,18 +11,6 @@ class ReviewsController extends \BaseController {
 		parent::__construct();
 		$this->beforeFilter('auth', array('except' => array('show')));	
 	}
-	
-	/**
-	 * Display a listing of reviews
-	 *
-	 * @return Response
-	 */
-	// public function index()
-	// {
-	// 	$reviews = Review::all();
-
-	// 	return View::make('reviews.index', compact('reviews'));
-	// }
 
 	/**
 	 * Show the form for creating a new review
@@ -127,19 +115,6 @@ class ReviewsController extends \BaseController {
 	}
 
 	/**
-	 * Display the specified review.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	// public function show($id)
-	// {
-	// 	$review = Review::findOrFail($id);
-
-	// 	return View::make('reviews.show', compact('review'));
-	// }
-
-	/**
 	 * Show the form for editing the specified review.
 	 *
 	 * @param  int  $id
@@ -147,10 +122,19 @@ class ReviewsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$review = Review::find($id);
-		$categories = FlavorCategory::orderBy('name')->get();
+		$u = User::find(Auth::id());
 
-		return View::make('reviews.edit', compact('review', 'categories'));
+		if(($u->id == Auth::id()) || ($u->role_id = 1)) {
+			$review = Review::find($id);
+			$categories = FlavorCategory::orderBy('name')->get();
+
+			return View::make('reviews.edit', compact('review', 'categories'));
+		}  else {
+
+			return Redirect::action('HomeController@showHome');
+		}
+
+		
 	}
 
 	/**
@@ -257,4 +241,29 @@ class ReviewsController extends \BaseController {
 		return Response::json($options);
 	}
 
+	/**
+	 * Display a listing of reviews
+	 *
+	 * @return Response
+	 */
+	// public function index()
+	// {
+	// 	$reviews = Review::all();
+
+	// 	return View::make('reviews.index', compact('reviews'));
+	// }
+
+
+	/**
+	 * Display the specified review.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	// public function show($id)
+	// {
+	// 	$review = Review::findOrFail($id);
+
+	// 	return View::make('reviews.show', compact('review'));
+	// }
 }
