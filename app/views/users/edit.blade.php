@@ -57,13 +57,13 @@
     <br>
     <h3>Using these 3 measures, map out your ideal cup of coffee.</h3>
         {{ Form::label('acid_pref', 'Acidity')}}
-        {{ Form::select('acid_pref', array(range(1,10))) }}
+        {{ Form::selectRange('acid_pref', 1, 10) }}
 
         {{ Form::label('body_pref', 'Body')}}
-        {{ Form::select('body_pref', array(range(1,10))) }}
+        {{ Form::selectRange('body_pref', 1, 10) }}
 
         {{ Form::label('roast_pref', 'Roast')}}
-        {{ Form::select('roast_pref', array(range(1,10))) }}
+        {{ Form::selectRange('roast_pref', 1, 10) }}
     <br>
         <button class="btn btn-default">Submit</button>
 
