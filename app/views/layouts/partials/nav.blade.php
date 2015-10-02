@@ -18,18 +18,18 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li>
-                    <a class="page-scroll" id="coffee" href="{{{ action('CoffeesController@index') }}}">Coffees</a>
+                <li id="coffee">
+                    <a class="page-scroll" href="{{{ action('CoffeesController@index') }}}">Coffees</a>
                 </li>
-                <li>
-                    <a class="page-scroll" id="roaster" href="{{{ action('RoastersController@index') }}}">Roasters</a>
+                <li id="roaster">
+                    <a class="page-scroll" href="{{{ action('RoastersController@index') }}}">Roasters</a>
                 </li>
-                <li>
-                    <a class="page-scroll" id="region" href="{{{ action('RegionsController@index') }}}">Regions</a>
+                <li id="region">
+                    <a class="page-scroll" href="{{{ action('RegionsController@index') }}}">Regions</a>
                 </li>
                 @if(!Auth::check())
-                <li>
-                    <a class="page-scroll" id="user" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
+                <li  id="user">
+                    <a class="page-scroll" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
                 </li>
                 @else
                 <li class="dropdown">
@@ -45,8 +45,8 @@
                             <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
                         </li>
                     </ul>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" id="create" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="dropdown" id="create">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Add
                         <i class="fa fa-plus"></i>
                     </a>
