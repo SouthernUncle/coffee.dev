@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Brew Review</a>
+            <a class="navbar-brand page-scroll" href="#page-top">Bean Rate</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
