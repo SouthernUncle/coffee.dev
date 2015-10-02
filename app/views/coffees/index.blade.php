@@ -2,6 +2,10 @@
 
 @section('title', 'COFFEES')
 
+@section('style')
+	<link rel="stylesheet" type="text/css" href="coffee-index.css">
+@stop
+
 @section('content')
 	<div class="container">
 		{{ Form::open(array('action' => 'CoffeesController@index', 'method' => 'get')) }}
@@ -33,4 +37,14 @@
 			{{ $coffees->links() }}
 		</div>
 	</div>
+@stop
+
+@section('js')
+	<script>
+		$(document).ready(function() {
+			"use strict";
+
+			$("#coffee").style.class = "active";
+		});
+	</script>
 @stop
