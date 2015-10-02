@@ -13,6 +13,9 @@
 @section('content')
 	<section>
 		<div class="container">
+			{{ Form::open(array('action' => 'RoastersController@index', 'method' => 'get')) }}
+                {{ Form::text('search', null, ['class' => 'form-control search', 'placeholder' => 'Search...']) }}
+            {{ Form::close() }}
 		    <table class="table table-responsive table-hover">
 		    	<thead>
 		    		<tr>

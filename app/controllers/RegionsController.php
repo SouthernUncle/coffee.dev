@@ -35,7 +35,17 @@ class RegionsController extends \BaseController {
 	{
 		$region = Region::findOrFail($id);
 
-		return View::make('regions.show', compact('region'));
+		$query = Coffee::where('region_id', $id);
+		// dd($coffees);
+
+		$search = Input::get('search');
+		if($search) {
+			$query->where('name', 'like', "%$search%");
+		}
+
+		$coffees = $query->orderBy('name')->paginate(10);
+		
+		return View::make('regions.show', compact('region', 'coffees'));
 	}
 
 	/**

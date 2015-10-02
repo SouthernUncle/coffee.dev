@@ -19,8 +19,15 @@ class RoastersController extends \BaseController {
 	 */
 	public function index()
 	{
+		$query = Roaster::with('coffees');
 
-		$roasters = Roaster::paginate(3);
+		$search = Input::get('search');
+		if($search) {
+			$query->where('name', 'like', "%$search%");
+		}
+
+		$roasters = $query->orderBy('name')->paginate(10);
+
 
 		return View::make('roasters.index', compact('roasters'));
 
