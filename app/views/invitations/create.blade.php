@@ -34,7 +34,7 @@
             {{ Form::label('email', 'Email') }}
             {{ Form::email('email', null, ['class' => 'form-control']) }}
 
-            <button class="btn btn-default">Save</button>
+            <button class="btn btn-default">Send Invite</button>
 
         {{ Form::close() }}    
     </div>
