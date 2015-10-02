@@ -113,3 +113,20 @@ h1#regions-header {
 .invite-label {
 	margin-top: 5px;
 }
+
+.search {
+	margin-bottom: 10px;
+}
+
+@media(min-width:320px) {
+	.search {
+		max-width: 100%;
+	}
+}
+
+@media(min-width:993px) {
+	.search {
+		float:left;
+		max-width: 25%;
+	}
+}

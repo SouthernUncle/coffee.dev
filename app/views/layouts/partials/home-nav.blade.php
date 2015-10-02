@@ -38,17 +38,24 @@
                     <a class="page-scroll" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
                 </li>
                 @else
-                <li>
-                    <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
-                </li>
-                @endif
-
-                @if(Auth::check())
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	Add
-                    	<i class="fa fa-plus"></i>
-                	</a>
+                        Account
+                        <i class="fa fa-key"></i>
+                    </a>
+                    <ul class="dropdown-menu nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll" href="{{{ action('UsersController@show', Auth::id()) }}}">Profile</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
+                        </li>
+                    </ul>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Add
+                        <i class="fa fa-plus"></i>
+                    </a>
                     <ul class="dropdown-menu nav navbar-nav navbar-right">
                         <li>
                             <a href="{{{ action('ReviewsController@create') }}}">Review</a>
