@@ -42,6 +42,24 @@ class InvitationsController extends BaseController {
 			Session::flash('errorMessage', 'You were missing some info there...');
 			Redirect::back()->withInput();
 	    }
+
+		$userEmails = User::select('email')->get();
+		$invited	= Invitation::select('email')->get();
+
+		foreach($userEmails as $e) {
+			if (Input::get('email') == $e->email) {
+				Session::flash('errorMessage', 'This email is in use or has already been invited.');
+				return Redirect::back()->withInput(); 
+			}
+		}
+
+		foreach($invited as $i) {
+			if (Input::get('email') == $i->email) {
+				Session::flash('errorMessage', 'This email is in use or has already been invited.');
+				return Redirect::back()->withInput(); 
+			}
+
+		}
 		
 		$invite = new Invitation();
 

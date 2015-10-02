@@ -1,26 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-@stop
-
-@section('style')
-<style>
-/* You need to have the style tags in here. */
-</style>
-@stop
-
-@section('heading')
-
-@stop
-
-@section('subheading')
-
-@stop
-
-@section('image_url')
-''
-@stop
+@section('title', 'Invite')
 
 @section('content')
 <section>
