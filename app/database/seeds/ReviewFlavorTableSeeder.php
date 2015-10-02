@@ -46,49 +46,49 @@ class ReviewFlavorTableSeeder extends Seeder {
 		$r->reviewFlavors()->attach($red_currant->id);
 		$r->reviewFlavors()->attach($tamarind->id);
 
-		$r = Review::where('coffee_id', $kiiAA->id)->firstOrFail();
-		$r->reviewFlavors()->attach($grapefruit->id); 
-		$r->reviewFlavors()->attach($strawberry->id);
-		$r->reviewFlavors()->attach($sdtomato->id);
+		// $r = Review::where('coffee_id', $kiiAA->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($grapefruit->id); 
+		// $r->reviewFlavors()->attach($strawberry->id);
+		// $r->reviewFlavors()->attach($sdtomato->id);
 		
-		$r = Review::where('coffee_id', $santaBarb->id)->firstOrFail();
-		$r->reviewFlavors()->attach($darkChoc->id);
-		$r->reviewFlavors()->attach($caramel->id);
-		$r->reviewFlavors()->attach($cashew->id);
+		// $r = Review::where('coffee_id', $santaBarb->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($darkChoc->id);
+		// $r->reviewFlavors()->attach($caramel->id);
+		// $r->reviewFlavors()->attach($cashew->id);
 
-		$r = Review::where('coffee_id', $laCruz->id)->firstOrFail();
-		$r->reviewFlavors()->attach($cherry->id); 
-		$r->reviewFlavors()->attach($orange->id);
-		$r->reviewFlavors()->attach($strawberry->id);	
+		// $r = Review::where('coffee_id', $laCruz->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($cherry->id); 
+		// $r->reviewFlavors()->attach($orange->id);
+		// $r->reviewFlavors()->attach($strawberry->id);	
 
-		$r = Review::where('coffee_id', $simi->id)->firstOrFail();
-		$r->reviewFlavors()->attach($honeydew->id);
-		$r->reviewFlavors()->attach($cream->id);
-		$r->reviewFlavors()->attach($scane->id);
+		// $r = Review::where('coffee_id', $simi->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($honeydew->id);
+		// $r->reviewFlavors()->attach($cream->id);
+		// $r->reviewFlavors()->attach($scane->id);
 
-		$r = Review::where('coffee_id', $sanAnto->id)->firstOrFail();
-		$r->reviewFlavors()->attach($dates->id);
-		$r->reviewFlavors()->attach($bsugar->id);
-		$r->reviewFlavors()->attach($hazelnut->id);
+		// $r = Review::where('coffee_id', $sanAnto->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($dates->id);
+		// $r->reviewFlavors()->attach($bsugar->id);
+		// $r->reviewFlavors()->attach($hazelnut->id);
 
-		$r = Review::where('coffee_id', $laVoz->id)->firstOrFail();
-		$r->reviewFlavors()->attach($rapple->id);
-		$r->reviewFlavors()->attach($caramel->id);
-		$r->reviewFlavors()->attach($walnut->id);
+		// $r = Review::where('coffee_id', $laVoz->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($rapple->id);
+		// $r->reviewFlavors()->attach($caramel->id);
+		// $r->reviewFlavors()->attach($walnut->id);
 
-		$r = Review::where('coffee_id', $idido->id)->firstOrFail();
-		$r->reviewFlavors()->attach($greens->id);
-		$r->reviewFlavors()->attach($cantaloupe->id);
-		$r->reviewFlavors()->attach($clementine->id);
+		// $r = Review::where('coffee_id', $idido->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($greens->id);
+		// $r->reviewFlavors()->attach($cantaloupe->id);
+		// $r->reviewFlavors()->attach($clementine->id);
 
-		$r = Review::where('coffee_id', $santaElena->id)->firstOrFail();
-		$r->reviewFlavors()->attach($mango->id);
-		$r->reviewFlavors()->attach($mandarin->id);
-		$r->reviewFlavors()->attach($bitterChoc->id);
+		// $r = Review::where('coffee_id', $santaElena->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($mango->id);
+		// $r->reviewFlavors()->attach($mandarin->id);
+		// $r->reviewFlavors()->attach($bitterChoc->id);
 
-		$r = Review::where('coffee_id', $sukeQuto->id)->firstOrFail();
-		$r->reviewFlavors()->attach($grapefruit->id); 
-		$r->reviewFlavors()->attach($scane->id);
-		$r->reviewFlavors()->attach($darkChoc->id);
+		// $r = Review::where('coffee_id', $sukeQuto->id)->firstOrFail();
+		// $r->reviewFlavors()->attach($grapefruit->id); 
+		// $r->reviewFlavors()->attach($scane->id);
+		// $r->reviewFlavors()->attach($darkChoc->id);
 	}
 }
