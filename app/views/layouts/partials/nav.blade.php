@@ -19,24 +19,34 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="{{{ action('CoffeesController@index') }}}">Coffees</a>
+                    <a class="page-scroll" id="coffee" href="{{{ action('CoffeesController@index') }}}">Coffees</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="{{{ action('RoastersController@index') }}}">Roasters</a>
+                    <a class="page-scroll" id="roaster" href="{{{ action('RoastersController@index') }}}">Roasters</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="{{{ action('RegionsController@index') }}}">Regions</a>
+                    <a class="page-scroll" id="region" href="{{{ action('RegionsController@index') }}}">Regions</a>
                 </li>
                 @if(!Auth::check())
                 <li>
-                    <a class="page-scroll" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
+                    <a class="page-scroll" id="user" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
                 </li>
                 @else
-                <li>
-                    <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
-                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account
+                        <i class="fa fa-key"></i>
+                    </a>
+                    <ul class="dropdown-menu nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll" href="{{{ action('UsersController@show', Auth::id()) }}}">Profile</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
+                        </li>
+                    </ul>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="create" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Add
                         <i class="fa fa-plus"></i>
                     </a>
