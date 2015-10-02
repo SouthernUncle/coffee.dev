@@ -19,7 +19,14 @@ class CoffeesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$coffees = Coffee::paginate(5);
+		$query = Coffee::with('roaster');
+
+		$search = Input::get('search');
+		if($search) {
+			$query->where('name', 'like', "%$search%");
+		}
+
+		$coffees = $query->orderBy('name')->paginate(10);
 
 		foreach($coffees as $c) {
 			$new = Image::make(public_path() . $c->img_url)->fit(500)->save(public_path() . '/img/fit500' . $c->img_url);
