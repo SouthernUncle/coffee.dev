@@ -19,6 +19,20 @@ class InvitationsController extends BaseController {
 	 */
 	public function create()
 	{
+		$myInvites  = Invitation::where('user_id', Auth::id())->get();
+		$count 		= count($myInvites);
+
+		$u = User::find(Auth::id());
+
+		if ($u->role_id = 1) {
+			return View::make('invitations.create');
+		}
+
+		if($count >= 5) {
+			Session::flash('errorMessage', 'You have used all of your invitations.');
+			return Redirect::action('UsersController@show', Auth::id());
+		}
+
 		return View::make('invitations.create');
 	}
 

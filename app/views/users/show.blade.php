@@ -21,7 +21,9 @@
             </tr>
         </table>
         <div>
-            {{ HTML::linkAction('UsersController@edit', 'Edit your user info', array($user->id)) }}
+            <h4>{{ HTML::linkAction('UsersController@edit', 'Edit your user info', array($user->id)) }}</h4>
+
+            <h4>{{ HTML::linkAction('InvitationsController@create', 'Invite friends') }}</h4>
         </div>
     </div>
 @stop
