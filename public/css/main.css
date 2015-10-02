@@ -105,3 +105,11 @@ h1#regions-header {
 	color: #fed316;
 	border: 1.5px solid #fed316;
 }
+
+.invite-btn {
+	margin-top: 5px;
+}
+
+.invite-label {
+	margin-top: 5px;
+}

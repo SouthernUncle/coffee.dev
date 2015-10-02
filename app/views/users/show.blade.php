@@ -6,18 +6,28 @@
     <div class="container">
         <h1>{{ $user->username }}</h1>
 
-        <table>
+        <table class="table table-responsive">
             <tr>
                 <td>Email</td>
                 <td>Roast Preference</td>
                 <td>Acid Preference</td>
                 <td>Body Preference</td>
+                @if($user->role_id != 1)
+                    <td>Invites Remaining</td>
+                @else 
+                    <td>Invites Sent</td>
+                @endif
             </tr>
             <tr>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->roast_pref }}</td>
                 <td>{{ $user->acid_pref }}</td>
                 <td>{{ $user->body_pref }}</td>
+                @if($user->role_id != 1)
+                    <td>{{ $remaining }}</td>
+                @else 
+                    <td>{{ $adminSent }}</td>
+                @endif
             </tr>
         </table>
         <div>
@@ -25,5 +35,7 @@
 
             <h4>{{ HTML::linkAction('InvitationsController@create', 'Invite friends') }}</h4>
         </div>
+
+
     </div>
 @stop

@@ -25,16 +25,22 @@
 @section('content')
 <section>
     <div class="container">
-        <h1>Invite a Friend</h1>
+        <div class="col-xs-12">
+            <h1>Invite a Friend</h1>
+        </div>
         {{ Form::open(array('action' => 'InvitationsController@emailInvite')) }}
-    
-            {{ Form::label('name', 'Name') }}
-            {{ Form::text('name', null, ['class' => 'form-control']) }}
+            <div class="col-xs-12 col-md-6">
+                {{ Form::label('name', 'Name', ['class' => 'fancy brown invite-label']) }}
+                {{ Form::text('name', null, ['class' => 'form-control']) }}
+            </div>
+            <div class="col-xs-12 col-md-6">
+                {{ Form::label('email', 'Email', ['class' => 'fancy brown invite-label']) }}
+                {{ Form::email('email', null, ['class' => 'form-control']) }}
+            </div>
 
-            {{ Form::label('email', 'Email') }}
-            {{ Form::email('email', null, ['class' => 'form-control']) }}
-
-            <button class="btn btn-default">Send Invite</button>
+            <div class="col-xs-12">
+                <button class="btn btn-info invite-btn">Send Invite</button>
+            </div>
 
         {{ Form::close() }}    
     </div>
