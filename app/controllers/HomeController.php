@@ -52,9 +52,12 @@ class HomeController extends BaseController {
 
 	public function doLogout()
 	{
-		Auth::logout();
-		// Session flash
-		Session::flash('successMessage', 'You have successfully logged out.');
+		if(Auth::check()) {
+			Auth::logout();
+			// Session flash
+			Session::flash('successMessage', 'You have successfully logged out.');
+		}
+
 		return Redirect::to('/');	
 	}
 

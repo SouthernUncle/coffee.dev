@@ -108,9 +108,16 @@ class RoastersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$roaster = Roaster::find($id);
+		$u = User::findOrFail(Auth::id());
 
-		return View::make('roasters.edit', compact('roaster'));
+		if($u->role_id == 1) {
+			$roaster = Roaster::find($id);
+
+			return View::make('roasters.edit', compact('roaster'));
+		} else {
+
+			return Redirect::action('RoastersController@index');
+		}
 	}
 
 	/**

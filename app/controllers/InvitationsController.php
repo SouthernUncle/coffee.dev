@@ -29,7 +29,7 @@ class InvitationsController extends BaseController {
 		}
 
 		if($count >= 5) {
-			Session::flash('errorMessage', 'You have used all of your invitations.');
+			Session::flash('errorMessage', 'You have used all of your invitations. Check back more for later.');
 			return Redirect::action('UsersController@show', Auth::id());
 		}
 

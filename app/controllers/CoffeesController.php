@@ -116,9 +116,15 @@ class CoffeesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$coffee = Coffee::find($id);
+		$u = User::findOrFail(Auth::id());
 
-		return View::make('coffees.edit', compact('coffee'));
+		if($u->role_id == 1) {
+			$coffee = Coffee::find($id);
+			return View::make('coffees.edit', compact('coffee'));
+		} else {
+			return Redirect::action('CoffeesController@index');
+		}
+
 	}
 
 	/**
