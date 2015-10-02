@@ -41,6 +41,9 @@
                 <td>{{ $user->body_pref }}</td>
             </tr>
         </table>
+        <div>
+            {{ HTML::linkAction('UsersController@edit', 'Edit your user info', array($user->id)) }}
+        </div>
     </div>
 </section>
 @stop
