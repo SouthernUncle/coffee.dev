@@ -40,9 +40,3 @@
     </div>
 </section>
 @stop
-
-@section('js')
-<script>
-// You need to have the script tags in here.
-</script>
-@stop

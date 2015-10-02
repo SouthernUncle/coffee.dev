@@ -1,29 +1,8 @@
 @extends('layouts.master')
 
-@section('title')
-
-@stop
-
-@section('style')
-<style>
-/* You need to have the style tags in here. */
-</style>
-@stop
-
-@section('heading')
-
-@stop
-
-@section('subheading')
-
-@stop
-
-@section('image_url')
-''
-@stop
+@section('title', 'ROASTERS')
 
 @section('content')
-<section>
     <div class="container">
         <h1>{{ $roaster->name }}</h1>
         <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
@@ -38,14 +17,17 @@
         <tr>
             <td>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
             <td>{{ HTML::linkAction('RegionsController@show', $c->region->name, array($c->region->id)) }}</td>
-            <td>{{ $c->overallCoffeeRating() }}</td>
+            @if(isset($c->reviews[0]))
+                <td>{{ $c->overallCoffeeRating() }}</td>
+            @else
+                <td>Not Yet Rated</td>
+            @endif
             <td>{{ $c->reviews->count() }}</td>
         </tr>
         @endforeach
         </table>
         <div>{{ $coffees->links() }}</div>
     </div>
-</section>
 @stop
 
 @section('js')

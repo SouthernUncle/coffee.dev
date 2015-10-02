@@ -10,44 +10,41 @@
 @stop
 
 @section('content')
-	<section>
-		<div class="container head">
-		{{ Form::open(array('action' => 'ReviewsController@store')) }}
-			<div class="well col-xs-12 col-md-8">
-				<h1 class="yellow heading">Create New Review</h1>
-				<div class="col-xs-12 col-md-6">
-				<h4 class="yellow fancy">Select Roaster</h4>
-					<select class="form-control" name="roaster" id="roaster">
-							<option>Roaster:</option>
-						@foreach ($roasters as $r)
-							<option value="{{{ $r->id }}}">
-								{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
-							</option>
-						@endforeach
-					</select>
-				</div>
-				<div class="col-xs-12 col-md-6">
-				<h4 class="yellow fancy">Select Coffee</h4>
-					<select class="form-control" id="coffee" name="coffee">
-						<option>Please select a roaster first...</option>
-					</select>
-				</div>
+	<div class="container head">
+	{{ Form::open(array('action' => 'ReviewsController@store')) }}
+		<div class="well col-xs-12 col-md-8">
+			<h1 class="yellow heading">Create New Review</h1>
+			<div class="col-xs-12 col-md-6">
+			<h4 class="yellow fancy">Select Roaster</h4>
+				<select class="form-control" name="roaster" id="roaster">
+						<option>Roaster:</option>
+					@foreach ($roasters as $r)
+						<option value="{{{ $r->id }}}">
+							{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
+						</option>
+					@endforeach
+				</select>
 			</div>
-			<div class="well col-xs-12 col-md-4">
-				<h4 class="yellow fancy">Don't see what you're looking for?</h4>
-				<a href="{{{ action('RoastersController@create') }}}">
-					<button type="button" class="btn btn-info btn-lg">Add a New Roaster</button>
-				</a>
-				<h4 class="yellow fancy">or</h4>
-				<a href="{{{ action('CoffeesController@create') }}}">
-					<button type="button" class="btn btn-info btn-lg">Add a New Coffee</button>
-				</a>
+			<div class="col-xs-12 col-md-6">
+			<h4 class="yellow fancy">Select Coffee</h4>
+				<select class="form-control" id="coffee" name="coffee">
+					<option>Please select a roaster first...</option>
+				</select>
 			</div>
 		</div>
-		@include('reviews.create-form')
-		{{ Form::close() }}
-	</section>
-
+		<div class="well col-xs-12 col-md-4">
+			<h4 class="yellow fancy">Don't see what you're looking for?</h4>
+			<a href="{{{ action('RoastersController@create') }}}">
+				<button type="button" class="btn btn-info btn-lg">Add a New Roaster</button>
+			</a>
+			<h4 class="yellow fancy">or</h4>
+			<a href="{{{ action('CoffeesController@create') }}}">
+				<button type="button" class="btn btn-info btn-lg">Add a New Coffee</button>
+			</a>
+		</div>
+	</div>
+	@include('reviews.create-form')
+	{{ Form::close() }}
 @stop
 
 @section('js')

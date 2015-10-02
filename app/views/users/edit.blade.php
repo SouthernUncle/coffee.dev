@@ -1,15 +1,8 @@
 @extends('layouts.master')
 
-@section('title')
-
-@section('style')
-<style>
-/* You need to have the style tags in here. */
-</style>
-@stop
+@section('title', 'Edit Profile')
 
 @section('content')
-<section>
     <div class="container">
         {{ Form::model($user, array('action' => array('UsersController@update', $user->id), 'method' => 'PUT', 'class' => 'form-horizontal')) }}
 
@@ -69,11 +62,4 @@
 
     {{ Form::close() }}
     </div>
-</section>
-@stop
-
-@section('js')
-<script>
-// You need to have the script tags in here.
-</script>
 @stop
