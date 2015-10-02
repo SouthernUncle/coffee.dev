@@ -8,9 +8,20 @@ class UsersTableSeeder extends Seeder {
 	{
 		User::create([
 
-			'username'      => $_ENV['USER_USERNAME'],
-			'email'         => $_ENV['USER_EMAIL'],
-			'password'      => $_ENV['USER_PASSWORD'],
+			'username'      => $_ENV['J_USERNAME'],
+			'email'         => $_ENV['J_EMAIL'],
+			'password'      => $_ENV['J_PASSWORD'],
+			'role_id'	    => 1,
+			'roast_pref'	=> 5,
+			'acid_pref'		=> 6,
+			'body_pref'		=> 7
+		]);
+
+		User::create([
+
+			'username'      => $_ENV['D_USERNAME'],
+			'email'         => $_ENV['D_EMAIL'],
+			'password'      => $_ENV['D_PASSWORD'],
 			'role_id'	    => 1,
 			'roast_pref'	=> 5,
 			'acid_pref'		=> 6,
@@ -25,7 +36,7 @@ class UsersTableSeeder extends Seeder {
 				
 				'username'      => $faker->userName,
 				'email'         => $faker->freeEmail,
-				'password'      => $_ENV['USER_PASSWORD'],
+				'password'      => $_ENV['J_PASSWORD'],
 				'role_id'		=> 2,
 				'roast_pref'	=> mt_rand(1,10),
 				'acid_pref'		=> mt_rand(1,10),
