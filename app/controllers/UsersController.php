@@ -82,8 +82,12 @@ class UsersController extends \BaseController {
 	public function show($id)
 	{
 		$user = User::findOrFail($id);
+
+		$myInvites  = Invitation::where('user_id', Auth::id())->get();
+		$remaining 	= 5 - count($myInvites);
+		$adminSent  = count($myInvites);
 		
-		return View::make('users.show', compact('user'));
+		return View::make('users.show', compact('user', 'remaining', 'adminSent'));
 	}
 
 	/**
