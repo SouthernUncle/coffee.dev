@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container alert">
     @if (Session::has('successMessage'))
         <div class="alert alert-success messages">{{{ Session::get('successMessage') }}}</div>
     @endif

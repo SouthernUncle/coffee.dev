@@ -4,21 +4,19 @@
 @section('title', 'REGIONS')
 
 @section('content')
-	<section>
-		<div class="container">
-			<h1 id="regions-header">Regions</h1>
-			<div class="region-photos">
-				@foreach($regions as $r)
-					<span class="col-xs-12 col-sm-6 col-lg-4 animate-hover">
-						<a href="{{{ action('RegionsController@show', $r->id) }}}">
-							<img src="{{ $r->img_url }}" class="img-responsive region-pic">
-							<p class="region-name">{{ $r->name }}</p>
-						</a>
-					</span>
-				@endforeach
-			</div>
+	<div class="container">
+		<h1 id="regions-header">Regions</h1>
+		<div class="region-photos">
+			@foreach($regions as $r)
+				<span class="col-xs-12 col-sm-6 col-lg-4 animate-hover">
+					<a href="{{{ action('RegionsController@show', $r->id) }}}">
+						<img src="{{ $r->img_url }}" class="img-responsive region-pic">
+						<p class="region-name">{{ $r->name }}</p>
+					</a>
+				</span>
+			@endforeach
 		</div>
-	</section>
+	</div>
 @stop
 
 @section('js')
