@@ -14,9 +14,11 @@
 	{{ Form::open(array('action' => 'ReviewsController@store')) }}
 		<div class="well col-xs-12 col-md-8">
 			<h1 class="yellow heading">Create New Review</h1>
+
 			<div class="col-xs-12 col-md-6">
-			<h4 class="yellow fancy">Select Roaster</h4>
-				<select class="form-control" name="roaster" id="roaster">
+				<h4 class="yellow fancy">Select Roaster</h4>
+
+				<select class="form-control" name="roaster" id="coffee_roaster">
 						<option>Roaster:</option>
 					@foreach ($roasters as $r)
 						<option value="{{{ $r->id }}}">
@@ -24,12 +26,16 @@
 						</option>
 					@endforeach
 				</select>
+
 			</div>
+
 			<div class="col-xs-12 col-md-6">
-			<h4 class="yellow fancy">Select Coffee</h4>
-				<select class="form-control" id="coffee" name="coffee">
+				<h4 class="yellow fancy">Select Coffee</h4>
+
+				<select class="form-control" id="roasters_coffees" name="coffee">
 					<option>Please select a roaster first...</option>
 				</select>
+
 			</div>
 		</div>
 		<div class="well col-xs-12 col-md-4">
@@ -51,16 +57,25 @@
 	<script>
 	$(document).ready(function(){
 	"use strict";
-		$("#roaster").change(function() {
-			$.get("/roasters/coffees/" + $("#roaster").val()).done(function(data) {
-				var $coffees = $("#coffee");
-				$coffees.empty();
-				$.each(data, function(index, value) {
-					$coffees.append('<option value="' + index +'">' + value + '</option>');
+		
+		var path = "/roasters/coffees/";
+		var roaster = $("#coffee_roaster");
+		var coffee = $("#roasters_coffees");
+		getCoffeeDropdown(roaster, coffee);
+
+		function getCoffeeDropdown(roaster, coffee) {
+			roaster.change(function() {
+				$.get(path + roaster.val()).done(function(data) {
+					var $options = coffee;
+					$options.empty();
+					console.log(data);
+					$.each(data, function(index, value) {
+						$options.append('<option value="' + index +'">' + value + '</option>');
+					});
+					coffee.trigger("change"); 
 				});
-				$("#coffee").trigger("change"); 
 			});
-		});
+		};
 
 		var route = "/categories/flavors/";
 		var master = $("#category1");
@@ -131,11 +146,11 @@
 			}
 		});
 
-		webshims.setOptions('forms-ext', {
-		    replaceUI: 'auto',
-		    types: 'number'
-		});
-		webshims.polyfill('forms forms-ext');
+		// webshims.setOptions('forms-ext', {
+		//     replaceUI: 'auto',
+		//     types: 'number'
+		// });
+		// webshims.polyfill('forms forms-ext');
 
 	});
 	</script>

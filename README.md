@@ -5,7 +5,7 @@ Final Weekend Tasks:
 
 ## To Do:
 
-Make sure invite system works... sending mail, generating link, validating link, creating an account and logging in.
+Changed dropdowns on user create to sliders w/ explanations
 
 Create admin-only coffee edit page
 Create admin-only roaster edit page
@@ -69,6 +69,8 @@ FAQ Page
     link in footer
 
 ## Done:
+
+Make sure invite system works... sending mail, generating link, validating link, creating an account and logging in.
 
 
 LEMP+J stack 

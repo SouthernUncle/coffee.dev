@@ -27,8 +27,8 @@ Route::resource('/regions', 'RegionsController');
 
 Route::resource('/reviews', 'ReviewsController');
 Route::get('/reviews/createFromCoffee/{id}', 'ReviewsController@createFromCoffee');
-Route::get('roasters/coffees/{id}', 'ReviewsController@getCoffees');
-Route::get('categories/flavors/{id}', 'ReviewsController@getFlavors');
+Route::get('/roasters/coffees/{id}', 'ReviewsController@getCoffees');
+Route::get('/categories/flavors/{id}', 'ReviewsController@getFlavors');
 
 Route::resource('/roasters', 'RoastersController');
 
