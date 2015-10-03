@@ -19,7 +19,7 @@
 				<h4 class="yellow fancy">Select Roaster</h4>
 
 				<select class="form-control" name="roaster" id="coffee_roaster">
-						<option>Roaster:</option>
+						<option value="0">Roaster:</option>
 					@foreach ($roasters as $r)
 						<option value="{{{ $r->id }}}">
 							{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
@@ -33,7 +33,7 @@
 				<h4 class="yellow fancy">Select Coffee</h4>
 
 				<select class="form-control" id="roasters_coffees" name="coffee">
-					<option>Please select a roaster first...</option>
+					<option value="0">Please select a roaster first...</option>
 				</select>
 
 			</div>
