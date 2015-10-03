@@ -16,7 +16,7 @@
 			<div class="col-xs-12 col-md-6">
 			<h4 class="brown fancy">Select Region:</h4>
 				<select class="brown form-control" name="region" id="region">
-						<option>Region:</option>
+						<option value="0">Region:</option>
 					@foreach ($regions as $re)
 						<option value="{{{ $re->id }}}">
 							{{{ $re->name }}}
@@ -27,7 +27,7 @@
 			<div class="col-xs-12 col-md-6">
 			<h4 class="brown fancy">Select Roaster</h4>
 				<select class="brown form-control" name="roaster" id="roaster">
-						<option>Roaster:</option>
+						<option value="0">Roaster:</option>
 					@foreach ($roasters as $r)
 						<option value="{{{ $r->id }}}">
 							{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
