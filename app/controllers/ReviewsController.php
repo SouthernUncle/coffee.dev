@@ -42,15 +42,26 @@ class ReviewsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), review::$rules);
+		$validator = Validator::make($data = Input::all(), Review::$rules);
 
+		$dropdownValues = array('roaster', 'coffee', 'flavor1', 'flavor2', 'flavor3', 'category1', 'category2', 'category3');
+
+		foreach($dropdownValues as $input)  {
+			$input = Input::get($input);
+
+			if($input == 0) {
+				Session::flash('errorMessage', "All fields not marked 'optional' are required.");
+				return Redirect::back()->withErrors($validator)->withInput();
+			} 
+		}
+		
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
 		$review = new Review();
-		$review->user_id	    = 1;
+		$review->user_id	    = Auth::id();
 		$review->roaster_id		= Input::get('roaster');
 		$review->coffee_id		= Input::get('coffee');
 		$review->review 		= Input::get('review'); 
@@ -71,7 +82,6 @@ class ReviewsController extends \BaseController {
 		$flavor3 = Input::get('flavor3');
 		
 		$flavors = array($flavor1, $flavor2, $flavor3);
-		
 		$this->addFlavorToReview($flavors, $review->id);
 
 		if(Input::has('grind') || 
