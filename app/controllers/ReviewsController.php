@@ -20,10 +20,10 @@ class ReviewsController extends \BaseController {
 	public function create()
 	{
 		$roasters = Roaster::all();
-		$coffees  = Coffee::all();
+		// $coffees  = Coffee::all();
 		$categories = FlavorCategory::orderBy('name')->get();
 
-		return View::make('reviews.create', compact('roasters', 'coffees', 'categories'));
+		return View::make('reviews.create', compact('roasters', 'categories'));
 	}
 
 	public function createFromCoffee($id)
