@@ -1,31 +1,31 @@
 <div class="container">
 	<div class="well full col-xs-12">
 		<span class="slider-title fancy">Flavor</span>
-		<input id="flavor" name="flavor" data-slider-id='flavor' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="5.5"/>
+		<input id="flavor" name="flavor" data-slider-id='flavor' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
 	<div class="well col-xs-12 col-s-6">
 		<span class="slider-title fancy">Aroma</span>
-		<input id="aroma" name="aroma" data-slider-id='aroma' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="5.5"/>
+		<input id="aroma" name="aroma" data-slider-id='aroma' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
 	<div class="well col-xs-12 col-s-6">
 		<span class="slider-title fancy">Aftertaste</span>
-		<input id="aftertaste" name="aftertaste" data-slider-id='aftertaste' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="5.5"/>
+		<input id="aftertaste" name="aftertaste" data-slider-id='aftertaste' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
 	<div class="well col-xs-12 col-s-6">
 		<span class="slider-title fancy">Balance</span>
-		<input id="balance" name="balance" data-slider-id='balance' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="5.5"/>
+		<input id="balance" name="balance" data-slider-id='balance' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
 	<div class="well col-xs-12 col-s-6">
 		<span class="slider-title fancy">Roast</span>
-		<input id="roast" name="roast" data-slider-id='roast' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="5.5"/>
+		<input id="roast" name="roast" data-slider-id='roast' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
 	<div class="well col-xs-12 col-s-6">
 		<span class="slider-title fancy">Body</span>
-		<input id="body" name="body" data-slider-id='body' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="5.5"/>
+		<input id="body" name="body" data-slider-id='body' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
 	<div class="well col-xs-12 col-s-6">
 		<span class="slider-title fancy">Acidity</span>
-		<input id="acidity" name="acidity" data-slider-id='aroma' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="5.5"/>
+		<input id="acidity" name="acidity" data-slider-id='aroma' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
 	<div class="well col-xs-12 col-s-6">
 		<span class="slider-title fancy">Price per Bag</span>
@@ -46,7 +46,7 @@
     	<textarea class="input-group form-control clear" name="review" cols="50" rows="10" placeholder="Write your review here..."></textarea>
     </div>
     <div class="well col-xs-12 col-s-6 full">
-        <span class="slider-title fancy clear-both">Choose 3 Notes</span>
+        <span class="slider-title fancy clear-both">Choose 3 Primary Flavor Notes</span>
 
         <select class="form-control flavors tier-one" id="category1">
 			<option>Categories:</option>
