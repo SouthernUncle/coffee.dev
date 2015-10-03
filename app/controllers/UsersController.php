@@ -53,6 +53,8 @@ class UsersController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$user = new User(); 
+
 		$user->role_id = 2;
 		$user->email = Input::get('email');
 		$user->username = Input::get('username');
@@ -62,7 +64,7 @@ class UsersController extends \BaseController {
 		$user->body_pref = Input::get('body_pref');
 		$user->save();
 
-		return Redirect::route('login');
+		return Redirect::action('HomeController@showLogin');
 	}
 
 	/**
@@ -137,7 +139,7 @@ class UsersController extends \BaseController {
 		}
 
 		// updates the edited user
-		$user->role_id 		= 2;
+		$user->role_id 		= $user->role_id;
 
 		if(Input::get('email') != $user->email) {
 			$user->email = Input::get('email');
