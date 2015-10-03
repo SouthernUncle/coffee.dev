@@ -1,22 +1,87 @@
 # coffee.dev
+## Codeup Capstone
 
-CODEUP Capstone Project
+Final Weekend Tasks:
+
+## To Do:
+
+Create admin-only coffee edit page
+Create admin-only roaster edit page
+Consistent form formatting 
+    roaster create
+    coffee create from roaster
+    coffee create
+    review create from coffee
+    review create
+    review edit
+        coffee edit
+        roaster edit
+
+Titles on index pages, or link highlights in nav
+Touch-up/re-do css on:
+    coffee index
+    coffee show
+    roaster index
+    roaster show
+    region index (mobile, esp.)
+    region show
+    user show
+    user edit
+
+Text on review sliders to explain ratings
+    create
+    create from coffee
+    edit
+
+Review sort on:
+    coffee show
+    roaster show
+
+Table column sort on:
+    coffee index
+    roaster index
+    region index
+
+All tables show NOT YET RATED instead of 0:
+    region show
+    coffee index
+
+### Nice to haves:
+
+Explanation section on landing page (NEED TO HAVE?)
+
+Chartist.js
+    flavor wheel pie chart
+    roast 
+    body
+    acidity graphs
+
+Accordion on brew parameters
+    coffee show
+    roaster show
+
+Landing page carousel
+    double as explanation section???
+
+FAQ Page
+    link in footer
+
+## Done:
+
 
 LEMP+J stack 
 
 Site Plan:
 
-	Name: @TODO
+	Name: Bean Rate
 
-	Template: @TODO
+	Template: Agency
 
 	Packages/dependencies?
 	    Bower
-	    SASS
-	    Angular ***
-	    Chartist
-	    Sizzle.js (?)
-	    Carbon
+	    Chartist TBD
+        Matriphe
+        -TODO
 
 	Functionality?
     	re: BeerAdvocate for coffee
