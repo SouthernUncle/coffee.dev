@@ -30,9 +30,13 @@ class Roaster extends Eloquent {
 			$scores[] = $c->overallCoffeeRating();
 		}
 
-		$avg = array_sum($scores) / count($scores);
+		if (!empty($scores)) {
+			$avg = array_sum($scores) / count($scores);
+			return $mainScore = round(($avg * 5) + 50);
+		} else {
+			return $mainScore = "Not Yet Rated";
+		}
 
-		return $mainScore = round(($avg * 5) + 50);
 	}
 
 	public static $rules = array(
