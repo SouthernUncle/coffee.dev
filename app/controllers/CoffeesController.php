@@ -61,7 +61,7 @@ class CoffeesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), coffee::$rules);
+		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), Coffee::$rules);
 
 		if ($validator->fails())
 		{
@@ -137,7 +137,7 @@ class CoffeesController extends \BaseController {
 	{
 		$coffee = Coffee::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), coffee::$rules);
+		$validator = Validator::make($data = Input::all(), Coffee::$rules);
 
 		if ($validator->fails())
 		{
