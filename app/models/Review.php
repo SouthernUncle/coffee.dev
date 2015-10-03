@@ -37,6 +37,8 @@ class Review extends Eloquent {
 
 	//Rules
 	public static $rules = array(
+		'roaster' => 'required',
+		'coffee' => 'required',
 		'review' => 'required',
 		'aroma' => 'required',
 		'flavor' => 'required',
@@ -44,7 +46,13 @@ class Review extends Eloquent {
 		'balance' => 'required',
 		'roast' => 'required',
 		'body' => 'required',
-		'acidity' => 'required'
+		'acidity' => 'required',
+		'flavor1' => 'required',
+		'flavor2' => 'required',
+		'flavor3' => 'required',
+		'category1' => 'required',
+		'category2' => 'required',
+		'category3' => 'required',
 	);
 
 	// Calculations
