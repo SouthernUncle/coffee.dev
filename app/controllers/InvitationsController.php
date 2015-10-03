@@ -82,7 +82,7 @@ class InvitationsController extends BaseController {
 			$message->subject('Welcome to ...');
 		});
 		Session::flash('successMessage', 'Your invite was sent.');
-		return Redirect::action('HomeController@showHome');			
+		return Redirect::action('UsersController@show', Auth::id());			
 	}
 
 	/**
