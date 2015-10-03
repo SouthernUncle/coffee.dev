@@ -5,6 +5,8 @@ Final Weekend Tasks:
 
 ## To Do:
 
+Make sure invite system works... sending mail, generating link, validating link, creating an account and logging in.
+
 Create admin-only coffee edit page
 Create admin-only roaster edit page
 Consistent form formatting 
