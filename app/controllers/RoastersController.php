@@ -130,7 +130,7 @@ class RoastersController extends \BaseController {
 	{
 		$roaster = Roaster::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), roaster::$rules);
+		$validator = Validator::make($data = Input::all(), Roaster::$rules);
 
 		if ($validator->fails())
 		{
