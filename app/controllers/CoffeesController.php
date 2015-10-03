@@ -63,6 +63,17 @@ class CoffeesController extends \BaseController {
 	{
 		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), Coffee::$rules);
 
+		$dropdownValues = array('region', 'roaster');
+
+		foreach($dropdownValues as $input)  {
+			$input = Input::get($input);
+
+			if($input == 0) {
+				Session::flash('errorMessage', "All dropdowns are required.");
+				return Redirect::back()->withErrors($validator)->withInput();
+			} 
+		}
+
 		if ($validator->fails())
 		{
 			Session::flash('errorMessage', 'Please fix errors and re-submit:');
@@ -77,7 +88,6 @@ class CoffeesController extends \BaseController {
 		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
 		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
 		$coffee->roasters_description 	= Input::get('description');
-		$coffee->active 				= 1;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
