@@ -80,13 +80,14 @@ class UsersController extends \BaseController {
 			return Redirect::action('HomeController@showHome');
 		}
 
-		$user = User::findOrFail($id);
+		$user 	 = User::findOrFail($id);
+		$reviews = Review::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get(); 
 
 		$myInvites  = Invitation::where('user_id', Auth::id())->get();
 		$remaining 	= 5 - count($myInvites);
 		$adminSent  = count($myInvites);
 		
-		return View::make('users.show', compact('user', 'remaining', 'adminSent'));
+		return View::make('users.show', compact('user', 'reviews', 'remaining', 'adminSent'));
 	}
 
 	/**
