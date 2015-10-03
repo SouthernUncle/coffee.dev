@@ -50,7 +50,7 @@ class RoastersController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), roaster::$rules);
+		$validator = Validator::make($data = Input::all(), Roaster::$rules);
 
 		if ($validator->fails())
 		{

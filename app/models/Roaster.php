@@ -49,7 +49,6 @@ class Roaster extends Eloquent {
 		'twitter' 		=> 'required',
 		'instagram'		=> 'required',
 		'description'	=> 'required',
-		// 'img_url' 		=> 'required',
 	);
 
 }
