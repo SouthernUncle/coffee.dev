@@ -6,14 +6,14 @@ Final Weekend Tasks:
 ## To Do:
 
 Consistent form formatting 
-    roaster create
-    coffee create from roaster
-    coffee create
+            roaster create
+            coffee create from roaster
+            coffee create
     review create from coffee
     review create
     review edit
-        coffee edit
-        roaster edit
+            coffee edit
+            roaster edit
 
 Touch-up/re-do css on:
     coffee index

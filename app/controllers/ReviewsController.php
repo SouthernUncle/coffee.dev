@@ -135,7 +135,7 @@ class ReviewsController extends \BaseController {
 		$review = Review::find($id);
 		$categories = FlavorCategory::orderBy('name')->get();
 		
-		if((Auth::id() == $review->user->id) || Auth::user()->role_id == 1)) {
+		if((Auth::id() == $review->user->id) || (Auth::user()->role_id == 1)) {
 
 			return View::make('reviews.edit', compact('review', 'categories'));
 		}  else {
