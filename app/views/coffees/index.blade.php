@@ -40,11 +40,10 @@
 @stop
 
 @section('js')
-	<script>
-		$(document).ready(function() {
-			"use strict";
-
-			$("#coffee").style.class = "active";
-		});
-	</script>
+<script>
+    "use strict";
+    $(document).ready(function() {
+        $("#coffee_nav").addClass("active");
+    });
+</script>
 @stop

@@ -36,6 +36,9 @@
 
 @section('js')
 <script>
-// You need to have the script tags in here.
+    "use strict";
+    $(document).ready(function() {
+        $("#roaster_nav").addClass("active");
+    });
 </script>
 @stop

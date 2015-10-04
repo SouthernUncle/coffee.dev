@@ -31,3 +31,12 @@
 		<div class="paginfix">{{ $coffees->links() }}</div>
     </div>
 @stop
+
+@section('js')
+<script>
+    "use strict";
+    $(document).ready(function() {
+        $("#region_nav").addClass("active");
+    });
+</script>
+@stop
