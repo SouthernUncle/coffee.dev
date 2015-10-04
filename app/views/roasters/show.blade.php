@@ -4,10 +4,14 @@
 
 @section('content')
     <div class="container">
-        <h1>{{ $roaster->name }}</h1>
-        <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
-        <p>{{ $roaster->description }}</p>
-        <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive">
+        <div class="col-xs-12 col-s-6">
+            <h1>{{ $roaster->name }}</h1>
+            <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
+            <p>{{ $roaster->description }}</p>
+        </div>
+        <div class="col-xs-12 col-s-6">
+            <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive">
+        </div>
         <table class="table table-responsive">
             <th>Coffee</th>
             <th>Region</th>
