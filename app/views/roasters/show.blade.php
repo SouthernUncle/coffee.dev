@@ -6,7 +6,11 @@
     <div class="container">
         <div class="col-xs-12 col-s-6">
             <h1>{{ $roaster->name }}</h1>
-            <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
+            @if($roaster->overallRoasterScore() == 50)
+                <h2>No Coffees Yet Rated</h2>
+            @else
+                <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
+            @endif
             <p>{{ $roaster->description }}</p>
         </div>
         <div class="col-xs-12 col-s-6">

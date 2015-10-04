@@ -27,10 +27,13 @@
 			        <td class="coffee-name">{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
 			        <td class="region-name">{{ HTML::linkAction('RegionsController@show', $c->region->name, array($c->region->id)) }}</td>
 			        <td>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</td>
-			        <td>{{ $c->overallCoffeeRating() }}</td>
-			        <td>{{ $c->reviews->count() }}</td>
-			    </tr>
-			@endforeach
+                    @if(isset($c->reviews[0]))
+                        <td>{{ $c->overallCoffeeRating() }}</td>
+                    @else
+                        <td>Not Yet Rated</td>
+                    @endif			        <td>{{ $c->reviews->count() }}</td>
+        			    </tr>
+        			@endforeach
 			</tbody>
 	    </table>
 		<div>
