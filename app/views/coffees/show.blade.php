@@ -31,6 +31,12 @@
         <img src="/img/fit500{{ $coffee->img_url }}" class="img img-responsive">
         <br>
 
+        @if(Auth::user()->role_id == 1)
+            <a href="{{{ action('CoffeesController@edit', $coffee->id) }}}">
+                <button class="btn btn-info">Edit</button>
+            </a>
+        @endif        
+
         @if(isset($reviews[0]))<h2>Reviews:</h2>@endif
         @foreach ($reviews as $r)
             <div class="panel-group">

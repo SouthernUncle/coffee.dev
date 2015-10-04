@@ -5,21 +5,16 @@ Final Weekend Tasks:
 
 ## To Do:
 
-Changed dropdowns on user create to sliders w/ explanations
-
-Create admin-only coffee edit page
-Create admin-only roaster edit page
 Consistent form formatting 
-    roaster create
-    coffee create from roaster
-    coffee create
-    review create from coffee
+            roaster create
+            coffee create from roaster
+            coffee create
+            review create from coffee
     review create
     review edit
-        coffee edit
-        roaster edit
+            coffee edit
+            roaster edit
 
-Titles on index pages, or link highlights in nav
 Touch-up/re-do css on:
     coffee index
     coffee show
@@ -58,10 +53,6 @@ Chartist.js
     body
     acidity graphs
 
-Accordion on brew parameters
-    coffee show
-    roaster show
-
 Landing page carousel
     double as explanation section???
 
@@ -71,11 +62,14 @@ FAQ Page
 ## Done:
 
 Make sure invite system works... sending mail, generating link, validating link, creating an account and logging in.
+Changed dropdowns on user create to sliders w/ explanations
+Create admin-only coffee edit page
+Create admin-only roaster edit page
+Edit buttons on roaster show and coffee show (admin only)
+Link highlights in nav
 
-
+##Site Plan:
 LEMP+J stack 
-
-Site Plan:
 
 	Name: Bean Rate
 

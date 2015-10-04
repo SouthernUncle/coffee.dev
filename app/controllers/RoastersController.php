@@ -64,11 +64,11 @@ class RoastersController extends \BaseController {
 		$roaster->address		= Input::get('address') ;
 		$roaster->city			= Input::get('city');
 		$roaster->state			= Input::get('state');
-		$roaster->url			= 'http://' . Input::get('url');
-		$roaster->facebook		= 'http://www.facebook.com/' . Input::get('facebook');
-		$roaster->twitter		= 'http://twitter.com/' . Input::get('twitter');
-		$roaster->instagram		= 'http://instagram.com/' . Input::get('instagram');
 		$roaster->description 	= Input::get('description');
+		$roaster->url			= Input::get('url');
+		$roaster->facebook		= (Input::has('facebook')	? Input::get('facebook') 	: null);
+		$roaster->twitter		= (Input::has('twitter') 	? Input::get('twitter') 	: null);
+		$roaster->instagram		= (Input::has('instagram') 	? Input::get('instagram') 	: null);
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -136,12 +136,32 @@ class RoastersController extends \BaseController {
 
 		if ($validator->fails())
 		{
+			Session::flash('errorMessage', 'Please complete the form before proceeding.');
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$roaster->update($data);
+		$roaster->user_id		= Auth::id();
+		$roaster->name			= Input::get('name');
+		$roaster->address		= Input::get('address') ;
+		$roaster->city			= Input::get('city');
+		$roaster->state			= Input::get('state');
+		$roaster->url			= Input::get('url');
+		$roaster->facebook		= (Input::has('facebook') 	? Input::get('facebook') 	: null);
+		$roaster->twitter		= (Input::has('twitter') 	? Input::get('twitter')		: null);
+		$roaster->instagram		= (Input::has('instagram') 	? Input::get('instagram') 	: null);
+		$roaster->description 	= Input::get('description');
 
-		return Redirect::route('roasters.index');
+		if (Request::hasFile('file')) {
+		    $img = Imageupload::upload(Request::file('file'));
+
+			$roaster->img_url = '/' . $img['original_filedir'];
+		} else {
+			$roaster->img_url = $roaster->img_url;
+		}
+
+		$roaster->save();
+
+		return Redirect::action('RoastersController@show', $id);
 	}
 
 	/**

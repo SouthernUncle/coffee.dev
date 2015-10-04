@@ -132,16 +132,15 @@ class ReviewsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$u = User::find(Auth::id());
-
-		if(($u->id == Auth::id()) || ($u->role_id = 1)) {
-			$review = Review::find($id);
-			$categories = FlavorCategory::orderBy('name')->get();
+		$review = Review::find($id);
+		$categories = FlavorCategory::orderBy('name')->get();
+		
+		if((Auth::id() == $review->user->id) || (Auth::user()->role_id == 1)) {
 
 			return View::make('reviews.edit', compact('review', 'categories'));
 		}  else {
-
-			return Redirect::action('HomeController@showHome');
+			Session::flash('errorMessage', 'You can only edit your own reviews.');
+			return Redirect::action('CoffeesController@show', $review->coffee->id);
 		}
 
 		

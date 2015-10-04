@@ -10,12 +10,10 @@
 
 @section('content')
 	{{ Form::open(array('action' => 'RoastersController@store', 'files' => true)) }}
-	<div class="container head">
+	<div class="container">
 		<div class="col-xs-12">
 			<h1 class="brown heading">Create New Roaster</h1>
 		</div>	
-	<div class="container">
-
 		<div class="col-xs-6  col-md-6">
 			<span class="brown fancy">Name</span>
 	    		<input type="text" name="name" class="form-control coffee-input brown" placeholder="i.e. 'Merit Roasting Co.'"/>

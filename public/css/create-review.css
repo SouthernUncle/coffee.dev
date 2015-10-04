@@ -17,5 +17,9 @@ section #form {
 }
 
 #bag-size {
-	float: right;
+	/*float: right;*/
+}
+
+.btn {
+	margin-top: 10px;
 }
