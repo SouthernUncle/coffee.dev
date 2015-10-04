@@ -31,7 +31,7 @@ Touch-up/re-do css on:
     user edit
 
 Text on review sliders to explain ratings
-    create
+    create DONE
     create from coffee
     edit
 
