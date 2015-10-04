@@ -12,16 +12,16 @@
 @section('content')
 	<div class="container head">
 	{{ Form::open(array('action' => 'ReviewsController@store')) }}
-		<div class="well full col-xs-12 col-md-8">
-			<h1 class="yellow heading">Create New Review</h1>
+		<div class="full col-xs-12 col-md-12">
+			<h1 class="brown heading">Create New Review</h1>
 			<div class="col-xs-12 col-md-6">
-			<h4 class="yellow fancy">Select Roaster</h4>
+			<h4 class="brown fancy">Select Roaster</h4>
 				<select class="form-control" name="roaster" id="roaster">
 					<option value="{{{ $roaster[0]->id }}}">{{{ $roaster[0]->name }}}</option>
 				</select>
 			</div>
 			<div class="col-xs-12 col-md-6">
-			<h4 class="yellow fancy">Select Coffee</h4>
+			<h4 class="brown fancy">Select Coffee</h4>
 				<select class="form-control" id="coffee" name="coffee">
 					<option value="{{{ $coffee->id }}}">{{{ $coffee->name }}}</option>
 				</select>

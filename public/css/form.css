@@ -1,6 +1,10 @@
-.well {
-	background-color: #222;
+div.col-xs-12 {
+	margin-top: 8px;
+}
+
+.slider {
 	text-align: center;
+	margin-top: 5px;
 }
 
 @media(min-width:320px) {
@@ -65,8 +69,9 @@
 }
 
 span.slider-title {
-	color: #fed316;
+	color: #222;
 	font-size: 1.3em;
+	text-align: center;
 }
 
 .input-group {
@@ -137,4 +142,16 @@ input.small {
 
 textarea.full {
 	max-width: 100%
+}
+
+.slider-track,
+.slider-track-low,
+.slider-track-high,
+.slider-track-selection
+div.slider-selection {
+	background-color: #222;
+}
+
+.slider-selection {
+	    background-image: linear-gradient(to bottom,#222 0,#222 100%);
 }
