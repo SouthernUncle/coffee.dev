@@ -5,10 +5,9 @@ Final Weekend Tasks:
 
 ## To Do:
 
-Changed dropdowns on user create to sliders w/ explanations
-
 Create admin-only coffee edit page
 Create admin-only roaster edit page
+
 Consistent form formatting 
     roaster create
     coffee create from roaster
@@ -71,6 +70,8 @@ FAQ Page
 ## Done:
 
 Make sure invite system works... sending mail, generating link, validating link, creating an account and logging in.
+
+Changed dropdowns on user create to sliders w/ explanations
 
 
 LEMP+J stack 

@@ -130,8 +130,11 @@ class CoffeesController extends \BaseController {
 
 		if($u->role_id == 1) {
 			$coffee = Coffee::find($id);
-			return View::make('coffees.edit', compact('coffee'));
+			$regions = Region::with('coffees')->get();
+			$roasters = Roaster::with('coffees')->get();
+			return View::make('coffees.edit', compact('coffee', 'regions', 'roasters'));
 		} else {
+			Session::flash('errorMessage', 'You do not have permission to access that page.');
 			return Redirect::action('CoffeesController@index');
 		}
 
@@ -147,16 +150,43 @@ class CoffeesController extends \BaseController {
 	{
 		$coffee = Coffee::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Coffee::$rules);
+		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), Coffee::$rules);
+
+		$dropdownValues = array('region', 'roaster');
+
+		foreach($dropdownValues as $input)  {
+			$input = Input::get($input);
+
+			if($input == 0) {
+				Session::flash('errorMessage', "All dropdowns are required.");
+				return Redirect::back()->withErrors($validator)->withInput();
+			} 
+		}
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$coffee->update($data);
+		$coffee->user_id				= Auth::id();
+		$coffee->region_id				= Input::get('region');
+		$coffee->roaster_id				= Input::get('roaster');
+		$coffee->name 					= Input::get('name');
+		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
+		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
+		$coffee->roasters_description 	= Input::get('description');
 
-		return Redirect::route('CoffeesController@index');
+		if (Request::hasFile('file')) {
+		    $img = Imageupload::upload(Request::file('file'));
+		    
+			$coffee->img_url = '/' . $img['original_filedir'];
+		} else {
+			$coffee->img_url = $coffee->img_url;
+		}
+		
+		$coffee->save();
+
+		return Redirect::action('CoffeesController@show', $id);
 	}
 
 	/**
