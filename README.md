@@ -5,7 +5,6 @@ Final Weekend Tasks:
 
 ## To Do:
 
-Create admin-only coffee edit page
 Create admin-only roaster edit page
 
 Consistent form formatting 
@@ -70,13 +69,11 @@ FAQ Page
 ## Done:
 
 Make sure invite system works... sending mail, generating link, validating link, creating an account and logging in.
-
 Changed dropdowns on user create to sliders w/ explanations
+Create admin-only coffee edit page
 
-
+##Site Plan:
 LEMP+J stack 
-
-Site Plan:
 
 	Name: Bean Rate
 

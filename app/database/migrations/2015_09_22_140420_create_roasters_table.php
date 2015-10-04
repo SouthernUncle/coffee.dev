@@ -30,9 +30,9 @@ class CreateRoastersTable extends Migration {
 			$table->string('url');
 			$table->text('description');
 
-			$table->string('twitter');
-			$table->string('facebook');
-			$table->string('instagram');
+			$table->string('twitter')->nullable();
+			$table->string('facebook')->nullable();
+			$table->string('instagram')->nullable();
 
 			$table->timestamps();
 		});
