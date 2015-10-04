@@ -21,7 +21,6 @@ class UsersController extends \BaseController {
 	{
 		if(!Auth::check()) {
 			$query = Invitation::where('confirmation', $confirmation)->first();
-
 			if(empty($query)) {
 				// Log something here
 				Session::flash('errorMessage', 'Invalid invitation code.');
