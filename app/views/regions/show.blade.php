@@ -23,11 +23,24 @@
 	        <tr>
 	            <td>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
 	            <td>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</td>
-	            <td>{{ $c->overallCoffeeRating() }}</td>
+	            @if(isset($c->reviews[0]))
+                    <td>{{ $c->overallCoffeeRating() }}</td>
+                @else
+                    <td>Not Yet Rated</td>
+                @endif
 	            <td>{{ $c->reviews->count() }}</td>
 	        </tr>
         @endforeach
 		</table>
 		<div class="paginfix">{{ $coffees->links() }}</div>
     </div>
+@stop
+
+@section('js')
+<script>
+    "use strict";
+    $(document).ready(function() {
+        $("#region_nav").addClass("active");
+    });
+</script>
 @stop

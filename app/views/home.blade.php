@@ -176,7 +176,7 @@
                         <ul class="list-inline social-buttons">
                             <li><a href="https://github.com/j-womack" target="_blank"><i class="fa fa-github"></i></a>
                             </li>
-                            <li><a href="https://twitter.com/avecbruit" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <li><a href="https://twitter.com/noisefights" target="_blank"><i class="fa fa-twitter"></i></a>
                             </li>
                             <li><a href="https://www.linkedin.com/pub/joshua-womack/71/946/704" target="_blank"><i class="fa fa-linkedin"></i></a>
                             </li>

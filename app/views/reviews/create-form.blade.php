@@ -25,7 +25,7 @@
 	</div>
 	<div class="slider col-xs-12 col-s-6 col-md-6">
 		<span class="slider-title fancy">Acidity</span>
-		<input id="acidity" name="acidity" data-slider-id='aroma' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
+		<input id="acidity" name="acidity" data-slider-id='acidity' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
 
 	<div class="col-xs-12 col-s-6 col-md-6">

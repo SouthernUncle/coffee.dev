@@ -60,6 +60,8 @@
 	<script>
 	$(document).ready(function(){
 	"use strict";
+
+        $("#create_nav").addClass("active");
 		
 		var path = "/roasters/coffees/";
 		var roaster = $("#coffee_roaster");

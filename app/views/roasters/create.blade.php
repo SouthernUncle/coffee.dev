@@ -58,3 +58,12 @@
 	<button class="btn btn-default fancy">Save</button>
 	{{ Form::close() }}
 @stop
+
+@section('js')
+<script>
+    "use strict";
+    $(document).ready(function() {
+        $("#create_nav").addClass("active");
+    });
+</script>
+@stop

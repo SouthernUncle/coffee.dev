@@ -4,17 +4,25 @@
 
 @section('content')
     <div class="container">
-        <h1>{{ $roaster->name }}</h1>
-        <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
-        <p>{{ $roaster->description }}</p>
-        <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive"><br>
+        <div class="col-xs-12 col-s-6">
+            <h1>{{ $roaster->name }}</h1>
+             @if($roaster->overallRoasterScore() == 50)
+                    <h2>No Coffees Yet Rated</h2>
+                @else
+                    <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
+                @endif
+            <p>{{ $roaster->description }}</p>
+        </div>
+        <div class="col-xs-12 col-s-6">
+            <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive">
+        </div>
 
         @if(Auth::user()->role_id == 1)
             <a href="{{{ action('RoastersController@edit', $roaster->id) }}}">
                 <button class="btn btn-info">Edit</button>
             </a>
         @endif
-
+        
         <table class="table table-responsive">
             <thead>
                 <th>Coffee</th>
@@ -43,6 +51,9 @@
 
 @section('js')
 <script>
-// You need to have the script tags in here.
+    "use strict";
+    $(document).ready(function() {
+        $("#roaster_nav").addClass("active");
+    });
 </script>
 @stop
