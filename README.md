@@ -5,8 +5,6 @@ Final Weekend Tasks:
 
 ## To Do:
 
-Edit buttons on roaster show and coffee show (admin only)
-
 Consistent form formatting 
     roaster create
     coffee create from roaster
@@ -68,6 +66,7 @@ Make sure invite system works... sending mail, generating link, validating link,
 Changed dropdowns on user create to sliders w/ explanations
 Create admin-only coffee edit page
 Create admin-only roaster edit page
+Edit buttons on roaster show and coffee show (admin only)
 
 ##Site Plan:
 LEMP+J stack 

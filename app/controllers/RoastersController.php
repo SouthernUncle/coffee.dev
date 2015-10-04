@@ -64,11 +64,11 @@ class RoastersController extends \BaseController {
 		$roaster->address		= Input::get('address') ;
 		$roaster->city			= Input::get('city');
 		$roaster->state			= Input::get('state');
-		$roaster->url			= 'http://' . Input::get('url');
-		$roaster->facebook		= (Input::has('facebook') ? 'http://www.facebook.com/' . Input::get('facebook') : null);
-		$roaster->twitter		= (Input::has('twitter') ? 'http://twitter.com/' . Input::get('twitter') : null);
-		$roaster->instagram		= (Input::has('instagram') ? 'http://instagram.com/' . Input::get('instagram') : null);
 		$roaster->description 	= Input::get('description');
+		$roaster->url			= Input::get('url');
+		$roaster->facebook		= (Input::has('facebook')	? Input::get('facebook') 	: null);
+		$roaster->twitter		= (Input::has('twitter') 	? Input::get('twitter') 	: null);
+		$roaster->instagram		= (Input::has('instagram') 	? Input::get('instagram') 	: null);
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -143,10 +143,10 @@ class RoastersController extends \BaseController {
 		$roaster->address		= Input::get('address') ;
 		$roaster->city			= Input::get('city');
 		$roaster->state			= Input::get('state');
-		$roaster->url			= 'http://' . Input::get('url');
-		$roaster->facebook		= (Input::has('facebook') ? 'http://www.facebook.com/' . Input::get('facebook') : null);
-		$roaster->twitter		= (Input::has('twitter') ? 'http://twitter.com/' . Input::get('twitter') : null);
-		$roaster->instagram		= (Input::has('instagram') ? 'http://instagram.com/' . Input::get('instagram') : null);
+		$roaster->url			= Input::get('url');
+		$roaster->facebook		= (Input::has('facebook') 	? Input::get('facebook') 	: null);
+		$roaster->twitter		= (Input::has('twitter') 	? Input::get('twitter')		: null);
+		$roaster->instagram		= (Input::has('instagram') 	? Input::get('instagram') 	: null);
 		$roaster->description 	= Input::get('description');
 
 		if (Request::hasFile('file')) {
