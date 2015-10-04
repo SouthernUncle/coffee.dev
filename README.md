@@ -15,7 +15,6 @@ Consistent form formatting
         coffee edit
         roaster edit
 
-Titles on index pages, or link highlights in nav
 Touch-up/re-do css on:
     coffee index
     coffee show
@@ -67,6 +66,7 @@ Changed dropdowns on user create to sliders w/ explanations
 Create admin-only coffee edit page
 Create admin-only roaster edit page
 Edit buttons on roaster show and coffee show (admin only)
+Link highlights in nav
 
 ##Site Plan:
 LEMP+J stack 
