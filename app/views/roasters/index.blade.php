@@ -36,3 +36,12 @@
 		<div class="paginfix">{{ $roasters->links() }}</div>
 	</div>
 @stop
+
+@section('js')
+<script>
+    "use strict";
+    $(document).ready(function() {
+        $("#roaster_nav").addClass("active");
+    });
+</script>
+@stop

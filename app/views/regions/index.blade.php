@@ -20,20 +20,21 @@
 @stop
 
 @section('js')
-	<script>
-		$(document).ready(function() {
-			"use strict";	
+<script>
+"use strict";	
+	$(document).ready(function() {
 
-			doHoverAnimation(".animate-hover", "pulse");
+		doHoverAnimation(".animate-hover", "pulse");
 
-			function doHoverAnimation (element, animation) {
-				var element = $(element);
-				element.mouseenter(function() {
-					$(this).addClass('animated ' + animation).one('animationend webkitAnimationEnd oAnimationEnd', function() {
-    					$(this).removeClass('animated ' + animation);
-    				});
+		function doHoverAnimation (element, animation) {
+			var element = $(element);
+			element.mouseenter(function() {
+				$(this).addClass('animated ' + animation).one('animationend webkitAnimationEnd oAnimationEnd', function() {
+					$(this).removeClass('animated ' + animation);
 				});
-			};	
-		});
-	</script>
+			});
+		};	
+    $("#region_nav").addClass("active");
+	});
+</script>
 @stop

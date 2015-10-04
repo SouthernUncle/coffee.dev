@@ -91,3 +91,12 @@
     </div>
 @stop
 
+@section('js')
+<script>
+    "use strict";
+    $(document).ready(function() {
+        $("#coffee_nav").addClass("active");
+    });
+</script>
+@stop
+
