@@ -87,6 +87,11 @@
                 </div>
             </div>
         @endforeach
+        @if(Auth::user()->role_id == 1)
+            <a href="{{{ action('CoffeesController@edit', $coffee->id) }}}">
+                <button class="btn btn-info">Edit</button>
+            </a>
+        @endif
         <div>{{ $reviews->links() }}</div>
     </div>
 @stop

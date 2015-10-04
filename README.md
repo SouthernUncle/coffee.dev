@@ -5,7 +5,7 @@ Final Weekend Tasks:
 
 ## To Do:
 
-Create admin-only roaster edit page
+Edit buttons on roaster show and coffee show (admin only)
 
 Consistent form formatting 
     roaster create
@@ -56,10 +56,6 @@ Chartist.js
     body
     acidity graphs
 
-Accordion on brew parameters
-    coffee show
-    roaster show
-
 Landing page carousel
     double as explanation section???
 
@@ -71,6 +67,7 @@ FAQ Page
 Make sure invite system works... sending mail, generating link, validating link, creating an account and logging in.
 Changed dropdowns on user create to sliders w/ explanations
 Create admin-only coffee edit page
+Create admin-only roaster edit page
 
 ##Site Plan:
 LEMP+J stack 
