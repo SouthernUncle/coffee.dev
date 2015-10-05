@@ -229,6 +229,21 @@
                                     <input type="email" class="form-control" placeholder="Your Email *" id="email" name="email" required>
                                     <p class="help-block text-danger"></p>
                                 </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="subject" id="subject" required>
+                                        <option disabled selected>Subject *</option>
+                                        <option value="Request Invitation">Request Invitation</option>
+                                        <option value="Report Content Issue">Report Content Issue</option>
+                                        <option value="Report Site Issue">Report Site Issue</option>
+                                        <option value="Report User Misuse of Site">Report User Misuse of Site</option>
+                                        <option value="Hire Us">Hire Us</option>
+                                        <option value="Other">Other</option>
+                                        @if (Auth::check() && Auth::user()->role_id == 1)
+                                            <option value="Admin Testing">Admin Testing</option>
+                                        @endif
+                                    </select>
+                                    <p class="help-block text-danger"></p>
+                                </div>
                                 
                             </div>
                             <div class="col-md-6">

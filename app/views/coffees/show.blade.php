@@ -6,9 +6,10 @@
 
 @section('content')
     <div class="container">
-        <h1>
-            <a href="{{ $coffee->url }}">{{ $coffee->name }}</a>
+        <h1 class="display-inline">
+            {{ $coffee->name }}
         </h1>
+        <a href="http://{{ $coffee->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
 
         <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->id) }}}">
             <button class="btn  btn-awesome review-btn btn-lg">Review</button>
