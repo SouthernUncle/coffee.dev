@@ -7,34 +7,34 @@ $(document).ready(function() {
 	                return 'Acidity: ' + value + ' (No Acid)';
 	                break;
 	            case 1:
-	                return 'Acidity: ' + value;
+	                return 'Acidity: ' + value + ' (Low Acid)';
 	                break;
 	            case 2:
-	                return 'Acidity: ' + value;
+	                return 'Acidity: ' + value + ' (Gentle)';
 	                break;
 	            case 3:
-	                return 'Acidity: ' + value;
+	                return 'Acidity: ' + value + ' (Cantaloupe)';
 	                break;
 	            case 4:
-	                return 'Acidity: ' + value;
+	                return 'Acidity: ' + value + ' (Soft)';
 	                break;
 	            case 5:
-	                return 'Acidity: ' + value + ' (Average)';
+	                return 'Acidity: ' + value + ' (Balanced)';
 	                break;
 	            case 6:
-	                return 'Acidity: ' + value;
+	                return 'Acidity: ' + value + ' (Fresh Tomato)';
 	                break;
 	            case 7:
-	                return 'Acidity: ' + value;
+	                return 'Acidity: ' + value + ' (Intense)';
 	                break;
 	            case 8:
-	                return 'Acidity: ' + value;
+	                return 'Acidity: ' + value + ' (Lime)';
 	                break;
 	            case 9:
-	                return 'Acidity: ' + value;
+	                return 'Acidity: ' + value + ' (Sharp)';
 	                break;
 	            case 10:
-	                return 'Acidity: ' + value + ' (Most Acidic)';
+	                return 'Acidity: ' + value + ' (Pure Acid)';
 	                break;
 	        }
 	        return 'Acidity: ' + value;
@@ -46,11 +46,14 @@ $(document).ready(function() {
                 case 0:
                     return 'Roast: ' + value + ' (Sour Peanuts)';
                     break;
-                case 2:
+                case 1:
                     return 'Roast: ' + value + ' (Hay)';
                     break;
-                case 3:
+                case 2:
                     return 'Roast: ' + value + ' (Grassy)';
+                    break;
+                case 3:
+                    return 'Roast: ' + value + ' (Vegetal)';
                     break;
                 case 5:
                     return 'Roast: ' + value + ' (Balanced)';
