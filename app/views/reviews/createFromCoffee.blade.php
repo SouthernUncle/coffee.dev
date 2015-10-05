@@ -75,55 +75,7 @@
 				});
 			});
 		};
-
-		$('#aroma').slider({
-			formatter: function(value) {
-				return 'Aroma: ' + value;
-			}
-		});
-
-		$('#flavor').slider({
-			formatter: function(value) {
-				return 'Flavor: ' + value;
-			}
-		});
-
-		$('#aftertaste').slider({
-			formatter: function(value) {
-				return 'Aftertaste: ' + value;
-			}
-		});
-
-		$('#balance').slider({
-			formatter: function(value) {
-				return 'Balance: ' + value;
-			}
-		});
-
-		$('#roast').slider({
-			formatter: function(value) {
-				return 'Roast: ' + value;
-			}
-		});
-
-		$('#body').slider({
-			formatter: function(value) {
-				return 'Body: ' + value;
-			}
-		});
-
-		$('#acidity').slider({
-			formatter: function(value) {
-				return 'Acidity: ' + value;
-			}
-		});
-
-		webshims.setOptions('forms-ext', {
-		    replaceUI: 'auto',
-		    types: 'number'
-		});
-		webshims.polyfill('forms forms-ext');
-
 	});
 	</script>
+	<script src="/js/review-create-edit.js"></script>
 @stop

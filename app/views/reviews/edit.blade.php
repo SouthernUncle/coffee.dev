@@ -22,31 +22,31 @@
 		<!-- REVIEW SLIDERS -->
 		<div class="slider full col-xs-12">
 			<span class="slider-title fancy">Flavor</span>
-			<input id="flavor" name="flavor" data-slider-id='flavor' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->flavor }}}"/>
+			<input id="flavor" name="flavor" data-slider-id='flavor' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->flavor }}}"/>
 		</div>
 		<div class="slider col-xs-12 col-s-6 col-md-6">
 			<span class="slider-title fancy">Aroma</span>
-			<input id="aroma" name="aroma" data-slider-id='aroma' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->aroma }}}"/>
+			<input id="aroma" name="aroma" data-slider-id='aroma' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->aroma }}}"/>
 		</div>
 		<div class="slider col-xs-12 col-s-6 col-md-6">
 			<span class="slider-title fancy">Aftertaste</span>
-			<input id="aftertaste" name="aftertaste" data-slider-id='aftertaste' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->aftertaste }}}"/>
+			<input id="aftertaste" name="aftertaste" data-slider-id='aftertaste' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->aftertaste }}}"/>
 		</div>
 		<div class="slider col-xs-12 col-s-6 col-md-6">
 			<span class="slider-title fancy">Balance</span>
-			<input id="balance" name="balance" data-slider-id='balance' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->balance }}}"/>
+			<input id="balance" name="balance" data-slider-id='balance' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->balance }}}"/>
 		</div>
 		<div class="slider col-xs-12 col-s-6 col-md-6">
 			<span class="slider-title fancy">Roast</span>
-			<input id="roast" name="roast" data-slider-id='roast' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->roast }}}"/>
+			<input id="roast" name="roast" data-slider-id='roast' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->roast }}}"/>
 		</div>
 		<div class="slider col-xs-12 col-s-6 col-md-6">
 			<span class="slider-title fancy">Body</span>
-			<input id="body" name="body" data-slider-id='body' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->body }}}"/>
+			<input id="body" name="body" data-slider-id='body' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->body }}}"/>
 		</div>
 		<div class="slider col-xs-12 col-s-6 col-md-6">
 			<span class="slider-title fancy">Acidity</span>
-			<input id="acidity" name="acidity" data-slider-id='aroma' type="number" data-slider-min="1" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->acidity }}}"/>
+			<input id="acidity" name="acidity" data-slider-id='aroma' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{{ $review->acidity }}}"/>
 		</div>
 		<div class="col-12-xs col-md-12">
 			<hr>
@@ -148,7 +148,7 @@
 
 @section('js')
 	<script>
-	// $(document).ready(function() {
+	$(document).ready(function() {
 	"use strict";
 		$("#create_nav").addClass("active");
 		$("#add_nav").text("Edit Review");
@@ -197,50 +197,7 @@
 				});
 			});
 		};
-
-		// With JQuery
-		$('#aroma').slider({
-			formatter: function(value) {
-				return 'Aroma: ' + value;
-			}
-		});
-
-		$('#flavor').slider({
-			formatter: function(value) {
-				return 'Flavor: ' + value;
-			}
-		});
-
-		$('#aftertaste').slider({
-			formatter: function(value) {
-				return 'Aftertaste: ' + value;
-			}
-		});
-
-		$('#balance').slider({
-			formatter: function(value) {
-				return 'Balance: ' + value;
-			}
-		});
-
-		$('#roast').slider({
-			formatter: function(value) {
-				return 'Roast: ' + value;
-			}
-		});
-
-		$('#body').slider({
-			formatter: function(value) {
-				return 'Body: ' + value;
-			}
-		});
-
-		$('#acidity').slider({
-			formatter: function(value) {
-				return 'Acidity: ' + value;
-			}
-		});
-	// });
-
+	});
   </script>
+  <script src="/js/review-create-edit.js"></script>
 @stop

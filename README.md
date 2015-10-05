@@ -16,9 +16,12 @@ Touch-up/re-do css on:
     user edit
 
 Text on review sliders to explain ratings
-    create DONE
-    create from coffee
-    edit
+    review create DONE
+    review create from coffee
+    review edit
+    user create
+    user edit
+
 
 Review sort on:
     coffee show
@@ -28,10 +31,6 @@ Table column sort on:
     coffee index
     roaster index
     region index
-
-All tables show NOT YET RATED instead of 0:
-    region show
-    coffee index
 
 ### Nice to haves:
 
@@ -71,6 +70,11 @@ Consistent form formatting
 
 Region create (admin-only)
 Region edit (admin-only)
+
+All tables show NOT YET RATED instead of 0:
+    region show
+    coffee index
+
 
 ##Site Plan:
 LEMP+J stack 
