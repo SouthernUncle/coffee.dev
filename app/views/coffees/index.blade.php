@@ -14,7 +14,7 @@
 	    <table class="table table-responsive table-hover">
 	    	<thead>
 	    		<tr>
-	    			<th>Name</th>
+	    			<th>Coffee</th>
 	    			<th>Region</th>
 	    			<th>Roaster</th>
     				<th>Overall Rating</th>

@@ -70,12 +70,13 @@ class HomeController extends BaseController {
 			'name' => Input::get('name'),
 			'email' => Input::get('email'),
 			'body'  => Input::get('message'),
+			'subject' => Input::get('subject'),
 		);
 
 		Mail::send('emails.contact', $data, function($message) {
 			$message->from(Input::get('email'), Input::get('name'));
-			$message->to('david@gcollier.me', 'Admin');
-			$message->subject('testing the contact form');
+			$message->to('brewrate@gmail.com', 'Admin');
+			$message->subject(Input::get('subject'));
 		});
 
 		Session::flash('successMessage', 'Your message was sent.');
