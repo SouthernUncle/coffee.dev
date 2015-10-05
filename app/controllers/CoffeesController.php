@@ -195,13 +195,13 @@ class CoffeesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		$coffee = Coffee::find($id);
-		$coffee->delete();
+	// public function destroy($id)
+	// {
+	// 	$coffee = Coffee::find($id);
+	// 	$coffee->delete();
 
-		return Redirect::route('CoffeesController@index');
-	}
+	// 	return Redirect::route('CoffeesController@index');
+	// }
 
 	
 

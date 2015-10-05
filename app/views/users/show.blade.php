@@ -48,6 +48,9 @@
                     <a href="{{{ action('CoffeesController@show', $review->coffee->id) }}}" class="brown">
                         {{ $review->coffee->name }} by <span class="fancy">{{ $review->coffee->roaster->name }}</span>
                     </a>
+                    <a href="{{{ action('ReviewsController@edit', $review->id) }}}">
+                        <i class="fa fa-edit"></i>
+                    </a>
                 </div>
             @endforeach
         </div>

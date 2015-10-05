@@ -7,7 +7,7 @@
 
 <body id="page-top" class="index" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-    @include('layouts.partials.home-nav')
+    @include('layouts.partials.nav')
     
     @include('layouts.partials.404-header')
 

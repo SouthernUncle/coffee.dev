@@ -199,13 +199,8 @@ class ReviewsController extends \BaseController {
 			$param = new Parameter();
 		}
 
-		if(Input::has('roast_date')) {
-				$input 		= Input::get('roast_date');
-				$date  		= date_create($input);
-				$roast_date = date_format($date, 'Y-m-d');
-				$param->roast_date		= $roast_date;
-			}
-
+		if(Input::has('grind') || Input::has('water_weight') || Input::has('coffee_weight') || 
+		Input::has('brew_time') || Input::has('water_temp') || Input::has('brewer') || Input::has('method')) {
 			$param->review_id		= $review->id;
 			$param->grind 			= (Input::has('grind') ? Input::get('grind') : null);
 			$param->water_weight	= (Input::has('water_weight') ? Input::get('water_weight') : null);
@@ -214,7 +209,16 @@ class ReviewsController extends \BaseController {
 			$param->water_temp		= (Input::has('water_temp') ? Input::get('water_temp') : null);
 			$param->brewer			= (Input::has('brewer') ? Input::get('brewer') : null);
 			$param->method 			= (Input::has('method') ? Input::get('method') : null);
+
+			if(Input::has('roast_date')) {
+				$input 		= Input::get('roast_date');
+				$date  		= date_create($input);
+				$roast_date = date_format($date, 'Y-m-d');
+				$param->roast_date		= $roast_date;
+			}
+
 			$param->save();
+		}
 
 		return Redirect::action('CoffeesController@show', $review->coffee_id);
 	}
