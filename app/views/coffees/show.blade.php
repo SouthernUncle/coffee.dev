@@ -31,7 +31,7 @@
         <img src="/img/fit500{{ $coffee->img_url }}" class="img img-responsive">
         <br>
 
-        @if(Auth::user()->role_id == 1)
+        @if(Auth::check() && Auth::user()->role_id == 1)
             <a href="{{{ action('CoffeesController@edit', $coffee->id) }}}">
                 <button class="btn btn-info">Edit</button>
             </a>

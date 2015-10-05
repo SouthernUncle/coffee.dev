@@ -16,13 +16,12 @@
         <div class="col-xs-12 col-s-6">
             <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive">
             <br>
-            @if(Auth::user()->role_id == 1)
+            @if(Auth::check() && Auth::user()->role_id == 1)
                 <a href="{{{ action('RoastersController@edit', $roaster->id) }}}">
                     <button class="btn btn-info">Edit</button>
                 </a>
             @endif
         </div>
-
 
         <table class="table table-responsive">
             <thead>
