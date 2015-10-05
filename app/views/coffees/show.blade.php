@@ -10,6 +10,10 @@
             <a href="{{ $coffee->url }}">{{ $coffee->name }}</a>
         </h1>
 
+        <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->id) }}}">
+            <button class="btn  btn-awesome review-btn btn-lg">Review</button>
+        </a>
+
         <h4>
             <a href="{{ action('RoastersController@show', $coffee->roaster->id) }}">{{ $coffee->roaster->name }}</a>
         </h4>
