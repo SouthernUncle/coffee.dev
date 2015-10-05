@@ -110,8 +110,11 @@ class CoffeesController extends \BaseController {
 	{
 		$coffee = Coffee::with('reviews')->findOrFail($id);
 
-		$new = Image::make(public_path() . $coffee->img_url)->fit(500)->save(public_path() . '/img/fit500' . $coffee->img_url);
+		$roasters_description = $coffee->roasters_description;
+		$parse = new Parsedown();
+		$coffee->roasters_description = $parse->text($roasters_description);
 
+		$new = Image::make(public_path() . $coffee->img_url)->fit(500)->save(public_path() . '/img/fit500' . $coffee->img_url);
 
 		$reviews = $coffee->reviews()->paginate(4);
 

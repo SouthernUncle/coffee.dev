@@ -35,6 +35,10 @@ class RegionsController extends \BaseController {
 	{
 		$region = Region::findOrFail($id);
 
+		$description = $region->description;
+		$parse = new Parsedown();
+		$region->description = $parse->text($description);
+
 		$query = Coffee::where('region_id', $id);
 		// dd($coffees);
 
