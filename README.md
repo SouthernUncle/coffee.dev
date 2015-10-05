@@ -1,4 +1,4 @@
-# coffee.dev
+# BeanRate.com
 ## Codeup Capstone
 
 Final Weekend Tasks:
@@ -11,17 +11,9 @@ Touch-up/re-do css on:
     roaster index
     roaster show
     region index (mobile, esp.)
-    region show
-    user show
-    user edit
-
-Text on review sliders to explain ratings
-            review create
-            review create from coffee
-            review edit
-    user create
-    user edit
-
+        //region show
+    user show (add image?)
+        //user edit
 
 Review sort on:
     coffee show
@@ -75,6 +67,13 @@ All tables show NOT YET RATED instead of 0:
     region show
     coffee index
 
+
+Text on review sliders to explain ratings
+    review create
+    review create from coffee
+    review edit
+    user create
+    user edit
 
 ##Site Plan:
 LEMP+J stack 
