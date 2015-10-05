@@ -43,7 +43,7 @@
                         </li>
                     </ul>
                 <li class="dropdown" id="create_nav">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="dropdown-toggle" id="add_nav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Add
                         <i class="fa fa-plus"></i>
                     </a>

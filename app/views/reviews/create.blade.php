@@ -12,11 +12,6 @@
 @section('content')
 	<div class="container head">
 	{{ Form::open(array('action' => 'ReviewsController@store')) }}
-		<div class="col-xs-12 col-md-12 center-it">
-			<h1 class="brown heading">New Review</h1>
-		</div>
-		<hr>
-
 		<div class="col-xs-12 col-md-6 center-it">
 			<h4 class="brown fancy">Don't see what you're looking for?</h4>
 			<a href="{{{ action('RoastersController@create') }}}">
@@ -61,6 +56,7 @@
 	"use strict";
 
         $("#create_nav").addClass("active");
+        $("#add_nav").text("Add Review");
 		
 		var path = "/roasters/coffees/";
 		var roaster = $("#coffee_roaster");

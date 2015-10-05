@@ -14,7 +14,7 @@
 	{{ Form::model($coffee, array('action' => array('CoffeesController@update', $coffee->id), 'method' =>'PUT', 'files' => true)) }}
 	<div class="container head">
 		<div class="col-xs-12">
-			<h1 class="brown heading">Edit {{{ $coffee->name }}}</h1>
+			<h1 class="brown heading">{{{ $coffee->name }}}</h1>
 			<div class="col-xs-12 col-md-6">
 			<h4 class="brown fancy">Select Region:</h4>
 				<select class="brown form-control" name="region" id="region">
@@ -48,15 +48,15 @@
 		</div>
 		<div class="col-xs-12 col-s-6">
 			<span class="brown fancy">Process</span>
-    		<input type="text" name="process" id="process" class="form-control coffee-input" placeholder="i.e. 'Washed' or 'Natural'" value="{{{ $coffee->process }}}"/>
+    		<input type="text" name="process" id="process" class="form-control coffee-input brown" placeholder="i.e. 'Washed' or 'Natural'" value="{{{ $coffee->process }}}"/>
 	    </div>
 	    <div class="col-xs-12 col-s-6">
 			<span class="brown fancy">Elevation</span>
-    		<input type="text" name="elevation" id="elevation" class="form-control coffee-input" placeholder="i.e. '1800m'" value="{{{ $coffee->elevation }}}"/>
+    		<input type="text" name="elevation" id="elevation" class="form-control coffee-input brown" placeholder="i.e. '1800m'" value="{{{ $coffee->elevation }}}"/>
 	    </div>
 		<div class="col-xs-12">
 			<span class="brown fancy">Description</span>
-	    	<textarea name="description" rows="5" class="form-control" placeholder="Enter the roaster's description of this coffee.">{{{ $coffee->roasters_description }}}</textarea>
+	    	<textarea name="description" rows="5" class="form-control brown" placeholder="Enter the roaster's description of this coffee.">{{{ $coffee->roasters_description }}}</textarea>
     	</div>
 	    <div class="upload col-xs-12 col-md-6">
 		    {{ Form::label('file','Image Upload',array('id'=>'','class'=>'fancy brown')) }}
@@ -65,4 +65,11 @@
 	</div>
 	<button class="btn btn-default fancy">Save</button>
 	{{ Form::close() }}
+@stop
+
+@section('js')
+	<script>
+		$("#create_nav").addClass("active");
+		$("#add_nav").text("Edit Coffee");
+	</script>
 @stop

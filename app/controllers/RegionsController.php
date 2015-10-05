@@ -53,29 +53,52 @@ class RegionsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	// public function create()
-	// {
-	// 	return View::make('regions.create');
-	// }
+	public function create()
+	{
+		if(Auth::check() && Auth::user()->role_id == 1) {
+
+			return View::make('regions.create');
+		} else {
+			Session::flash('errorMessage', 'You do not have permission to access that page.');
+			return Redirect::action('RegionsController@index');
+		}
+	}
 
 	/**
 	 * Store a newly created region in storage.
 	 *
 	 * @return Response
 	 */
-	// public function store()
-	// {
-	// 	$validator = Validator::make($data = Input::all(), region::$rules);
+	public function store()
+	{
+		$validator = Validator::make($data = Input::all(), Region::$rules);
 
-	// 	if ($validator->fails())
-	// 	{
-	// 		return Redirect::back()->withErrors($validator)->withInput();
-	// 	}
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
 
-	// 	Region::create($data);
+		$region = new Region();
 
-	// 	return Redirect::route('regions.index');
-	// }
+		$region->name 	 	   = Input::get('name');
+		$region->description   = Input::get('description');
+
+		if (Request::hasFile('map')) {
+		    $img = Imageupload::upload(Request::file('map'));
+		    
+			$region->map_url = '/' . $img['original_filedir'];
+		}
+
+		if (Request::hasFile('file')) {
+		    $img = Imageupload::upload(Request::file('file'));
+		    
+			$region->img_url = '/' . $img['original_filedir'];
+		}
+
+		$region->save();
+
+		return Redirect::action('RegionsController@show', $region->id);
+	}
 
 	/**
 	 * Show the form for editing the specified region.
@@ -83,12 +106,17 @@ class RegionsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	// public function edit($id)
-	// {
-	// 	$region = Region::find($id);
+	public function edit($id)
+	{
+		if(Auth::check() && Auth::user()->role_id == 1) {
+	 		$region = Region::find($id);
 
-	// 	return View::make('regions.edit', compact('region'));
-	// }
+			return View::make('regions.edit', compact('region'));
+		} else {
+			Session::flash('errorMessage', 'You do not have permission to access that page.');
+			return Redirect::action('RegionsController@index');
+		}
+	}
 
 	/**
 	 * Update the specified region in storage.
@@ -96,21 +124,40 @@ class RegionsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	// public function update($id)
-	// {
-	// 	$region = Region::findOrFail($id);
+	public function update($id)
+	{
+		$validator = Validator::make($data = Input::all(), Region::$editRules);
 
-	// 	$validator = Validator::make($data = Input::all(), region::$rules);
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
 
-	// 	if ($validator->fails())
-	// 	{
-	// 		return Redirect::back()->withErrors($validator)->withInput();
-	// 	}
+		$region = Region::findOrFail($id);
 
-	// 	$region->update($data);
+		$region->name 	 	   = Input::get('name');
+		$region->description   = Input::get('description');
 
-	// 	return Redirect::route('regions.index');
-	// }
+		if (Request::hasFile('map')) {
+		    $img = Imageupload::upload(Request::file('map'));
+		    
+			$region->map_url = '/' . $img['original_filedir'];
+		} else {
+			$region->map_url = $region->map_url;
+		}
+
+		if (Request::hasFile('file')) {
+		    $img = Imageupload::upload(Request::file('file'));
+		    
+			$region->img_url = '/' . $img['original_filedir'];
+		} else {
+			$region->img_url = $region->img_url;
+		}
+
+		$region->save();
+
+		return Redirect::action('RegionsController@show', $id);
+	}
 
 	/**
 	 * Remove the specified region from storage.

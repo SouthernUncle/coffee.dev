@@ -5,15 +5,8 @@ Final Weekend Tasks:
 
 ## To Do:
 
-Consistent form formatting 
-            roaster create
-            coffee create from roaster
-            coffee create
-            review create from coffee
-    review create
-    review edit
-            coffee edit
-            roaster edit
+Region create (admin-only)
+Region edit (admin-only)
 
 Touch-up/re-do css on:
     coffee index
@@ -67,6 +60,16 @@ Create admin-only coffee edit page
 Create admin-only roaster edit page
 Edit buttons on roaster show and coffee show (admin only)
 Link highlights in nav
+
+Consistent form formatting 
+            roaster create
+            coffee create from roaster
+            coffee create
+            review create from coffee
+            review create
+            review edit
+            coffee edit
+            roaster edit
 
 ##Site Plan:
 LEMP+J stack 

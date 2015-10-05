@@ -12,7 +12,6 @@
 	{{ Form::open(array('action' => 'CoffeesController@store', 'files' => true)) }}
 	<div class="container head">
 		<div class="col-xs-12">
-			<h1 class="brown heading">Create New Coffee</h1>
 			<div class="col-xs-12 col-md-6">
 			<h4 class="brown fancy">Select Region:</h4>
 				<select class="brown form-control" name="region" id="region">
@@ -70,6 +69,7 @@
     "use strict";
     $(document).ready(function() {
         $("#create_nav").addClass("active");
+		$("#add_nav").text("Add Coffee");
     });
 </script>
 @stop

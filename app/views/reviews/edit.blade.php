@@ -150,6 +150,9 @@
 	<script>
 	// $(document).ready(function() {
 	"use strict";
+		$("#create_nav").addClass("active");
+		$("#add_nav").text("Edit Review");
+
 		var route = "/categories/flavors/";
 
 		var master = $("#category0");
