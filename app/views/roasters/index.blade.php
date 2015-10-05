@@ -18,7 +18,7 @@
 	    <table class="table table-responsive table-hover">
 	    	<thead>
 	    		<tr>
-	    			<th>Name</th>
+	    			<th>Roaster</th>
 	    			<th>Location</th>
 	    			<th>Number of Coffees</th>
 	    		</tr>
