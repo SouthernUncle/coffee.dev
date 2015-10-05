@@ -36,6 +36,10 @@
             <h4>{{ HTML::linkAction('UsersController@edit', 'Edit your user info', array($user->id)) }}</h4>
 
             <h4>{{ HTML::linkAction('InvitationsController@create', 'Invite friends') }}</h4>
+
+            @if(Auth::user()->role_id == 1)
+                <h4>{{ HTML::linkAction('RegionsController@create', 'Add a Region') }}</h4>                
+            @endif
         </div>
         <div class="col-xs-12">
             <h4>My Reviews</h4>

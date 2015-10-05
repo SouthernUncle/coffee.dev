@@ -5,9 +5,6 @@ Final Weekend Tasks:
 
 ## To Do:
 
-Region create (admin-only)
-Region edit (admin-only)
-
 Touch-up/re-do css on:
     coffee index
     coffee show
@@ -60,6 +57,7 @@ Create admin-only coffee edit page
 Create admin-only roaster edit page
 Edit buttons on roaster show and coffee show (admin only)
 Link highlights in nav
+Add admin manage region link to profile
 
 Consistent form formatting 
             roaster create
@@ -70,6 +68,9 @@ Consistent form formatting
             review edit
             coffee edit
             roaster edit
+
+Region create (admin-only)
+Region edit (admin-only)
 
 ##Site Plan:
 LEMP+J stack 

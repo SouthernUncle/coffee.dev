@@ -4,11 +4,23 @@
 	{{ $region->name }}
 @stop
 
+@section('style')
+    <style>
+        .btn {margin-top:10px; margin-bottom:10px;}
+    </style>
+@stop
+
 @section('content')
     <div class="container">
         <h1>{{ $region->name }}</h1>
         <p>{{ $region->description }}</p>
         <img src="{{ $region-> map_url }}">
+        <br>
+        @if(Auth::check() && Auth::user()->role_id == 1)
+            <a href="{{{ action('RegionsController@edit', $region->id) }}}">
+                <button class="btn btn-info">Edit</button>
+            </a>
+        @endif
         {{ Form::open(array('action' => ['RegionsController@show', $region->id], 'method' => 'get')) }}
             {{ Form::text('search', null, ['class' => 'form-control search', 'placeholder' => 'Search...']) }}
         {{ Form::close() }}
