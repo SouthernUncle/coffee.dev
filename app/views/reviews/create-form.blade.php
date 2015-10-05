@@ -107,7 +107,7 @@
 	    	<input type="text" name="brewer" placeholder="Brewer (ex: Chemex -or- V60)" class="form-control small">
     	</div>
     	<div class="col-xs-12">
-	    	<textarea name="method"class="form-control full" placeholder="Enter your brewing methods here (ie: bloom time, other equipment used) and any other factors or tidbits you wish to share!"></textarea>
+	    	<textarea name="method" class="form-control full" placeholder="Enter your brewing methods here (ie: bloom time, other equipment used) and any other factors or tidbits you wish to share!"></textarea>
     	</div>
     </div>
     <div class="col-xs-12 full col-md-6">

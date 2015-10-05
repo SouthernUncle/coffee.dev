@@ -122,7 +122,7 @@
 	    	<input type="text" name="brewer" placeholder="Brewer (ex: Chemex -or- V60)" class="form-control small" value="@if(isset($review->parameter->brewer)){{{ $review->parameter->brewer }}}@endif"/>
     	</div>
     	<div class="col-xs-12">
-	    	<textarea class="form-control full" placeholder="Enter your brewing methods here (ie: bloom time, other equipment used) and any other factors or tidbits you wish to share!">@if(isset($review->parameter->method)){{ $review->parameter->method }}@endif</textarea>
+	    	<textarea name="method" class="form-control full" placeholder="Enter your brewing methods here (ie: bloom time, other equipment used) and any other factors or tidbits you wish to share!">@if(isset($review->parameter->method)){{ $review->parameter->method }}@endif</textarea>
     	</div>
     </div>
     <div class="well col-xs-12 full">
