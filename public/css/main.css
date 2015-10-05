@@ -153,4 +153,9 @@ label.fancy {
 
 .review-btn {
 	float: right;
+	margin-top: 0px;
+}
+
+.display-inline {
+	display: inline;
 }

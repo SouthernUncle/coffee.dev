@@ -5,7 +5,8 @@
 @section('content')
     <div class="container">
         <div class="col-xs-12 col-s-6">
-            <h1>{{ $roaster->name }}</h1>
+            <h1 class="display-inline">{{ $roaster->name }}</h1>
+            <a href="http://{{ $roaster->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
 
             @if($roaster->overallRoasterScore() == 50)
                     <h2>No Coffees Yet Rated</h2>
