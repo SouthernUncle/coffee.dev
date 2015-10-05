@@ -82,6 +82,14 @@ h1#regions-header {
 	background-color: #222;
 }
 
+label.fancy {
+	margin-top: 10px;
+}
+
+.btn {
+	margin-top: 10px;
+}
+
 .btn.btn-default {
 	color: #222;
 	border: 1px solid #222;
@@ -129,4 +137,20 @@ h1#regions-header {
 		float:left;
 		max-width: 25%;
 	}
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -125px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 125px; /* .push must be the same height as .footer */
 }
