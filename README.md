@@ -1,19 +1,9 @@
-# coffee.dev
+# BeanRate.com
 ## Codeup Capstone
 
 Final Weekend Tasks:
 
 ## To Do:
-
-Consistent form formatting 
-            roaster create
-            coffee create from roaster
-            coffee create
-            review create from coffee
-    review create
-    review edit
-            coffee edit
-            roaster edit
 
 Touch-up/re-do css on:
     coffee index
@@ -21,14 +11,9 @@ Touch-up/re-do css on:
     roaster index
     roaster show
     region index (mobile, esp.)
-    region show
-    user show
-    user edit
-
-Text on review sliders to explain ratings
-    create DONE
-    create from coffee
-    edit
+        //region show
+    user show (add image?)
+        //user edit
 
 Review sort on:
     coffee show
@@ -38,10 +23,6 @@ Table column sort on:
     coffee index
     roaster index
     region index
-
-All tables show NOT YET RATED instead of 0:
-    region show
-    coffee index
 
 ### Nice to haves:
 
@@ -67,6 +48,32 @@ Create admin-only coffee edit page
 Create admin-only roaster edit page
 Edit buttons on roaster show and coffee show (admin only)
 Link highlights in nav
+Add admin manage region link to profile
+
+Consistent form formatting 
+            roaster create
+            coffee create from roaster
+            coffee create
+            review create from coffee
+            review create
+            review edit
+            coffee edit
+            roaster edit
+
+Region create (admin-only)
+Region edit (admin-only)
+
+All tables show NOT YET RATED instead of 0:
+    region show
+    coffee index
+
+
+Text on review sliders to explain ratings
+    review create
+    review create from coffee
+    review edit
+    user create
+    user edit
 
 ##Site Plan:
 LEMP+J stack 

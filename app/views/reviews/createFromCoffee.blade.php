@@ -13,7 +13,6 @@
 	<div class="container head">
 	{{ Form::open(array('action' => 'ReviewsController@store')) }}
 		<div class="full col-xs-12 col-md-12">
-			<h1 class="brown heading">Create New Review</h1>
 			<div class="col-xs-12 col-md-6">
 			<h4 class="brown fancy">Select Roaster</h4>
 				<select class="form-control" name="roaster" id="roaster">
@@ -34,8 +33,11 @@
 
 @section('js')
 	<script>
-	$(document).ready(function(){
+	$(document).ready(function() {
 	"use strict";
+		$("#create_nav").addClass("active");
+		$("#add_nav").text("Add Review");
+
 		$("#roaster").change(function() {
 			$.get("/roasters/coffees/" + $("#roaster").val()).done(function(data) {
 				var $coffees = $("#coffee");
@@ -73,55 +75,7 @@
 				});
 			});
 		};
-
-		$('#aroma').slider({
-			formatter: function(value) {
-				return 'Aroma: ' + value;
-			}
-		});
-
-		$('#flavor').slider({
-			formatter: function(value) {
-				return 'Flavor: ' + value;
-			}
-		});
-
-		$('#aftertaste').slider({
-			formatter: function(value) {
-				return 'Aftertaste: ' + value;
-			}
-		});
-
-		$('#balance').slider({
-			formatter: function(value) {
-				return 'Balance: ' + value;
-			}
-		});
-
-		$('#roast').slider({
-			formatter: function(value) {
-				return 'Roast: ' + value;
-			}
-		});
-
-		$('#body').slider({
-			formatter: function(value) {
-				return 'Body: ' + value;
-			}
-		});
-
-		$('#acidity').slider({
-			formatter: function(value) {
-				return 'Acidity: ' + value;
-			}
-		});
-
-		webshims.setOptions('forms-ext', {
-		    replaceUI: 'auto',
-		    types: 'number'
-		});
-		webshims.polyfill('forms forms-ext');
-
 	});
 	</script>
+	<script src="/js/review-create-edit.js"></script>
 @stop

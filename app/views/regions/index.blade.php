@@ -5,7 +5,6 @@
 
 @section('content')
 	<div class="container">
-		<h1 id="regions-header">Regions</h1>
 		<div class="region-photos">
 			@foreach($regions as $r)
 				<span class="col-xs-12 col-sm-6 col-lg-4 animate-hover">

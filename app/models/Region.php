@@ -18,4 +18,11 @@ class Region extends Eloquent {
 	{
 		return $this->hasMany('Coffee');
 	}
+
+	public static $rules = array(
+		'name' => 'required',
+		'description' => 'required',
+	);
+
+	public static $editRules = array();
 }

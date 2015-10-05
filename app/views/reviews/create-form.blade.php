@@ -27,7 +27,9 @@
 		<span class="slider-title fancy">Acidity</span>
 		<input id="acidity" name="acidity" data-slider-id='acidity' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
 	</div>
-
+	<div class="col-12-xs col-md-12">
+		<hr>
+	</div>
 	<div class="col-xs-12 col-s-6 col-md-6">
 		<span class="slider-title fancy clear-both">Price per Bag</span>
 			<div class="input-group"> 
@@ -42,6 +44,9 @@
     		<input type="number" name="bag_size_grams" id="bag-size" value="0" min="0" step="0.0" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency"/>
 		</div>
     </div>
+	<div class="col-12-xs col-md-12">
+		<hr>
+	</div>    
     <div class="col-xs-12">
     	<span class="slider-title fancy clear-both">Review</span>
     	<textarea class="input-group form-control clear" name="review" cols="50" rows="10" placeholder="Write your review here..."></textarea>
@@ -107,7 +112,7 @@
 	    	<input type="text" name="brewer" placeholder="Brewer (ex: Chemex -or- V60)" class="form-control small">
     	</div>
     	<div class="col-xs-12">
-	    	<textarea name="method"class="form-control full" placeholder="Enter your brewing methods here (ie: bloom time, other equipment used) and any other factors or tidbits you wish to share!"></textarea>
+	    	<textarea name="method" class="form-control full" placeholder="Enter your brewing methods here (ie: bloom time, other equipment used) and any other factors or tidbits you wish to share!"></textarea>
     	</div>
     </div>
     <div class="col-xs-12 full col-md-6">

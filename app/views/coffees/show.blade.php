@@ -31,7 +31,7 @@
         <img src="/img/fit500{{ $coffee->img_url }}" class="img img-responsive">
         <br>
 
-        @if(Auth::user()->role_id == 1)
+        @if(Auth::check() && Auth::user()->role_id == 1)
             <a href="{{{ action('CoffeesController@edit', $coffee->id) }}}">
                 <button class="btn btn-info">Edit</button>
             </a>
@@ -56,8 +56,10 @@
                     <hr>
                     <div class="panel-body">
                         <p>
-                            @if ($p->grind)
+                            @if ($p->grind && ($p->water_weight || $p->coffee_weight || $p->brew_time))
                                 Grind: {{ $p->grind }} |
+                            @elseif($p->grind)
+                                Grind: {{ $p->grind }} 
                             @endif
                             @if ($p->water_weight)
                                 Water: {{ $p->water_weight }} g |
@@ -71,15 +73,19 @@
                             @if ($p->brew_time)
                                 Brew Time: {{ $p->brew_time }} seconds
                             @endif
-                            @if ($p->water_temp)
+                            @if ($p->water_temp && ($p->brew_time || $p->coffee_weight || $p->water_weight))
                                 | Water Temp: {{ $p->water_temp }} &deg;F
+                            @elseif($p->water_temp)
+                                Water Temp: {{ $p->water_temp }} &deg;F
                             @endif
                         </p>
                         <p>
                             @if ($p->brewer)
                                 Brewer: {{ $p->brewer }}
                             @endif
-                            @if ($p->method)
+                            @if ($p->method && $p->brewer)
+                                | Method: {{ $p->method }} 
+                            @elseif($p->method)
                                 Method: {{ $p->method }}
                             @endif
                         </p>

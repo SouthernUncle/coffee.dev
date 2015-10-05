@@ -3,9 +3,8 @@
 <head>
     @include('layouts.partials.head')
     <link rel="stylesheet" type="text/css" href="/css/body.css">
+    <link rel="stylesheet" type="text/css" href="/css/sticky-footer.css">
 </head>
-
-
 
 <header>
 	@include('layouts.partials.nav')
@@ -18,3 +17,5 @@
 	@include('layouts.partials.footer')
 
 	@include('layouts.partials.script')
+</body>
+</html>

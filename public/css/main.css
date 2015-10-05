@@ -82,6 +82,14 @@ h1#regions-header {
 	background-color: #222;
 }
 
+label.fancy {
+	margin-top: 10px;
+}
+
+.btn {
+	margin-top: 10px;
+}
+
 .btn.btn-default {
 	color: #222;
 	border: 1px solid #222;

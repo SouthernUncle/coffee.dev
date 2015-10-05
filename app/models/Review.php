@@ -55,6 +55,8 @@ class Review extends Eloquent {
 		'category3' => 'required',
 	);
 
+	public static $editRules = array();
+
 	// Calculations
 	public static function convertToGrams($number)
 	{

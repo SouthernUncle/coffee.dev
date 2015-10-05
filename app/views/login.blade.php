@@ -4,23 +4,28 @@
 
 @section('content')
 	<div class="container">
-	    <div class="row">
-	        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-		        {{ Form::open(array('action' => 'HomeController@doLogin', 'class' => 'form-horizontal', 'id' => 'login')) }}
-		            <div id="loginForm" class="form-group col-xs-12">
-		                <div class="row">
-		                	{{ Form::label('username', 'Username') }}
-							{{ Form::text('username', null, [ 'autofocus', 'class' => 'form-control']) }}
+        {{ Form::open(array('action' => 'HomeController@doLogin', 'class' => 'form-horizontal', 'id' => 'login')) }}
+            <div class="col-xs-12 col-s-12 col-md-12">
+            	<div class="col-s-6 col-md-6">
+            	{{ Form::label('username', 'Username', ['class' => 'fancy']) }}
+				{{ Form::text('username', null, [ 'autofocus', 'class' => 'form-control brown']) }}
+				</div>
+			</div>
 
-							{{ Form::label('password', 'Password') }}
-							{{ Form::password('password', null, ['class' => 'form-control']) }}
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-sm-6 col-md-6">
+				{{ Form::label('password', 'Password', ['class' => 'fancy']) }}
+				{{ Form::password('password', ['class' => 'form-control brown']) }}
+				</div>
 
-	                        <button class="btn btn-default">Login</button>
-	                    </div>
-		            </div>
-		        {{ Form::close() }}
-	        </div>
-	    </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12">
+            	<div class ="col-xs-12 col-sm-12 col-md-12">
+		            <button class="btn btn-info">Log In</button>
+	            </div>
+            </div>
+        {{ Form::close() }}
 	</div>
 @stop
 

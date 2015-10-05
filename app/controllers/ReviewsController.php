@@ -20,7 +20,6 @@ class ReviewsController extends \BaseController {
 	public function create()
 	{
 		$roasters = Roaster::all();
-		// $coffees  = Coffee::all();
 		$categories = FlavorCategory::orderBy('name')->get();
 
 		return View::make('reviews.create', compact('roasters', 'categories'));
@@ -154,16 +153,19 @@ class ReviewsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$review = Review::findOrFail($id);
-
-		$validator = Validator::make($data = Input::all(), Review::$rules);
+		$validator = Validator::make($data = Input::only('review'), Review::$editRules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$review->review 		= Input::get('review'); 
+		$review = Review::findOrFail($id);
+
+		$review->user_id 		= $review->user_id;
+		$review->roaster_id		= $review->roaster_id;
+		$review->coffee_id		= $review->coffee_id;
+		$review->review 		= (Input::has('review') ? Input::get('review') : $review->review); 
 		$review->aroma			= Input::get('aroma');
 		$review->flavor 		= Input::get('flavor');
 		$review->aftertaste		= Input::get('aftertaste');
@@ -176,20 +178,26 @@ class ReviewsController extends \BaseController {
 
 		$review->save();
 
-		$flavors = [];
+		$flavors = [];	
 
 		for($i = 0; $i <= 2; $i++) {
 			if (Input::has('flavor' . $i)) {
 				$flavor = Input::get('flavor' . $i);
-				array_push($flavors, $flavor);
+			} else {
+				$flavor = $review->reviewFlavors[$i]->id;
 			}
+			array_push($flavors, $flavor); 
 		}
 
 		if(!empty($flavors)) {
 			$this->addFlavorToReview($flavors, $review->id);
 		}	
 
-		$param = new Parameter();
+		if(Parameter::find($review->id)) {
+			$param = Parameter::find($review->id);
+		} else {
+			$param = new Parameter();
+		}
 
 		if(Input::has('roast_date')) {
 				$input 		= Input::get('roast_date');

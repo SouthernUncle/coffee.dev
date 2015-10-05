@@ -11,9 +11,6 @@
 @section('content')
 	{{ Form::open(array('action' => 'RoastersController@store', 'files' => true)) }}
 	<div class="container">
-		<div class="col-xs-12">
-			<h1 class="brown heading">Create New Roaster</h1>
-		</div>	
 		<div class="col-xs-6  col-md-6">
 			<span class="brown fancy">Name</span>
 	    		<input type="text" name="name" class="form-control coffee-input brown" placeholder="i.e. 'Merit Roasting Co.'"/>
@@ -64,6 +61,7 @@
     "use strict";
     $(document).ready(function() {
         $("#create_nav").addClass("active");
+        $("#add_nav").text("Add Roaster");
     });
 </script>
 @stop

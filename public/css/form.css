@@ -2,6 +2,10 @@ div.col-xs-12 {
 	margin-top: 8px;
 }
 
+.center-it {
+	text-align: center;
+}
+
 .slider {
 	text-align: center;
 	margin-top: 5px;

@@ -14,7 +14,7 @@
 	{{ Form::model($roaster, array('action' => array('RoastersController@update', $roaster->id), 'method' =>'PUT', 'files' => true)) }}
 	<div class="container head">
 		<div class="col-xs-12">
-			<h1 class="brown heading">Edit {{{ $roaster->name }}}</h1>
+			<h1 class="brown heading">{{{ $roaster->name }}}</h1>
 		</div>	
 	<div class="container">
 
@@ -61,4 +61,11 @@
 	</div><br>
 	<button class="btn btn-default fancy">Save</button>
 	{{ Form::close() }}
+@stop
+
+@section('js')
+	<script>
+		$("#create_nav").addClass("active");
+		$("#add_nav").text("Edit Roaster");
+	</script>
 @stop
