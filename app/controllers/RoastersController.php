@@ -91,7 +91,9 @@ class RoastersController extends \BaseController {
 	{
 		$roaster = Roaster::findOrFail($id);
 
-		
+		$description = $roaster->description;
+		$parse = new Parsedown();
+		$roaster->description = $parse->text($description);
 
 		$new = Image::make(public_path() . $roaster->img_url)->resize(null, 750, function ($constraint) {
 			    $constraint->aspectRatio();
