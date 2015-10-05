@@ -12,9 +12,21 @@
 @section('content')
 	<div class="container head">
 	{{ Form::open(array('action' => 'ReviewsController@store')) }}
-		<div class="col-xs-12 col-md-6">
-			<h1 class="yellow heading">Create New Review</h1>
+		<div class="col-xs-12 col-md-12 center-it">
+			<h1 class="brown heading">New Review</h1>
+		</div>
 
+		<div class="col-xs-12 col-md-6 center-it">
+			<h4 class="brown fancy">Don't see what you're looking for?</h4>
+			<a href="{{{ action('RoastersController@create') }}}">
+				<button type="button" class="btn btn-info btn-lg">Add a New Roaster</button>
+			</a>
+			<a href="{{{ action('CoffeesController@create') }}}">
+				<button type="button" class="btn btn-info btn-lg">Add a New Coffee</button>
+			</a>
+		</div>
+
+		<div class="col-xs-12 col-md-6 center-it">
 			<h4 class="brown fancy">Select Roaster</h4>
 
 			<select class="form-control" name="roaster" id="coffee_roaster">
@@ -27,29 +39,12 @@
 			</select>
 		</div>
 
-		<div class="col-xs-12 col-md-6">
-			<h4 class="brown fancy">Don't see what you're looking for?</h4>
-			<a href="{{{ action('RoastersController@create') }}}">
-				<button type="button" class="btn btn-info btn-lg">Add a New Roaster</button>
-			</a>
-
-			<a href="{{{ action('CoffeesController@create') }}}">
-				<button type="button" class="btn btn-info btn-lg">Add a New Coffee</button>
-			</a>
-		</div>
-
-		<div class="col-xs-12 col-md-6">
+		<div class="col-xs-12 col-md-6 center-it">
 			<h4 class="brown fancy">Select Coffee</h4>
 
 			<select class="form-control" id="roasters_coffees" name="coffee">
 				<option value="0">Please select a roaster first...</option>
 			</select>
-		</div>
-		
-		<div class="col-xs-12 col-md-4">
-			
-			<h4 class="brown fancy">or</h4>
-			
 		</div>
 	</div>
 	@include('reviews.create-form')
