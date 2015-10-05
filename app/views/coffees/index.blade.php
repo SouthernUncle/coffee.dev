@@ -2,10 +2,6 @@
 
 @section('title', 'COFFEES')
 
-@section('style')
-	<link rel="stylesheet" type="text/css" href="coffee-index.css">
-@stop
-
 @section('content')
 	<div class="container">
 		{{ Form::open(array('action' => 'CoffeesController@index', 'method' => 'get')) }}

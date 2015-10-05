@@ -5,6 +5,10 @@ Final Weekend Tasks:
 
 ## To Do:
 
+Form persistence
+
+Edit link on user profile review section
+
 Touch-up/re-do css on:
     coffee index
     coffee show

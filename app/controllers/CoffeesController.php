@@ -110,8 +110,11 @@ class CoffeesController extends \BaseController {
 	{
 		$coffee = Coffee::with('reviews')->findOrFail($id);
 
-		$new = Image::make(public_path() . $coffee->img_url)->fit(500)->save(public_path() . '/img/fit500' . $coffee->img_url);
+		$roasters_description = $coffee->roasters_description;
+		$parse = new Parsedown();
+		$coffee->roasters_description = $parse->text($roasters_description);
 
+		$new = Image::make(public_path() . $coffee->img_url)->fit(500)->save(public_path() . '/img/fit500' . $coffee->img_url);
 
 		$reviews = $coffee->reviews()->paginate(4);
 
@@ -195,13 +198,13 @@ class CoffeesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		$coffee = Coffee::find($id);
-		$coffee->delete();
+	// public function destroy($id)
+	// {
+	// 	$coffee = Coffee::find($id);
+	// 	$coffee->delete();
 
-		return Redirect::route('CoffeesController@index');
-	}
+	// 	return Redirect::route('CoffeesController@index');
+	// }
 
 	
 
