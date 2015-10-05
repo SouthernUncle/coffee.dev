@@ -13,4 +13,8 @@
 <script src="/js/agency.js"></script>
 <script src="/js/bootstrap-slider.js"></script>
 
+{{-- Google Analytics --}}
+
+@include('layouts.partials.analytics')
+
 @yield('js')
