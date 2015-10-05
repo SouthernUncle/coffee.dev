@@ -15,6 +15,7 @@
 		<div class="col-xs-12 col-md-12 center-it">
 			<h1 class="brown heading">New Review</h1>
 		</div>
+		<hr>
 
 		<div class="col-xs-12 col-md-6 center-it">
 			<h4 class="brown fancy">Don't see what you're looking for?</h4>
@@ -45,6 +46,9 @@
 			<select class="form-control" id="roasters_coffees" name="coffee">
 				<option value="0">Please select a roaster first...</option>
 			</select>
+		</div>
+		<div class="col-12-xs col-md-12">
+			<hr>
 		</div>
 	</div>
 	@include('reviews.create-form')
