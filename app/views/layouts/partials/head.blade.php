@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="/css/agency.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 <link rel="stylesheet" type="text/css" href="/css/slider.css">
+<link rel="stylesheet" type="text/css" href="/css/paginate.css">
 
 <!-- Custom Fonts -->
 <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

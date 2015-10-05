@@ -5,6 +5,8 @@ Intro - Dave
 
 	Brief project overview
 		-scope
+			-crowd-sourced
+			-invite-only
 		-problem solved
 		-technologies used
 	Homepage overview
@@ -35,6 +37,7 @@ Challenges-Dave
 		-dependent dropdowns
 			-js w/ php
 			-js on sliders
+	Laravel authentication
 
 Challenges-Josh
 	Home @ Contact
@@ -48,8 +51,6 @@ Wrap-up-Dave
 	-keeping in production
 	-check back for future changes and upgrades
 	-github link for the nerds
-
-
 
 
 Notes:

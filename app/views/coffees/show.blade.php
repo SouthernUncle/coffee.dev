@@ -11,9 +11,11 @@
         </h1>
         <a href="http://{{ $coffee->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
 
+        @if(Auth::check())
         <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->id) }}}">
             <button class="btn  btn-awesome review-btn btn-lg">Review</button>
         </a>
+        @endif
 
         <h4>
             <a href="{{ action('RoastersController@show', $coffee->roaster->id) }}">{{ $coffee->roaster->name }}</a>
