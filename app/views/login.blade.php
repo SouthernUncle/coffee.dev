@@ -12,8 +12,8 @@
 				</div>
 			</div>
 
-			<div class="col-xs-12 col-s-12 col-md-12">
-				<div class="col-s-6 col-md-6">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-sm-6 col-md-6">
 				{{ Form::label('password', 'Password', ['class' => 'fancy']) }}
 				{{ Form::password('password', ['class' => 'form-control brown']) }}
 				</div>
@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-xs-12 col-md-12">
-            	<div class ="col-xs-12 col-s-12 col-md-12">
+            	<div class ="col-xs-12 col-sm-12 col-md-12">
 		            <button class="btn btn-info">Log In</button>
 	            </div>
             </div>

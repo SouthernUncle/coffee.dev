@@ -26,11 +26,11 @@
                 </li>
                 @if(!Auth::check())
                 <li  id="user_nav">
-                    <a class="page-scroll" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
+                    <a class="page-scroll" id="new_user_nav" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
                 </li>
                 @else
                 <li id="user_nav" class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="dropdown-toggle" id="edit_user_nav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Account
                         <i class="fa fa-key"></i>
                     </a>
