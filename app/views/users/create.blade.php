@@ -9,42 +9,55 @@
 
 @section('content')
     <div class="container">
+        <div class="col-xs-12 col-md-12">
+            <h1 class="yellow heading">Welcome</h1>
+        </div>
         {{ Form::open(array('action' => 'UsersController@store', 'method' => 'POST', 'class' => 'form-horizontal', 'id' => 'createUser')) }}
 
-        {{ Form::label('username', 'Username') }}
-        {{ Form::text('username', null, 
-            [
-                'class'       => 'form-control',
-                'placeholder' => 'Username',
-                'value'       => '{{{ Input::old("username")'
-            ])
-        }}
-
-        {{ Form::label('email', 'Email') }}
-        {{ Form::email('email', null, 
-            [
-                'class'       => 'form-control', 
-                'placeholder' => 'Email',
-                'value'       => '{{{ Input::old("email")'
-            ])
-        }}
-
-        {{ Form::label('password', 'Password') }}
-        {{ Form::password('password', null, ['class' => 'form-control'])}}
-                
-        {{ Form::label('password', 'Confirm') }}
-        {{ Form::password('password_confirmation', null, ['class' => 'form-control'])}}
-    <br>
+        <div class="col-xs-12 col-md-6">
+            {{ Form::label('username', 'Username', ['class' => 'fancy']) }}
+            {{ Form::text('username', null, 
+                [
+                    'class'       => 'form-control',
+                    'placeholder' => 'Username',
+                    'value'       => '{{{ Input::old("username")'
+                ])
+            }}
+        </div>
+        <div class="col-xs-12 col-md-6">
+            {{ Form::label('email', 'Email', ['class' => 'fancy']) }}
+            {{ Form::email('email', null, 
+                [
+                    'class'       => 'form-control', 
+                    'placeholder' => 'Email',
+                    'value'       => '{{{ Input::old("email")'
+                ])
+            }}
+        </div>
+        <div class="col-xs-12 col-md-6">
+            {{ Form::label('password', 'Password', ['class' => 'fancy']) }}
+            <div class="col-xs-12 col-md-12">
+                {{ Form::password('password', ['class' => 'form-control'])}}
+            </div>
+        </div>          
+        <div class="col-xs-12 col-md-6">      
+            {{ Form::label('password', 'Confirm', ['class' => 'fancy']) }}
+            <div class="col-xs-12 col-md-12">
+                {{ Form::password('password_confirmation', ['class' => 'form-control'])}}
+            </div>
+        </div>
+    <div class="col-xs-12 col-md-12 center-it">
     <h3>Using these 3 measures, map out your ideal cup of coffee.</h3>
-    <div class="well col-xs-12 col-s-6">
+    </div>
+    <div class="col-xs-12 col-s-6">
         <span class="slider-title fancy">Roast</span>
         <input id="roast_pref" name="roast_pref" data-slider-id='roast_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
     </div>
-    <div class="well col-xs-12 col-s-6">
+    <div class="col-xs-12 col-s-6">
         <span class="slider-title fancy">Body</span>
         <input id="body_pref" name="body_pref" data-slider-id='body_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
     </div>
-    <div class="well col-xs-12 col-s-6">
+    <div class="col-xs-12 col-s-6">
         <span class="slider-title fancy">Acidity</span>
         <input id="acid_pref" name="acid_pref" data-slider-id='acid_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
     </div>

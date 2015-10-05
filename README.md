@@ -16,9 +16,9 @@ Touch-up/re-do css on:
     user edit
 
 Text on review sliders to explain ratings
-    review create DONE
-    review create from coffee
-    review edit
+            review create
+            review create from coffee
+            review edit
     user create
     user edit
 
