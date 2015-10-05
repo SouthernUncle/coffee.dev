@@ -101,6 +101,18 @@ label.fancy {
 	background-color: #222;
 }
 
+.btn-awesome {
+	background-color: #222;
+	color: #fed316;
+}
+
+.btn-awesome:hover,
+.btn-awesome:focus {
+	background-color: #fed316;
+	color: #222;
+	border: 1px solid #222;
+}
+
 .btn-info {
 	color: #222;
 	background-color: #fed316;
@@ -137,4 +149,8 @@ label.fancy {
 		float:left;
 		max-width: 25%;
 	}
+}
+
+.review-btn {
+	float: right;
 }
