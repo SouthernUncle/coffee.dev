@@ -47,6 +47,9 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 */
 App::missing(function($exception)
 {
+    $url = Request::fullUrl();
+    $userAgent = Request::header('user-agent');
+    Log::warning("404 for URL: $url requested by user agent: $userAgent");
 	return Response::view('errors.404', array(), 404);	
 });
 
