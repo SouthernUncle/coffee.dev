@@ -75,7 +75,7 @@ class HomeController extends BaseController {
 
 		Mail::send('emails.contact', $data, function($message) {
 			$message->from(Input::get('email'), Input::get('name'));
-			$message->to('brewrate@gmail.com', 'Admin');
+			$message->to('beanrate@gmail.com', 'Admin');
 			$message->subject(Input::get('subject'));
 		});
 
