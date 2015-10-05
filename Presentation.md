@@ -53,4 +53,5 @@ Wrap-up-Dave
 
 
 Notes:
+	150 man hours
 	Add coffee to home for demo?

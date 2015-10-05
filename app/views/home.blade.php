@@ -163,7 +163,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
+                    <h2 class="section-heading">The Team</h2>
                     <h3 class="section-subheading text-muted">Small in number, but mighty.</h3>
                 </div>
             </div>
