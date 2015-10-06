@@ -43,7 +43,7 @@ Challenges-Dave
 		-dependent dropdowns
 			-jQuery w/ php
 			-jQUery on sliders
-	Laravel authentication
+	Laravel authentication "real world"
 
 Challenges-Josh
 	Home @ Contact

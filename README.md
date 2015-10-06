@@ -1,8 +1,6 @@
 # BeanRate.com
 ## Codeup Capstone
 
-Final Weekend Tasks:
-
 ## To Do:
 
 Form persistence
