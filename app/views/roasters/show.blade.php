@@ -7,24 +7,25 @@
         <div class="col-xs-12 col-s-6">
             <h1 class="display-inline">{{ $roaster->name }}</h1>
             <a href="http://{{ $roaster->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
-
             @if($roaster->overallRoasterScore() == 50)
                     <h2>No Coffees Yet Rated</h2>
             @else
                 <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
             @endif
+        </div>
             
+        <div class="col-xs-12 col-s-6 col-md-6">
             <p>{{ $roaster->description }}</p>
         </div>
-        <div class="col-xs-12 col-s-6">
+        <div class="col-xs-12 col-s-6 col-md-6">
             <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive">
-            <br>
             @if(Auth::check() && Auth::user()->role_id == 1)
                 <a href="{{{ action('RoastersController@edit', $roaster->id) }}}">
                     <button class="btn btn-info">Edit</button>
                 </a>
             @endif
         </div>
+        <br>
 
         <table class="table table-responsive">
             <thead>

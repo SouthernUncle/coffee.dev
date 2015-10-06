@@ -9,6 +9,12 @@ Intro - Dave
 			-invite-only
 		-problem solved
 		-technologies used
+			-LAMP stack
+			-JavaScript & jQuery
+			-Laravel 4 framework
+			-google maps API
+			-Rackspace's mailgun
+			-Twitter Bootstrap
 	Homepage overview
 		-indexes
 		-coffees (random)
@@ -24,19 +30,19 @@ Reviews-Josh
 	Review createFromCoffee
 		-demo form (pre-filled)
 	Coffee show
-		-built-in correction
 		-pagination
 		-optional parameters
 		-piping on parameters
-		-formula for review rating
-
+		-formula for review rating 
+		-built-in correction
+	wrap up - table talk, linking, etc
 Challenges-Dave
 	Regions Index
 		-js w/ css
 	Review create
 		-dependent dropdowns
-			-js w/ php
-			-js on sliders
+			-jQuery w/ php
+			-jQUery on sliders
 	Laravel authentication
 
 Challenges-Josh
