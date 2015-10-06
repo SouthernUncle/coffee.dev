@@ -11,7 +11,7 @@
 |
 */
 
-Route::resource('/coffees', 'CoffeesController');
+Route::resource('/coffees', 'CoffeesController', array('except' => array('destroy')));
 Route::get('/coffees/createFromRoaster/{id}', 'CoffeesController@createFromRoaster');
 
 Route::get('/', 'HomeController@showHome');
@@ -20,17 +20,17 @@ Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@doLogin');
 Route::get('/logout', 'HomeController@doLogout');
 
-Route::resource('/invite', 'InvitationsController');
+Route::resource('/invite', 'InvitationsController', array('except' => array('destroy')));
 Route::post('/createinvite', 'InvitationsController@emailInvite');
 
-Route::resource('/regions', 'RegionsController');
+Route::resource('/regions', 'RegionsController', array('except' => array('destroy')));
 
-Route::resource('/reviews', 'ReviewsController');
+Route::resource('/reviews', 'ReviewsController', array('except' => array('destroy')));
 Route::get('/reviews/createFromCoffee/{id}', 'ReviewsController@createFromCoffee');
 Route::get('/roasters/coffees/{id}', 'ReviewsController@getCoffees');
 Route::get('/categories/flavors/{id}', 'ReviewsController@getFlavors');
 
-Route::resource('/roasters', 'RoastersController');
+Route::resource('/roasters', 'RoastersController', array('except' => array('destroy')));
 
-Route::resource('/users', 'UsersController');
+Route::resource('/users', 'UsersController', array('except' => array('destroy')));
 Route::get('/createnewuser/{confirmation}', 'UsersController@create');
