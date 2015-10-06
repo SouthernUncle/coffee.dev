@@ -12,9 +12,15 @@
 
 @section('content')
     <div class="container">
-        <h1>{{ $region->name }}</h1>
-        <p>{{ $region->description }}</p>
-        <img src="{{ $region-> map_url }}">
+        <div class="col-xs-12">
+            <h1>{{ $region->name }}</h1>
+        </div>
+        <div class="col-xs-12 col-s-6 col-md-6">
+            <p>{{ $region->description }}</p>
+        </div>
+        <div class="col-xs-12 col-s-6 col-md-6">
+            <img src="{{ $region-> map_url }}">
+        </div>
         <br>
         @if(Auth::check() && Auth::user()->role_id == 1)
             <a href="{{{ action('RegionsController@edit', $region->id) }}}">

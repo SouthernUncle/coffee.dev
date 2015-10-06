@@ -7,17 +7,9 @@ Final Weekend Tasks:
 
 Form persistence
 
-Edit link on user profile review section
+Add url to coffee create!
 
-Touch-up/re-do css on:
-    coffee index
-    coffee show
-    roaster index
-    roaster show
-    region index (mobile, esp.)
-        //region show
-    user show (add image?)
-        //user edit
+User show (add image?)
 
 Review sort on:
     coffee show
@@ -53,6 +45,16 @@ Create admin-only roaster edit page
 Edit buttons on roaster show and coffee show (admin only)
 Link highlights in nav
 Add admin manage region link to profile
+Edit link on user profile review section
+
+Touch-up/re-do css on:
+    coffee show
+    roaster index
+    coffee index
+    region index
+    roaster show
+    region show
+    user edit
 
 Consistent form formatting 
             roaster create
