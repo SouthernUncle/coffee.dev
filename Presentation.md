@@ -5,8 +5,10 @@ Intro - Dave
 
 	Brief project overview
 		-scope
-			-crowd-sourced
-			-invite-only
+			-crowd-sourced coffee reviews
+			-for coffee nerds
+			-home brew
+			-Local, Brown
 		-problem solved
 		-technologies used
 			-LAMP stack
@@ -42,7 +44,7 @@ Challenges-Dave
 	Review create
 		-dependent dropdowns
 			-jQuery w/ php
-			-jQUery on sliders
+			-jQuery on sliders
 	Laravel authentication "real world"
 
 Challenges-Josh

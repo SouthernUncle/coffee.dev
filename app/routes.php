@@ -19,6 +19,7 @@ Route::post('/', 'HomeController@contactUs');
 Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@doLogin');
 Route::get('/logout', 'HomeController@doLogout');
+Route::get('/FAQ', 'HomeController@showFAQ');
 
 Route::resource('/invite', 'InvitationsController', array('except' => array('destroy')));
 Route::post('/createinvite', 'InvitationsController@emailInvite');

@@ -15,11 +15,11 @@
 		<div class="container">
 			<div class="col-xs-12 col-s-6">
 				<span class="brown fancy">Name</span>
-		    		<input type="text" name="name" class="form-control coffee-input brown" placeholder="i.e. 'Ethiopia'"/>
+		    		<input type="text" name="name" class="form-control coffee-input brown" placeholder="i.e. 'Ethiopia'" value="{{ Input::old('name') }}"/>
 			</div>
 			<div class="col-xs-12">
 				<span class="brown fancy">Description</span>
-		    	<textarea name="description" rows="5" class="form-control brown" placeholder="Enter a description of the region."></textarea>
+		    	<textarea name="description" rows="5" class="form-control brown" placeholder="Enter a description of the region.">{{{ Input::old('description') }}}</textarea>
 	    	</div>
 		    <div class="upload col-xs-12 col-md-6">
 			    {{ Form::label('map','Map Image Upload',array('id'=>'','class'=>'fancy brown')) }}

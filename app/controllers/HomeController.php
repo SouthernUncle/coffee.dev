@@ -82,5 +82,10 @@ class HomeController extends BaseController {
 		Session::flash('successMessage', 'Your message was sent.');
 		return Redirect::action('HomeController@showHome');	
 	}
+
+	public function showFAQ()
+	{
+		return View::make('FAQ');
+	}
 	
 }

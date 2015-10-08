@@ -26,7 +26,7 @@
 			<select class="form-control" name="roaster" id="coffee_roaster">
 					<option value="0">Roaster:</option>
 				@foreach ($roasters as $r)
-					<option value="{{{ $r->id }}}">
+					<option @if(Input::old('roaster') == $r->id) selected @endif value="{{{ $r->id }}}">
 						{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
 					</option>
 				@endforeach
@@ -68,7 +68,7 @@
 					$options.empty();
 					console.log(data);
 					$.each(data, function(index, value) {
-						$options.append('<option value="' + index +'">' + value + '</option>');
+						$options.append('<option @if(Input::old("coffee") == ' + index +') selected @endif value="' + index +'">' + value + '</option>');
 					});
 					coffee.trigger("change"); 
 				});
@@ -78,14 +78,17 @@
 		var route = "/categories/flavors/";
 		var master = $("#category1");
 		var dependent = $("#flavor1");
+		var flavor = 'flavor1';
 		getDropdown(master, dependent);
 
 		master = $("#category2");
 		dependent = $("#flavor2");
+		flavor = 'flavor2';
 		getDropdown(master, dependent);
 
 		master = $("#category3");
 		dependent = $("#flavor3");
+		flavor = 'flavor3';
 		getDropdown(master, dependent);
 
 		function getDropdown(master, dependent) {
@@ -95,7 +98,7 @@
 					$options.empty();
 					console.log(data);
 					$.each(data, function(index, value) {
-						$options.append('<option value="' + index +'">' + value + '</option>');
+						$options.append('<option @if(Input::old(' + flavor + ') == ' + index +') selected @endif value="' + index +'">' + value + '</option>');
 					});
 					dependent.trigger("change"); 
 				});

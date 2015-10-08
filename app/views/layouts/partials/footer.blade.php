@@ -11,4 +11,7 @@
         <a href="https://github.com/SouthernUncle/coffee.dev/" target="_blank" class="squeeze text-ccenter">
         <i class="fa fa-github"></i> Southern Uncle</a>
     </div>
+    <div class="col-xs-12">
+        <a href="{{ action('HomeController@showFAQ') }}">FAQ</a>
+    </div>
 </footer>

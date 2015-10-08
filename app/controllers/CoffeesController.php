@@ -85,6 +85,7 @@ class CoffeesController extends \BaseController {
 		$coffee->region_id				= Input::get('region');
 		$coffee->roaster_id				= Input::get('roaster');
 		$coffee->name 					= Input::get('name');
+		$coffee->url 					= Input::get('url');
 		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
 		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
 		$coffee->roasters_description 	= Input::get('description');
@@ -175,6 +176,7 @@ class CoffeesController extends \BaseController {
 		$coffee->region_id				= Input::get('region');
 		$coffee->roaster_id				= Input::get('roaster');
 		$coffee->name 					= Input::get('name');
+		$coffee->url 					= Input::get('url');
 		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
 		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
 		$coffee->roasters_description 	= Input::get('description');

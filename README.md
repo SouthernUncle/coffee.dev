@@ -3,9 +3,9 @@
 
 ## To Do:
 
-Form persistence
+Laravel transactions on user create
 
-Add url to coffee create!
+Form persistence: reviews create
 
 User show (add image?)
 
@@ -44,6 +44,7 @@ Edit buttons on roaster show and coffee show (admin only)
 Link highlights in nav
 Add admin manage region link to profile
 Edit link on user profile review section
+Add url to coffee create!
 
 Touch-up/re-do css on:
     coffee show
@@ -78,6 +79,12 @@ Text on review sliders to explain ratings
     review edit
     user create
     user edit
+
+Form persistence
+    -coffees done
+    -roasters done
+    -users create sliders done 
+    -regions done
 
 ##Site Plan:
 LEMP+J stack 
