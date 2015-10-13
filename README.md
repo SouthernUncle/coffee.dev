@@ -3,7 +3,7 @@
 
 ## To Do:
 
-Button to create coffee from roaster page
+Add create buttons to roaster and coffee index pages
 
 Laravel transactions on user create
     -update email (remove ridiculous instructions)
@@ -92,6 +92,7 @@ FAQ Page
     link in footer
 
 Redirect Login to intended OR profile (not home)
+Button to create coffee from roaster page
 
 ##Site Plan:
 LEMP+J stack 

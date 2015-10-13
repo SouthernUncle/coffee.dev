@@ -30,6 +30,20 @@ tr {
 	max-height: 50px;
 }
 
+tbody > tr:hover a {
+	color: #fed316;
+}
+
+td > a:hover {
+	color: #fed316;
+	text-decoration: underline;
+}
+
+td a {
+	color: #222;
+	font-style: italic;
+}
+
 .region-photos {
 	margin-left: auto;
 	margin-right: auto;
