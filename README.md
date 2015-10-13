@@ -3,12 +3,12 @@
 
 ## To Do:
 
-Add create buttons to roaster and coffee index pages
-
 Laravel transactions on user create
     -update email (remove ridiculous instructions)
 
-Form persistence: reviews create
+Form persistence: 
+    reviews create
+    coffees create
 
 URLs with names instead of DB ids(?)
 
@@ -93,6 +93,7 @@ FAQ Page
 
 Redirect Login to intended OR profile (not home)
 Button to create coffee from roaster page
+Add create buttons to roaster and coffee index pages
 
 ##Site Plan:
 LEMP+J stack 
