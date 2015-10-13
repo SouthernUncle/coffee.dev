@@ -12,6 +12,8 @@
         <i class="fa fa-github"></i> Southern Uncle</a>
     </div>
     <div class="col-xs-12">
-        <a href="{{ action('HomeController@showFAQ') }}">FAQ</a>
+        <a href="{{ action('HomeController@showFAQ') }}">
+            FAQ <i class="fa fa-question-circle yellow"></i>
+        </a>
     </div>
 </footer>

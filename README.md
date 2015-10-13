@@ -3,9 +3,14 @@
 
 ## To Do:
 
+Button to create coffee from roaster page
+
 Laravel transactions on user create
+    -update email (remove ridiculous instructions)
 
 Form persistence: reviews create
+
+URLs with names instead of DB ids(?)
 
 User show (add image?)
 
@@ -20,7 +25,7 @@ Table column sort on:
 
 ### Nice to haves:
 
-Explanation section on landing page (NEED TO HAVE?)
+Explanation section on landing page
 
 Chartist.js
     flavor wheel pie chart
@@ -30,9 +35,6 @@ Chartist.js
 
 Landing page carousel
     double as explanation section???
-
-FAQ Page
-    link in footer
 
 ## Done:
 
@@ -85,6 +87,11 @@ Form persistence
     -roasters done
     -users create sliders done 
     -regions done
+
+FAQ Page
+    link in footer
+
+Redirect Login to intended OR profile (not home)
 
 ##Site Plan:
 LEMP+J stack 

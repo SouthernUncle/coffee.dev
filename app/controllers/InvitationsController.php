@@ -79,7 +79,7 @@ class InvitationsController extends BaseController {
 		Mail::send('emails.invite', $data, function($message) {
 			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'test');
 			$message->to(Input::get('email'), Input::get('name'));
-			$message->subject('Welcome to ...');
+			$message->subject('Welcome to Bean Rate!');
 		});
 		Session::flash('successMessage', 'Your invite was sent.');
 		return Redirect::action('UsersController@show', Auth::id());			
