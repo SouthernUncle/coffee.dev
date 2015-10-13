@@ -43,11 +43,11 @@
 @stop
 
 @section('js')
-<script>
-    "use strict";
-    $(document).ready(function() {
-        $("#create_nav").addClass("active");
-		$("#add_nav").text("Add Coffee");
-    });
-</script>
+	<script>
+	    "use strict";
+	    $(document).ready(function() {
+	        $("#create_nav").addClass("active");
+			$("#add_nav").text("Add Coffee");
+	    });
+	</script>
 @stop
