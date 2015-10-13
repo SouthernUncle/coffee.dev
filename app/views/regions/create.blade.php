@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-	Create Region
-@stop
+@section('title', 'Create Region')
 
 @section('style')
 	<link rel="stylesheet" type="text/css" href="/css/form.css">
