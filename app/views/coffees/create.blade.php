@@ -16,7 +16,7 @@
 			<select class="brown form-control" name="region" id="region">
 					<option value="0">Region:</option>
 				@foreach ($regions as $re)
-					<option value="{{{ $re->id }}}">
+					<option value="{{{ $re->id }}}" @if(Input::old('region') == $re->id) selected @endif>
 						{{{ $re->name }}}
 					</option>
 				@endforeach
@@ -27,7 +27,7 @@
 			<select class="brown form-control" name="roaster" id="roaster">
 					<option value="0">Roaster:</option>
 				@foreach ($roasters as $r)
-					<option value="{{{ $r->id }}}">
+					<option value="{{{ $r->id }}}" @if(Input::old('roaster') == $r->id) selected @endif>
 						{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
 					</option>
 				@endforeach
