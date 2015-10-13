@@ -12,6 +12,12 @@
             @else
                 <h2>{{ $roaster->overallRoasterScore() }} / 100</h2>
             @endif
+
+             @if(Auth::check())
+            <a href="{{{ action('CoffeesController@createFromRoaster', $roaster->id) }}}">
+                <button class="btn btn-awesome btn-lg">Create Coffee</button>
+            </a>
+            @endif
         </div>
             
         <div class="col-xs-12 col-s-6 col-md-6">
