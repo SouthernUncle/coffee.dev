@@ -2,14 +2,6 @@
 
 @section('title', 'ROASTERS')
 
-@section('style')
-<style>
-	.paginfix {
-		color: #FED316;
-	}
-</style>
-@stop
-
 @section('content')
 	<div class="container">
 		{{ Form::open(array('action' => 'RoastersController@index', 'method' => 'get')) }}
