@@ -39,13 +39,13 @@
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <img src="/img/fit500{{ $coffee->img_url }}" class="img img-responsive">
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
             @if(Auth::check() && Auth::user()->role_id == 1)
                 <a href="{{{ action('CoffeesController@edit', $coffee->id) }}}">
                     <button class="btn btn-info">Edit</button>
                 </a>
             @endif        
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
 
             @if(isset($reviews[0]))<h2>Reviews:</h2>@endif
             @foreach ($reviews as $r)
