@@ -18,7 +18,7 @@
 			<select class="brown form-control" name="region" id="region">
 					<option>Region:</option>
 				@foreach ($regions as $re)
-					<option value="{{{ $re->id }}}">
+					<option value="{{{ $re->id }}}" @if(Input::old('region') == $re->id) selected @endif>
 						{{{ $re->name }}}
 					</option>
 				@endforeach
