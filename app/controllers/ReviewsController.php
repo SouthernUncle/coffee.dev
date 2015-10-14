@@ -112,7 +112,7 @@ class ReviewsController extends \BaseController {
 			$param->save();
 		}
 
-		return Redirect::action('CoffeesController@show', $review->coffee_id);
+		return Redirect::action('CoffeesController@show', $review->coffee->url_name);
 	}
 
 
@@ -139,7 +139,7 @@ class ReviewsController extends \BaseController {
 			return View::make('reviews.edit', compact('review', 'categories'));
 		}  else {
 			Session::flash('errorMessage', 'You can only edit your own reviews.');
-			return Redirect::action('CoffeesController@show', $review->coffee->id);
+			return Redirect::action('CoffeesController@show', $review->coffee->url_name);
 		}
 
 		
@@ -220,7 +220,7 @@ class ReviewsController extends \BaseController {
 			$param->save();
 		}
 
-		return Redirect::action('CoffeesController@show', $review->coffee_id);
+		return Redirect::action('CoffeesController@show', $review->coffee->url_name);
 	}
 
 	/**
@@ -233,7 +233,7 @@ class ReviewsController extends \BaseController {
 	{
 		Review::destroy($id);
 
-		return Redirect::route('reviews.index');
+		return Redirect::action('UsersController@show', Auth::user()->username);
 	}
 
 	public function getCoffees($id)
