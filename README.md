@@ -3,9 +3,9 @@
 
 ## To Do:
 
-User account delete
-
 Forgot Password?
+
+Testing PHPStorm
 
 Laravel transactions on user create
     -update email (remove ridiculous instructions)
@@ -97,6 +97,7 @@ Add create buttons to roaster and coffee index pages
 URLs with names instead of DB ids
 Delete and edit buttons on user's reviews (coffee show)
 404 on ModelNotFound/NotFoundHttp/MethodNotAllowed
+User account delete
 
 ##Site Plan:
 LEMP+J stack 
