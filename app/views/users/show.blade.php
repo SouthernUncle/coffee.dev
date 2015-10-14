@@ -45,7 +45,7 @@
             <h4>My Reviews</h4>
             @foreach($reviews as $review)
                 <div class="col-xs-6 col-md-4">
-                    <a href="{{{ action('CoffeesController@show', $review->coffee->id) }}}" class="brown">
+                    <a href="{{{ action('CoffeesController@show', $review->coffee->url_name) }}}" class="brown">
                         {{ $review->coffee->name }} by <span class="fancy">{{ $review->coffee->roaster->name }}</span>
                     </a>
                     <a href="{{{ action('ReviewsController@edit', $review->id) }}}">
