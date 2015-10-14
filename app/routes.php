@@ -55,5 +55,5 @@ Route::resource('/roasters', 'RoastersController', array('except' => array('dest
 /************************
  * USERS CONTROLLER
  */
-Route::resource('/users', 'UsersController', array('except' => array('destroy')));
+Route::resource('/users', 'UsersController');
 Route::get('/welcome/{confirmation}', 'UsersController@create');

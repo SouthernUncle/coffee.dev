@@ -133,9 +133,7 @@ class CoffeesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$u = User::findOrFail(Auth::id());
-
-		if($u->role_id == 1) {
+		if(Auth::user()->role_id == 1) {
 			$coffee = Coffee::where('url_name', $id)->firstOrFail();
 			$regions = Region::with('coffees')->get();
 			$roasters = Roaster::with('coffees')->get();

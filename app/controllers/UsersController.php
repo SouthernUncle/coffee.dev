@@ -180,7 +180,8 @@ class UsersController extends \BaseController {
 	{
 		User::destroy($id);
 
-		return Redirect::route('users.index');
+		Session::flash('successMessage', 'Your account was successfully deleted.'); 
+		return Redirect::action('HomeController@showHome');
 	}
 
 	/**

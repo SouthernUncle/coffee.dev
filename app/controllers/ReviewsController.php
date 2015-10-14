@@ -231,9 +231,6 @@ class ReviewsController extends \BaseController {
 	public function destroy($id)
 	{
 		Review::destroy($id);
-		// $review = Review::findOrFail($id);
-
-		// $review->delete();
 
 		Session::flash('successMessage', 'Your review was successfully deleted.'); 
 		return Redirect::action('UsersController@show', Auth::user()->username);

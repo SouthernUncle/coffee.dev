@@ -3,14 +3,16 @@
 
 ## To Do:
 
+User account delete
+
+Forgot Password?
+
 Laravel transactions on user create
     -update email (remove ridiculous instructions)
 
 Form persistence: 
     reviews create
     coffees create
-
-User show (add image?)
 
 Review sort on:
     coffee show
@@ -93,6 +95,8 @@ Redirect Login to intended OR profile (not home)
 Button to create coffee from roaster page
 Add create buttons to roaster and coffee index pages
 URLs with names instead of DB ids
+Delete and edit buttons on user's reviews (coffee show)
+404 on ModelNotFound/NotFoundHttp/MethodNotAllowed
 
 ##Site Plan:
 LEMP+J stack 

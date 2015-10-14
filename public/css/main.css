@@ -198,3 +198,12 @@ button.btn-delete {
 	background-color: transparent;
 	border: none;
 }
+
+.delete-account {
+	position: absolute;
+	bottom: 100px;
+}
+
+.my-reviews {
+	margin-bottom: 50px;
+}

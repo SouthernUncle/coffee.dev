@@ -54,6 +54,13 @@
                 </div>
             @endforeach
         </div>
+        <div class="col-xs-12 delete-account">
+            <button class="btn-delete danger" id="delete">
+                <h4><i class="fa fa-times danger"></i>Delete Account</h4>
+            </button>
+            {{ Form::open(array('action' => array('UsersController@destroy', $user->id), 'method' => 'DELETE', 'id' => 'formDelete')) }}
+            {{ Form::close() }}
+        </div>
     </div>
 @stop
 
@@ -64,4 +71,5 @@
         $("#user_nav").addClass("active");
     });
 </script>
+<script src="/js/delete.js"></script>
 @stop
