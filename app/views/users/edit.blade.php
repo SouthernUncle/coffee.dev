@@ -47,15 +47,15 @@
             </div>
             <div class="col-xs-12 col-s-6">
                 <span class="slider-title fancy center-it">Roast</span>
-                <input id="roast_pref" name="roast_pref" data-slider-id='roast_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
+                <input id="roast_pref" name="roast_pref" data-slider-id='roast_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{ $user->roast_pref }}"/>
             </div>
             <div class="col-xs-12 col-s-6">
                 <span class="slider-title fancy center-it">Body</span>
-                <input id="body_pref" name="body_pref" data-slider-id='body_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
+                <input id="body_pref" name="body_pref" data-slider-id='body_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{ $user->body_pref }}"/>
             </div>
             <div class="col-xs-12 col-s-6">
                 <span class="slider-title fancy center-it">Acidity</span>
-                <input id="acid_pref" name="acid_pref" data-slider-id='acid_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="5"/>
+                <input id="acid_pref" name="acid_pref" data-slider-id='acid_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{ $user->acid_pref }}"/>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-xs-offset-3">
