@@ -10,8 +10,6 @@ Form persistence:
     reviews create
     coffees create
 
-URLs with names instead of DB ids(?)
-
 User show (add image?)
 
 Review sort on:
@@ -94,6 +92,7 @@ FAQ Page
 Redirect Login to intended OR profile (not home)
 Button to create coffee from roaster page
 Add create buttons to roaster and coffee index pages
+URLs with names instead of DB ids
 
 ##Site Plan:
 LEMP+J stack 
