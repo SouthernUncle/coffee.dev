@@ -1,6 +1,6 @@
 Hey {{ $name }},<br><br>
 
-Somebody you know thinks that you'd be a great contributor to beanrate.com!
+Somebody thinks that you'd be a great contributor to BeanRate.com!
 
 To accept their invitation and create an account, click this link: <br><br>
 

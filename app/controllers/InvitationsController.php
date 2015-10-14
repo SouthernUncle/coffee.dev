@@ -73,11 +73,11 @@ class InvitationsController extends BaseController {
 		$data = array(
 			'name' => Input::get('name'),
 			'email_address' => Input::get('email'),
-			'confirmation'  => md5(Input::get('email') . Auth::id()),
+			'confirmation'  => md5(Input::get('email') . Auth::id())
 		);
 
 		Mail::send('emails.invite', $data, function($message) {
-			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'test');
+			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'BeanRate.com');
 			$message->to(Input::get('email'), Input::get('name'));
 			$message->subject('Welcome to Bean Rate!');
 		});
