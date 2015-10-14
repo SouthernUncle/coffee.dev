@@ -115,14 +115,11 @@ class RoastersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$u = User::findOrFail(Auth::id());
+		$roaster = Roaster::where('url_name', $id)->firstOrFail();	
 
-		if($u->role_id == 1) {
-			$roaster = Roaster::where('url_name', $id)->firstOrFail();
-
+		if(Auth::user()->role_id == 1) {
 			return View::make('roasters.edit', compact('roaster'));
 		} else {
-
 			return Redirect::action('RoastersController@index');
 		}
 	}

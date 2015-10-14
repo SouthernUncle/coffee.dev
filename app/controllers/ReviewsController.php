@@ -131,7 +131,8 @@ class ReviewsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$review = Review::find($id);
+		$review = Review::where('id', $id)->firstOrFail();	
+
 		$categories = FlavorCategory::orderBy('name')->get();
 		
 		if((Auth::id() == $review->user->id) || (Auth::user()->role_id == 1)) {
@@ -140,9 +141,7 @@ class ReviewsController extends \BaseController {
 		}  else {
 			Session::flash('errorMessage', 'You can only edit your own reviews.');
 			return Redirect::action('CoffeesController@show', $review->coffee->url_name);
-		}
-
-		
+		}		
 	}
 
 	/**

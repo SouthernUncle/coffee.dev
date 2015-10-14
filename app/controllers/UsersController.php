@@ -101,13 +101,12 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		if($id != Auth::id()) {
-			Session::flash('errorMessage', 'You do not have permission to edit this account.');
+		if($id != Auth::user()->username) {
+			Session::flash('errorMessage', 'Invalid permissions or account does not exist.');
 			return Redirect::action('HomeController@showHome');
 		}
 
-		$user = User::findOrFail($id);
-
+		$user = User::where('username', $id)->firstOrFail();
 		return View::make('users.edit', compact('user'));
 	}
 
