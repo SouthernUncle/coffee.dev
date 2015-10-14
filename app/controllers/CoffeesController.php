@@ -61,7 +61,7 @@ class CoffeesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), Coffee::$rules);
+		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description', 'url'), Coffee::$rules);
 
 		$dropdownValues = array('region', 'roaster');
 
@@ -80,6 +80,8 @@ class CoffeesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$url_name = $this->returnURLFromString(Input::get('name'));
+
 		$coffee = new Coffee();
 		$coffee->user_id				= Auth::id();
 		$coffee->region_id				= Input::get('region');
@@ -89,6 +91,7 @@ class CoffeesController extends \BaseController {
 		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
 		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
 		$coffee->roasters_description 	= Input::get('description');
+		$coffee->url_name 				= $url_name;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -154,7 +157,7 @@ class CoffeesController extends \BaseController {
 	{
 		$coffee = Coffee::findOrFail($id);
 
-		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), Coffee::$rules);
+		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description', 'url'), Coffee::$rules);
 
 		$dropdownValues = array('region', 'roaster');
 
@@ -172,6 +175,8 @@ class CoffeesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$url_name = $this->returnURLFromString(Input::get('name'));
+
 		$coffee->user_id				= Auth::id();
 		$coffee->region_id				= Input::get('region');
 		$coffee->roaster_id				= Input::get('roaster');
@@ -180,6 +185,7 @@ class CoffeesController extends \BaseController {
 		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
 		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
 		$coffee->roasters_description 	= Input::get('description');
+		$coffee->url_name 				= $url_name;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -192,6 +198,21 @@ class CoffeesController extends \BaseController {
 		$coffee->save();
 
 		return Redirect::action('CoffeesController@show', $coffee->url_name);
+	}
+
+	public function returnURLFromString($string)
+	{
+		$string = strtolower($string);
+		$array = explode(' ', $string);
+
+		$finalArray = [];
+		foreach($array as $element){
+			$element = (ucfirst($element));
+			array_push($finalArray, $element);
+		}
+
+		$answer = implode('', $finalArray);
+		return $answer;
 	}
 
 	/**

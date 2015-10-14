@@ -41,7 +41,7 @@
 	<div class="container">
 
 		<div class="col-xs-12 col-sm-6 col-md-6">
-			<span class="brown fancy">Name</span>
+			<span class="brown fancy">Name Test</span>
 	    		<input type="text" name="name" class="form-control coffee-input brown" placeholder="i.e. 'La Simetria'" value="{{{ $coffee->name }}}"/>
 		</div>
 		<div class="col-xs-12 col-sm-6 col-md-6">
