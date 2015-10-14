@@ -26,7 +26,7 @@
 			<select class="form-control" name="roaster" id="coffee_roaster">
 					<option value="0">Roaster:</option>
 				@foreach ($roasters as $r)
-					<option @if(Input::old('roaster') == $r->id) selected @endif value="{{{ $r->id }}}">
+					<option value="{{{ $r->id }}}" @if(Input::old('roaster') == $r->id) selected @endif>
 						{{{ $r->name }}} - {{{ $r->city }}}, {{{ $r->state }}}
 					</option>
 				@endforeach

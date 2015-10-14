@@ -21,7 +21,7 @@
 				<tbody>
 				@foreach ($roasters as $r)
 				    <tr>
-				        <td>{{ HTML::linkAction('RoastersController@show', $r->name, array($r->id)) }}</td>
+				        <td>{{ HTML::linkAction('RoastersController@show', $r->name, array($r->url_name)) }}</td>
 				        <td>{{ $r->city . ", " . $r->state }}</td>
 				        <td>{{ $r->coffees->count() }}</td>
 				    </tr>

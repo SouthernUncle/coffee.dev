@@ -27,7 +27,7 @@ class ReviewsController extends \BaseController {
 
 	public function createFromCoffee($id)
 	{
-		$coffee  = Coffee::findOrFail($id);
+		$coffee  = Coffee::where('url_name', $id)->firstOrFail();
 		$roaster = Roaster::where('id', $coffee->roaster_id)->get();
 		$categories = FlavorCategory::orderBy('name')->get();
 

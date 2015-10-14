@@ -78,7 +78,7 @@ class RoastersController extends \BaseController {
 
 		$roaster->save();
 
-		return Redirect::action('CoffeesController@createFromRoaster', $roaster->id);
+		return Redirect::action('CoffeesController@createFromRoaster', $roaster->url_name);
 	}
 
 	/**
@@ -89,7 +89,7 @@ class RoastersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$roaster = Roaster::findOrFail($id);
+		$roaster = Roaster::where('url_name', $id)->firstOrFail();
 
 		$description = $roaster->description;
 		$parse = new Parsedown();
@@ -115,7 +115,7 @@ class RoastersController extends \BaseController {
 		$u = User::findOrFail(Auth::id());
 
 		if($u->role_id == 1) {
-			$roaster = Roaster::find($id);
+			$roaster = Roaster::where('url_name', $id)->firstOrFail();
 
 			return View::make('roasters.edit', compact('roaster'));
 		} else {
@@ -163,7 +163,7 @@ class RoastersController extends \BaseController {
 
 		$roaster->save();
 
-		return Redirect::action('RoastersController@show', $id);
+		return Redirect::action('RoastersController@show', $roaster->url_name);
 	}
 
 	/**

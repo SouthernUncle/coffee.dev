@@ -15,7 +15,8 @@
  * COFFEES CONTROLLER
  */
 Route::resource('/coffees', 'CoffeesController', array('except' => array('destroy')));
-Route::get('/coffees/createFromRoaster/{id}', 'CoffeesController@createFromRoaster');
+Route::get('/coffees/createFromRoaster/{roaster}', 'CoffeesController@createFromRoaster');
+Route::get('coffees/{coffee}', 'CoffeesController@showByName');
 
 /************************
  * HOME CONTROLLER
@@ -42,7 +43,7 @@ Route::resource('/regions', 'RegionsController', array('except' => array('destro
  * REVIEWS CONTROLLER
  */
 Route::resource('/reviews', 'ReviewsController', array('except' => array('destroy')));
-Route::get('/reviews/createFromCoffee/{id}', 'ReviewsController@createFromCoffee');
+Route::get('/reviews/createFromCoffee/{coffee}', 'ReviewsController@createFromCoffee');
 Route::get('/roasters/coffees/{id}', 'ReviewsController@getCoffees');
 Route::get('/categories/flavors/{id}', 'ReviewsController@getFlavors');
 

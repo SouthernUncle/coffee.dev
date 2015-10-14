@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-{{ $coffee->name }}
+    {{ $coffee->name }}
 @stop
 
 @section('content')
@@ -12,13 +12,13 @@
             </h1>
             <a href="{{ $coffee->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
             @if(Auth::check())
-            <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->id) }}}">
+            <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->url_name) }}}">
                 <button class="btn btn-awesome review-btn btn-lg">Review</button>
             </a>
             @endif
 
             <h4>
-                <a href="{{ action('RoastersController@show', $coffee->roaster->id) }}">{{ $coffee->roaster->name }}</a>
+                <a href="{{ action('RoastersController@show', $coffee->roaster->url_name) }}">{{ $coffee->roaster->name }}</a>
             </h4>
             <h4>
                 @if(isset($reviews[0]))
@@ -40,7 +40,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <img src="/img/fit500{{ $coffee->img_url }}" class="img img-responsive">
             @if(Auth::check() && Auth::user()->role_id == 1)
-                <a href="{{{ action('CoffeesController@edit', $coffee->id) }}}">
+                <a href="{{{ action('CoffeesController@edit', $coffee->url_name) }}}">
                     <button class="btn btn-info">Edit</button>
                 </a>
             @endif        

@@ -74,12 +74,12 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		if($id != Auth::id()) {
+		if($id != Auth::user()->username) {
 			Session::flash('errorMessage', 'You do not have permission to view this account.');
 			return Redirect::action('HomeController@showHome');
 		}
 
-		$user 	 = User::findOrFail($id);
+		$user 	 = User::where('username', $id)->firstOrFail();
 		$reviews = Review::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get(); 
 
 		$myInvites  = Invitation::where('user_id', Auth::id())->get();

@@ -36,7 +36,7 @@
                     </a>
                     <ul class="dropdown-menu nav navbar-nav navbar-right">
                         <li>
-                            <a class="page-scroll" href="{{{ action('UsersController@show', Auth::id()) }}}">Profile</a>
+                            <a class="page-scroll" href="{{{ action('UsersController@show', Auth::user()->username) }}}">Profile</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>

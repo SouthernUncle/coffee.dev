@@ -23,9 +23,9 @@
 		    	<tbody>
 				@foreach ($coffees as $c)
 				    <tr>
-				        <td class="coffee-name">{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
-				        <td class="region-name">{{ HTML::linkAction('RegionsController@show', $c->region->name, array($c->region->id)) }}</td>
-				        <td>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</td>
+				        <td class="coffee-name">{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->url_name)) }}</td>
+				        <td class="region-name">{{ HTML::linkAction('RegionsController@show', $c->region->name, array($c->region->url_name)) }}</td>
+				        <td>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->url_name)) }}</td>
 
 	                    @if(isset($c->reviews[0]))
 	                        <td>{{ $c->overallCoffeeRating() }}</td>

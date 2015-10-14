@@ -49,7 +49,7 @@ class CoffeesController extends \BaseController {
 
 	public function createFromRoaster($id)
 	{
-		$roaster = Roaster::findOrFail($id);
+		$roaster = Roaster::where('url_name', $id)->firstOrFail();
 		$regions = Region::orderBy('name')->get();
 		return View::make('coffees.createFromRoaster', compact('roaster', 'regions'));	
 	}
@@ -98,7 +98,7 @@ class CoffeesController extends \BaseController {
 		
 		$coffee->save();
 
-		return Redirect::action('ReviewsController@createFromCoffee', $coffee->id);
+		return Redirect::action('ReviewsController@createFromCoffee', $coffee->url_name);
 	}
 
 	/**
@@ -109,7 +109,7 @@ class CoffeesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$coffee = Coffee::with('reviews')->findOrFail($id);
+		$coffee = Coffee::where('url_name', $id)->firstOrFail();
 
 		$roasters_description = $coffee->roasters_description;
 		$parse = new Parsedown();
@@ -133,7 +133,7 @@ class CoffeesController extends \BaseController {
 		$u = User::findOrFail(Auth::id());
 
 		if($u->role_id == 1) {
-			$coffee = Coffee::find($id);
+			$coffee = Coffee::where('url_name', $id)->firstOrFail();
 			$regions = Region::with('coffees')->get();
 			$roasters = Roaster::with('coffees')->get();
 			return View::make('coffees.edit', compact('coffee', 'regions', 'roasters'));
@@ -191,7 +191,7 @@ class CoffeesController extends \BaseController {
 		
 		$coffee->save();
 
-		return Redirect::action('CoffeesController@show', $id);
+		return Redirect::action('CoffeesController@show', $coffee->url_name);
 	}
 
 	/**
