@@ -53,12 +53,24 @@
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab">
                             <div class="panel-title">
+                                    @if(Auth::check() && $r->user_id == Auth::id())
+                                        <button class="float-r btn-delete" id="delete">
+                                            <i class="fa fa-times fa-2x danger float-r"></i>
+                                        </button>
+                                        {{ Form::open(array('action' => array('ReviewsController@destroy', $r->id), 'method' => 'DELETE', 'id' => 'formDelete')) }}
+                                        {{ Form::close() }}
+                                    @endif                                   
                                    <h4><span id="overall">{{ $r->weightedScore() }}</span>/10 {{ $r->user->username }}</h4><span>Deviation: {{ $r->ratingsDev() }} %</span>
                                    <p>Aroma: {{ $r->aroma }} | Flavor: {{ $r->flavor }} | Aftertaste: {{ $r->aftertaste }} | Balance: {{ $r->balance }}</p>
                                    <p>Roast: {{ $r->roast }} | Body: {{ $r->body }} | Acidity: {{ $r->acidity }}</p>
                             </div>
                         </div>
                         <div class="panel-body">
+                            @if(Auth::check() && $r->user_id == Auth::id())
+                                <a href="{{ action('ReviewsController@edit', $r->id) }}">
+                                    <i class="fa fa-pencil-square-o fa-2x yellow float-r"></i>
+                                </a>
+                            @endif
                             <p>{{ $r->review }}</p>
                         </div>
                         @if($r->parameter)
@@ -119,6 +131,14 @@
     "use strict";
     $(document).ready(function() {
         $("#coffee_nav").addClass("active");
+
+        $('#delete').click(function() {
+            var onConfirm = confirm('Are you sure you want to delete this? This action cannot be undone.');
+            
+            if(onConfirm) {
+                $('#formDelete').submit();
+            }
+        })
     });
 </script>
 @stop

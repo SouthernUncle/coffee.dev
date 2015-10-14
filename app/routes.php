@@ -42,7 +42,7 @@ Route::resource('/regions', 'RegionsController', array('except' => array('destro
 /************************
  * REVIEWS CONTROLLER
  */
-Route::resource('/reviews', 'ReviewsController', array('except' => array('destroy')));
+Route::resource('/reviews', 'ReviewsController', array('except' => array('index', 'show')));
 Route::get('/reviews/createFromCoffee/{coffee}', 'ReviewsController@createFromCoffee');
 Route::get('/roasters/coffees/{id}', 'ReviewsController@getCoffees');
 Route::get('/categories/flavors/{id}', 'ReviewsController@getFlavors');

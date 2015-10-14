@@ -88,12 +88,28 @@ h1#regions-header {
 	color: #222;
 }
 
+.danger {
+	color: #a32b34;
+}
+
+.success {
+	color: #2ebe62;
+}
+
 .bg-yellow {
 	background-color: #fed316;
 }
 
 .bg-brown {
 	background-color: #222;
+}
+
+.bg-danger {
+	background-color: #a32b34;
+}
+
+.bg-success {
+	background-color: #2ebe62;
 }
 
 label.fancy {
@@ -172,4 +188,13 @@ label.fancy {
 
 .display-inline {
 	display: inline;
+}
+
+.float-r {
+	float: right;
+}
+
+button.btn-delete {
+	background-color: transparent;
+	border: none;
 }
