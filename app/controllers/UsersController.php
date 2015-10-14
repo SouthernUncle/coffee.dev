@@ -168,7 +168,7 @@ class UsersController extends \BaseController {
 
 		Session::flash('successMessage', 'Your account was updated successfully!');
 
-		return Redirect::action('UsersController@show', $id);
+		return Redirect::action('UsersController@show', $user->username);
 	}
 
 	/**
