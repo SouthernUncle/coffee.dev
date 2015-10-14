@@ -81,10 +81,13 @@ class RegionsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$url_name = $this->returnURLFromString(Input::get('name'));
+
 		$region = new Region();
 
 		$region->name 	 	   = Input::get('name');
 		$region->description   = Input::get('description');
+		$region->url_name 	   = $url_name;
 
 		if (Request::hasFile('map')) {
 		    $img = Imageupload::upload(Request::file('map'));
@@ -138,8 +141,11 @@ class RegionsController extends \BaseController {
 
 		$region = Region::findOrFail($id);
 
+		$url_name = $this->returnURLFromString(Input::get('name'));
+
 		$region->name 	 	   = Input::get('name');
 		$region->description   = Input::get('description');
+		$region->url_name 	   = $url_name;
 
 		if (Request::hasFile('map')) {
 		    $img = Imageupload::upload(Request::file('map'));
@@ -160,6 +166,19 @@ class RegionsController extends \BaseController {
 		$region->save();
 
 		return Redirect::action('RegionsController@show', $region->url_name);
+	}
+
+	function returnURLFromString($string)
+	{
+		$array = explode(' ', $string);
+
+		$finalArray = [];
+		foreach($array as $element){
+			array_push($finalArray, $element);
+		}
+
+		$answer = implode('', $finalArray);
+		return $answer;
 	}
 
 	/**

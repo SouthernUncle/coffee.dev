@@ -58,6 +58,8 @@ class RoastersController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$url_name = $this->returnURLFromString(Input::get('name'));
+
 		$roaster = new Roaster();
 		$roaster->user_id		= Auth::id();
 		$roaster->name			= Input::get('name');
@@ -69,6 +71,7 @@ class RoastersController extends \BaseController {
 		$roaster->facebook		= (Input::has('facebook')	? Input::get('facebook') 	: null);
 		$roaster->twitter		= (Input::has('twitter') 	? Input::get('twitter') 	: null);
 		$roaster->instagram		= (Input::has('instagram') 	? Input::get('instagram') 	: null);
+		$roaster->url_name 		= $url_name;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -142,6 +145,8 @@ class RoastersController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$url_name = $this->returnURLFromString(Input::get('name'));
+
 		$roaster->user_id		= Auth::id();
 		$roaster->name			= Input::get('name');
 		$roaster->address		= Input::get('address') ;
@@ -152,6 +157,7 @@ class RoastersController extends \BaseController {
 		$roaster->twitter		= (Input::has('twitter') 	? Input::get('twitter')		: null);
 		$roaster->instagram		= (Input::has('instagram') 	? Input::get('instagram') 	: null);
 		$roaster->description 	= Input::get('description');
+		$roaster->url_name 		= $url_name;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -164,6 +170,27 @@ class RoastersController extends \BaseController {
 		$roaster->save();
 
 		return Redirect::action('RoastersController@show', $roaster->url_name);
+	}
+
+	public function returnURLFromString($string)
+	{
+		$prohibited = array(
+			'coffee', 'roasting', 'roasters', 'roaster', 'co.', 'co', 'company', '&', 'and', 'tea'
+		);
+
+		$string = strtolower($string);
+		$array = explode(' ', $string);
+
+		$alteredArray = array_diff($array, $prohibited);
+
+		$finalArray = [];
+		foreach($alteredArray as $element){
+			$element = (ucfirst($element));
+			array_push($finalArray, $element);
+		}
+
+		$answer = implode('', $finalArray);
+		return $answer;
 	}
 
 	/**

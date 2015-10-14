@@ -202,11 +202,17 @@ class CoffeesController extends \BaseController {
 
 	public function returnURLFromString($string)
 	{
+		$prohibited = array(
+			'coffee', 'coffees', 'roasting', 'roasters', 'roaster', 'co.', 'co', 'company', '&', 'and', 'tea'
+		);
+
 		$string = strtolower($string);
 		$array = explode(' ', $string);
 
+		$alteredArray = array_diff($array, $prohibited);
+
 		$finalArray = [];
-		foreach($array as $element){
+		foreach($alteredArray as $element){
 			$element = (ucfirst($element));
 			array_push($finalArray, $element);
 		}
