@@ -30,7 +30,7 @@ class InvitationsController extends BaseController {
 
 		if($count >= 5) {
 			Session::flash('errorMessage', 'You have used all of your invitations. Check back more for later.');
-			return Redirect::action('UsersController@show', Auth::id());
+			return Redirect::action('UsersController@show', Auth::user()->username);
 		}
 
 		return View::make('invitations.create');
@@ -82,7 +82,7 @@ class InvitationsController extends BaseController {
 			$message->subject('Welcome to Bean Rate!');
 		});
 		Session::flash('successMessage', 'Your invite was sent.');
-		return Redirect::action('UsersController@show', Auth::id());			
+		return Redirect::action('UsersController@show', Auth::user()->username);			
 	}
 
 	/**

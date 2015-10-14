@@ -63,7 +63,11 @@ class UsersController extends \BaseController {
 		$user->body_pref = Input::get('body_pref');
 		$user->save();
 
-		return Redirect::action('HomeController@showLogin');
+		Auth::login($user);
+
+		Session::flash('successMessage', 'Welcome to Bean Rate!');
+
+		return Redirect::action('UsersController@show', Auth::user()->username);
 	}
 
 	/**
