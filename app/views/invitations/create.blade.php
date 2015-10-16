@@ -26,3 +26,10 @@
     </div>
 </section>
 @stop
+
+@section('js')
+    <script>
+        $("#user_nav").addClass("active");
+        $("#invite_nav").html("Invite");
+    </script>
+@stop

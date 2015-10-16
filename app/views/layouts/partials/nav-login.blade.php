@@ -4,7 +4,7 @@
 </li>
 @else
 <li id="user_nav">
-    <a class="page-scroll" href="{{{ action('UsersController@show', Auth::user()->username) }}}">
+    <a href="{{{ action('UsersController@show', Auth::user()->username) }}}"class="page-scroll" id="invite_nav">
         <i class="fa fa-user"></i>
         Account
     </a>
