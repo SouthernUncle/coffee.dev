@@ -119,18 +119,18 @@ class HomeController extends BaseController {
 
 	public function encryptIt($string)
 	{	
-		$method = 'aes-128-cbc';
-		$iv = '1234567812345678';
-		$pass = '1234567812345678';
+		$method = $_ENV['ENCRYPT_METHOD'];
+		$iv = $_ENV['ENCRYPT_IV'];
+		$pass = $_ENV['ENCRYPT_PASS'];
 		$encrypted = openssl_encrypt($string, $method, $pass, true, $iv);
 		return $encrypted;
 	}
 
 	public function decryptIt($string)
 	{	
-		$method = 'aes-128-cbc';
-		$iv = '1234567812345678';
-		$pass = '1234567812345678';
+		$method = $_ENV['ENCRYPT_METHOD'];
+		$iv = $_ENV['ENCRYPT_IV'];
+		$pass = $_ENV['ENCRYPT_PASS'];
 		$decrypted = openssl_decrypt($string, $method, $pass, true, $iv);
 		return $decrypted;
 	}
