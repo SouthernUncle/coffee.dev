@@ -117,30 +117,12 @@ class HomeController extends BaseController {
 		return Redirect::action('UsersController@edit', Auth::user()->username);
 	}
 
-	public function encryptIt($string)
-	{	
-		$method = $_ENV['ENCRYPT_METHOD'];
-		$iv = $_ENV['ENCRYPT_IV'];
-		$pass = $_ENV['ENCRYPT_PASS'];
-		$encrypted = openssl_encrypt($string, $method, $pass, true, $iv);
-		return $encrypted;
-	}
-
-	public function decryptIt($string)
-	{	
-		$method = $_ENV['ENCRYPT_METHOD'];
-		$iv = $_ENV['ENCRYPT_IV'];
-		$pass = $_ENV['ENCRYPT_PASS'];
-		$decrypted = openssl_decrypt($string, $method, $pass, true, $iv);
-		return $decrypted;
-	}
-
 	public function encrypt_decrypt($action, $string) {
 	    $output = false;
 
-	    $encrypt_method = "AES-256-CBC";
-	    $secret_key = 'password';
-	    $secret_iv = 'password';
+	    $encrypt_method = $_ENV['PASS_METHOD'];
+	    $secret_key = $_ENV['PASS_KEY'];
+	    $secret_iv = $_ENV['PASS_IV'];
 
 	    // hash
 	    $key = hash('sha256', $secret_key);
