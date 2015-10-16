@@ -29,19 +29,12 @@
                     <a class="page-scroll" id="new_user_nav" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
                 </li>
                 @else
-                <li id="user_nav" class="dropdown">
-                    <a href="#" class="dropdown-toggle" id="edit_user_nav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li id="user_nav">
+                    <a class="page-scroll" href="{{{ action('UsersController@show', Auth::user()->username) }}}">
                         Account
                         <i class="fa fa-key"></i>
                     </a>
-                    <ul class="dropdown-menu nav navbar-nav navbar-right">
-                        <li>
-                            <a class="page-scroll" href="{{{ action('UsersController@show', Auth::user()->username) }}}">Profile</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
-                        </li>
-                    </ul>
+                </li>
                 <li class="dropdown" id="create_nav">
                     <a href="#" class="dropdown-toggle" id="add_nav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Add
