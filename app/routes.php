@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
-
 /************************
  * COFFEES CONTROLLER
  */
@@ -27,6 +16,9 @@ Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@doLogin');
 Route::get('/logout', 'HomeController@doLogout');
 Route::get('/FAQ', 'HomeController@showFAQ');
+Route::get('/forgotpassword', 'HomeController@showForgotPassword');
+Route::post('/forgotpassword/{id}', 'HomeController@sendPasswordLink');
+Route::get('/resetpassword/{hash}', 'HomeController@resetPassword');
 
 /************************
  * INVITATIONS CONTROLLER

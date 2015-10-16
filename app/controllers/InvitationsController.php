@@ -22,9 +22,7 @@ class InvitationsController extends BaseController {
 		$myInvites  = Invitation::where('user_id', Auth::id())->get();
 		$count 		= count($myInvites);
 
-		$u = User::find(Auth::id());
-
-		if ($u->role_id = 1) {
+		if (Auth::user()->role_id = 1) {
 			return View::make('invitations.create');
 		}
 

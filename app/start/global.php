@@ -45,22 +45,22 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 | shown, which includes a detailed stack trace during debug.
 |
 */
-App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $exception, $code)
-{
-   // handle the exception and show view or redirect to a diff route
-    return Response::view('errors.404', array(), 404);	
-});
-App::error(function(\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $exception, $code)
-{
-   // handle the exception and show view or redirect to a diff route
-    return Response::view('errors.404', array(), 404);	
-});
+// App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $exception, $code)
+// {
+//    // handle the exception and show view or redirect to a diff route
+//     return Response::view('errors.404', array(), 404);	
+// });
+// App::error(function(\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $exception, $code)
+// {
+//    // handle the exception and show view or redirect to a diff route
+//     return Response::view('errors.404', array(), 404);	
+// });
 
-App::error(function(\Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException $exception, $code)
-{
-   // handle the exception and show view or redirect to a diff route
-    return Response::view('errors.404', array(), 404);	
-});
+// App::error(function(\Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException $exception, $code)
+// {
+//    // handle the exception and show view or redirect to a diff route
+//     return Response::view('errors.404', array(), 404);	
+// });
 
 App::error(function(Exception $exception, $code)
 {
