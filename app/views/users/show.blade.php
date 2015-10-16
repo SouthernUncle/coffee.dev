@@ -33,6 +33,8 @@
             </table>
         </div>
         <div class="col-xs-12">
+            <h4>{{ HTML::linkAction('HomeController@doLogout', 'LOG OUT') }}
+
             <h4>{{ HTML::linkAction('UsersController@edit', 'Edit your user info', array($user->username)) }}</h4>
 
             <h4>{{ HTML::linkAction('InvitationsController@create', 'Invite friends') }}</h4>
