@@ -9,7 +9,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Bean Rate</a>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                Bean Rate
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,8 +37,6 @@
                 </li>
                 @include('layouts.partials.nav-login');
             </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
 </nav>
