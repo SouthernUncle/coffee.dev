@@ -35,24 +35,11 @@
                         <i class="fa fa-key"></i>
                     </a>
                 </li>
-                <li class="dropdown" id="create_nav">
-                    <a href="#" class="dropdown-toggle" id="add_nav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li id="create_nav">
+                    <a href="{{{ action('ReviewsController@create') }}}" class="page-scroll" id="add_nav"> 
                         Add
                         <i class="fa fa-plus"></i>
                     </a>
-                    <ul class="dropdown-menu nav navbar-nav navbar-right">
-                        <li>
-                            <a href="{{{ action('ReviewsController@create') }}}">Review</a>
-                        </li>
-
-                        <li>
-                            <a href="{{{ action('CoffeesController@create') }}}">Coffee</a>
-                        </li>
-                    
-                        <li>
-                            <a href="{{{ action('RoastersController@create') }}}">Roaster</a>
-                        </li>
-                    </ul>
                 </li>
                 @endif
             </ul>
