@@ -34,41 +34,21 @@
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
                 @if(!Auth::check())
-                <li>
-                    <a class="page-scroll" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
+                <li  id="user_nav">
+                    <a class="page-scroll" id="new_user_nav" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
                 </li>
                 @else
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li id="user_nav">
+                    <a class="page-scroll" href="{{{ action('UsersController@show', Auth::user()->username) }}}">
                         Account
                         <i class="fa fa-key"></i>
                     </a>
-                    <ul class="dropdown-menu nav navbar-nav navbar-right">
-                        <li>
-                            <a class="page-scroll" href="{{{ action('UsersController@show', Auth::user()->username) }}}">Profile</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="{{{ action('HomeController@doLogout') }}}">Log Out</a>
-                        </li>
-                    </ul>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </li>
+                <li id="create_nav">
+                    <a href="{{{ action('ReviewsController@create') }}}" class="page-scroll" id="add_nav"> 
                         Add
                         <i class="fa fa-plus"></i>
                     </a>
-                    <ul class="dropdown-menu nav navbar-nav navbar-right">
-                        <li>
-                            <a href="{{{ action('ReviewsController@create') }}}">Review</a>
-                        </li>
-
-                        <li>
-                            <a href="{{{ action('CoffeesController@create') }}}">Coffee</a>
-                        </li>
-                    
-                        <li>
-                            <a href="{{{ action('RoastersController@create') }}}">Roaster</a>
-                        </li>
-                    </ul>
                 </li>
                 @endif
             </ul>
