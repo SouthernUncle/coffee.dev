@@ -24,24 +24,7 @@
                 <li id="region_nav">
                     <a class="page-scroll" href="{{{ action('RegionsController@index') }}}">Regions</a>
                 </li>
-                @if(!Auth::check())
-                <li  id="user_nav">
-                    <a class="page-scroll" id="new_user_nav" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
-                </li>
-                @else
-                <li id="user_nav">
-                    <a class="page-scroll" href="{{{ action('UsersController@show', Auth::user()->username) }}}">
-                        Account
-                        <i class="fa fa-key"></i>
-                    </a>
-                </li>
-                <li id="create_nav">
-                    <a href="{{{ action('ReviewsController@create') }}}" class="page-scroll" id="add_nav"> 
-                        Add
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </li>
-                @endif
+                @include('layouts.partials.nav-login');
             </ul>
         </div>
         <!-- /.navbar-collapse -->
