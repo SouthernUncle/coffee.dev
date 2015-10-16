@@ -28,7 +28,7 @@ class AddUrlNameToRoastersTable extends Migration {
 	{
 		Schema::table('roasters', function(Blueprint $table)
 		{
-			$table->drop('url_name');
+			$table->dropColumn('url_name');
 		});
 	}
 

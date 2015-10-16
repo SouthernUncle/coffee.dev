@@ -28,7 +28,7 @@ class AddUrlNameToRegionsTable extends Migration {
 	{
 		Schema::table('regions', function(Blueprint $table)
 		{
-			$table->drop('url_name');
+			$table->dropColumn('url_name');
 		});
 	}
 

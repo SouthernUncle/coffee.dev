@@ -28,7 +28,7 @@ class AddUrlNameToCoffeesTable extends Migration {
 	{
 		Schema::table('coffees', function(Blueprint $table)
 		{
-			$table->drop('url_name');	
+			$table->dropColumn('url_name');	
 		});
 	}
 
