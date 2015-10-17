@@ -88,11 +88,11 @@ class RoastersController extends \BaseController {
 			'email' 	=> 'noreply@beanrate.com',
 			'roaster'  	=> Input::get('name'),
 			'subject' 	=> 'New Roaster created - ' . Input::get('name'),
-			'url'		=> 'http://beanrate.com/roasters/' . $roaster->id
+			'url'		=> 'http://beanrate.com/roasters/' . $roaster->url_name
 		);
 
 		Mail::send('emails.newroaster', $data, function($message) {
-			$message->from(Input::get('email'), Input::get('name'));
+			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'BeanRate.com');
 			$message->to('beanrate@gmail.com', 'Admin');
 			$message->subject(Input::get('subject'));
 		});
@@ -115,8 +115,9 @@ class RoastersController extends \BaseController {
 		$roaster->description = $parse->text($description);
 
 		$new = Image::make(public_path() . $roaster->img_url)->resize(null, 750, function ($constraint) {
-			    $constraint->aspectRatio();
-			 	$constraint->upsize();})->save(public_path() . '/img/fit750' . $roaster->img_url);
+			//     $constraint->aspectRatio();
+			//  	$constraint->upsize();
+			// })->save(public_path() . '/img/fit750' . $roaster->img_url);
 		
 		$coffees = $roaster->coffees()->paginate(5);
 
@@ -185,19 +186,19 @@ class RoastersController extends \BaseController {
 
 		// Mailgun to send us an email upon roaster update
 		// So we can verify accuracy, formatting, etc.
-		$data = array(
-			'name' 		=> 'Roaster Update',
-			'email' 	=> 'noreply@beanrate.com',
-			'roaster'  	=> Input::get('name'),
-			'subject' 	=> Input::get('name') . ' has been updated',
-			'url'		=> 'http://beanrate.com/roasters/' . $roaster->id
-		);
+		// $data = array(
+		// 	'name' 		=> 'Roaster Update',
+		// 	'email' 	=> 'noreply@beanrate.com',
+		// 	'roaster'  	=> Input::get('name'),
+		// 	'subject' 	=> Input::get('name') . ' has been updated',
+		// 	'url'		=> 'http://beanrate.com/roasters/' . $roaster->url_name
+		// );
 
-		Mail::send('emails.roasterupdate', $data, function($message) {
-			$message->from(Input::get('email'), Input::get('name'));
-			$message->to('beanrate@gmail.com', 'Admin');
-			$message->subject(Input::get('subject'));
-		});
+		// Mail::send('emails.roasterupdate', $data, function($message) {
+		// 	$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'BeanRate.com');
+		// 	$message->to('beanrate@gmail.com', 'Admin');
+		// 	$message->subject(Input::get('subject'));
+		// });
 
 		return Redirect::action('RoastersController@show', $roaster->url_name);
 	}
