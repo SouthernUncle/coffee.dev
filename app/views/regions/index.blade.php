@@ -8,7 +8,7 @@
 		<div class="region-photos">
 			@foreach($regions as $r)
 				<span class="col-xs-12 col-sm-6 col-lg-4 animate-hover">
-					<a href="{{{ action('RegionsController@show', $r->id) }}}">
+					<a href="{{{ action('RegionsController@show', $r->url_name) }}}">
 						<img src="{{ $r->img_url }}" class="img-responsive region-pic">
 						<p class="region-name">{{ $r->name }}</p>
 					</a>

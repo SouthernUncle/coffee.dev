@@ -34,7 +34,6 @@ class Review extends Eloquent {
 		return $this->hasOne('Parameter');
 	}
 
-
 	//Rules
 	public static $rules = array(
 		'roaster' => 'required',

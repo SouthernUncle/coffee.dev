@@ -45,12 +45,21 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 | shown, which includes a detailed stack trace during debug.
 |
 */
-App::missing(function($exception)
+App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $exception, $code)
 {
-    $url = Request::fullUrl();
-    $userAgent = Request::header('user-agent');
-    Log::warning("404 for URL: $url requested by user agent: $userAgent");
-	return Response::view('errors.404', array(), 404);	
+   // handle the exception and show view or redirect to a diff route
+    return Response::view('errors.404', array(), 404);	
+});
+App::error(function(\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $exception, $code)
+{
+   // handle the exception and show view or redirect to a diff route
+    return Response::view('errors.404', array(), 404);	
+});
+
+App::error(function(\Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException $exception, $code)
+{
+   // handle the exception and show view or redirect to a diff route
+    return Response::view('errors.404', array(), 404);	
 });
 
 App::error(function(Exception $exception, $code)

@@ -18,7 +18,7 @@
 		</div>	
 	<div class="container">
 
-		<div class="col-xs-6  col-md-6">
+		<div class="col-xs-6 col-md-6">
 			<span class="brown fancy">Name</span>
 	    		<input type="text" name="name" class="form-control coffee-input brown" placeholder="i.e. 'Merit Roasting Co.'" value="{{{ $roaster->name }}}"/>
 		</div>
@@ -36,19 +36,19 @@
     	</div>
     	<div class="col-xs-6 col-s-6">
 			<span class="brown fancy">Website</span>
-    		<input type="text" name="url" id="url" class="form-control coffee-input" placeholder="i.e. 'meritcoffee.com'" value="{{{ $roaster->url }}}"/>
+    		<input type="url" name="url" id="url" class="form-control coffee-input" placeholder="i.e. 'http://meritcoffee.com'" value="{{{ $roaster->url }}}"/>
 	    </div>
 	    <div class="col-xs-6 col-s-6">
 			<span class="brown fancy">Twitter Handle</span>
-    		<input type="text" name="twitter" id="twitter" class="form-control coffee-input" placeholder="i.e. 'localcoffeeSA'" value="{{{ $roaster->twitter }}}"/>
+    		<input type="url" name="twitter" id="twitter" class="form-control coffee-input" placeholder="i.e. 'http://twitter.com/localcoffeeSA'" value="{{{ $roaster->twitter }}}"/>
 	    </div>
 	    <div class="col-xs-6 col-s-6">
 			<span class="brown fancy">Facebook Extension</span>
-    		<input type="text" name="facebook" id="facebook" class="form-control coffee-input" placeholder="i.e. 'localcoffeesa'" value="{{{ $roaster->facebook }}}"/>
+    		<input type="url" name="facebook" id="facebook" class="form-control coffee-input" placeholder="i.e. 'http://facebook.com/localcoffeesa'" value="{{{ $roaster->facebook }}}"/>
 	    </div>
 	    <div class="col-xs-6 col-s-6">
 			<span class="brown fancy">Instagram Name</span>
-    		<input type="text" name="instagram" id="instagram" class="form-control coffee-input" placeholder="i.e. 'meritroastingco'" value="{{{ $roaster->instagram }}}"/>
+    		<input type="url" name="instagram" id="instagram" class="form-control coffee-input" placeholder="i.e. 'http://instagram.com/meritroastingco'" value="{{{ $roaster->instagram }}}"/>
 	    </div>
 	    <div class="upload col-xs-12 col-md-6">
 		    {{ Form::label('file','Image Upload',array('id'=>'','class'=>'fancy brown')) }}

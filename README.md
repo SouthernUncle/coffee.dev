@@ -1,15 +1,22 @@
 # BeanRate.com
 ## Codeup Capstone
 
-Final Weekend Tasks:
-
 ## To Do:
 
-Form persistence
+1. php artisan migrate (add 1 column in 3 tables)
+2. update url_name fields in production && dev DB (encryption variables)
+3. update .env.local.php file && production equivalent
 
-Add url to coffee create!
+Upcoming:
+4. (sudo npm install -g bower)
+5. bower install chartist --save
 
-User show (add image?)
+Laravel transactions on user create
+    -update email (remove ridiculous instructions)
+
+Form persistence: 
+    reviews create
+    coffees create
 
 Review sort on:
     coffee show
@@ -22,7 +29,7 @@ Table column sort on:
 
 ### Nice to haves:
 
-Explanation section on landing page (NEED TO HAVE?)
+Explanation section on landing page
 
 Chartist.js
     flavor wheel pie chart
@@ -32,9 +39,6 @@ Chartist.js
 
 Landing page carousel
     double as explanation section???
-
-FAQ Page
-    link in footer
 
 ## Done:
 
@@ -46,6 +50,7 @@ Edit buttons on roaster show and coffee show (admin only)
 Link highlights in nav
 Add admin manage region link to profile
 Edit link on user profile review section
+Add url to coffee create!
 
 Touch-up/re-do css on:
     coffee show
@@ -81,18 +86,31 @@ Text on review sliders to explain ratings
     user create
     user edit
 
+Form persistence
+    -coffees done
+    -roasters done
+    -users create sliders done 
+    -regions done
+
+FAQ Page
+    link in footer
+
+Redirect Login to intended OR profile (not home)
+Button to create coffee from roaster page
+Add create buttons to roaster and coffee index pages
+URLs with names instead of DB ids
+Delete and edit buttons on user's reviews (coffee show)
+404 on ModelNotFound/NotFoundHttp/MethodNotAllowed
+User account delete
+Forgot Password?
+Get rid of ugly dropdowns on navs
+
 ##Site Plan:
 LEMP+J stack 
 
 	Name: Bean Rate
 
-	Template: Agency
-
-	Packages/dependencies?
-	    Bower
-	    Chartist TBD
-        Matriphe
-        -TODO
+	Template: Agency (http://startbootstrap.com/template-overviews/agency/)
 
 	Functionality?
     	re: BeerAdvocate for coffee

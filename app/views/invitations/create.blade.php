@@ -11,7 +11,7 @@
         {{ Form::open(array('action' => 'InvitationsController@emailInvite')) }}
             <div class="col-xs-12 col-md-6">
                 {{ Form::label('name', 'Name', ['class' => 'fancy brown invite-label']) }}
-                {{ Form::text('name', null, ['class' => 'form-control']) }}
+                {{ Form::text('name', null, ['class' => 'form-control', 'autofocus']) }}
             </div>
             <div class="col-xs-12 col-md-6">
                 {{ Form::label('email', 'Email', ['class' => 'fancy brown invite-label']) }}
@@ -25,4 +25,11 @@
         {{ Form::close() }}    
     </div>
 </section>
+@stop
+
+@section('js')
+    <script>
+        $("#user_nav").addClass("active");
+        $("#invite_nav").html("Invite");
+    </script>
 @stop
