@@ -116,9 +116,9 @@ class RoastersController extends \BaseController {
 		$roaster->description = $parse->text($description);
 
 		$new = Image::make(public_path() . $roaster->img_url)->resize(null, 750, function ($constraint) {
-			//     $constraint->aspectRatio();
-			//  	$constraint->upsize();
-			// })->save(public_path() . '/img/fit750' . $roaster->img_url);
+		    $constraint->aspectRatio();
+		 	$constraint->upsize();
+		})->save(public_path() . '/img/fit750' . $roaster->img_url);
 		
 		$coffees = $roaster->coffees()->paginate(5);
 
