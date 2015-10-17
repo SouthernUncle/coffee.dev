@@ -81,7 +81,27 @@ class RoastersController extends \BaseController {
 
 		$roaster->save();
 
+<<<<<<< HEAD
+		// Mailgun to send us an email upon roaster creation
+		// So we can verify accuracy, formatting, etc.
+		$data = array(
+			'name' 		=> 'New Roaster',
+			'email' 	=> 'noreply@beanrate.com',
+			'roaster'  	=> Input::get('name'),
+			'subject' 	=> 'New Roaster created - ' . Input::get('name'),
+			'url'		=> 'http://beanrate.com/roasters/' . $roaster->id
+		);
+
+		Mail::send('emails.newroaster', $data, function($message) {
+			$message->from(Input::get('email'), Input::get('name'));
+			$message->to('beanrate@gmail.com', 'Admin');
+			$message->subject(Input::get('subject'));
+		});
+
+		return Redirect::action('CoffeesController@createFromRoaster', $roaster->id);
+=======
 		return Redirect::action('CoffeesController@createFromRoaster', $roaster->url_name);
+>>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
@@ -166,6 +186,25 @@ class RoastersController extends \BaseController {
 
 		$roaster->save();
 
+<<<<<<< HEAD
+		// Mailgun to send us an email upon roaster update
+		// So we can verify accuracy, formatting, etc.
+		$data = array(
+			'name' 		=> 'Roaster Update',
+			'email' 	=> 'noreply@beanrate.com',
+			'roaster'  	=> Input::get('name'),
+			'subject' 	=> Input::get('name') . ' has been updated',
+			'url'		=> 'http://beanrate.com/roasters/' . $roaster->id
+		);
+
+		Mail::send('emails.roasterupdate', $data, function($message) {
+			$message->from(Input::get('email'), Input::get('name'));
+			$message->to('beanrate@gmail.com', 'Admin');
+			$message->subject(Input::get('subject'));
+		});
+
+		return Redirect::action('RoastersController@show', $id);
+=======
 		return Redirect::action('RoastersController@show', $roaster->url_name);
 	}
 
@@ -188,6 +227,7 @@ class RoastersController extends \BaseController {
 
 		$answer = implode('', $finalArray);
 		return $answer;
+>>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
