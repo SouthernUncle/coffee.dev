@@ -58,12 +58,6 @@
                 <input id="acid_pref" name="acid_pref" data-slider-id='acid_pref' type="number" data-slider-min="0" data-slider-max="10" data-slider-step="0.5" data-slider-value="{{ $user->acid_pref }}"/>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-xs-offset-3">
-                        {{ Form::label('password', 'Password (required)', ['class' => 'fancy']) }}
-                        {{ Form::password('password', ['class' => 'form-control brown']) }}
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
                     <button class="btn btn-default">Submit</button>
             </div>
         {{ Form::close() }}
