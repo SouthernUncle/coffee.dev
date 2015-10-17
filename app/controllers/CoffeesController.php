@@ -103,7 +103,6 @@ class CoffeesController extends \BaseController {
 		
 		$coffee->save();
 
-<<<<<<< HEAD
 
 		// Mailgun to send us an email after creation of a new coffee
 		// So we can verify accurate info, formatting, etc.
@@ -121,10 +120,8 @@ class CoffeesController extends \BaseController {
 			$message->subject(Input::get('subject'));
 		});
 
-		return Redirect::action('ReviewsController@createFromCoffee', $coffee->id);
-=======
+	
 		return Redirect::action('ReviewsController@createFromCoffee', $coffee->url_name);
->>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
@@ -220,7 +217,6 @@ class CoffeesController extends \BaseController {
 		
 		$coffee->save();
 
-<<<<<<< HEAD
 		// Mailgun to send us an email upon roaster update
 		// So we can verify accuracy, formatting, etc.
 		$data = array(
@@ -237,8 +233,6 @@ class CoffeesController extends \BaseController {
 			$message->subject(Input::get('subject'));
 		});
 
-		return Redirect::action('CoffeesController@show', $id);
-=======
 		return Redirect::action('CoffeesController@show', $coffee->url_name);
 	}
 
@@ -261,7 +255,6 @@ class CoffeesController extends \BaseController {
 
 		$answer = implode('', $finalArray);
 		return $answer;
->>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
