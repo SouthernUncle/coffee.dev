@@ -75,8 +75,9 @@ class RoastersController extends \BaseController {
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
-
 			$roaster->img_url = '/' . $img['original_filedir'];
+		} else {
+			$roaster->img_url = '/img/defaultRoaster.jpg';
 		}
 
 		$roaster->save();

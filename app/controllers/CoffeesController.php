@@ -97,12 +97,12 @@ class CoffeesController extends \BaseController {
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
-		    
 			$coffee->img_url = '/' . $img['original_filedir'];
+		} else {
+			$coffee->img_url = '/img/defaultCoffee.jpg';
 		}
-		
-		$coffee->save();
 
+		$coffee->save();
 
 		// Mailgun to send us an email after creation of a new coffee
 		// So we can verify accurate info, formatting, etc.
