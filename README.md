@@ -3,10 +3,6 @@
 
 ## To Do:
 
-Forgot Password?
-
-Testing PHPStorm
-
 Laravel transactions on user create
     -update email (remove ridiculous instructions)
 
@@ -98,19 +94,15 @@ URLs with names instead of DB ids
 Delete and edit buttons on user's reviews (coffee show)
 404 on ModelNotFound/NotFoundHttp/MethodNotAllowed
 User account delete
+Forgot Password?
+Get rid of ugly dropdowns on navs
 
 ##Site Plan:
 LEMP+J stack 
 
 	Name: Bean Rate
 
-	Template: Agency
-
-	Packages/dependencies?
-	    Bower
-	    Chartist TBD
-        Matriphe
-        -TODO
+	Template: Agency (http://startbootstrap.com/template-overviews/agency/)
 
 	Functionality?
     	re: BeerAdvocate for coffee
