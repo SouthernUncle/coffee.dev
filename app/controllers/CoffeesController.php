@@ -80,7 +80,9 @@ class CoffeesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$url_name = $this->returnURLFromString(Input::get('name'));
+		$get_url_name = $this->returnURLFromString(Input::get('name'));
+
+		$url_name = $coffee->roaster->url_name . '-' . $get_url_name;
 
 		$coffee = new Coffee();
 		$coffee->user_id				= Auth::id();
