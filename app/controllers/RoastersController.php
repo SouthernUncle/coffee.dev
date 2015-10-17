@@ -81,7 +81,6 @@ class RoastersController extends \BaseController {
 
 		$roaster->save();
 
-<<<<<<< HEAD
 		// Mailgun to send us an email upon roaster creation
 		// So we can verify accuracy, formatting, etc.
 		$data = array(
@@ -98,10 +97,7 @@ class RoastersController extends \BaseController {
 			$message->subject(Input::get('subject'));
 		});
 
-		return Redirect::action('CoffeesController@createFromRoaster', $roaster->id);
-=======
 		return Redirect::action('CoffeesController@createFromRoaster', $roaster->url_name);
->>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
@@ -186,7 +182,7 @@ class RoastersController extends \BaseController {
 
 		$roaster->save();
 
-<<<<<<< HEAD
+
 		// Mailgun to send us an email upon roaster update
 		// So we can verify accuracy, formatting, etc.
 		$data = array(
@@ -203,8 +199,6 @@ class RoastersController extends \BaseController {
 			$message->subject(Input::get('subject'));
 		});
 
-		return Redirect::action('RoastersController@show', $id);
-=======
 		return Redirect::action('RoastersController@show', $roaster->url_name);
 	}
 
@@ -227,7 +221,6 @@ class RoastersController extends \BaseController {
 
 		$answer = implode('', $finalArray);
 		return $answer;
->>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
