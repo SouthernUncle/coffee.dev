@@ -28,10 +28,6 @@ class CoffeesController extends \BaseController {
 
 		$coffees = $query->orderBy('name')->paginate(10);
 
-		foreach($coffees as $c) {
-			$new = Image::make(public_path() . $c->img_url)->fit(500)->save(public_path() . '/img/fit500' . $c->img_url);
-		}
-
 		return View::make('coffees.index', compact('coffees'));
 	}
 
@@ -111,11 +107,11 @@ class CoffeesController extends \BaseController {
 			'email' 	=> 'noreply@beanrate.com',
 			'coffee'  	=> Input::get('name'),
 			'subject' 	=> 'New Coffee created - ' . Input::get('name'),
-			'url'		=> 'http://beanrate.com/coffees/' . $coffee->id
+			'url'		=> 'http://beanrate.com/coffees/' . $coffee->url_name
 		);
 
 		Mail::send('emails.newcoffee', $data, function($message) {
-			$message->from(Input::get('email'), Input::get('name'));
+			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'BeanRate.com');
 			$message->to('beanrate@gmail.com', 'Admin');
 			$message->subject(Input::get('subject'));
 		});
@@ -219,19 +215,19 @@ class CoffeesController extends \BaseController {
 
 		// Mailgun to send us an email upon roaster update
 		// So we can verify accuracy, formatting, etc.
-		$data = array(
-			'name' 		=> 'Coffee Update',
-			'email' 	=> 'noreply@beanrate.com',
-			'coffee'  	=> Input::get('name'),
-			'subject' 	=> Input::get('name') . ' has been updated',
-			'url'		=> 'http://beanrate.com/coffees/' . $coffee->id
-		);
+		// $data = array(
+		// 	'name' 		=> 'Coffee Update',
+		// 	'email' 	=> 'noreply@beanrate.com',
+		// 	'coffee'  	=> Input::get('name'),
+		// 	'subject' 	=> Input::get('name') . ' has been updated',
+		// 	'url'		=> 'http://beanrate.com/coffees/' . $coffee->url_name
+		// );
 
-		Mail::send('emails.coffeeupdate', $data, function($message) {
-			$message->from(Input::get('email'), Input::get('name'));
-			$message->to('beanrate@gmail.com', 'Admin');
-			$message->subject(Input::get('subject'));
-		});
+		// Mail::send('emails.coffeeupdate', $data, function($message) {
+		// 	$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'BeanRate.com');
+		// 	$message->to('beanrate@gmail.com', 'Admin');
+		// 	$message->subject(Input::get('subject'));
+		// });
 
 		return Redirect::action('CoffeesController@show', $coffee->url_name);
 	}
