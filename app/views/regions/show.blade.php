@@ -23,11 +23,11 @@
         </div>
         <br>
         @if(Auth::check() && Auth::user()->role_id == 1)
-            <a href="{{{ action('RegionsController@edit', $region->id) }}}">
+            <a href="{{{ action('RegionsController@edit', $region->url_name) }}}">
                 <button class="btn btn-info">Edit</button>
             </a>
         @endif
-        {{ Form::open(array('action' => ['RegionsController@show', $region->id], 'method' => 'get')) }}
+        {{ Form::open(array('action' => ['RegionsController@show', $region->url_name], 'method' => 'get')) }}
             {{ Form::text('search', null, ['class' => 'form-control search', 'placeholder' => 'Search...']) }}
         {{ Form::close() }}
         <table class="table table-responsive">
@@ -39,8 +39,8 @@
         	</tr>
         @foreach ($coffees as $c)
 	        <tr>
-	            <td>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->id)) }}</td>
-	            <td>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->id)) }}</td>
+	            <td>{{ HTML::linkAction('CoffeesController@show', $c->name, array($c->url_name)) }}</td>
+	            <td>{{ HTML::linkAction('RoastersController@show', $c->roaster->name, array($c->roaster->url_name)) }}</td>
 	            @if(isset($c->reviews[0]))
                     <td>{{ $c->overallCoffeeRating() }}</td>
                 @else
