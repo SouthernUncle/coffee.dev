@@ -22,15 +22,13 @@ class InvitationsController extends BaseController {
 		$myInvites  = Invitation::where('user_id', Auth::id())->get();
 		$count 		= count($myInvites);
 
-		$u = User::find(Auth::id());
-
-		if ($u->role_id = 1) {
+		if (Auth::user()->role_id = 1) {
 			return View::make('invitations.create');
 		}
 
 		if($count >= 5) {
 			Session::flash('errorMessage', 'You have used all of your invitations. Check back more for later.');
-			return Redirect::action('UsersController@show', Auth::id());
+			return Redirect::action('UsersController@show', Auth::user()->username);
 		}
 
 		return View::make('invitations.create');
@@ -73,16 +71,16 @@ class InvitationsController extends BaseController {
 		$data = array(
 			'name' => Input::get('name'),
 			'email_address' => Input::get('email'),
-			'confirmation'  => md5(Input::get('email') . Auth::id()),
+			'confirmation'  => md5(Input::get('email') . Auth::id())
 		);
 
 		Mail::send('emails.invite', $data, function($message) {
-			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'test');
+			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'BeanRate.com');
 			$message->to(Input::get('email'), Input::get('name'));
-			$message->subject('Welcome to ...');
+			$message->subject('Welcome to Bean Rate!');
 		});
 		Session::flash('successMessage', 'Your invite was sent.');
-		return Redirect::action('UsersController@show', Auth::id());			
+		return Redirect::action('UsersController@show', Auth::user()->username);			
 	}
 
 	/**

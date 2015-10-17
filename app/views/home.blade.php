@@ -59,7 +59,7 @@
             <div class="row">
                 @foreach($coffees as $c)
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="/coffees/{{ $c->id }}" class="portfolio-link" data-toggle="modal">
+                    <a href="/coffees/{{ $c->url_name }}" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>

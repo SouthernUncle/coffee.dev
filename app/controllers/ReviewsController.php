@@ -27,7 +27,7 @@ class ReviewsController extends \BaseController {
 
 	public function createFromCoffee($id)
 	{
-		$coffee  = Coffee::findOrFail($id);
+		$coffee  = Coffee::where('url_name', $id)->firstOrFail();
 		$roaster = Roaster::where('id', $coffee->roaster_id)->get();
 		$categories = FlavorCategory::orderBy('name')->get();
 
@@ -112,7 +112,7 @@ class ReviewsController extends \BaseController {
 			$param->save();
 		}
 
-		return Redirect::action('CoffeesController@show', $review->coffee_id);
+		return Redirect::action('CoffeesController@show', $review->coffee->url_name);
 	}
 
 
@@ -131,7 +131,8 @@ class ReviewsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$review = Review::find($id);
+		$review = Review::where('id', $id)->firstOrFail();	
+
 		$categories = FlavorCategory::orderBy('name')->get();
 		
 		if((Auth::id() == $review->user->id) || (Auth::user()->role_id == 1)) {
@@ -139,10 +140,8 @@ class ReviewsController extends \BaseController {
 			return View::make('reviews.edit', compact('review', 'categories'));
 		}  else {
 			Session::flash('errorMessage', 'You can only edit your own reviews.');
-			return Redirect::action('CoffeesController@show', $review->coffee->id);
-		}
-
-		
+			return Redirect::action('CoffeesController@show', $review->coffee->url_name);
+		}		
 	}
 
 	/**
@@ -220,7 +219,7 @@ class ReviewsController extends \BaseController {
 			$param->save();
 		}
 
-		return Redirect::action('CoffeesController@show', $review->coffee_id);
+		return Redirect::action('CoffeesController@show', $review->coffee->url_name);
 	}
 
 	/**
@@ -233,7 +232,8 @@ class ReviewsController extends \BaseController {
 	{
 		Review::destroy($id);
 
-		return Redirect::route('reviews.index');
+		Session::flash('successMessage', 'Your review was successfully deleted.'); 
+		return Redirect::action('UsersController@show', Auth::user()->username);
 	}
 
 	public function getCoffees($id)

@@ -113,6 +113,7 @@ class Coffee extends Eloquent {
 		'roaster' 		=> 'required',
 		'name' 			=> 'required',
 		'description' 	=> 'required',
+		'url' 			=> 'required'
 	);
 
 }

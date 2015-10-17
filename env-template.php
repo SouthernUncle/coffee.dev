@@ -11,4 +11,12 @@
 		'USER_EMAIL'     => '$_ENV['USER_EMAIL']',
 		'USER_USERNAME'  => '$_ENV['USER_USERNAME']',
 		'USER_PASSWORD'  => '$_ENV['USER_PASSWORD']',
+
+		'ENCRYPT_METHOD' => '',
+		'ENCRYPT_PASS'   => '',
+		'ENCRYPT_IV'     => '',
+
+		'PASS_METHOD'    => '',
+		'PASS_KEY'       => '',
+		'PASS_IV'	     => '',
 	];

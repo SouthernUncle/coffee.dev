@@ -58,6 +58,8 @@ class RoastersController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$url_name = $this->returnURLFromString(Input::get('name'));
+
 		$roaster = new Roaster();
 		$roaster->user_id		= Auth::id();
 		$roaster->name			= Input::get('name');
@@ -69,6 +71,7 @@ class RoastersController extends \BaseController {
 		$roaster->facebook		= (Input::has('facebook')	? Input::get('facebook') 	: null);
 		$roaster->twitter		= (Input::has('twitter') 	? Input::get('twitter') 	: null);
 		$roaster->instagram		= (Input::has('instagram') 	? Input::get('instagram') 	: null);
+		$roaster->url_name 		= $url_name;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -78,6 +81,7 @@ class RoastersController extends \BaseController {
 
 		$roaster->save();
 
+<<<<<<< HEAD
 		// Mailgun to send us an email upon roaster creation
 		// So we can verify accuracy, formatting, etc.
 		$data = array(
@@ -95,6 +99,9 @@ class RoastersController extends \BaseController {
 		});
 
 		return Redirect::action('CoffeesController@createFromRoaster', $roaster->id);
+=======
+		return Redirect::action('CoffeesController@createFromRoaster', $roaster->url_name);
+>>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
@@ -105,7 +112,7 @@ class RoastersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$roaster = Roaster::findOrFail($id);
+		$roaster = Roaster::where('url_name', $id)->firstOrFail();
 
 		$description = $roaster->description;
 		$parse = new Parsedown();
@@ -128,14 +135,11 @@ class RoastersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$u = User::findOrFail(Auth::id());
+		$roaster = Roaster::where('url_name', $id)->firstOrFail();	
 
-		if($u->role_id == 1) {
-			$roaster = Roaster::find($id);
-
+		if(Auth::user()->role_id == 1) {
 			return View::make('roasters.edit', compact('roaster'));
 		} else {
-
 			return Redirect::action('RoastersController@index');
 		}
 	}
@@ -158,6 +162,8 @@ class RoastersController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$url_name = $this->returnURLFromString(Input::get('name'));
+
 		$roaster->user_id		= Auth::id();
 		$roaster->name			= Input::get('name');
 		$roaster->address		= Input::get('address') ;
@@ -168,6 +174,7 @@ class RoastersController extends \BaseController {
 		$roaster->twitter		= (Input::has('twitter') 	? Input::get('twitter')		: null);
 		$roaster->instagram		= (Input::has('instagram') 	? Input::get('instagram') 	: null);
 		$roaster->description 	= Input::get('description');
+		$roaster->url_name 		= $url_name;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -179,6 +186,7 @@ class RoastersController extends \BaseController {
 
 		$roaster->save();
 
+<<<<<<< HEAD
 		// Mailgun to send us an email upon roaster update
 		// So we can verify accuracy, formatting, etc.
 		$data = array(
@@ -196,6 +204,30 @@ class RoastersController extends \BaseController {
 		});
 
 		return Redirect::action('RoastersController@show', $id);
+=======
+		return Redirect::action('RoastersController@show', $roaster->url_name);
+	}
+
+	public function returnURLFromString($string)
+	{
+		$prohibited = array(
+			'coffee', 'roasting', 'roasters', 'roaster', 'co.', 'co', 'company', '&', 'and', 'tea'
+		);
+
+		$string = strtolower($string);
+		$array = explode(' ', $string);
+
+		$alteredArray = array_diff($array, $prohibited);
+
+		$finalArray = [];
+		foreach($alteredArray as $element){
+			$element = (ucfirst($element));
+			array_push($finalArray, $element);
+		}
+
+		$answer = implode('', $finalArray);
+		return $answer;
+>>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**

@@ -11,15 +11,19 @@
 				{{ Form::text('username', null, [ 'autofocus', 'class' => 'form-control brown']) }}
 				</div>
 			</div>
-
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="col-sm-6 col-md-6">
 				{{ Form::label('password', 'Password', ['class' => 'fancy']) }}
 				{{ Form::password('password', ['class' => 'form-control brown']) }}
 				</div>
-
             </div>
-
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-sm-6 col-md-6">
+                    <a href="{{ action('HomeController@showForgotPassword') }}" class="yellow fancy">
+                        Forgot Password?
+                    </a>
+                </div>
+            </div>
             <div class="col-xs-12 col-md-12">
             	<div class ="col-xs-12 col-sm-12 col-md-12">
 		            <button class="btn btn-info">Log In</button>

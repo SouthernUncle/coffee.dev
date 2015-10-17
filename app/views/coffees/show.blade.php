@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-{{ $coffee->name }}
+    {{ $coffee->name }}
 @stop
 
 @section('content')
@@ -12,13 +12,13 @@
             </h1>
             <a href="{{ $coffee->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
             @if(Auth::check())
-            <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->id) }}}">
-                <button class="btn  btn-awesome review-btn btn-lg">Review</button>
+            <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->url_name) }}}">
+                <button class="btn btn-awesome review-btn btn-lg">Review</button>
             </a>
             @endif
 
             <h4>
-                <a href="{{ action('RoastersController@show', $coffee->roaster->id) }}">{{ $coffee->roaster->name }}</a>
+                <a href="{{ action('RoastersController@show', $coffee->roaster->url_name) }}">{{ $coffee->roaster->name }}</a>
             </h4>
             <h4>
                 @if(isset($reviews[0]))
@@ -39,13 +39,13 @@
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <img src="/img/fit500{{ $coffee->img_url }}" class="img img-responsive">
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
             @if(Auth::check() && Auth::user()->role_id == 1)
-                <a href="{{{ action('CoffeesController@edit', $coffee->id) }}}">
+                <a href="{{{ action('CoffeesController@edit', $coffee->url_name) }}}">
                     <button class="btn btn-info">Edit</button>
                 </a>
             @endif        
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
 
             @if(isset($reviews[0]))<h2>Reviews:</h2>@endif
             @foreach ($reviews as $r)
@@ -53,12 +53,24 @@
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab">
                             <div class="panel-title">
+                                    @if(Auth::check() && $r->user_id == Auth::id())
+                                        <button class="float-r btn-delete" id="delete">
+                                            <i class="fa fa-times fa-2x danger float-r"></i>
+                                        </button>
+                                        {{ Form::open(array('action' => array('ReviewsController@destroy', $r->id), 'method' => 'DELETE', 'id' => 'formDelete')) }}
+                                        {{ Form::close() }}
+                                    @endif                                   
                                    <h4><span id="overall">{{ $r->weightedScore() }}</span>/10 {{ $r->user->username }}</h4><span>Deviation: {{ $r->ratingsDev() }} %</span>
                                    <p>Aroma: {{ $r->aroma }} | Flavor: {{ $r->flavor }} | Aftertaste: {{ $r->aftertaste }} | Balance: {{ $r->balance }}</p>
                                    <p>Roast: {{ $r->roast }} | Body: {{ $r->body }} | Acidity: {{ $r->acidity }}</p>
                             </div>
                         </div>
                         <div class="panel-body">
+                            @if(Auth::check() && $r->user_id == Auth::id())
+                                <a href="{{ action('ReviewsController@edit', $r->id) }}">
+                                    <i class="fa fa-pencil-square-o fa-2x yellow float-r"></i>
+                                </a>
+                            @endif
                             <p>{{ $r->review }}</p>
                         </div>
                         @if($r->parameter)
@@ -121,5 +133,6 @@
         $("#coffee_nav").addClass("active");
     });
 </script>
+<script src="/js/delete.js"></script>
 @stop
 

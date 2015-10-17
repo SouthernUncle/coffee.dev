@@ -63,7 +63,11 @@ class UsersController extends \BaseController {
 		$user->body_pref = Input::get('body_pref');
 		$user->save();
 
-		return Redirect::action('HomeController@showLogin');
+		Auth::login($user);
+
+		Session::flash('successMessage', 'Welcome to Bean Rate!');
+
+		return Redirect::action('UsersController@show', Auth::user()->username);
 	}
 
 	/**
@@ -74,12 +78,12 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		if($id != Auth::id()) {
+		if($id != Auth::user()->username) {
 			Session::flash('errorMessage', 'You do not have permission to view this account.');
 			return Redirect::action('HomeController@showHome');
 		}
 
-		$user 	 = User::findOrFail($id);
+		$user 	 = User::where('username', $id)->firstOrFail();
 		$reviews = Review::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get(); 
 
 		$myInvites  = Invitation::where('user_id', Auth::id())->get();
@@ -97,13 +101,12 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		if($id != Auth::id()) {
-			Session::flash('errorMessage', 'You do not have permission to edit this account.');
+		if($id != Auth::user()->username) {
+			Session::flash('errorMessage', 'Invalid permissions or account does not exist.');
 			return Redirect::action('HomeController@showHome');
 		}
 
-		$user = User::findOrFail($id);
-
+		$user = User::where('username', $id)->firstOrFail();
 		return View::make('users.edit', compact('user'));
 	}
 
@@ -164,7 +167,7 @@ class UsersController extends \BaseController {
 
 		Session::flash('successMessage', 'Your account was updated successfully!');
 
-		return Redirect::action('UsersController@show', $id);
+		return Redirect::action('UsersController@show', $user->username);
 	}
 
 	/**
@@ -177,7 +180,8 @@ class UsersController extends \BaseController {
 	{
 		User::destroy($id);
 
-		return Redirect::route('users.index');
+		Session::flash('successMessage', 'Your account was successfully deleted.'); 
+		return Redirect::action('HomeController@showHome');
 	}
 
 	/**

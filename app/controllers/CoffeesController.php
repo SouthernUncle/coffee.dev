@@ -49,7 +49,7 @@ class CoffeesController extends \BaseController {
 
 	public function createFromRoaster($id)
 	{
-		$roaster = Roaster::findOrFail($id);
+		$roaster = Roaster::where('url_name', $id)->firstOrFail();
 		$regions = Region::orderBy('name')->get();
 		return View::make('coffees.createFromRoaster', compact('roaster', 'regions'));	
 	}
@@ -61,7 +61,7 @@ class CoffeesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), Coffee::$rules);
+		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description', 'url'), Coffee::$rules);
 
 		$dropdownValues = array('region', 'roaster');
 
@@ -80,14 +80,20 @@ class CoffeesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$get_url_name = $this->returnURLFromString(Input::get('name'));
+
+		$url_name = $coffee->roaster->url_name . '-' . $get_url_name;
+
 		$coffee = new Coffee();
 		$coffee->user_id				= Auth::id();
 		$coffee->region_id				= Input::get('region');
 		$coffee->roaster_id				= Input::get('roaster');
 		$coffee->name 					= Input::get('name');
+		$coffee->url 					= Input::get('url');
 		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
 		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
 		$coffee->roasters_description 	= Input::get('description');
+		$coffee->url_name 				= $url_name;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -97,6 +103,7 @@ class CoffeesController extends \BaseController {
 		
 		$coffee->save();
 
+<<<<<<< HEAD
 
 		// Mailgun to send us an email after creation of a new coffee
 		// So we can verify accurate info, formatting, etc.
@@ -115,6 +122,9 @@ class CoffeesController extends \BaseController {
 		});
 
 		return Redirect::action('ReviewsController@createFromCoffee', $coffee->id);
+=======
+		return Redirect::action('ReviewsController@createFromCoffee', $coffee->url_name);
+>>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
@@ -125,7 +135,7 @@ class CoffeesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$coffee = Coffee::with('reviews')->findOrFail($id);
+		$coffee = Coffee::where('url_name', $id)->firstOrFail();
 
 		$roasters_description = $coffee->roasters_description;
 		$parse = new Parsedown();
@@ -146,10 +156,8 @@ class CoffeesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$u = User::findOrFail(Auth::id());
-
-		if($u->role_id == 1) {
-			$coffee = Coffee::find($id);
+		if(Auth::user()->role_id == 1) {
+			$coffee = Coffee::where('url_name', $id)->firstOrFail();
 			$regions = Region::with('coffees')->get();
 			$roasters = Roaster::with('coffees')->get();
 			return View::make('coffees.edit', compact('coffee', 'regions', 'roasters'));
@@ -170,7 +178,7 @@ class CoffeesController extends \BaseController {
 	{
 		$coffee = Coffee::findOrFail($id);
 
-		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description'), Coffee::$rules);
+		$validator = Validator::make($data = Input::only('region', 'roaster', 'name', 'description', 'url'), Coffee::$rules);
 
 		$dropdownValues = array('region', 'roaster');
 
@@ -188,13 +196,19 @@ class CoffeesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$get_url_name = $this->returnURLFromString(Input::get('name'));
+
+		$url_name = $coffee->roaster->url_name . '-' . $get_url_name;
+
 		$coffee->user_id				= Auth::id();
 		$coffee->region_id				= Input::get('region');
 		$coffee->roaster_id				= Input::get('roaster');
 		$coffee->name 					= Input::get('name');
+		$coffee->url 					= Input::get('url');
 		$coffee->process 				= (Input::has('process') ? Input::get('process') : null);
 		$coffee->elevation 				= (Input::has('elevation') ? Input::get('elevation') : null);
 		$coffee->roasters_description 	= Input::get('description');
+		$coffee->url_name 				= $url_name;
 
 		if (Request::hasFile('file')) {
 		    $img = Imageupload::upload(Request::file('file'));
@@ -206,6 +220,7 @@ class CoffeesController extends \BaseController {
 		
 		$coffee->save();
 
+<<<<<<< HEAD
 		// Mailgun to send us an email upon roaster update
 		// So we can verify accuracy, formatting, etc.
 		$data = array(
@@ -223,6 +238,30 @@ class CoffeesController extends \BaseController {
 		});
 
 		return Redirect::action('CoffeesController@show', $id);
+=======
+		return Redirect::action('CoffeesController@show', $coffee->url_name);
+	}
+
+	public function returnURLFromString($string)
+	{
+		$prohibited = array(
+			'coffee', 'coffees', 'roasting', 'roasters', 'roaster', 'co.', 'co', 'company', '&', 'and', 'tea'
+		);
+
+		$string = strtolower($string);
+		$array = explode(' ', $string);
+
+		$alteredArray = array_diff($array, $prohibited);
+
+		$finalArray = [];
+		foreach($alteredArray as $element){
+			$element = (ucfirst($element));
+			array_push($finalArray, $element);
+		}
+
+		$answer = implode('', $finalArray);
+		return $answer;
+>>>>>>> 692a73b617fa2b1562f34ee87cd696d35f0d4ed8
 	}
 
 	/**
