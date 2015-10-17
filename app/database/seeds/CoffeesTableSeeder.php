@@ -39,21 +39,19 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->img_url                = '/img/santabarbara.jpg';
         $coffee->url                    = 'http://www.corvuscoffee.com/collections/single-origin/products/santa-barbara-el-salvador-12oz';
         $coffee->roasters_description   = 'Country: El Salvador
-            Terroir: Cerro las Ranas
-            Farmer: Miguel Menendez
-            Varietal: Bourbon & Typica
+        Terroir: Cerro las Ranas
+        Farmer: Miguel Menendez
+        Varietal: Bourbon & Typica
+        Aroma: Cashew, Chocolate
+        Flavors: Dark Chocolate, Caramel
+        Sweetness: Smooth, Very rich
+        Body: Full and mellow
 
-            Aroma: Cashew, Chocolate
-            Flavors: Dark Chocolate, Caramel
-            Sweetness: Smooth, Very rich
-            Body: Full and mellow
-             
+        Santa Barbara is from our oldest direct trade relationship, the Menendez Family. Guillermo and Miguel, along with their families, have won multiple awards for coffee from different farms they own and their father, Miguel Sr. runs in El Salvador. For the last two years we\'ve purchased from the Santa Barbara farm because of the exceptional chocolate sweetness produced by the terroir. It\'s consistently one of our best selling coffees every year. 
 
-            Santa Barbara is from our oldest direct trade relationship, the Menendez Family. Guillermo and Miguel, along with their families, have won multiple awards for coffee from different farms they own and their father, Miguel Sr. runs in El Salvador. For the last two years we\'ve purchased from the Santa Barbara farm because of the exceptional chocolate sweetness produced by the terroir. It\'s consistently one of our best selling coffees every year. 
+        The Menendez family is committed to improving the areas and people\'s livelihoods around the farms, and were even responsible for bringing electricity to the surrounding areas. The family also flies in the face of "conventional" wisdom which promotes turning over older, heirloom varietals for newer rust resistant varietals. This commitment to people and the cup quality of their product has led to them producing some of the best coffees in the world.
 
-            The Menendez family is committed to improving the areas and people\'s livelihoods around the farms, and were even responsible for bringing electricity to the surrounding areas. The family also flies in the face of "conventional" wisdom which promotes turning over older, heirloom varietals for newer rust resistant varietals. This commitment to people and the cup quality of their product has led to them producing some of the best coffees in the world.
-
-            As usual, this year\'s crop is enormously sweet, to the point of being sugary. It has a very distinct caramel and chocolate flavor to the cup, a mild acidity, and is very clean. We would recommend this coffee for everyone, and especially if you\'re a fan of full, sweet cups.';
+        As usual, this year\'s crop is enormously sweet, to the point of being sugary. It has a very distinct caramel and chocolate flavor to the cup, a mild acidity, and is very clean. We would recommend this coffee for everyone, and especially if you\'re a fan of full, sweet cups.';
         $coffee->url_name               = 'Corvus-SantaBarbara';
         $coffee->save();
 

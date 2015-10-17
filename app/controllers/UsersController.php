@@ -122,9 +122,7 @@ class UsersController extends \BaseController {
 
 		$user = User::find($id);
 
-		$password = Input::get('password');
 		$validator = Validator::make(Input::all(), User::$editRules);
-
 
 		if ($validator->fails()) {
 	        Session::flash('errorMessage', 'Hmmm...something went wrong. Please check the message(s) below to fix:');

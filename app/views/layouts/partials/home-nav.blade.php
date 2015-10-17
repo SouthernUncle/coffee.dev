@@ -35,7 +35,7 @@
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
-                @include('layouts.partials.nav-login');
+                @include('layouts.partials.nav-login')
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

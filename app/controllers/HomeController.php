@@ -95,23 +95,10 @@ class HomeController extends BaseController {
 		$newPass = User::generatePassword();
 
 		$user = User::findOrFail($query->id);
-		$user->password = $newPass;
-		$user->save();
-
-		$data = array(
-			'email_address' => $user->email,
-			'newPass'  		=> $newPass,
-			'username'		=> $user->username,
-		);
-
-		Mail::send('emails.password-reset', $data, function($message) use ($data) {
-			$message->from('postmaster@sandbox6bf8d9af287f40889101d1fa77058dc8.mailgun.org', 'BeanRate.com');
-			$message->to($data['email_address'], $data['username']);
-			$message->subject('Password Reset');
-		});
 
 		Auth::login($user);
 
+		Session::flash('successMessage', 'Please reset your password below.');
 		return Redirect::action('UsersController@edit', Auth::user()->username);
 	}
 
