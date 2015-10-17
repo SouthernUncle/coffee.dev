@@ -81,7 +81,6 @@ class HomeController extends BaseController {
 	public function resetPassword($hash)
 	{
 		$email = $this->encrypt_decrypt('decrypt', $hash);
-		// dd($email);	
 		if(Auth::check()) {
 			Auth::logout();
 		}
