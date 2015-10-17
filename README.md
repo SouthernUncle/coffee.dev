@@ -3,6 +3,14 @@
 
 ## To Do:
 
+1. php artisan migrate (add 1 column in 3 tables)
+2. update url_name fields in production && dev DB (encryption variables)
+3. update .env.local.php file && production equivalent
+
+Upcoming:
+4. (sudo npm install -g bower)
+5. bower install chartist --save
+
 Laravel transactions on user create
     -update email (remove ridiculous instructions)
 
