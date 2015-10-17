@@ -48,8 +48,8 @@
 				<h4>The roaster and/or coffee I want to rate isn't on here. What should I do?</h4>
 					<p>In the navbar click 'Add+', then on the following page select 
 					'<a href="{{ action('CoffeesController@create') }}">Add New Coffee</a>' or '<a href="{{ action('RoastersController@create') }}">Add New Roaster</a>'. Alternatively, you can access those from the <a href="{{ action('CoffeesController@index') }}">Coffee Index</a>, <a href="{{ action('RoastersController@index') }}">Roaster Index</a>, or Roaster Show pages.  After creating a roaster, you will automatically be prompted to create a coffee. And after creating a coffee, you will be prompted to create a review. Please do so! It will help keep the site full of useful data, rather than empty pages.</p>
-				<h4>Have a different question</h4>
-					<p>Send us an email! We'll respond directly to you and if we think it's a system-wide thing, we'll address it here as well.</p>
+				<h4>Have a different question?</h4>
+					<p><a href="{{ action('HomeController@showHome', '/#contact') }}">Send us an email!</a> We'll respond directly to you and if we think it's a system-wide thing, we'll address it here as well.</p>
 			</div>
 		</div>
 		</section>
