@@ -92,8 +92,6 @@ class HomeController extends BaseController {
 			return Redirect::action('HomeController@showLogin');
 		}
 
-		$newPass = User::generatePassword();
-
 		$user = User::findOrFail($query->id);
 
 		Auth::login($user);
