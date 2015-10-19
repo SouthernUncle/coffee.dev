@@ -75,7 +75,7 @@ class CoffeesController extends \BaseController {
 			Session::flash('errorMessage', 'Please fix errors and re-submit:');
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-		
+
 		$roaster = Roaster::where('id', Input::get('roaster'))->firstOrFail();
 
 		$get_url_name = $this->returnURLFromString(Input::get('name'));
@@ -190,10 +190,12 @@ class CoffeesController extends \BaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
+		
+		$roaster = Roaster::where('id', Input::get('roaster'))->firstOrFail();
 
 		$get_url_name = $this->returnURLFromString(Input::get('name'));
 
-		$url_name = $coffee->roaster->url_name . '-' . $get_url_name;
+		$url_name = $roaster->url_name . '-' . $get_url_name;
 
 		$coffee->user_id				= Auth::id();
 		$coffee->region_id				= Input::get('region');
