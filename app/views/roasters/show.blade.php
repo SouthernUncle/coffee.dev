@@ -7,8 +7,15 @@
 @section('content')
     <div class="container">
         <div class="col-xs-12 col-s-6">
-            <h1 class="display-inline">{{ $roaster->name }}</h1>
-            <a href="{{ $roaster->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
+            <a href="{{ $roaster->url }}" target="_blank" class="brown">
+                <h1 class="display-inline">{{ $roaster->name }}</h1>
+            </a>
+            <p>
+                <a href="{{ $roaster->getMapLink($roaster->address, $roaster->city, $roaster->state) }}" target="_blank" class="brown">{{ $roaster->address }} {{ $roaster->city }}, {{ $roaster->state }}</a>
+            </p>
+            <a href="{{ $roaster->facebook }}" target="_blank"><i class="fa fa-facebook fa-2x brown roaster-icon"></i>  </a>
+            <a href="{{ $roaster->twitter }}" target="_blank"><i class="fa fa-twitter fa-2x brown roaster-icon"></i>  </a>
+            <a href="{{ $roaster->instagram }}" target="_blank"><i class="fa fa-instagram fa-2x brown roaster-icon"></i></a>
             @if($roaster->overallRoasterScore() == 50)
                     <h2>No Coffees Yet Rated</h2>
             @else
@@ -17,7 +24,7 @@
 
              @if(Auth::check())
             <a href="{{{ action('CoffeesController@createFromRoaster', $roaster->url_name) }}}">
-                <button class="btn btn-awesome btn-lg">Create Coffee</button>
+                <button class="btn btn-awesome btn-md">Create Coffee</button>
             </a>
             @endif
         </div>
@@ -25,7 +32,7 @@
         <div class="col-xs-12 col-s-6 col-md-6">
             <p>{{ $roaster->description }}</p>
         </div>
-        <div class="col-xs-12 col-s-6 col-md-6">
+        <div class="col-xs-12 col-s-6 col-md-6" id="roaster-pic">
             <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive">
             @if(Auth::check() && Auth::user()->role_id == 1)
                 <a href="{{{ action('RoastersController@edit', $roaster->url_name) }}}">

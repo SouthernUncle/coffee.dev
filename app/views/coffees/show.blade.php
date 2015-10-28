@@ -13,7 +13,7 @@
             <a href="{{ $coffee->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
             @if(Auth::check())
             <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->url_name) }}}">
-                <button class="btn btn-awesome review-btn btn-lg">Review</button>
+                <button class="btn btn-awesome review-btn btn-md">Review</button>
             </a>
             @endif
 

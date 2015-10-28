@@ -34,7 +34,7 @@ class RoastersTableSeeder extends Seeder {
                         We have been heavily influenced by the Nordic roasting styles and mindset of the roasters in Norway. For a long time, people viewed roasting in terms of "light" and "dark" when talking about roast profiles. As roasting knowledge has advanced, so has the understanding of what happens to coffee when heat is applied. Our fully manual roaster allows us to manipulate heat and airflow in a way which increases the development of the bean more quickly at different stages of the roast. The result is a very sweet, flavorful coffee which has no flavor from the roasting process. Each bean is evaluated on multiple roast profiles until we understand how to bring out the flavor developed before the coffee left the farm, and avoid adding a "roasted" flavor.';
                 $roaster->twitter       = 'https://www.twitter.com/CorvusCoffee';
                 $roaster->facebook      = 'https://www.facebook.com/CorvusCoffeeRoasters?fref=ts';
-                $roaster->instagram     = 'https://wwww.instagram.com/corvuscoffee/';
+                $roaster->instagram     = 'https://instagram.com/corvuscoffee/';
                 $roaster->url_name      = 'Corvus';
                 $roaster->save();
         
@@ -49,7 +49,7 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->description   = 'At Onyx we love coffee. Coffee roasting. Coffee brewing. Coffee talking. We don\'t want you to taste the roast; we want you to taste the bean. Every single coffee farm yields beans that have specific, innate taste notes that can only be exhibited when roasted correctly, and that\'s what we\'re after. It\'s the perfect combination of science + art that fuses ethical trading standards and quality bean sourcing, resulting in a precise cup.';
                 $roaster->twitter       = 'https://www.twitter.com/OnyxCoffeeLab';
                 $roaster->facebook      = 'https://www.facebook.com/OnyxCoffeeLab/';
-                $roaster->instagram     = 'https://wwww.instagram.com/onyxcoffeelab/';
+                $roaster->instagram     = 'https://instagram.com/onyxcoffeelab/';
                 $roaster->url_name      = 'Onyx';
                 $roaster->save();
         
@@ -67,7 +67,7 @@ class RoastersTableSeeder extends Seeder {
                         We are passionate about coffee education, and our mission to create cutting-edge coffee people extends beyond our organization to the relationships with farmers and co-ops, customers, vendors, and local communities. Our approach to coffee education aims to empower everyone in the coffee chain with the skills and knowledge necessary to ensure quality stewardship and sustainability from farm to cup. Since we know that education, quality, and sustainability go hand in hand, we feel a responsibility to share our discoveries and knowledge with the world.';
                 $roaster->twitter       = 'https://www.twitter.com/counter_culture';
                 $roaster->facebook      = 'https://www.facebook.com/counterculturecoffee';
-                $roaster->instagram     = 'https://wwww.instagram.com/counterculturecoffee/';
+                $roaster->instagram     = 'https://instagram.com/counterculturecoffee/';
                 $roaster->url_name      = 'CounterCulture';
                 $roaster->save();
         
@@ -84,7 +84,7 @@ class RoastersTableSeeder extends Seeder {
                         Lastly, as people, we believe that the best way to operate a business is to be honest, ethical and loyal to our friends. We will stand by that any day!';
                 $roaster->twitter       = 'https://www.twitter.com/metriccoffee';
                 $roaster->facebook      = 'https://www.facebook.com/metriccoffee';
-                $roaster->instagram     = 'https://wwww.instagram.com/metriccoffee';
+                $roaster->instagram     = 'https://instagram.com/metriccoffee';
                 $roaster->url_name      = 'Metric';
                 $roaster->save();
 
@@ -113,7 +113,7 @@ Many of our specialty beans come from a single farm or even from a specific area
 We buy directly from the farmers and have established strong, long-term relationships, based on good coffee and fair prices.';
                 $roaster->twitter       = 'https://www.twitter.com/localcoffeeSA';
                 $roaster->facebook      = 'https://www.facebook.com/localcoffeesa';
-                $roaster->instagram     = 'https://wwww.instagram.com/meritroastingco';
+                $roaster->instagram     = 'https://instagram.com/meritroastingco';
                 $roaster->url_name      = 'Merit';
                 $roaster->save();
 	}
