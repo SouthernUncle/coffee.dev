@@ -9,6 +9,10 @@
         <div class="col-xs-12 col-s-6">
             <h1 class="display-inline">{{ $roaster->name }}</h1>
             <a href="{{ $roaster->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
+            <p>
+                {{ $roaster->address }} {{ $roaster->city }}, {{ $roaster->state }} |
+                <a href="{{ $roaster->getMapLink($roaster->address, $roaster->city, $roaster->state) }}" target="_blank">Map</a>
+            </p>
             @if($roaster->overallRoasterScore() == 50)
                     <h2>No Coffees Yet Rated</h2>
             @else
