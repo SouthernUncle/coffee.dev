@@ -25,7 +25,7 @@
         <div class="col-xs-12 col-s-6 col-md-6">
             <p>{{ $roaster->description }}</p>
         </div>
-        <div class="col-xs-12 col-s-6 col-md-6">
+        <div class="col-xs-12 col-s-6 col-md-6" id="roaster-pic">
             <img src="/img/fit750{{ $roaster->img_url }}" class="img-responsive">
             @if(Auth::check() && Auth::user()->role_id == 1)
                 <a href="{{{ action('RoastersController@edit', $roaster->url_name) }}}">
