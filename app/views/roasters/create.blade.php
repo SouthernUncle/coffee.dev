@@ -29,19 +29,19 @@
     	</div>
     	<div class="col-xs-6 col-s-6">
 			<span class="brown fancy">Website</span>
-    		<input type="text" name="url" id="url" class="form-control coffee-input" placeholder="i.e. 'meritcoffee.com'" value="{{{ Input::old('url') }}}"/>
+    		<input type="text" name="url" id="url" class="form-control coffee-input" placeholder="i.e. 'http://meritcoffee.com'" value="{{{ Input::old('url') }}}"/>
 	    </div>
 	    <div class="col-xs-6 col-s-6">
 			<span class="brown fancy">Twitter Handle</span>
-    		<input type="text" name="twitter" id="twitter" class="form-control coffee-input" placeholder="i.e. 'localcoffeeSA'" value="{{{ Input::old('twitter') }}}"/>
+    		<input type="text" name="twitter" id="twitter" class="form-control coffee-input" placeholder="i.e. 'http://www.twitter.com/localcoffeeSA'" value="{{{ Input::old('twitter') }}}"/>
 	    </div>
 	    <div class="col-xs-6 col-s-6">
 			<span class="brown fancy">Facebook Extension</span>
-    		<input type="text" name="facebook" id="facebook" class="form-control coffee-input" placeholder="i.e. 'localcoffeesa'" value="{{{ Input::old('facebook') }}}"/>
+    		<input type="text" name="facebook" id="facebook" class="form-control coffee-input" placeholder="i.e. 'http://www.facebook.com/localcoffeesa'" value="{{{ Input::old('facebook') }}}"/>
 	    </div>
 	    <div class="col-xs-6 col-s-6">
 			<span class="brown fancy">Instagram Name</span>
-    		<input type="text" name="instagram" id="instagram" class="form-control coffee-input" placeholder="i.e. 'meritroastingco'" value="{{{ Input::old('instagram') }}}"/>
+    		<input type="text" name="instagram" id="instagram" class="form-control coffee-input" placeholder="i.e. 'http://instagram.com/meritroastingco'" value="{{{ Input::old('instagram') }}}"/>
 	    </div>
 	    <div class="upload col-xs-12 col-md-6">
 		    {{ Form::label('file','Image Upload',array('id'=>'','class'=>'fancy brown')) }}
