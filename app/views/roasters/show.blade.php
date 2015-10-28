@@ -17,7 +17,7 @@
 
              @if(Auth::check())
             <a href="{{{ action('CoffeesController@createFromRoaster', $roaster->url_name) }}}">
-                <button class="btn btn-awesome btn-lg">Create Coffee</button>
+                <button class="btn btn-awesome btn-md">Create Coffee</button>
             </a>
             @endif
         </div>
