@@ -31,13 +31,15 @@
                 @endif
             </h3>
 
-            <h6>
-                {{ $coffee->region->name }}
-            </h6>        
+            <h6>{{ $coffee->region->name }} @if(!is_null($coffee->elevation)) | {{ $coffee->elevation }} @endif</h6>
+
+            @if(!is_null($coffee->process)) 
+                <h6>
+                    {{ $coffee->process }}
+                </h6>
+            @endif         
         
-            <p>
-                {{ $coffee->roasters_description }}
-            </p>
+            <p>{{ $coffee->roasters_description }}</p>
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-6">
