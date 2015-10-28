@@ -28,6 +28,17 @@ class UsersTableSeeder extends Seeder {
 			'body_pref'		=> 7
 		]);
 
+		User::create([
+
+			'username'      => $_ENV['T_USERNAME'],
+			'email'         => $_ENV['T_EMAIL'],
+			'password'      => $_ENV['T_PASSWORD'],
+			'role_id'	    => 2,
+			'roast_pref'	=> 5,
+			'acid_pref'		=> 5,
+			'body_pref'		=> 5
+		]);
+
 		$faker = Faker::create();
 
 		foreach(range(1, 9) as $index)

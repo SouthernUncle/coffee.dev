@@ -27,7 +27,10 @@ class Roaster extends Eloquent {
 	public function overallRoasterScore()
 	{
 		foreach($this->coffees as $c) {
-			$scores[] = $c->overallCoffeeRating();
+			$reviews = $c->reviews()->get();
+			if(isset($reviews[0])) {
+				$scores[] = $c->overallCoffeeRating();
+			}
 		}
 
 		if (!empty($scores)) {
