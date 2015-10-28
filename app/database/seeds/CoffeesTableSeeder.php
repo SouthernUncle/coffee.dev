@@ -210,6 +210,98 @@ class CoffeesTableSeeder extends Seeder {
         $coffee->url_name               = 'Metric-BonVivant';
         $coffee->save();
 
-	}
+        $coffee = new Coffee();
+        $coffee->user_id                = 1;
+        $coffee->region_id              = 1;
+        $coffee->roaster_id             = 6;
+        $coffee->name                   = 'Gitmalee';
+        $coffee->img_url                = '/img/gitmalee.jpeg';
+        $coffee->url                    = 'https://squareup.com/market/local-coffee-5';
+        $coffee->roasters_description   = 'Yirgacheffe
 
+Flavor Notes: White Grape, Honeysuckle, & Lemon
+
+Heirloom Varietal';
+        $coffee->url_name               = 'Merit-Gitmalee';
+        $coffee->save();
+
+        $coffee = new Coffee();
+        $coffee->user_id                = 1;
+        $coffee->region_id              = 9;
+        $coffee->roaster_id             = 6;
+        $coffee->name                   = 'La Roca';
+        $coffee->img_url                = '/img/laroca.jpeg';
+        $coffee->url                    = 'https://squareup.com/market/local-coffee-5';
+        $coffee->roasters_description   = 'Dipilto, Nicaragua
+
+Tasting Notes: Sweet Citrus, Nougat, & Clean';
+        $coffee->url_name               = 'Merit-LaRoca';
+        $coffee->save();
+
+        $coffee = new Coffee();
+        $coffee->user_id                = 1;
+        $coffee->region_id              = 9;
+        $coffee->roaster_id             = 6;
+        $coffee->name                   = 'La Claridad';
+        $coffee->img_url                = '/img/laclaridad.jpg';
+        $coffee->url                    = 'https://squareup.com/market/local-coffee-5';
+        $coffee->roasters_description   = 'Hand-picked from a competition featuring Oaxaca, Mexico\'s top 30 coffees where La Claridad earned Third Place. One of two lots bought at auction following the competition, this coffee presents notes of: Tropical Fruit, Silikiness, and Cola, according to the roaster. The varietals are: Typica, Bourbon, and Mundo Novo.';
+        $coffee->url_name               = 'Merit-LaClaridad';
+        $coffee->save();
+
+        $coffee = new Coffee();
+        $coffee->user_id                = 1;
+        $coffee->region_id              = 9;
+        $coffee->roaster_id             = 6;
+        $coffee->name                   = 'La Simetria';
+        $coffee->img_url                = '/img/laclaridad.jpg';
+        $coffee->url                    = 'https://squareup.com/market/local-coffee-5';
+        $coffee->roasters_description   = 'Hand-picked from a competition featuring Oaxaca, Mexico\'s top 30 coffees where La Claridad earned Third Place. One of two lots bought at auction following the competition, this coffee presents notes of: Tropical Fruit, Silikiness, and Cola, according to the roaster. The varietals are: Typica, Bourbon, and Mundo Novo.';
+        $coffee->url_name               = 'Merit-LaSimetria';
+        $coffee->save();
+
+        $coffee = new Coffee();
+        $coffee->user_id                = 1;
+        $coffee->region_id              = 8;
+        $coffee->roaster_id             = 6;
+        $coffee->name                   = 'Conductor';
+        $coffee->img_url                = '/img/laclaridad.jpg';
+        $coffee->url                    = 'https://squareup.com/market/local-coffee-5';
+        $coffee->roasters_description   = 'Hand-picked from a competition featuring Oaxaca, Mexico\'s top 30 coffees where La Claridad earned Third Place. One of two lots bought at auction following the competition, this coffee presents notes of: Tropical Fruit, Silikiness, and Cola, according to the roaster. The varietals are: Typica, Bourbon, and Mundo Novo.';
+        $coffee->url_name               = 'Merit-Conductor';
+        $coffee->save();
+
+        $coffee = new Coffee();
+        $coffee->user_id                = 1;
+        $coffee->region_id              = 1;
+        $coffee->roaster_id             = 6;
+        $coffee->name                   = 'Kudraa';
+        $coffee->img_url                = '/img/laclaridad.jpg';
+        $coffee->url                    = 'https://squareup.com/market/local-coffee-5';
+        $coffee->roasters_description   = 'Hand-picked from a competition featuring Oaxaca, Mexico\'s top 30 coffees where La Claridad earned Third Place. One of two lots bought at auction following the competition, this coffee presents notes of: Tropical Fruit, Silikiness, and Cola, according to the roaster. The varietals are: Typica, Bourbon, and Mundo Novo.';
+        $coffee->url_name               = 'Merit-Kudraa';
+        $coffee->save();
+
+        $coffee = new Coffee();
+        $coffee->user_id                = 1;
+        $coffee->region_id              = 9;
+        $coffee->roaster_id             = 6;
+        $coffee->name                   = 'Brisas del Mogoton';
+        $coffee->img_url                = '/img/laclaridad.jpg';
+        $coffee->url                    = 'https://squareup.com/market/local-coffee-5';
+        $coffee->roasters_description   = 'Hand-picked from a competition featuring Oaxaca, Mexico\'s top 30 coffees where La Claridad earned Third Place. One of two lots bought at auction following the competition, this coffee presents notes of: Tropical Fruit, Silikiness, and Cola, according to the roaster. The varietals are: Typica, Bourbon, and Mundo Novo.';
+        $coffee->url_name               = 'Merit-BrisasdelMogoton';
+        $coffee->save();
+
+        $coffee = new Coffee();
+        $coffee->user_id                = 1;
+        $coffee->region_id              = 6;
+        $coffee->roaster_id             = 6;
+        $coffee->name                   = 'San Sebastian Decaf';
+        $coffee->img_url                = '/img/laclaridad.jpg';
+        $coffee->url                    = 'https://squareup.com/market/local-coffee-5';
+        $coffee->roasters_description   = 'Hand-picked from a competition featuring Oaxaca, Mexico\'s top 30 coffees where La Claridad earned Third Place. One of two lots bought at auction following the competition, this coffee presents notes of: Tropical Fruit, Silikiness, and Cola, according to the roaster. The varietals are: Typica, Bourbon, and Mundo Novo.';
+        $coffee->url_name               = 'Merit-SanSebastianDecaf';
+        $coffee->save();
+	}
 }

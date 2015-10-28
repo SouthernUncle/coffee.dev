@@ -87,5 +87,34 @@ class RoastersTableSeeder extends Seeder {
                 $roaster->instagram     = 'https://wwww.instagram.com/metriccoffee';
                 $roaster->url_name      = 'Metric';
                 $roaster->save();
+
+                $roaster = new Roaster();
+                $roaster->user_id       = 1;
+                $roaster->name          = 'Merit Roasting Co.';
+                $roaster->address       = '2001 S Presa St.';
+                $roaster->city          = 'San Antonio';
+                $roaster->state         = 'TX';
+                $roaster->img_url       = '/img/merit.jpg';
+                $roaster->url           = 'http://meritcoffee.com';
+                $roaster->description   = 'We personally source our beans, perfect them through the art/science of precision roasting, and supply them to Local Coffee and select restaurants and retail establishments. Please contact us about wholesale orders.
+
+Roasting coffee to perfection is exacting, but not mysterious. Here’s how we do it: 
+
+1) Travel the globe to find the best coffee beans. 
+
+2) Buy entire micro-lots of great beans at a fair price. 
+
+3) Roast with artistry and advanced technology. 
+
+4) Control quality from grower to roaster to barista to consumer.
+
+Many of our specialty beans come from a single farm or even from a specific area on the farm, so they are limited in quantity and superior in quality.
+
+We buy directly from the farmers and have established strong, long-term relationships, based on good coffee and fair prices.';
+                $roaster->twitter       = 'https://www.twitter.com/localcoffeeSA';
+                $roaster->facebook      = 'https://www.facebook.com/localcoffeesa';
+                $roaster->instagram     = 'https://wwww.instagram.com/meritroastingco';
+                $roaster->url_name      = 'Merit';
+                $roaster->save();
 	}
 }
