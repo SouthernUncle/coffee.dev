@@ -7,10 +7,11 @@
 @section('content')
     <div class="container">
         <div class="col-xs-12 col-s-6 col-md-6">
-            <h1 class="display-inline">
-                {{ $coffee->name }}
-            </h1>
-            <a href="{{ $coffee->url }}" target="_blank"><i class="fa fa-external-link fa-lg"></i></a>
+            <a href="{{ $coffee->url }}" target="_blank" class="brown">
+                <h1 class="display-inline">
+                    {{ $coffee->name }}
+                </h1>
+            </a>
             @if(Auth::check())
             <a href="{{{ action('ReviewsController@createFromCoffee', $coffee->url_name) }}}">
                 <button class="btn btn-awesome review-btn btn-md">Review</button>
@@ -18,15 +19,17 @@
             @endif
 
             <h4>
-                <a href="{{ action('RoastersController@show', $coffee->roaster->url_name) }}">{{ $coffee->roaster->name }}</a>
+                <a href="{{ action('RoastersController@show', $coffee->roaster->url_name) }}" class="brown">
+                    {{ $coffee->roaster->name }}
+                </a>
             </h4>
-            <h4>
+            <h3>
                 @if(isset($reviews[0]))
                     {{ $coffee->overallCoffeeRating() }} / 10
                 @else
                     Not Yet Rated
                 @endif
-            </h4>
+            </h3>
 
             <h6>
                 {{ $coffee->region->name }}
