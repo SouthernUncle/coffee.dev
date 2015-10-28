@@ -42,6 +42,31 @@ class Roaster extends Eloquent {
 
 	}
 
+	public function getMapLink($address, $city, $state)
+	{
+		$address = $this->makeMapLink(str_split($address));
+		$city = $this->makeMapLink(str_split($city));
+
+		$address = implode('', $address);
+		$city = implode('', $city);
+		$newAddress = $address . '+' . $city . '+' . $state;
+
+		$url = 'https://www.google.com/maps/place/';
+		$string = $url . $newAddress;
+		return $string;
+	}
+
+	public function makeMapLink($array)
+	{
+		foreach($array as $key => $value) {
+			if ($value == ' ') {
+				$array[$key] = '+';
+			}
+		}
+
+		return $array;
+	}
+
 	public static $rules = array(
 		'name' 			=> 'required',
 		'address' 		=> 'required',
