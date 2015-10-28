@@ -200,8 +200,7 @@ button.btn-delete {
 }
 
 .delete-account {
-	position: absolute;
-	bottom:100px;
+	margin-top: 50px;
 }
 
 .my-reviews {
