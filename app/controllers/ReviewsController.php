@@ -59,60 +59,68 @@ class ReviewsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$review = new Review();
-		$review->user_id	    = Auth::id();
-		$review->roaster_id		= Input::get('roaster');
-		$review->coffee_id		= Input::get('coffee');
-		$review->review 		= Input::get('review'); 
-		$review->aroma			= Input::get('aroma');
-		$review->flavor 		= Input::get('flavor');
-		$review->aftertaste		= Input::get('aftertaste');
-		$review->balance		= Input::get('balance');
-		$review->roast 			= Input::get('roast');
-		$review->body 			= Input::get('body');
-		$review->acidity 		= Input::get('acidity');
-		$review->price 			= Input::get('price');
-		$review->bag_size_grams = Review::convertToGrams(Input::get('bag_size_grams'));
+		$query = Review::where('user_id', Auth::id())->where('coffee_id', Input::get('coffee'));
 
-		$review->save();
+		if(!is_null($query)) {
+			Session::flash('errorMessage', 'You\'ve already reviewed that coffee. Please edit your existing review instead of creating a new one.');
+			return Redirect::action('UsersController@show', Auth::user()->username);
+		} else {
 
-		$flavor1 = Input::get('flavor1');
-		$flavor2 = Input::get('flavor2');
-		$flavor3 = Input::get('flavor3');
-		
-		$flavors = array($flavor1, $flavor2, $flavor3);
-		$this->addFlavorToReview($flavors, $review->id);
+			$review = new Review();
+			$review->user_id	    = Auth::id();
+			$review->roaster_id		= Input::get('roaster');
+			$review->coffee_id		= Input::get('coffee');
+			$review->review 		= Input::get('review'); 
+			$review->aroma			= Input::get('aroma');
+			$review->flavor 		= Input::get('flavor');
+			$review->aftertaste		= Input::get('aftertaste');
+			$review->balance		= Input::get('balance');
+			$review->roast 			= Input::get('roast');
+			$review->body 			= Input::get('body');
+			$review->acidity 		= Input::get('acidity');
+			$review->price 			= Input::get('price');
+			$review->bag_size_grams = Review::convertToGrams(Input::get('bag_size_grams'));
 
-		if(Input::has('grind') || 
-			Input::has('water_weight') || 
-			Input::has('coffee_weight') || 
-			Input::has('brew_time') || 
-			Input::has('water_temp') || 
-			Input::has('brewer') || 
-			Input::has('roast_date') ||
-			Input::has('method')) {
+			$review->save();
+
+			$flavor1 = Input::get('flavor1');
+			$flavor2 = Input::get('flavor2');
+			$flavor3 = Input::get('flavor3');
 			
-			$param = new Parameter();
+			$flavors = array($flavor1, $flavor2, $flavor3);
+			$this->addFlavorToReview($flavors, $review->id);
 
-			if(Input::has('roast_date')) {
-				$input 		= Input::get('roast_date');
-				$date  		= date_create($input);
-				$roast_date = date_format($date, 'Y-m-d');
-				$param->roast_date		= $roast_date;
+			if(Input::has('grind') || 
+				Input::has('water_weight') || 
+				Input::has('coffee_weight') || 
+				Input::has('brew_time') || 
+				Input::has('water_temp') || 
+				Input::has('brewer') || 
+				Input::has('roast_date') ||
+				Input::has('method')) {
+				
+				$param = new Parameter();
+
+				if(Input::has('roast_date')) {
+					$input 		= Input::get('roast_date');
+					$date  		= date_create($input);
+					$roast_date = date_format($date, 'Y-m-d');
+					$param->roast_date		= $roast_date;
+				}
+
+				$param->review_id		= $review->id;
+				$param->grind 			= (Input::has('grind') ? Input::get('grind') : null);
+				$param->water_weight	= (Input::has('water_weight') ? Input::get('water_weight') : null);
+				$param->coffee_weight	= (Input::has('coffee_weight') ? Input::get('coffee_weight') : null);
+				$param->brew_time		= (Input::has('brew_time') ? Input::get('brew_time') : null);
+				$param->water_temp		= (Input::has('water_temp') ? Input::get('water_temp') : null);
+				$param->brewer			= (Input::has('brewer') ? Input::get('brewer') : null);
+				$param->method 			= (Input::has('method') ? Input::get('method') : null);
+				$param->save();
 			}
 
-			$param->review_id		= $review->id;
-			$param->grind 			= (Input::has('grind') ? Input::get('grind') : null);
-			$param->water_weight	= (Input::has('water_weight') ? Input::get('water_weight') : null);
-			$param->coffee_weight	= (Input::has('coffee_weight') ? Input::get('coffee_weight') : null);
-			$param->brew_time		= (Input::has('brew_time') ? Input::get('brew_time') : null);
-			$param->water_temp		= (Input::has('water_temp') ? Input::get('water_temp') : null);
-			$param->brewer			= (Input::has('brewer') ? Input::get('brewer') : null);
-			$param->method 			= (Input::has('method') ? Input::get('method') : null);
-			$param->save();
+			return Redirect::action('CoffeesController@show', $review->coffee->url_name);
 		}
-
-		return Redirect::action('CoffeesController@show', $review->coffee->url_name);
 	}
 
 
@@ -192,14 +200,19 @@ class ReviewsController extends \BaseController {
 			$this->addFlavorToReview($flavors, $review->id);
 		}	
 
-		if(Parameter::find($review->id)) {
-			$param = Parameter::find($review->id);
-		} else {
-			$param = new Parameter();
-		}
-
 		if(Input::has('grind') || Input::has('water_weight') || Input::has('coffee_weight') || 
-		Input::has('brew_time') || Input::has('water_temp') || Input::has('brewer') || Input::has('method')) {
+		Input::has('brew_time') || Input::has('water_temp') || Input::has('brewer') || Input::has('method') || 
+		Input::has('roast_date')) {
+			
+			$query = Parameter::where('review_id', $review->id)->first();
+
+			if(!is_null($query))
+			{
+			    $param = Parameter::where('review_id', $review->id)->first();
+			} else {
+				$param = new Parameter();
+			}
+
 			$param->review_id		= $review->id;
 			$param->grind 			= (Input::has('grind') ? Input::get('grind') : null);
 			$param->water_weight	= (Input::has('water_weight') ? Input::get('water_weight') : null);

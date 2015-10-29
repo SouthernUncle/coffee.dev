@@ -138,7 +138,7 @@ class CoffeesController extends \BaseController {
 
 		$new = Image::make(public_path() . $coffee->img_url)->fit(500)->save(public_path() . '/img/fit500' . $coffee->img_url);
 
-		$reviews = $coffee->reviews()->paginate(4);
+		$reviews = $coffee->reviews()->orderBy('updated_at', 'desc')->paginate(4);
 
 		return View::make('coffees.show', compact('coffee', 'reviews'));
 	}
