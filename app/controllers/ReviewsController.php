@@ -192,14 +192,19 @@ class ReviewsController extends \BaseController {
 			$this->addFlavorToReview($flavors, $review->id);
 		}	
 
-		if(Parameter::find($review->id)) {
-			$param = Parameter::find($review->id);
-		} else {
-			$param = new Parameter();
-		}
-
 		if(Input::has('grind') || Input::has('water_weight') || Input::has('coffee_weight') || 
-		Input::has('brew_time') || Input::has('water_temp') || Input::has('brewer') || Input::has('method')) {
+		Input::has('brew_time') || Input::has('water_temp') || Input::has('brewer') || Input::has('method') || 
+		Input::has('roast_date')) {
+			
+			$query = Parameter::where('review_id', $review->id)->first();
+
+			if(!is_null($query))
+			{
+			    $param = Parameter::where('review_id', $review->id)->first();
+			} else {
+				$param = new Parameter();
+			}
+
 			$param->review_id		= $review->id;
 			$param->grind 			= (Input::has('grind') ? Input::get('grind') : null);
 			$param->water_weight	= (Input::has('water_weight') ? Input::get('water_weight') : null);
