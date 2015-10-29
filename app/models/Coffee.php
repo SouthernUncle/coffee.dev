@@ -108,6 +108,26 @@ class Coffee extends Eloquent {
 		return $date;
 	}
 
+	public function getPriceAvg($id)
+	{
+		$reviews = Review::where('coffee_id', $id)->get();
+
+		$prices = [];
+		foreach($reviews as $r) {
+			if(!is_null($r->price)) {
+				array_push($prices, $r->price);
+			}
+		}
+		
+		if(count($prices) > 0) {
+			$prices = '$' . number_format((array_sum($prices)/count($prices)), 2);
+		} else {
+			$prices = '';
+		}
+
+		return $prices;
+	}
+
 	public static $rules = array(
 		'region' 		=> 'required',
 		'roaster' 		=> 'required',

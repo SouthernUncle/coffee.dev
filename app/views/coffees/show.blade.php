@@ -33,12 +33,10 @@
 
             <h6>{{ $coffee->region->name }} @if(!is_null($coffee->elevation)) | {{ $coffee->elevation }} @endif</h6>
 
-            @if(!is_null($coffee->process)) 
-                <h6>
-                    {{ $coffee->process }}
-                </h6>
-            @endif         
-        
+            <h6>
+                @if(!is_null($coffee->process)) {{ $coffee->process }} @endif  {{ $coffee->getPriceAvg($coffee->id) }}
+            </h6>
+                    
             <p>{{ $coffee->roasters_description }}</p>
         </div>
 
