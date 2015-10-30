@@ -26,9 +26,8 @@ $(document).ready(function() {
 			//if there is text, lets filter
 	  		filter('tbody tr', $(this).val());
 		}
-
-	    //reapply zebra rows
-	    // $('.visible td').removeClass('odd');
-	    // zebraRows('.visible:odd td', 'odd');
 	});
 });
+
+// from Noah Hendrix
+// http://tutsplus.com/authors/noah-hendrix

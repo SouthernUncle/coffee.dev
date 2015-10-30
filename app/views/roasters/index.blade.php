@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="col-xs-12">
 			{{ Form::open(array('action' => 'RoastersController@index', 'method' => 'get')) }}
-	            {{ Form::text('filter', null, ['class' => 'form-control search', 'placeholder' => 'Search...', 'id' => 'filter']) }}
+	            @include('layouts.partials.filter')
 	        {{ Form::close() }}
         </div>
         <div class="col-xs-12">
