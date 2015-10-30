@@ -6,11 +6,11 @@
 	<div class="container">
 		<div class="col-xs-12">
 			{{ Form::open(array('action' => 'RoastersController@index', 'method' => 'get')) }}
-	            {{ Form::text('search', null, ['class' => 'form-control search', 'placeholder' => 'Search...']) }}
+	            {{ Form::text('filter', null, ['class' => 'form-control search', 'placeholder' => 'Search...', 'id' => 'filter']) }}
 	        {{ Form::close() }}
         </div>
         <div class="col-xs-12">
-		    <table class="table table-responsive table-hover">
+		    <table id="resultTable" class="table table-responsive table-hover">
 		    	<thead>
 		    		<tr>
 		    			<th>Roaster</th>
@@ -36,9 +36,6 @@
 	        	</button>
 	        </a>
 	    </div>
-		<div class="col-xs-12">
-			{{ $roasters->links() }}
-		</div>
 	</div>
 @stop
 
@@ -49,4 +46,5 @@
 	        $("#roaster_nav").addClass("active");
 	    });
 	</script>
+	<script src="/js/livefilter.js"></script>
 @stop

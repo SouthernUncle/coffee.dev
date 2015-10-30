@@ -21,12 +21,7 @@ class CoffeesController extends \BaseController {
 	{
 		$query = Coffee::with('roaster');
 
-		$search = Input::get('search');
-		if($search) {
-			$query->where('name', 'like', "%$search%");
-		}
-
-		$coffees = $query->orderBy('name')->paginate(10);
+		$coffees = $query->orderBy('name')->get();
 
 		return View::make('coffees.index', compact('coffees'));
 	}
