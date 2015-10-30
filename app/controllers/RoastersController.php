@@ -21,13 +21,7 @@ class RoastersController extends \BaseController {
 	{
 		$query = Roaster::with('coffees');
 
-		$search = Input::get('search');
-		if($search) {
-			$query->where('name', 'like', "%$search%");
-		}
-
-		$roasters = $query->orderBy('name')->paginate(10);
-
+		$roasters = $query->orderBy('name')->get();
 
 		return View::make('roasters.index', compact('roasters'));
 
@@ -120,7 +114,7 @@ class RoastersController extends \BaseController {
 		 	$constraint->upsize();
 		})->save(public_path() . '/img/fit750' . $roaster->img_url);
 		
-		$coffees = $roaster->coffees()->paginate(5);
+		$coffees = $roaster->coffees()->get();
 
 		return View::make('roasters.show', compact('roaster', 'coffees'));
 	}

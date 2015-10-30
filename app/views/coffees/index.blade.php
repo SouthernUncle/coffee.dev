@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="col-xs-12">
 			{{ Form::open(array('action' => 'CoffeesController@index', 'method' => 'get')) }}
-	            {{ Form::text('search', null, ['class' => 'form-control search', 'placeholder' => 'Search...']) }}
+	            @include('layouts.partials.filter')
 	        {{ Form::close() }}
         </div>
         <div class="col-xs-12">
@@ -46,9 +46,6 @@
 	        	</button>
 	        </a>
 	    </div>
-		<div class="col-xs-12">
-			{{ $coffees->links() }}
-		</div>
 	</div>
 @stop
 
@@ -59,4 +56,5 @@
 	        $("#coffee_nav").addClass("active");
 	    });
 	</script>
+	<script src="/js/livefilter.js"></script>
 @stop

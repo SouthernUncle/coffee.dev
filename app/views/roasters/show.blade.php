@@ -42,6 +42,12 @@
         </div>
         <br>
 
+        <div class="col-xs-12">
+            {{ Form::open(array('action' => array('RoastersController@show', $roaster->url_name), 'method' => 'get')) }}
+                @include('layouts.partials.filter')
+            {{ Form::close() }}
+        </div>
+
         <table class="table table-responsive">
             <thead>
                 <th>Coffee</th>
@@ -64,15 +70,15 @@
                 @endforeach
             </tbody>
         </table>
-        <div>{{ $coffees->links() }}</div>
     </div>
 @stop
 
 @section('js')
-<script>
-    "use strict";
-    $(document).ready(function() {
-        $("#roaster_nav").addClass("active");
-    });
-</script>
+    <script>
+        "use strict";
+        $(document).ready(function() {
+            $("#roaster_nav").addClass("active");
+        });
+    </script>
+    <script src="/js/livefilter.js"></script>
 @stop
