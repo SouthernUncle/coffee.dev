@@ -1,9 +1,9 @@
-"use strict";
+ "use strict";
 $(document).ready(function() {
 	//filter results based on query
 	function filter(selector, query) {
 	  query =   $.trim(query); //trim white space
-	  query = query.replace(/ /gi, '|'); //add OR for regex query
+	  query = query.replace(/ /gi, '&'); //add AND for regex query, can use '|'' for OR
 	 
 	  $(selector).each(function() {
 	    ($(this).text().search(new RegExp(query, "i")) < 0) ? $(this).hide().removeClass('visible') : $(this).show().addClass('visible');
