@@ -78,7 +78,12 @@
                                     <i class="fa fa-pencil-square-o fa-2x yellow float-r"></i>
                                 </a>
                             @endif
-                            <p>{{ Coffee::convertDate($r->updated_at) }}</p>
+                            <p>
+                                {{ Coffee::convertDate($r->created_at) }} 
+                                @if($r->created_at != $r->updated_at)
+                                    | Edited: {{ Coffee::convertDate($r->updated_at) }}
+                                @endif
+                            </p>
                             <p>{{ $r->review }}</p>
                         </div>
                         @if($r->parameter)
