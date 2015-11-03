@@ -114,7 +114,7 @@ class RoastersController extends \BaseController {
 		 	$constraint->upsize();
 		})->save(public_path() . '/img/fit750' . $roaster->img_url);
 		
-		$coffees = $roaster->coffees()->get();
+		$coffees = $roaster->coffees()->orderBy('name')->get();
 
 		return View::make('roasters.show', compact('roaster', 'coffees'));
 	}
