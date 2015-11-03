@@ -59,7 +59,7 @@ class ReviewsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$query = Review::where('user_id', Auth::id())->where('coffee_id', Input::get('coffee'));
+		$query = Review::where('user_id', Auth::id())->where('coffee_id', Input::get('coffee'))->pluck('id');
 
 		if(!is_null($query)) {
 			Session::flash('errorMessage', 'You\'ve already reviewed that coffee. Please edit your existing review instead of creating a new one.');
